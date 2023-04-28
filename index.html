@@ -5,17 +5,157 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>FILA</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="./js/jquery-3.6.4.min.js"></script>
   <script src="./js/jquery.scrollTo.min.js"></script>
   <script src="./js/jquery.mousewheel.min.js"></script>
   <script src="./js/jquery.easing.min.js"></script>
-  <link rel="stylesheet" href="./css/main.css">
-  
+
 </head>
 
 <body>
+  <section class="main_section">
+    <div class="swiper myswiper">
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img src="./fila_img.jpg" alt="">
+          <div class="visual_tit">
+            <p class="tit">FILA TENNIS COLLECTION</p>
+            <p class="tit_btn"><a href="#!">컬렉션 보기</a></p>
+          </div>
+        </div>
 
+        <div class="swiper-slide">
+          <img src="./fila_img1.jpg" alt="">
+          <div class="visual_tit">
+            <p class="tit">FILA<br />SPROTS LIFE</p>
+            <p class="tit_btn"><a href="#!">컬렉션 보기</a></p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <img src="./fila_img2.jpg" alt="">
+          <div class="visual_tit">
+            <p class="tit">FILA<br />FLOAT ELITE</p>
+            <p class="tit_btn"><a href="#!">컬렉션 보기</a></p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <img src="./fila_img3.jpg" alt="">
+          <div class="visual_tit">
+            <p class="tit">FILA<br />Heritage Collection</p>
+            <p class="tit_btn"><a href="#!">컬렉션 보기</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-wrap">
+        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination2"></div>
+      </div>
+
+      <div class="arrow">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="center">
+    <div class="newSwiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <div class="best_box">
+            <a href="#!">
+              <div class="product_img">
+                <img src="./fila_img.jpg">
+              </div>
+              <p class="pa">
+                <span class="bold">[이디야]</span> 봄맞이 블렌딩 티백 선물세트(티백4T x 6개)+토피넛라떼 10T
+              </p>
+            </a>
+            <div class="price">
+              <span class="won">28,900원</span>
+              <div class="price_icon">
+                <i class="fas fa-shopping-cart"></i>
+                <i class="far fa-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+    </div>
+  </section>
+
+
+  <script>
+    let swiper = new Swiper(".myswiper", {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        type: "fraction",
+        renderBullet: function (index, className) {
+          return '<span class=""' + className + '>' +
+            (index + 1) + '</span>'
+        }
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    let pagingSwiper = new Swiper(".myswiper", {
+      loop: true,
+      pagination: {
+        loop: true,
+        el: ".swiper-pagination2",
+        type: "progressbar",
+
+      },
+    });
+
+    swiper.controller.control = pagingSwiper;
+  </script>
+
+  <script>
+    let newSwiper = new Swiper(".newSwiper", {
+      loop: true,
+      centeredSlides: true,
+      slidesPerView: 3,
+      slidesPerGroup: 1,
+      slidesPerView: "auto",
+      autoplay: {
+        delay: 3000,
+      },
+
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
 </body>
 
 </html>
