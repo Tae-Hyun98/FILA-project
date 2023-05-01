@@ -264,15 +264,67 @@ div.an {
 }
 
 .rank {
-  margin-top: 60px;
+  padding-top: 80px;
 }
 
-.rank h1 {
+.rank h2 {
+  font-size: 36px;
   text-align: center;
 }
 
+.rank ul.category_btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
 
-/***************center*************/
+.rank ul li a {
+  display: block;
+  padding: 5px 15px;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(102, 102, 102);
+}
+
+.rank_box {
+  display: flex;
+}
+
+.rank_order {
+  width: 30%;
+  margin-right: 20px;
+}
+
+.rank .rank_top {
+  border-bottom: 2px solid #777;
+}
+
+.rank .rank_top h3 {
+  font-size: 25px;
+  padding-bottom: 5px;
+}
+
+.rank .rank_bottom {
+  margin: 15px 0 0 20px;
+}
+
+.rank .rank_bottom ul li {
+  height: 45px;
+  line-height: 45px;
+  border-bottom: 1px solid black;
+
+}
+
+.rank .rank_bottom ul li a span {
+  padding-right: 15px;
+}
+
+.rankSwiper {
+  width: 70%;
+  overflow: hidden;
+}
+
+/***************NEW_ARRIVAL*************/
 .new_arrival {
   margin-top: 60px;
 }
