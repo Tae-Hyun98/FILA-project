@@ -78,24 +78,33 @@ img {
 }
 
 .header .logo img {
-  width: 95px;
+  width: 120px;
 }
 
-.lnb_area {
-  margin-right: 50px;
+.lnb {
+  display: flex;
+  margin-right: 70px;
 }
 
-.lnb_area .lnb {
+.lnb .bar {
+  width: 1px;
+  height: 12px;
+  background-color: #fff;
+  margin: 0 20px;
+}
+
+.lnb .lnb_nav {
+  display: flex;
+  align-items: center;
   overflow: hidden;
 }
 
-.lnb_area .lnb>li {
-  float: left;
+.lnb .lnb_nav>li {
   margin-top: 35px;
   padding-bottom: 35px;
 }
 
-.lnb_area .lnb>li>a {
+.lnb .lnb_nav>li>a {
   display: block;
   color: #fff;
   font-size: 18px;
@@ -104,25 +113,9 @@ img {
   letter-spacing: 1px;
 }
 
-.lnb_area .lnb>li:hover>a {
+.lnb .lnb_nav>li:hover>a {
   color: #000;
   border-bottom: 1px solid black;
-}
-
-.lnb_area .lnb li.bar {
-  position: relative;
-  padding-right: 30px;
-}
-
-.lnb_area .lnb li.bar::after {
-  position: absolute;
-  display: block;
-  content: '';
-  right: 12px;
-  top: 25px;
-  width: 1.5px;
-  height: 12px;
-  background-color: #fff;
 }
 
 .gnb {
@@ -131,12 +124,17 @@ img {
   margin-right: 25px;
 }
 
-.gnb_area .gnb li a {
+.gnb li {
+  width: 55px;
+}
+
+.gnb li a {
   display: block;
+  text-align: center;
   padding: 15px;
 }
 
-.gnb_area .gnb li a i {
+.gnb li a i {
   font-size: 25px;
   color: #fff;
 }
@@ -145,55 +143,62 @@ img {
   font-size: 30px;
 }
 
-.gnb_area .gnb li a i.bag {
+.gnb li a i.bag {
   font-size: 30px;
   line-height: 1.1;
 }
 
 /**************hover_down*************/
-.header .lnb .women_down {
+.header .lnb .down {
   visibility: hidden;
   position: absolute;
   display: flex;
   justify-content: center;
-  z-index: 2;
+  z-index: 9999;
   top: 100px;
   left: 0;
   width: 100%;
   background-color: #fff;
   padding: 20px 40px 60px;
+  opacity: 0;
 }
 
-.header .lnb li:hover .women_down {
-  display: flex;
+.header .lnb li:nth-child(1):hover .women_down,
+.header .lnb li:nth-child(2):hover .men_down,
+.header .lnb li:nth-child(3):hover .kids_down {
   visibility: visible;
   opacity: 1;
 }
 
-.header .left_menu ul>li>a,
+.header .side_menu ul>li>a,
 .header .category_menu ul>li>a {
   color: #000;
 }
 
-.header .women_down ul li a {
+.header .down ul li a {
   font-size: 16px;
   line-height: 32px;
 }
 
-.header .lnb .women_down .inner {
+.header .lnb .down .inner {
   display: flex;
   justify-content: center;
   width: 1540px;
   margin: 0 auto;
 }
 
-.header .lnb .women_down .left_menu {
+.header .lnb .down .side_menu {
   width: 20%;
   padding-right: 80px;
-  border-right: 1px solid black;
+  border-right: 1px solid #ccc;
 }
 
-.header .lnb .women_down .left_menu ul {
+.header .lnb .down .side_menu_r {
+  padding-left: 80px;
+  border-left: 1px solid #ccc;
+}
+
+.header .lnb .down .side_menu ul {
   overflow: hidden;
   margin-top: 20px;
 }
@@ -207,6 +212,14 @@ img {
 
 .header .category_menu ul {
   margin-top: 20px;
+}
+
+.header .kids_down .category_menu {
+  justify-content: flex-start;
+}
+
+.header .kids_down .category_menu div {
+  flex-basis: 280px;
 }
 
 div.an {
