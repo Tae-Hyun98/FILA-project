@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="./js/jquery-3.6.4.min.js"></script>
   <script src="./js/jquery.scrollTo.min.js"></script>
@@ -36,7 +38,11 @@
       </div>
       <div class="gnb_area">
         <ul class="gnb">
-          <li><a href="#!">btn</a></li>
+          <li>
+            <a href="#!">
+              <i class="fas fa-map-marked-alt"></i>
+            </a>
+          </li>
           <li>
             <a href="#!">
               <i class="fas fa-search"></i>
@@ -49,14 +55,16 @@
           </li>
           <li>
             <a href="#!">
-              <img src="./img/outline_shopping_bag_black_24dp.png" alt="">
+              <i class="material-symbols-outlined bag">
+                shopping_bag
+              </i>
             </a>
           </li>
         </ul>
       </div>
     </header>
 
-    <section class="main_section">
+    <section class="visual_main">
       <div class="swiper myswiper">
         <div class="swiper-wrapper">
           <!-- Slides -->
@@ -104,8 +112,39 @@
         </div>
       </div>
     </section>
+    
+    <!-- RANK -->
+    <section class="rank">
+      <h1>랭킹</h1>
+      <div class="rank_category">
+        <ul>
+          <li>
+            <a href="#!">#티셔츠&팬츠</a>
+          </li>
+          <li>
+            <a href="#!">#레이플라이드</a>
+          </li>
+          <li>
+            <a href="#!">#헤리티지</a>
+          </li>
+          <li>
+            <a href="#!">#온라인단독</a>
+          </li>
+          <li>
+            <a href="#!">#타르가</a>
+          </li>
+          <li>
+            <a href="#!">#테니스</a>
+          </li>
+          <li>
+            <a href="#!">#런닝화</a>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-    <section class="center">
+    <!-- NEW_ARRIVAL -->
+    <section class="new_arrival">
       <div class="newSwiper">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
@@ -114,7 +153,7 @@
             <div class="best_box">
               <a href="#!">
                 <div class="product_img">
-                  <img src="./fila_img.jpg">
+                  <img src="./img/01. 메인/04. 추천 스타일/01.jpg">
                 </div>
                 <p class="pa">
                   <span class="bold">[이디야]</span> 봄맞이 블렌딩 티백 선물세트(티백4T x 6개)+토피넛라떼 10T
@@ -141,6 +180,10 @@
 
       </div>
     </section>
+
+    <div class="an">
+      <div class="bgi"></div>
+    </div>
   </div>
 
   <script>
