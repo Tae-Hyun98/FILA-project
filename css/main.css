@@ -96,7 +96,7 @@ img {
   letter-spacing: 1px;
 }
 
-.lnb_area .lnb li:nth-child(3) {
+.lnb_area .lnb li.bar:nth-child(3) {
   position: relative;
 }
 
@@ -134,6 +134,27 @@ img {
 .gnb_area .gnb li a i.bag {
   font-size: 30px;
   line-height: 1.1;
+}
+
+/**************hover_down*************/
+.header .lnb .women_down {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  top: 100px;
+  left: 0;
+  width: 1540px;
+  background-color: #fff;
+}
+
+.header .lnb .women_down .inner {
+  display: flex;
+  justify-content: center;
+}
+
+.lnb_area .lnb .women_down a {
+  color: #000;
 }
 
 div.an {
