@@ -49,6 +49,12 @@ img {
   margin: 0 auto;
 }
 
+.down_tit {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+}
+
 /***************header********************/
 .header {
   position: fixed;
@@ -83,29 +89,37 @@ img {
   overflow: hidden;
 }
 
-.lnb_area .lnb li {
+.lnb_area .lnb>li {
   float: left;
+  margin-top: 35px;
+  padding-bottom: 35px;
 }
 
-.lnb_area .lnb li a {
+.lnb_area .lnb>li>a {
   display: block;
   color: #fff;
   font-size: 18px;
   font-weight: 700;
-  padding: 20px 15px;
+  padding: 15px;
   letter-spacing: 1px;
 }
 
-.lnb_area .lnb li.bar:nth-child(3) {
-  position: relative;
+.lnb_area .lnb>li:hover>a {
+  color: #000;
+  border-bottom: 1px solid black;
 }
 
-.lnb_area .lnb li:nth-child(3)::after {
+.lnb_area .lnb li.bar {
+  position: relative;
+  padding-right: 30px;
+}
+
+.lnb_area .lnb li.bar::after {
   position: absolute;
   display: block;
   content: '';
-  right: 0px;
-  top: 28px;
+  right: 12px;
+  top: 25px;
   width: 1.5px;
   height: 12px;
   background-color: #fff;
@@ -138,23 +152,61 @@ img {
 
 /**************hover_down*************/
 .header .lnb .women_down {
+  visibility: hidden;
   position: absolute;
   display: flex;
   justify-content: center;
   z-index: 2;
   top: 100px;
   left: 0;
-  width: 1540px;
+  width: 100%;
   background-color: #fff;
+  padding: 20px 40px 60px;
+}
+
+.header .lnb li:hover .women_down {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+}
+
+.header .left_menu ul>li>a,
+.header .category_menu ul>li>a {
+  color: #000;
+}
+
+.header .women_down ul li a {
+  font-size: 16px;
+  line-height: 32px;
 }
 
 .header .lnb .women_down .inner {
   display: flex;
   justify-content: center;
+  width: 1540px;
+  margin: 0 auto;
 }
 
-.lnb_area .lnb .women_down a {
-  color: #000;
+.header .lnb .women_down .left_menu {
+  width: 20%;
+  padding-right: 80px;
+  border-right: 1px solid black;
+}
+
+.header .lnb .women_down .left_menu ul {
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.header .category_menu {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 80px;
+}
+
+.header .category_menu ul {
+  margin-top: 20px;
 }
 
 div.an {
