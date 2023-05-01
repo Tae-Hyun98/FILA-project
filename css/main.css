@@ -44,6 +44,10 @@ img {
     'opsz'48
 }
 
+.container {
+  width: 1660px;
+  margin: 0 auto;
+}
 
 /***************header********************/
 .header {
@@ -263,12 +267,14 @@ div.an {
   background-color: #fff;
 }
 
+
+/***************rank***************/
 .rank {
   padding-top: 80px;
 }
 
 .rank h2 {
-  font-size: 36px;
+  font-size: 38px;
   text-align: center;
 }
 
@@ -280,19 +286,27 @@ div.an {
 
 .rank ul li a {
   display: block;
-  padding: 5px 15px;
+  padding: 5px 20px;
   font-size: 18px;
   font-weight: 400;
   color: rgb(102, 102, 102);
 }
 
 .rank_box {
+  position: relative;
   display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
 }
 
 .rank_order {
-  width: 30%;
-  margin-right: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 26%;
+  flex-shrink: 1;
+  margin-right: 30px;
 }
 
 .rank .rank_top {
@@ -300,19 +314,25 @@ div.an {
 }
 
 .rank .rank_top h3 {
-  font-size: 25px;
-  padding-bottom: 5px;
+  font-size: 30px;
+  padding-bottom: 10px;
 }
 
 .rank .rank_bottom {
-  margin: 15px 0 0 20px;
+  margin: 5px 0 0 20px;
 }
 
-.rank .rank_bottom ul li {
-  height: 45px;
-  line-height: 45px;
-  border-bottom: 1px solid black;
+.rank_order .rank_bottom ul li.active a {
+  color: #002053;
+  font-weight: bold;
+  font-size: 23px;
+}
 
+.rank .rank_bottom ul li a {
+  padding: 10px 5px;
+  height: 60px;
+  line-height: 40px;
+  border-bottom: 1px solid #ccc;
 }
 
 .rank .rank_bottom ul li a span {
@@ -320,8 +340,34 @@ div.an {
 }
 
 .rankSwiper {
-  width: 70%;
+  position: relative;
+  width: 100%;
+  height: 500px;
+  flex-shrink: 1;
   overflow: hidden;
+}
+
+.rankSwiper .swiper-wrapper .swiper-slide {
+  width: 35%;
+  height: 500px;
+  opacity: 0;
+  margin: 0 10px;
+  transform: scale(0.9);
+  transition: all 0.3s;
+}
+
+.rankSwiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: 500px;
+}
+
+.rankSwiper .swiper-wrapper .swiper-slide.swiper-slide-next {
+  opacity: 0.3;
+}
+
+.rankSwiper .swiper-slide.swiper-slide-active {
+  transform: scale(1);
+  opacity: 1;
 }
 
 /***************NEW_ARRIVAL*************/
@@ -336,7 +382,6 @@ div.an {
   margin: 0 auto;
   overflow: hidden;
   border: 1px solid red;
-  box-sizing: border-box;
 }
 
 .newSwiper .swiper-wrapper .swiper-slide {
