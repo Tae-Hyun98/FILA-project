@@ -391,22 +391,30 @@ div.an {
 }
 
 .rank h2 {
-  font-size: 38px;
+  font-size: 40px;
   text-align: center;
 }
 
-.rank ul.category_btn {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+.rank .rank_category {
+  margin: 25px 0;
 }
 
-.rank ul li a {
-  display: block;
-  padding: 5px 20px;
+.rank .category_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rank .rank_category .category_btn li {
+  text-align: center;
+  width: 140px;
+}
+
+.rank .rank_category .category_btn li a {
   font-size: 18px;
   font-weight: 400;
   color: rgb(102, 102, 102);
+  transition: all 0.2s;
 }
 
 .rank_box {
@@ -418,7 +426,7 @@ div.an {
 
 .rank_order {
   position: absolute;
-  top: 55px;
+  top: 35px;
   left: 0;
   z-index: 2;
   width: 26%;
@@ -431,12 +439,19 @@ div.an {
 }
 
 .rank .rank_top h3 {
-  font-size: 30px;
+  font-size: 34px;
   padding-bottom: 10px;
 }
 
+.rank .rank_category .category_btn>li:hover a {
+  border-bottom: 1px solid black;
+  font-weight: bold;
+  color: #000;
+  letter-spacing: 1px;
+}
+
 .rank .rank_bottom {
-  margin: 5px 0 0 20px;
+  margin-top: 10px;
 }
 
 .rank_order .rank_bottom ul li.active a {
@@ -445,15 +460,21 @@ div.an {
   font-size: 23px;
 }
 
+.rank .rank_bottom ul li {
+  border-bottom: 1px solid #000;
+}
+
 .rank .rank_bottom ul li a {
-  padding: 10px 5px;
-  height: 60px;
-  line-height: 40px;
-  border-bottom: 1px solid #ccc;
+  display: block;
+  padding: 5px;
+  line-height: 70px;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(102, 102, 102);
 }
 
 .rank .rank_bottom ul li a span {
-  padding-right: 15px;
+  padding: 0 15px;
 }
 
 .rankSwiper {
@@ -465,11 +486,10 @@ div.an {
 }
 
 .rankSwiper .swiper-wrapper .swiper-slide {
-  width: 500px;
+  width: 550px;
   height: 650px;
   opacity: 0;
-  margin: 0 20px;
-  transform: scale(0.9);
+  margin: 0 15px;
   transition: all 0.3s;
   visibility: hidden;
 }
@@ -479,10 +499,9 @@ div.an {
   height: 650px;
 }
 
-.rankSwiper .swiper-wrapper .swiper-slide.swiper-slide-prev {}
-
 .rankSwiper .swiper-wrapper .swiper-slide.swiper-slide-next {
   opacity: 0.3;
+  transform: scale(0.9);
   visibility: visible;
 }
 
