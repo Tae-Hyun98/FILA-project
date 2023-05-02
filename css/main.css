@@ -193,11 +193,6 @@ img {
   border-right: 1px solid #ccc;
 }
 
-.header .lnb .down .side_menu_r {
-  padding-left: 80px;
-  border-left: 1px solid #ccc;
-}
-
 .header .lnb .down .side_menu ul {
   overflow: hidden;
   margin-top: 20px;
@@ -212,6 +207,15 @@ img {
 
 .header .category_menu ul {
   margin-top: 20px;
+}
+
+.header .category_menu>div {
+  padding-right: 100px;
+  border-right: 1px solid #ccc;
+}
+
+.header .category_menu>div:last-child {
+  border: none;
 }
 
 .header .kids_down .category_menu {
