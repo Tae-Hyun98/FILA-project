@@ -6,20 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FILA</title>
-  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/main.scss">
+  <!-- <link rel="stylesheet" href="./css/main.css"> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="./js/jquery-3.6.4.min.js"></script>
   <script src="./js/jquery.scrollTo.min.js"></script>
   <script src="./js/jquery.mousewheel.min.js"></script>
   <script src="./js/jquery.easing.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
   <script>
     $(function () {
-
+      $('.rank_order .rank_bottom ul li').click(function (e) {
+        e.preventDefault();
+        let index = $(this).index();
+        rankSwiper.slideToLoop(index);
+      });
     });
   </script>
 </head>
@@ -508,7 +513,9 @@
       },
     });
     swiper.controller.control = pagingSwiper;
+  </script>
 
+  <script>
     //랭킹
     let rankSwiper = new Swiper(".rankSwiper", {
       loop: true,
@@ -521,20 +528,18 @@
         delay: 4000,
         disableOnInteraction: false,
       },
-      on: {
+    
+      /* on: {
         slideChange: function () {
           $('.rank_order .rank_bottom ul li').removeClass('active');
           $('.rank_order .rank_bottom ul li').eq(this.realIndex).addClass('active');
         }
-      }
+      } */
     });
+   
+  </script>
 
-    $('.rank_order .rank_bottom ul li').click(function (e) {
-      e.preventDefault();
-      let index = $(this).index();
-      rankSwiper.slideToLoop(index);
-    });
-
+  <script>
     //NEW ARRIVAL
     let newSwiper = new Swiper(".newSwiper", {
       loop: true,
