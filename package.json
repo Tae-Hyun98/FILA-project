@@ -1,7 +1,6 @@
 {
   "name": "fila_project",
   "version": "1.0.0",
-  "description": "",
   "main": "index.html",
   "scripts": {
     "dev": "parcel index.html",
@@ -19,5 +18,6 @@
     "jquery": "^3.6.4",
     "jquery-ui-dist": "^1.13.2",
     "swiper": "^9.2.4"
-  }
+  },
+  "description": ""
 }

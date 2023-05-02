@@ -160,11 +160,13 @@ img {
   background-color: #fff;
   padding: 20px 40px 60px;
   opacity: 0;
+  transition: all 0.1s;
 }
 
 .header .lnb li:nth-child(1):hover .women_down,
 .header .lnb li:nth-child(2):hover .men_down,
-.header .lnb li:nth-child(3):hover .kids_down {
+.header .lnb li:nth-child(3):hover .kids_down,
+.header .lnb li.brand:hover .brand_down {
   visibility: visible;
   opacity: 1;
 }
@@ -210,7 +212,45 @@ img {
 }
 
 .header .kids_down .category_menu div {
-  flex-basis: 280px;
+  flex-basis: 290px;
+}
+
+.header .brand_down .brand_menu {
+  display: flex;
+}
+
+.header .brand_down .brand_menu li {
+  margin-left: 20px;
+}
+
+.header .brand_down .brand_menu li:first-child {
+  margin-left: 0;
+}
+
+.header .brand_down .brand_menu li a {
+  display: block;
+}
+
+.header .brand_down .brand_menu li a .brand_img {
+  overflow: hidden;
+}
+
+.header .brand_down .brand_menu img {
+  width: 100%;
+  height: 380px;
+  transition: all 0.4s;
+}
+
+.header .brand_down .brand_menu li a .brand_img:hover img {
+  transform: scale(1.1);
+}
+
+.header .brand_down .brand_menu li a p {
+  text-align: center;
+  color: #000;
+  padding-top: 10px;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 div.an {
@@ -439,8 +479,7 @@ div.an {
   height: 650px;
 }
 
-.rankSwiper .swiper-wrapper .swiper-slide.swiper-slide-prev {
-}
+.rankSwiper .swiper-wrapper .swiper-slide.swiper-slide-prev {}
 
 .rankSwiper .swiper-wrapper .swiper-slide.swiper-slide-next {
   opacity: 0.3;
