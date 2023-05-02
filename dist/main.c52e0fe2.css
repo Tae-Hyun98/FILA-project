@@ -164,7 +164,6 @@ img {
   opacity: 1;
 }
 
-.header .side_menu ul>li>a,
 .header .category_menu ul>li>a {
   color: #000;
 }
@@ -181,22 +180,10 @@ img {
   margin: 0 auto;
 }
 
-.header .lnb .down .side_menu {
-  width: 20%;
-  padding-right: 80px;
-  border-right: 1px solid #ccc;
-}
-
-.header .lnb .down .side_menu ul {
-  overflow: hidden;
-  margin-top: 20px;
-}
-
 .header .category_menu {
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  padding-left: 80px;
 }
 
 .header .category_menu ul {
@@ -204,7 +191,8 @@ img {
 }
 
 .header .category_menu>div {
-  padding-right: 100px;
+  width: 20%;
+  padding-left: 30px;
   border-right: 1px solid #ccc;
 }
 
@@ -213,7 +201,7 @@ img {
 }
 
 .header .kids_down .category_menu {
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .header .kids_down .category_menu div {

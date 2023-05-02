@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "jquery": "^3.6.4",
+    "jquery-ui-dist": "^1.13.2",
     "swiper": "^9.2.4"
   }
 }
