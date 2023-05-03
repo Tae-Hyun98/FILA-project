@@ -17,19 +17,21 @@
   <script src="./js/jquery.mousewheel.min.js"></script>
   <script src="./js/jquery.easing.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script src="./js/import-jquery.js"></script>
+  <script src="./js/import-jquery.js" defer></script>
+
+  <script src="./js/scroll.js" defer></script>
 </head>
 
-<body>
+<body class="scroll">
   <div class="wrap">
     <!-- header -->
     <header id="top" class="header">
       <div class="logo">
         <a href="./index.html">
-          <img src="./img/00. LOGO/01(3).png" alt="logo">
+          <img id="logo_img" src="./img/00. LOGO/01(3).png" alt="logo">
         </a>
       </div>
-      <nav class="lnb">
+      <div class="lnb">
         <ul class="lnb_nav">
           <li>
             <a href="#!">WOMEN</a>
@@ -331,7 +333,7 @@
             </div>
           </li>
         </ul>
-      </nav>
+      </div>
 
       <div class="gnb_area">
         <ul class="gnb">

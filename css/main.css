@@ -48,6 +48,25 @@ img {
   margin: 0 auto;
 }
 
+.scroll.scr_up .header {
+  transform: translateY(-100%);
+}
+
+.scroll.scr_down .header {
+  transform: translateY(0%);
+  background-color: #fff;
+
+}
+
+.scroll.scr_down .header>div a ,
+.scroll.scr_down .header>div i{
+  color: #000;
+}
+
+.scroll.scr_down .header div.bar {
+  background-color: #000;
+}
+
 .down_tit {
   font-size: 20px;
   font-weight: 700;
@@ -65,6 +84,7 @@ img {
   justify-content: space-between;
   align-items: center;
   z-index: 9999;
+  transition: all 0.3s;
 }
 
 .header .logo {
