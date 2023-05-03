@@ -1,17 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
 
-/* @font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(path/to/MaterialIcons-Regular.eot);
-  src: local('Material Icons'),
-    local('MaterialIcons-Regular'),
-    url(path/to/MaterialIcons-Regular.woff2) format('woff2'),
-    url(path/to/MaterialIcons-Regular.woff) format('woff'),
-    url(path/to/MaterialIcons-Regular.ttf) format('truetype');
-} */
-
 * {
   margin: 0;
   padding: 0;
@@ -35,18 +23,10 @@ img {
   display: block;
 }
 
-.material-symbols-outlined {
-  font-variation-settings:
-    'FILL'0,
-    'wght'500,
-    'GRAD'0,
-    'opsz'48
-}
-
-.container {
+/* .container {
   width: 1660px;
   margin: 0 auto;
-}
+} */
 
 .down_tit {
   font-size: 20px;
@@ -57,14 +37,41 @@ img {
 
 /*************scroll header**************/
 .scroll.scr_up .header {
+  visibility: hidden;
   transform: translateY(-100%);
   opacity: 0;
 }
 
 .scroll.scr_down .header {
+  visibility: visible;
+  background: none;
   transform: translateY(0%);
   background-color: #fff;
   opacity: 1;
+}
+
+.scroll.scr_down .header .logo a,
+.scroll.bg_on .header:hover .logo a {
+  background-image: url(/blue_fila.50f9621c.png);
+  background-size: contain;
+}
+
+.scroll.bg_on .header .down {
+  display: flex;
+}
+
+.scroll.bg_on .header:hover,
+.scroll.bg_on .header .down {
+  background-color: #fff;
+}
+
+.scroll.bg_on .header>div a,
+.scroll.bg_on .header>div i {
+  color: #000;
+}
+
+.scroll.bg_on .header div.bar {
+  background-color: #000;
 }
 
 .scroll.scr_down .header>div a,
@@ -80,27 +87,26 @@ img {
 .header {
   position: fixed;
   width: 100%;
-  height: 100px;
+  height: 90px;
   top: 0;
   left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 9999;
-  transition: all 0.3s;
 }
 
 .header .logo {
   width: 18%;
-  margin-left: 50px;
+  margin-left: 60px;
 }
 
 .header .logo a {
   display: block;
-}
-
-.header .logo img {
   width: 120px;
+  height: 45px;
+  background: url(/white_fila.5dc1bebf.png) no-repeat center;
+  background-size: contain;
 }
 
 .lnb {
@@ -127,6 +133,7 @@ img {
 }
 
 .lnb .lnb_nav>li>a {
+  position: relative;
   display: block;
   color: #fff;
   font-size: 18px;
@@ -135,9 +142,36 @@ img {
   letter-spacing: 1px;
 }
 
-.lnb .lnb_nav>li:hover>a {
-  color: #000;
-  border-bottom: 1px solid black;
+.lnb .lnb_nav>li>a::before {
+  left: 50%;
+}
+
+.lnb .lnb_nav>li>a::after {
+  right: 50%;
+}
+
+.lnb .lnb_nav>li>a::before,
+.lnb .lnb_nav>li>a::after {
+  content: '';
+  position: absolute;
+  top: 43px;
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #000;
+  transition: all 0.2s;
+}
+
+.lnb .lnb_nav>li:hover>a::before,
+.lnb .lnb_nav>li:hover>a::after {
+  width: 40px;
+}
+
+.lnb .lnb_nav>li:nth-child(2):hover>a::before,
+.lnb .lnb_nav>li:nth-child(2):hover>a::after,
+.lnb .lnb_nav>li:nth-child(3):hover>a::before,
+.lnb .lnb_nav>li:nth-child(3):hover>a::after {
+  width: 25px;
 }
 
 .gnb {
@@ -170,20 +204,19 @@ img {
   line-height: 1.1;
 }
 
-/**************hover_down*************/
+/**************header_down_menu*************/
 .header .lnb .down {
   visibility: hidden;
   position: absolute;
-  display: flex;
+  display: none;
   justify-content: center;
   z-index: 9999;
-  top: 100px;
+  top: 90px;
   left: 0;
   width: 100%;
   background-color: #fff;
   padding: 20px 40px 50px;
   opacity: 0;
-  transition: all 0.1s;
 }
 
 .header .lnb li:nth-child(1):hover .women_down,
@@ -192,6 +225,7 @@ img {
 .header .lnb li.brand:hover .brand_down {
   visibility: visible;
   opacity: 1;
+  display: flex;
 }
 
 .header .category_menu ul>li>a {
@@ -218,6 +252,14 @@ img {
 
 .header .category_menu ul {
   margin-top: 20px;
+}
+
+.header .category_menu ul li a {
+  transition: all 0.2s;
+}
+
+.header .category_menu ul li:hover a {
+  color: blue;
 }
 
 .header .category_menu>div {
@@ -380,22 +422,21 @@ img {
 
 .visual_tit .tit_btn {
   display: inline-block;
-  cursor: pointer;
   margin-top: 25px;
 }
 
 .visual_tit .tit_btn a {
   display: block;
-  padding: 10px 25px;
+  padding: 10px 30px;
   border-radius: 20px;
-  border: 1px solid white;
-  transition: all 0.3s;
+  border: 2px solid white;
+  transition: all 0.1s;
   letter-spacing: -0.5px;
   color: #fff;
 }
 
 .visual_tit .tit_btn a:hover {
-  color: black;
+  color: #000;
   background-color: #fff;
 }
 
@@ -422,14 +463,47 @@ img {
 
 .rank .rank_category .category_btn li {
   text-align: center;
-  width: 140px;
 }
 
 .rank .rank_category .category_btn li a {
+  position: relative;
+  display: block;
+  padding: 0 30px;
   font-size: 18px;
+  line-height: 30px;
   font-weight: 400;
   color: rgb(102, 102, 102);
+  letter-spacing: 1px;
   transition: all 0.2s;
+}
+
+.rank .rank_category .category_btn li a::before {
+  left: 50%;
+}
+
+.rank .rank_category .category_btn li a::after {
+  right: 50%;
+}
+
+.rank .rank_category .category_btn li a::before,
+.rank .rank_category .category_btn li a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 32px;
+  width: 0;
+  height: 2px;
+  background-color: #000;
+  transition: all 0.2s;
+}
+
+.rank .rank_category .category_btn li:hover a::before,
+.rank .rank_category .category_btn li:hover a::after {
+  width: 55px;
+}
+
+.rank .rank_category .category_btn li:hover a {
+  color: #000;
 }
 
 .rank_box {
@@ -442,7 +516,7 @@ img {
 .rank_order {
   position: absolute;
   top: 35px;
-  left: 0;
+  left: 30px;
   z-index: 2;
   width: 26%;
   flex-shrink: 1;
@@ -458,20 +532,13 @@ img {
   padding-bottom: 10px;
 }
 
-.rank .rank_category .category_btn>li:hover a {
-  border-bottom: 1px solid black;
-  font-weight: bold;
-  color: #000;
-  letter-spacing: 1px;
-}
-
 .rank .rank_bottom {
   margin-top: 10px;
 }
 
 .rank_order .rank_bottom ul li.active a {
   color: #002053;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 23px;
 }
 
@@ -495,16 +562,59 @@ img {
 .rankSwiper {
   position: relative;
   width: 100%;
-  height: 650px;
-  flex-shrink: 1;
   overflow: hidden;
+}
+
+.rankSwiper .rank_img {
+  position: relative;
+  overflow: hidden;
+}
+
+.rankSwiper .rank_img .rank_desc {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  transform: translateY(100%);
+  transition: all 0.3s;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.rankSwiper .rank_img:hover .rank_desc {
+  transform: translateY(0%);
+}
+
+.rankSwiper .rank_img .rank_desc ul {
+  display: flex;
+  align-items: center;
+}
+
+.rankSwiper .rank_img .rank_desc ul li {
+  width: 60%;
+  height: 100px;
+  padding: 10px 25px;
+}
+
+.rankSwiper .rank_img .rank_desc ul li:nth-child(2) {
+  display: flex;
+  width: 40%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.rankSwiper .rank_img .rank_desc ul li a {
+  color: #fff;
+  line-height: 40px;
+  font-size: 24px;
+}
+
+.rankSwiper .rank_img .rank_desc ul li span a {
+  font-size: 45px;
 }
 
 .rankSwiper .swiper-wrapper .swiper-slide {
   width: 550px;
   height: 650px;
   opacity: 0;
-  margin: 0 15px;
   transition: all 0.3s;
   visibility: hidden;
 }
@@ -516,11 +626,12 @@ img {
 
 .rankSwiper .swiper-wrapper .swiper-slide.swiper-slide-next {
   opacity: 0.3;
-  transform: scale(0.9);
+  transform: scale(0.8);
   visibility: visible;
 }
 
 .rankSwiper .swiper-slide.swiper-slide-active {
+  margin: 0 15px;
   transform: scale(1);
   opacity: 1;
   visibility: visible;
@@ -588,14 +699,55 @@ img {
 /*************배경이미지 fix************/
 div.an {
   position: relative;
+  overflow: hidden;
   width: 100%;
+  margin: 100px 0;
 }
 
 .an .bgi {
   width: 100%;
   height: 800px;
-  background: url(/01.d4234918.jpg) no-repeat top fixed;
+  background-image: url(/fix_img.8ae91d83.jpg);
   background-size: cover;
+  background-attachment: fixed;
+}
+
+
+/************countdown*************/
+.time_sale .edition {
+  position: relative;
+  overflow: hidden;
+  height: 800px;
+}
+
+.time_sale .edition .edition_video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.time_sale .edition .edition_video video {
+  width: 100%;
+  height: 940px;
+  object-fit: fill;
+}
+
+.time_sale .countdown_box {
+  width: 100%;
+  text-align: center;
+}
+
+.time_sale .countdown_box h1 {
+  font-size: 55px;
+  background: linear-gradient(to right, #03001e, #7303c0, #ec38bc, #fdeff9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.time_sale .countdown_box p {
+  color: #fff;
 }
 
 /*# sourceMappingURL=/main.c52e0fe2.css.map */

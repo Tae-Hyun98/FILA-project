@@ -117,47 +117,82 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/main.js":[function(require,module,exports) {
-//스크롤시 헤더
-var scr = document.querySelector('.scroll');
-window.addEventListener("wheel", function (e) {
-  if (e.deltaY == 100 && scrollY >= 100) {
-    scr.classList.add('scr_down');
-    scr.classList.remove('scr_up');
-  } else if (scrollY == 0) {
-    scr.classList.remove('scr_up');
-    scr.classList.remove('scr_down');
-  } else if (e.deltaY == -100) {
-    scr.classList.add('scr_up');
-    scr.classList.remove('scr_down');
+})({"js/mainswiper.js":[function(require,module,exports) {
+var _Swiper;
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+//비쥬얼메인
+var swiper = new Swiper(".myswiper", {
+  loop: true,
+  autoplay: {
+    delay: 3000
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    type: "fraction",
+    renderBullet: function renderBullet(index, className) {
+      return '<span class=""' + className + '>' + (index + 1) + '</span>';
+    }
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
   }
 });
-var li = document.querySelectorAll('.header .lnb>ul>li');
-for (var i = 0; i < li.length; i++) {
-  li[i].addEventListener("mouseover", function (e) {
-    scr.classList.add('bg_on');
-  });
-  li[i].addEventListener("mouseout", function (e) {
-    scr.classList.remove('bg_on');
-  });
-}
-
-//카운트다운
-var countDown = new Date("May 5, 2023 22:22:00").getTime();
-var x = setInterval(function () {
-  var now = new Date().getTime();
-  var timer = countDown - now;
-  var days = Math.floor(timer / (1000 * 60 * 60 * 24));
-  var hours = Math.floor(timer % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
-  var minutes = Math.floor(timer % (1000 * 60 * 60) / (1000 * 60));
-  var seconds = Math.floor(timer % (1000 * 60) / 1000);
-  document.getElementById("date").style.fontSize = '50px';
-  document.getElementById("date").innerHTML = days + "일 " + hours + "시 " + minutes + "분 " + seconds + "초 ";
-  if (timer < 0) {
-    clearInterval(x);
-    document.getElementById("date").innerHTML = "드디어 출시되는 FILA 에디션!";
+var pagingSwiper = new Swiper(".myswiper", {
+  loop: true,
+  pagination: {
+    loop: true,
+    el: ".swiper-pagination2",
+    type: "progressbar"
   }
-}, 1000);
+});
+swiper.controller.control = pagingSwiper;
+
+//랭킹
+var rankSwiper = new Swiper(".rankSwiper", {
+  loop: true,
+  loopAdditionalSlides: 1,
+  centeredSlides: true,
+  slidesPerGroup: 1,
+  slidesPerView: 3,
+  slideToClickedSlide: true,
+  /* autoplay: {
+    delay: 3500,
+    disableOnInteraction: false,
+  }, */
+
+  on: {
+    activeIndexChange: function activeIndexChange() {
+      $('.rank_order .rank_bottom ul li').removeClass('active');
+      $('.rank_order .rank_bottom ul li').eq(this.realIndex).addClass('active');
+    }
+  }
+});
+$(function () {
+  $('.rank_order .rank_bottom ul li').click(function (e) {
+    e.preventDefault();
+    var index = $(this).index();
+    rankSwiper.slideToLoop(index);
+  });
+});
+
+//NEW ARRIVAL
+var newSwiper = new Swiper(".newSwiper", (_Swiper = {
+  loop: true,
+  centeredSlides: true,
+  slidesPerView: 3,
+  slidesPerGroup: 1
+}, _defineProperty(_Swiper, "slidesPerView", "auto"), _defineProperty(_Swiper, "autoplay", {
+  delay: 4000,
+  disableOnInteraction: false
+}), _defineProperty(_Swiper, "navigation", {
+  nextEl: ".swiper-button-next",
+  prevEl: ".swiper-button-prev"
+}), _Swiper));
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -327,5 +362,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/main.js"], null)
-//# sourceMappingURL=/main.fb6bbcaf.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/mainswiper.js"], null)
+//# sourceMappingURL=/mainswiper.d9d5165e.js.map
