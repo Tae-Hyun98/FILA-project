@@ -40,6 +40,7 @@ img {
   visibility: hidden;
   transform: translateY(-100%);
   opacity: 0;
+  transition: all 0.3s;
 }
 
 .scroll.scr_down .header {
@@ -48,6 +49,7 @@ img {
   transform: translateY(0%);
   background-color: #fff;
   opacity: 1;
+  transition: all 0.3s;
 }
 
 .scroll.scr_down .header .logo a,
