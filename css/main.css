@@ -580,13 +580,20 @@ img {
 
 .rankSwiper .rank_img {
   position: relative;
+  overflow: hidden;
 }
 
 .rankSwiper .rank_img .rank_desc {
   position: absolute;
   width: 100%;
   bottom: 0;
+  transform: translateY(100%);
+  transition: all 0.3s;
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.rankSwiper .rank_img:hover .rank_desc {
+  transform: translateY(0%);
 }
 
 .rankSwiper .rank_img .rank_desc ul {
@@ -595,13 +602,14 @@ img {
 }
 
 .rankSwiper .rank_img .rank_desc ul li {
-  width: 50%;
+  width: 60%;
   height: 100px;
   padding: 10px 25px;
 }
 
 .rankSwiper .rank_img .rank_desc ul li:nth-child(2) {
   display: flex;
+  width: 40%;
   align-items: center;
   justify-content: space-around;
 }
@@ -609,11 +617,11 @@ img {
 .rankSwiper .rank_img .rank_desc ul li a {
   color: #fff;
   line-height: 40px;
-  font-size: 22px;
+  font-size: 24px;
 }
 
 .rankSwiper .rank_img .rank_desc ul li span a {
-  font-size: 35px;
+  font-size: 45px;
 }
 
 .rankSwiper .swiper-wrapper .swiper-slide {
