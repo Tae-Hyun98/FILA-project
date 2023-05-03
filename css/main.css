@@ -48,6 +48,14 @@ img {
   margin: 0 auto;
 }
 
+.down_tit {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+}
+
+
+/*************scroll header**************/
 .scroll.scr_up .header {
   transform: translateY(-100%);
   opacity: 0;
@@ -68,12 +76,6 @@ img {
   background-color: #000;
 }
 
-.down_tit {
-  font-size: 20px;
-  font-weight: 700;
-  color: #000;
-}
-
 /***************header********************/
 .header {
   position: fixed;
@@ -89,8 +91,8 @@ img {
 }
 
 .header .logo {
-  width: 20%;
-  margin-left: 45px;
+  width: 18%;
+  margin-left: 50px;
 }
 
 .header .logo a {
