@@ -50,16 +50,17 @@ img {
 
 .scroll.scr_up .header {
   transform: translateY(-100%);
+  opacity: 0;
 }
 
 .scroll.scr_down .header {
   transform: translateY(0%);
   background-color: #fff;
-
+  opacity: 1;
 }
 
-.scroll.scr_down .header>div a ,
-.scroll.scr_down .header>div i{
+.scroll.scr_down .header>div a,
+.scroll.scr_down .header>div i {
   color: #000;
 }
 
@@ -178,7 +179,7 @@ img {
   left: 0;
   width: 100%;
   background-color: #fff;
-  padding: 20px 40px 60px;
+  padding: 20px 40px 50px;
   opacity: 0;
   transition: all 0.1s;
 }
@@ -257,7 +258,7 @@ img {
 
 .header .brand_down .brand_menu img {
   width: 100%;
-  height: 380px;
+  height: 370px;
   transition: all 0.4s;
 }
 
@@ -273,18 +274,6 @@ img {
   font-size: 16px;
 }
 
-div.an {
-  position: relative;
-  width: 100%;
-}
-
-.an .bgi {
-  width: 100%;
-  height: 800px;
-  background: url(../img/01.jpg) no-repeat top fixed;
-  background-size: cover;
-}
-
 /*************visual_main*****************/
 .swiper {
   position: relative;
@@ -292,7 +281,11 @@ div.an {
   height: 100vh;
 }
 
-.swiper-slide-active img {
+.swiper .swiper-wrapper .swiper-slide-active {
+  width: 100%;
+}
+
+.myswiper .swiper-slide-active img {
   width: 100%;
   height: 100%;
 }
@@ -587,4 +580,18 @@ div.an {
 .best_box .product_img img {
   width: 100%;
   height: 500px;
+}
+
+
+/*************배경이미지 fix************/
+div.an {
+  position: relative;
+  width: 100%;
+}
+
+.an .bgi {
+  width: 100%;
+  height: 800px;
+  background: url(../img/01.jpg) no-repeat top fixed;
+  background-size: cover;
 }
