@@ -43,10 +43,10 @@ img {
     'opsz'48
 }
 
-.container {
+/* .container {
   width: 1660px;
   margin: 0 auto;
-}
+} */
 
 .down_tit {
   font-size: 20px;
@@ -62,9 +62,29 @@ img {
 }
 
 .scroll.scr_down .header {
+  background: none;
   transform: translateY(0%);
   background-color: #fff;
   opacity: 1;
+}
+
+.scroll.scr_down .header .logo a,
+.scroll.bg_on .header:hover .logo a {
+  background-image: url(../img/Logo/blue_fila.png);
+  background-size: contain;
+}
+
+.scroll.bg_on .header:hover {
+  background-color: #fff;
+}
+
+.scroll.bg_on .header>div a,
+.scroll.bg_on .header>div i {
+  color: #000;
+}
+
+.scroll.bg_on .header div.bar {
+  background-color: #000;
 }
 
 .scroll.scr_down .header>div a,
@@ -87,7 +107,7 @@ img {
   justify-content: space-between;
   align-items: center;
   z-index: 9999;
-  transition: all 0.3s;
+  transition: all 0.1s;
 }
 
 .header .logo {
@@ -97,10 +117,10 @@ img {
 
 .header .logo a {
   display: block;
-}
-
-.header .logo img {
   width: 120px;
+  height: 55px;
+  background: url(../img/Logo/white_fila.png) no-repeat center;
+  background-size: contain;
 }
 
 .lnb {
@@ -442,7 +462,7 @@ img {
 .rank_order {
   position: absolute;
   top: 35px;
-  left: 0;
+  left: 30px;
   z-index: 2;
   width: 26%;
   flex-shrink: 1;

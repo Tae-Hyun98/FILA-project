@@ -36,7 +36,7 @@ let rankSwiper = new Swiper(".rankSwiper", {
   loopAdditionalSlides: 1,
   centeredSlides: true,
   slidesPerGroup: 1,
-  slidesPerView: 'auto',
+  slidesPerView: 3,
   slideToClickedSlide: true,
   autoplay: {
     delay: 3500,
