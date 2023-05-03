@@ -38,10 +38,10 @@ let rankSwiper = new Swiper(".rankSwiper", {
   slidesPerGroup: 1,
   slidesPerView: 3,
   slideToClickedSlide: true,
-  autoplay: {
+  /* autoplay: {
     delay: 3500,
     disableOnInteraction: false,
-  },
+  }, */
 
   on: {
     activeIndexChange: function () {
