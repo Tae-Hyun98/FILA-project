@@ -33,7 +33,6 @@ swiper.controller.control = pagingSwiper;
 //랭킹
 let rankSwiper = new Swiper(".rankSwiper", {
   loop: true,
-  loopAdditionalSlides: 1,
   centeredSlides: true,
   slidesPerGroup: 1,
   slidesPerView: 3,
@@ -59,17 +58,20 @@ $(function () {
   });
 });
 
+
 //NEW ARRIVAL
-let newSwiper = new Swiper(".newSwiper", {
+const newSwiper = new Swiper(".newSwiper", {
   loop: true,
+  init: true,
+  loopAdditionalSlides: 1,
   centeredSlides: true,
   slidesPerView: 3,
   slidesPerGroup: 1,
   slidesPerView: "auto",
-  /*  autoplay: {
-     delay: 4000,
-     disableOnInteraction: false,
-   }, */
+  /* autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+  }, */
 
   navigation: {
     nextEl: ".swiper-button-next",

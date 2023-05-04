@@ -643,19 +643,46 @@ img {
   visibility: visible;
 }
 
-/*************배경이미지 fix************/
-div.an {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
+
+/************countdown*************/
+.time_sale {
   margin: 100px 0;
 }
 
-.an .bgi {
+.time_sale .edition {
+  position: relative;
+  overflow: hidden;
+  height: 800px;
+}
+
+.time_sale .edition .edition_video {
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
-  height: 600px;
-  background: url(../img/Main_img/fix_img.jpg) no-repeat top fixed;
-  background-size: cover;
+  z-index: -1;
+}
+
+.time_sale .edition .edition_video video {
+  width: 100%;
+  height: 940px;
+  object-fit: fill;
+}
+
+.time_sale .countdown_box {
+  width: 100%;
+  text-align: center;
+}
+
+.time_sale .countdown_box h1 {
+  font-size: 55px;
+  background: linear-gradient(to right, #03001e, #7303c0, #ec38bc, #fdeff9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.time_sale .countdown_box p {
+  color: #fff;
 }
 
 
@@ -705,13 +732,11 @@ div.an {
 }
 
 .newSwiper .swiper-wrapper .swiper-slide {
-  width: 850px;
+  width: 900px;
   height: 600px;
-  margin: 0 30px;
   transform: scale(0.8);
-  background-color: #eee;
   opacity: 0.3;
-  transition: all 0.3s;
+  margin: 50px;
 }
 
 .newSwiper .swiper-slide.swiper-slide-active {
@@ -719,8 +744,15 @@ div.an {
   opacity: 1;
   z-index: 1;
 }
-.swiper-button-prev{}
-.swiper-button-next{}
+
+.newSwiper .swiper-button-prev {
+  left: 22%;
+}
+
+.newSwiper .swiper-button-next {
+  right:22%;
+}
+
 .new_box {
   width: 100%;
   display: flex;
@@ -733,8 +765,9 @@ div.an {
 
 .new_box .new_desc {
   position: relative;
-  width: 350px;
-  padding: 30px 10px 0 10px;
+  width: 400px;
+  background-color: #eee;
+  padding: 30px 15px 0 15px;
 }
 
 .new_box .new_desc p {
@@ -783,39 +816,17 @@ div.an {
   font-weight: 300;
 }
 
-/************countdown*************/
-.time_sale .edition {
+/*************배경이미지 fix************/
+div.an {
   position: relative;
   overflow: hidden;
-  height: 800px;
-}
-
-.time_sale .edition .edition_video {
-  position: absolute;
-  left: 0;
-  top: 0;
   width: 100%;
-  z-index: -1;
+  margin: 100px 0;
 }
 
-.time_sale .edition .edition_video video {
+.an .bgi {
   width: 100%;
-  height: 940px;
-  object-fit: fill;
-}
-
-.time_sale .countdown_box {
-  width: 100%;
-  text-align: center;
-}
-
-.time_sale .countdown_box h1 {
-  font-size: 55px;
-  background: linear-gradient(to right, #03001e, #7303c0, #ec38bc, #fdeff9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.time_sale .countdown_box p {
-  color: #fff;
+  height: 600px;
+  background: url(../img/Main_img/fix_img.jpg) no-repeat top fixed;
+  background-size: cover;
 }

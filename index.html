@@ -609,12 +609,18 @@
         </div>
       </section>
 
-      <!-- fix_img -->
-      <section class="fix_content">
-        <div class="an">
-          <div class="bgi"></div>
+      <section class="time_sale">
+        <div class="edition">
+          <div class="edition_video">
+            <video autoplay muted loop src="./img/time_video.mp4" type="video/mp4"></video>
+          </div>
+          <div class="countdown_box">
+            <h1>FILA NEW EDITION</h1>
+            <p id="date"></p>
+          </div>
         </div>
       </section>
+
 
       <!-- NEW_ARRIVAL -->
       <section class="new_arrival">
@@ -818,17 +824,10 @@
         </div>
       </section>
 
-
-
-      <section class="time_sale">
-        <div class="edition">
-          <div class="edition_video">
-            <video autoplay muted loop src="./img/time_video.mp4" type="video/mp4"></video>
-          </div>
-          <div class="countdown_box">
-            <h1>FILA NEW EDITION</h1>
-            <p id="date"></p>
-          </div>
+      <!-- fix_img -->
+      <section class="fix_content">
+        <div class="an">
+          <div class="bgi"></div>
         </div>
       </section>
     </div>
@@ -836,88 +835,84 @@
 
   <!-- <script>
     //비쥬얼메인
-    let swiper = new Swiper(".myswiper", {
-      loop: true,
-      autoplay: {
-        delay: 3000,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        type: "fraction",
-        renderBullet: function (index, className) {
-          return '<span class=""' + className + '>' +
-            (index + 1) + '</span>'
-        }
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+let swiper = new Swiper(".myswiper", {
+  loop: true,
+  autoplay: {
+    delay: 3000,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    type: "fraction",
+    renderBullet: function (index, className) {
+      return '<span class=""' + className + '>' +
+        (index + 1) + '</span>'
+    }
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
 
-    let pagingSwiper = new Swiper(".myswiper", {
-      loop: true,
-      pagination: {
-        loop: true,
-        el: ".swiper-pagination2",
-        type: "progressbar",
+let pagingSwiper = new Swiper(".myswiper", {
+  loop: true,
+  pagination: {
+    loop: true,
+    el: ".swiper-pagination2",
+    type: "progressbar",
 
-      },
-    });
-    swiper.controller.control = pagingSwiper;
-  </script>
+  },
+});
+swiper.controller.control = pagingSwiper;
 
-  <script>
-    //랭킹
-    let rankSwiper = new Swiper(".rankSwiper", {
-      loop: true,
-      loopAdditionalSlides: 1,
-      centeredSlides: true,
-      slidesPerGroup: 1,
-      slidesPerView: 'auto',
-      slideToClickedSlide: true,
-      autoplay: {
-        delay: 3500,
-        disableOnInteraction: false,
-      },
+//랭킹
+let rankSwiper = new Swiper(".rankSwiper", {
+  loop: true,
+  loopAdditionalSlides: 1,
+  centeredSlides: true,
+  slidesPerGroup: 1,
+  slidesPerView: 3,
+  slideToClickedSlide: true,
+  autoplay: {
+    delay: 3500,
+    disableOnInteraction: false,
+  },
 
-      on: {
-        activeIndexChange: function () {
-          $('.rank_order .rank_bottom ul li').removeClass('active');
-          $('.rank_order .rank_bottom ul li').eq(this.realIndex).addClass('active');
-        }
-      },
+  on: {
+    activeIndexChange: function () {
+      $('.rank_order .rank_bottom ul li').removeClass('active');
+      $('.rank_order .rank_bottom ul li').eq(this.realIndex).addClass('active');
+    }
+  },
 
-    });
-  </script>
-  <script>
-    $(function () {
-      $('.rank_order .rank_bottom ul li').click(function (e) {
-        e.preventDefault();
-        let index = $(this).index();
-        rankSwiper.slideToLoop(index);
-      });
-    });
-  </script>
-  <script>
-    //NEW ARRIVAL
-    let newSwiper = new Swiper(".newSwiper", {
-      loop: true,
-      centeredSlides: true,
-      slidesPerView: 3,
-      slidesPerGroup: 1,
-      slidesPerView: "auto",
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-      },
+});
+$(function () {
+  $('.rank_order .rank_bottom ul li').click(function (e) {
+    e.preventDefault();
+    let index = $(this).index();
+    rankSwiper.slideToLoop(index);
+  });
+});
 
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+
+//NEW ARRIVAL
+const newSwiper = new Swiper(".newSwiper", {
+  loop: true,
+  centeredSlides: true,
+  slidesPerView: 3,
+  slidesPerGroup: 1,
+  slidesPerView: "auto",
+  /*  autoplay: {
+     delay: 4000,
+     disableOnInteraction: false,
+   }, */
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
   </script> -->
 </body>
 
