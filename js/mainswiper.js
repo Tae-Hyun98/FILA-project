@@ -66,10 +66,10 @@ let newSwiper = new Swiper(".newSwiper", {
   slidesPerView: 3,
   slidesPerGroup: 1,
   slidesPerView: "auto",
- /*  autoplay: {
-    delay: 4000,
-    disableOnInteraction: false,
-  }, */
+  /*  autoplay: {
+     delay: 4000,
+     disableOnInteraction: false,
+   }, */
 
   navigation: {
     nextEl: ".swiper-button-next",
