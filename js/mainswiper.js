@@ -77,11 +77,11 @@ const newSwiper = new Swiper(".newSwiper", {
   observeParents: true,
   roundLengths: true,
   speed:1000,
-  autoplay: {
+ /*  autoplay: {
     delay: 3000,
     disableOnInteraction: false,
   },
-
+ */
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
