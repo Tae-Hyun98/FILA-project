@@ -38,10 +38,10 @@ let rankSwiper = new Swiper(".rankSwiper", {
   slidesPerGroup: 1,
   slidesPerView: 3,
   slideToClickedSlide: true,
-  /* autoplay: {
+  autoplay: {
     delay: 3500,
     disableOnInteraction: false,
-  }, */
+  },
 
   on: {
     activeIndexChange: function () {
@@ -66,10 +66,10 @@ let newSwiper = new Swiper(".newSwiper", {
   slidesPerView: 3,
   slidesPerGroup: 1,
   slidesPerView: "auto",
-  autoplay: {
+ /*  autoplay: {
     delay: 4000,
     disableOnInteraction: false,
-  },
+  }, */
 
   navigation: {
     nextEl: ".swiper-button-next",

@@ -160,11 +160,10 @@ var rankSwiper = new Swiper(".rankSwiper", {
   slidesPerGroup: 1,
   slidesPerView: 3,
   slideToClickedSlide: true,
-  /* autoplay: {
+  autoplay: {
     delay: 3500,
-    disableOnInteraction: false,
-  }, */
-
+    disableOnInteraction: false
+  },
   on: {
     activeIndexChange: function activeIndexChange() {
       $('.rank_order .rank_bottom ul li').removeClass('active');
@@ -186,10 +185,7 @@ var newSwiper = new Swiper(".newSwiper", (_Swiper = {
   centeredSlides: true,
   slidesPerView: 3,
   slidesPerGroup: 1
-}, _defineProperty(_Swiper, "slidesPerView", "auto"), _defineProperty(_Swiper, "autoplay", {
-  delay: 4000,
-  disableOnInteraction: false
-}), _defineProperty(_Swiper, "navigation", {
+}, _defineProperty(_Swiper, "slidesPerView", "auto"), _defineProperty(_Swiper, "navigation", {
   nextEl: ".swiper-button-next",
   prevEl: ".swiper-button-prev"
 }), _Swiper));
@@ -218,7 +214,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "10126" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51788" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
