@@ -37,25 +37,29 @@ let rankSwiper = new Swiper(".rankSwiper", {
   slidesPerGroup: 1,
   slidesPerView: 3,
   slideToClickedSlide: true,
+  speed:1000,
   autoplay: {
     delay: 3500,
     disableOnInteraction: false,
   },
 
   on: {
-    activeIndexChange: function () {
+    slideChange: function () {
       $('.rank_order .rank_bottom ul li').removeClass('active');
       $('.rank_order .rank_bottom ul li').eq(this.realIndex).addClass('active');
     }
+    /* activeIndexChange: function () {
+      $('.rank_order .rank_bottom ul li').removeClass('active');
+      $('.rank_order .rank_bottom ul li').eq(this.realIndex).addClass('active');
+    } */
   },
 
 });
-$(function () {
-  $('.rank_order .rank_bottom ul li').click(function (e) {
-    e.preventDefault();
-    let index = $(this).index();
-    rankSwiper.slideToLoop(index);
-  });
+
+$('.rank_order .rank_bottom ul li').click(function (e) {
+  e.preventDefault();
+  let index = $(this).index();
+  rankSwiper.slideToLoop(index);
 });
 
 
@@ -68,10 +72,15 @@ const newSwiper = new Swiper(".newSwiper", {
   slidesPerView: 3,
   slidesPerGroup: 1,
   slidesPerView: "auto",
-  /* autoplay: {
-    delay: 2000,
+  observer: true,
+  initialSlide: 0,
+  observeParents: true,
+  roundLengths: true,
+  speed:1000,
+  autoplay: {
+    delay: 3000,
     disableOnInteraction: false,
-  }, */
+  },
 
   navigation: {
     nextEl: ".swiper-button-next",

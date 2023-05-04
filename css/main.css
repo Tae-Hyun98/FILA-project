@@ -445,10 +445,10 @@ img {
 
 /***************rank***************/
 .rank {
-  padding-top: 80px;
+  margin-top: 150px;
 }
 
-.rank h2 {
+.rank h1 {
   font-size: 40px;
   text-align: center;
 }
@@ -621,8 +621,8 @@ img {
   width: 550px;
   height: 650px;
   opacity: 0;
-  transition: all 0.3s;
   visibility: hidden;
+  transition: all 0.2s;
 }
 
 .rankSwiper .swiper-wrapper .swiper-slide img {
@@ -646,7 +646,7 @@ img {
 
 /************countdown*************/
 .time_sale {
-  margin: 100px 0;
+  margin-top: 150px;
 }
 
 .time_sale .edition {
@@ -688,7 +688,7 @@ img {
 
 /***************NEW_ARRIVAL*************/
 .new_arrival {
-  margin: 100px 0;
+  margin-top: 150px;
 }
 
 .new_arrival h1 {
@@ -714,10 +714,11 @@ img {
   line-height: 50px;
   padding: 0 40px;
   border: 1px solid #777;
+  border-radius: 10px;
   color: #000;
   letter-spacing: 1px;
   font-size: 18px;
-  transition: all 0.2s
+  transition: all 0.2s;
 }
 
 .new_arrival .new_arrival_category ul li:hover a {
@@ -728,33 +729,52 @@ img {
 .newSwiper {
   position: relative;
   width: 100%;
+  height: auto;
   overflow: hidden;
 }
 
 .newSwiper .swiper-wrapper .swiper-slide {
   width: 900px;
-  height: 600px;
   transform: scale(0.8);
   opacity: 0.3;
-  margin: 50px;
+  transition: all 0.1s;
 }
 
 .newSwiper .swiper-slide.swiper-slide-active {
   transform: scale(1);
+  border: 1px solid #777;
   opacity: 1;
   z-index: 1;
 }
 
+.newSwiper .swiper-slide.swiper-slide-prev .new_img {
+  transform: translateX(400px);
+}
+
+.newSwiper .swiper-slide.swiper-slide-prev .new_desc {
+  opacity: 0;
+}
+
+.newSwiper .swiper-slide.swiper-slide-next .new_desc {
+  opacity: 1;
+}
+
+.newSwiper .swiper-slide.swiper-slide-prev,
+.newSwiper .swiper-slide.swiper-slide-next {
+  border: none;
+}
+
 .newSwiper .swiper-button-prev {
   left: 22%;
+  font-weight: 700;
 }
 
 .newSwiper .swiper-button-next {
-  right:22%;
+  right: 22%;
+  font-weight: 700;
 }
 
 .new_box {
-  width: 100%;
   display: flex;
 }
 
@@ -784,9 +804,10 @@ img {
 .new_desc .favorite {
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   position: absolute;
+  padding: 0 15px;
   bottom: 20px;
   right: 0;
 }
@@ -798,7 +819,6 @@ img {
 .new_desc .favorite .price p {
   font-size: 28px;
   font-weight: 700;
-  padding-left: 10px;
   padding-bottom: 10px;
 }
 
@@ -807,13 +827,16 @@ img {
   color: #777;
 }
 
+.new_desc .favorite span:hover a {
+  color: red;
+}
+
 .new_desc .detail {
   padding-top: 30px;
 }
 
 .new_desc .detail p {
   color: rgb(153, 153, 153);
-  font-weight: 300;
 }
 
 /*************배경이미지 fix************/
@@ -821,7 +844,7 @@ div.an {
   position: relative;
   overflow: hidden;
   width: 100%;
-  margin: 100px 0;
+  margin-top: 150px;
 }
 
 .an .bgi {
@@ -829,4 +852,35 @@ div.an {
   height: 600px;
   background: url(../img/Main_img/fix_img.jpg) no-repeat top fixed;
   background-size: cover;
+}
+
+/*************MAGAZINE***********/
+.magazine {
+  margin: 150px 0;
+}
+
+.magazine h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.magazine .magazine_box {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.magazine .magazine_box>div {
+  width: 33.3333%;
+  margin-right: 10px;
+}
+
+.magazine .magazine_box>div:first-child {
+  margin-left: 10px;
+}
+
+.magazine .magazine_box>div img {
+  width: 100%;
+  height: 500px;
 }
