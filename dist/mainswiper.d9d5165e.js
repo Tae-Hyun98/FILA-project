@@ -155,37 +155,42 @@ swiper.controller.control = pagingSwiper;
 //랭킹
 var rankSwiper = new Swiper(".rankSwiper", {
   loop: true,
-  loopAdditionalSlides: 1,
   centeredSlides: true,
   slidesPerGroup: 1,
   slidesPerView: 3,
   slideToClickedSlide: true,
+  speed: 1000,
   autoplay: {
     delay: 3500,
     disableOnInteraction: false
   },
   on: {
-    activeIndexChange: function activeIndexChange() {
+    slideChange: function slideChange() {
       $('.rank_order .rank_bottom ul li').removeClass('active');
       $('.rank_order .rank_bottom ul li').eq(this.realIndex).addClass('active');
     }
+    /* activeIndexChange: function () {
+      $('.rank_order .rank_bottom ul li').removeClass('active');
+      $('.rank_order .rank_bottom ul li').eq(this.realIndex).addClass('active');
+    } */
   }
 });
-$(function () {
-  $('.rank_order .rank_bottom ul li').click(function (e) {
-    e.preventDefault();
-    var index = $(this).index();
-    rankSwiper.slideToLoop(index);
-  });
+
+$('.rank_order .rank_bottom ul li').click(function (e) {
+  e.preventDefault();
+  var index = $(this).index();
+  rankSwiper.slideToLoop(index);
 });
 
 //NEW ARRIVAL
 var newSwiper = new Swiper(".newSwiper", (_Swiper = {
   loop: true,
+  init: true,
+  loopAdditionalSlides: 1,
   centeredSlides: true,
   slidesPerView: 3,
   slidesPerGroup: 1
-}, _defineProperty(_Swiper, "slidesPerView", "auto"), _defineProperty(_Swiper, "navigation", {
+}, _defineProperty(_Swiper, "slidesPerView", "auto"), _defineProperty(_Swiper, "observer", true), _defineProperty(_Swiper, "initialSlide", 0), _defineProperty(_Swiper, "observeParents", true), _defineProperty(_Swiper, "roundLengths", true), _defineProperty(_Swiper, "speed", 1000), _defineProperty(_Swiper, "navigation", {
   nextEl: ".swiper-button-next",
   prevEl: ".swiper-button-prev"
 }), _Swiper));
@@ -214,7 +219,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51788" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "4636" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
