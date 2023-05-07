@@ -1034,7 +1034,67 @@ div.an {
 
 
 /***********footer************/
-.footer{
-  padding: 50px 30px;
-  background-color: rgb(238,238,238);
+.footer {
+  margin-top: 100px;
+  padding: 50px 20px;
+  background-color: rgb(238, 238, 238);
+}
+
+.footer_inner {
+  width: 1610px;
+  margin: 0 auto;
+}
+
+.footer .footer_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer .footer_nav .f_top_left {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .footer_nav ul li.f_nav_tit {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer .footer_nav ul li {
+  text-align: center;
+  line-height: 35px;
+  font-size: 18px;
+}
+
+.footer .footer_nav ul li a {
+  color: black;
+}
+
+.footer .footer_nav .f_sns {
+  width: 10%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.footer .footer_nav .f_sns li {
+  width: 25%;
+  line-height: 50px;
+}
+
+.footer .footer_nav .f_sns li i {
+  font-size: 25px;
+}
+
+.footer .footer_nav .f_sns li img {
+  width: 100%;
+}
+
+.footer .footer_list ul {
+  display: flex;
 }

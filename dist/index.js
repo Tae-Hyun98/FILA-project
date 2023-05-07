@@ -117,88 +117,58 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/jquery.mousewheel.min.js":[function(require,module,exports) {
-var define;
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-/*!
- * jQuery Mousewheel 3.1.13
- *
- * Copyright 2015 jQuery Foundation and other contributors
- * Released under the MIT license.
- * http://jquery.org/license
- */
-!function (a) {
-  "function" == typeof define && define.amd ? define(["jquery"], a) : "object" == (typeof exports === "undefined" ? "undefined" : _typeof(exports)) ? module.exports = a : a(jQuery);
-}(function (a) {
-  function b(b) {
-    var g = b || window.event,
-      h = i.call(arguments, 1),
-      j = 0,
-      l = 0,
-      m = 0,
-      n = 0,
-      o = 0,
-      p = 0;
-    if (b = a.event.fix(g), b.type = "mousewheel", "detail" in g && (m = -1 * g.detail), "wheelDelta" in g && (m = g.wheelDelta), "wheelDeltaY" in g && (m = g.wheelDeltaY), "wheelDeltaX" in g && (l = -1 * g.wheelDeltaX), "axis" in g && g.axis === g.HORIZONTAL_AXIS && (l = -1 * m, m = 0), j = 0 === m ? l : m, "deltaY" in g && (m = -1 * g.deltaY, j = m), "deltaX" in g && (l = g.deltaX, 0 === m && (j = -1 * l)), 0 !== m || 0 !== l) {
-      if (1 === g.deltaMode) {
-        var q = a.data(this, "mousewheel-line-height");
-        j *= q, m *= q, l *= q;
-      } else if (2 === g.deltaMode) {
-        var r = a.data(this, "mousewheel-page-height");
-        j *= r, m *= r, l *= r;
-      }
-      if (n = Math.max(Math.abs(m), Math.abs(l)), (!f || f > n) && (f = n, d(g, n) && (f /= 40)), d(g, n) && (j /= 40, l /= 40, m /= 40), j = Math[j >= 1 ? "floor" : "ceil"](j / f), l = Math[l >= 1 ? "floor" : "ceil"](l / f), m = Math[m >= 1 ? "floor" : "ceil"](m / f), k.settings.normalizeOffset && this.getBoundingClientRect) {
-        var s = this.getBoundingClientRect();
-        o = b.clientX - s.left, p = b.clientY - s.top;
-      }
-      return b.deltaX = l, b.deltaY = m, b.deltaFactor = f, b.offsetX = o, b.offsetY = p, b.deltaMode = 0, h.unshift(b, j, l, m), e && clearTimeout(e), e = setTimeout(c, 200), (a.event.dispatch || a.event.handle).apply(this, h);
+})({"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+  return bundleURL;
+}
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+    if (matches) {
+      return getBaseURL(matches[0]);
     }
   }
-  function c() {
-    f = null;
-  }
-  function d(a, b) {
-    return k.settings.adjustOldDeltas && "mousewheel" === a.type && b % 120 === 0;
-  }
-  var e,
-    f,
-    g = ["wheel", "mousewheel", "DOMMouseScroll", "MozMousePixelScroll"],
-    h = "onwheel" in document || document.documentMode >= 9 ? ["wheel"] : ["mousewheel", "DomMouseScroll", "MozMousePixelScroll"],
-    i = Array.prototype.slice;
-  if (a.event.fixHooks) for (var j = g.length; j;) a.event.fixHooks[g[--j]] = a.event.mouseHooks;
-  var k = a.event.special.mousewheel = {
-    version: "3.1.12",
-    setup: function setup() {
-      if (this.addEventListener) for (var c = h.length; c;) this.addEventListener(h[--c], b, !1);else this.onmousewheel = b;
-      a.data(this, "mousewheel-line-height", k.getLineHeight(this)), a.data(this, "mousewheel-page-height", k.getPageHeight(this));
-    },
-    teardown: function teardown() {
-      if (this.removeEventListener) for (var c = h.length; c;) this.removeEventListener(h[--c], b, !1);else this.onmousewheel = null;
-      a.removeData(this, "mousewheel-line-height"), a.removeData(this, "mousewheel-page-height");
-    },
-    getLineHeight: function getLineHeight(b) {
-      var c = a(b),
-        d = c["offsetParent" in a.fn ? "offsetParent" : "parent"]();
-      return d.length || (d = a("body")), parseInt(d.css("fontSize"), 10) || parseInt(c.css("fontSize"), 10) || 16;
-    },
-    getPageHeight: function getPageHeight(b) {
-      return a(b).height();
-    },
-    settings: {
-      adjustOldDeltas: !0,
-      normalizeOffset: !0
-    }
+  return '/';
+}
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+function updateLink(link) {
+  var newLink = link.cloneNode();
+  newLink.onload = function () {
+    link.remove();
   };
-  a.fn.extend({
-    mousewheel: function mousewheel(a) {
-      return a ? this.bind("mousewheel", a) : this.trigger("mousewheel");
-    },
-    unmousewheel: function unmousewheel(a) {
-      return this.unbind("mousewheel", a);
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+var cssTimeout = null;
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
     }
-  });
-});
-},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+    cssTimeout = null;
+  }, 50);
+}
+module.exports = reloadCSS;
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -367,5 +337,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/jquery.mousewheel.min.js"], null)
-//# sourceMappingURL=/jquery.mousewheel.min.f95e68c8.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
+//# sourceMappingURL=/index.js.map
