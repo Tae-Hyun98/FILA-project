@@ -265,7 +265,7 @@ h1 {
   transition: all 0.2s;
 }
 
-.header .category_menu ul li:hover a {
+.header .category_menu ul li a:hover {
   color: blue;
 }
 
