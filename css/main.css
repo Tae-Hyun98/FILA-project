@@ -1085,9 +1085,6 @@ div.an {
 
 .footer .footer_nav .f_sns {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
 }
 
 .footer .footer_nav .f_sns li a {
