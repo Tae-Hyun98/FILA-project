@@ -1084,25 +1084,35 @@ div.an {
 }
 
 .footer .footer_nav .f_sns {
-  width: 10%;
-  height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
 }
 
-.footer .footer_nav .f_sns li {
-  width: 25%;
-  line-height: 50px;
+.footer .footer_nav .f_sns li a {
+  display: block;
+  width: 52px;
+  height: 50px;
+  font-size: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
-.footer .footer_nav .f_sns li i {
-  font-size: 25px;
+.footer .footer_nav .f_sns li a.insta {
+  background-image: url(../img/Main_img/Sns/insta.svg);
 }
 
-.footer .footer_nav .f_sns li img {
-  width: 100%;
+.footer .footer_nav .f_sns li a.facebook {
+  background-image: url(../img/Main_img/Sns/facebook.svg);
+}
+
+.footer .footer_nav .f_sns li a.youtube {
+  background-image: url(../img/Main_img/Sns/youtube.svg);
+}
+
+.footer .footer_nav .f_sns li a.kakao {
+  background-image: url(../img/Main_img/Sns/kakao_ch.svg);
 }
 
 .footer .footer_list {
