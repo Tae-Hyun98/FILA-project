@@ -45,3 +45,17 @@ const x = setInterval(function () {
     document.getElementById("date").innerHTML = "드디어 출시되는 FILA 에디션!";
   }
 }, 1000);
+
+const searchOpen = document.getElementById('search');
+const searchWord = document.querySelector('.header .search_down');
+let state = 0;
+
+searchOpen.addEventListener('click', () => {
+  if (state === 0) {
+    searchWord.style.display = 'none'
+    state = 1;
+  } else if (state === 1) {
+    searchWord.style.display = 'block'
+    state = 0;
+  }
+});
