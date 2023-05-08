@@ -21,6 +21,32 @@
   <script src="./js/import-jquery.js" defer></script>
   <script src="./js/main.js" defer></script>
   <script src="./js/mainswiper.js" defer></script>
+
+  <script>
+    //탑 바텀버튼
+    $(function () {
+      $('.quick').css('top', $(window).height() / 2 - $('.quick').height() / 2);
+      $(window).scroll(function () {
+        let point = $(this).scrollTop() + ($(window).height() / 2 - $('.quick').height() / 2);
+        $('.quick').stop().animate({
+          top: point
+        }, 200);
+      });
+
+      $('.quick .arrow li a.top').click(function (e) {
+        e.preventDefault();
+        $('html,body').stop().animate({
+          scrollTop: 0,
+        }, 300);
+      });
+      $('.quick .arrow li a.bottom').click(function (e) {
+        e.preventDefault();
+        $('html,body').stop().animate({
+          scrollTop: $(document).height(),
+        }, 300);
+      });
+    });
+  </script>
 </head>
 
 <body class="scroll">
@@ -363,8 +389,16 @@
           </li>
         </ul>
       </div>
-    </header>
 
+      <div class="search_down">
+        <div class="input_box">
+          <button type="button" class="search_btn">search_btn</button>
+          <input type="text" placeholder="검색어 입력">
+        </div>
+        <div class="search word"></div>
+      </div>
+    </header>
+    
     <!-- 비쥬얼메인 -->
     <section class="visual_main">
       <div class="swiper myswiper">
@@ -1117,6 +1151,42 @@
         </div>
       </div>
     </footer>
+
+    <div class="quick">
+      <div class="quick_box">
+        <ul class="quick_nav">
+          <li>
+            <a href="#!" class="profile bg">profile</a>
+            <a href="#!">로그인</a>
+          </li>
+          <li>
+            <a href="#!" class="recent bg">recent</a>
+            <a href="#!">최근 본 상품</a>
+          </li>
+          <li>
+            <a href="#!" class="order bg">order</a>
+            <a href="#!">주문/배송조회</a>
+          </li>
+          <li>
+            <a href="#!" class="service bg">service</a>
+            <a href="#!">설치서비스</a>
+          </li>
+        </ul>
+
+        <ul class="arrow">
+          <li>
+            <a href="#!" class="material-icons-outlined top">
+              keyboard_arrow_up
+            </a>
+          </li>
+          <li>
+            <a href="#!" class="material-icons-outlined bottom">
+              keyboard_arrow_down
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 
 

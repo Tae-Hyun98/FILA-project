@@ -325,6 +325,54 @@ h1 {
   font-size: 16px;
 }
 
+.header .search_down {
+  position: absolute;
+  width: 100%;
+  top: 90px;
+  left: 0;
+  background-color: #fff;
+  backdrop-filter: blur(15px);
+}
+
+.header .search_down .input_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1610px;
+  margin: 10px auto;
+  padding: 0 20px;
+  border-radius: 30px;
+  background-color: rgb(238, 238, 238);
+}
+
+.header .search_down .input_box .search_btn {
+  display: block;
+  background-image: url(../img/search.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 60px;
+  height: 60px;
+  font-size: 0;
+  border: none;
+}
+
+.header .search_down .input_box input {
+  width: calc(100% - 60px);
+  height: 60px;
+  outline: none;
+  border: none;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  color: #000;
+  background: none;
+}
+
+.header .search_down .input_box input::placeholder {
+  font-size: 25px;
+  text-align: center;
+}
+
 /*************visual_main*****************/
 .swiper {
   position: relative;
@@ -1179,4 +1227,98 @@ div.an {
 
 .footer .footer_bottom .f_sns li a.kakao {
   background-image: url(../img/Main_img/Sns/kakao_ch.svg);
+}
+
+/*************quick_menu***********/
+.quick {
+  position: absolute;
+  width: 200px;
+  height: 382px;
+  right: 0;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.quick .quick_box {
+  position: absolute;
+  top: 0;
+  right: -135px;
+  transition: all 0.3s;
+}
+
+.quick:hover .quick_box {
+  right: 0;
+}
+
+.quick .quick_box ul li:hover a {
+  color: red;
+}
+
+.quick:hover .arrow li a {
+  text-align: center;
+  padding-left: 0;
+}
+
+.quick ul li {
+  width: 200px;
+  background-color: #fff;
+  border: 1px solid black;
+}
+
+.quick ul li a {
+  display: block;
+  line-height: 55px;
+}
+
+.quick .quick_nav li a.bg {
+  width: 50px;
+  height: 50px;
+  margin: 10px 0 10px 10px;
+  font-size: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.quick .quick_nav li {
+  display: flex;
+}
+
+.quick .quick_nav li a {
+  display: flex;
+  align-items: center;
+}
+
+.quick .quick_nav li a:nth-child(2) {
+  width: 70%;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  padding-left: 20px;
+}
+
+.quick .quick_nav li a.profile {
+  background-image: url(../img/quick_menu/profile.svg);
+}
+
+.quick .quick_nav li a.service {
+  background-image: url(../img/quick_menu/02.png);
+}
+
+.quick .quick_nav li a.order {
+  background-image: url(../img/quick_menu/01.png);
+}
+
+.quick .quick_nav li a.recent {
+  background-image: url(../img/quick_menu/05.png);
+}
+
+.quick .arrow {
+  padding-top: 10px;
+}
+
+.quick .arrow li a {
+  color: #000;
+  font-size: 40px;
+  padding-left: 15px;
+  line-height: 40px;
 }
