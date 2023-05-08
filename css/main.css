@@ -1048,14 +1048,11 @@ div.an {
 .footer .footer_nav {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   margin-bottom: 40px;
 }
 
-.footer .footer_nav .f_top_left {
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
+.footer .footer_nav ul {
+  width: 20%;
 }
 
 .footer .footer_nav ul li.f_nav_tit {
@@ -1083,48 +1080,17 @@ div.an {
   color: black;
 }
 
-.footer .footer_nav .f_sns {
-  display: flex;
-}
-
-.footer .footer_nav .f_sns li a {
-  display: block;
-  width: 52px;
-  height: 50px;
-  font-size: 0;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.footer .footer_nav .f_sns li a.insta {
-  background-image: url(../img/Main_img/Sns/insta.svg);
-}
-
-.footer .footer_nav .f_sns li a.facebook {
-  background-image: url(../img/Main_img/Sns/facebook.svg);
-}
-
-.footer .footer_nav .f_sns li a.youtube {
-  background-image: url(../img/Main_img/Sns/youtube.svg);
-}
-
-.footer .footer_nav .f_sns li a.kakao {
-  background-image: url(../img/Main_img/Sns/kakao_ch.svg);
-}
-
 .footer .footer_list {
-  width: 85%;
   margin-bottom: 40px;
 }
 
 .footer .footer_list ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .footer .footer_list ul li {
-  width: 18%;
+  width: 20%;
   line-height: 50px;
   text-align: center;
 }
@@ -1145,6 +1111,7 @@ div.an {
 
 .footer .footer_bottom {
   display: flex;
+  justify-content: space-between;
 }
 
 .footer .footer_bottom p {
@@ -1153,10 +1120,8 @@ div.an {
 }
 
 .footer .footer_bottom .f_bom_left {
-  width: 65%;
+  width: 50%;
 }
-
-.footer .footer_bottom .f_bom_right {}
 
 .footer .footer_bottom .f_bom_right p a {
   display: block;
@@ -1180,4 +1145,38 @@ div.an {
   color: #000;
   font-weight: 700;
   font-size: 18px;
+}
+
+.footer .footer_bottom .f_sns {
+  width: 30%;
+  padding-left: 230px;
+}
+
+.footer .footer_bottom .f_sns ul {
+  display: flex;
+}
+
+.footer .footer_bottom .f_sns li a {
+  display: block;
+  width: 52px;
+  height: 50px;
+  font-size: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.footer .footer_bottom .f_sns li a.insta {
+  background-image: url(../img/Main_img/Sns/insta.svg);
+}
+
+.footer .footer_bottom .f_sns li a.facebook {
+  background-image: url(../img/Main_img/Sns/facebook.svg);
+}
+
+.footer .footer_bottom .f_sns li a.youtube {
+  background-image: url(../img/Main_img/Sns/youtube.svg);
+}
+
+.footer .footer_bottom .f_sns li a.kakao {
+  background-image: url(../img/Main_img/Sns/kakao_ch.svg);
 }
