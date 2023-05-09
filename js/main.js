@@ -4,7 +4,7 @@ window.addEventListener("wheel", (e) => {
   if (e.deltaY == 100 && scrollY >= 100) {
     scr.classList.add('scr_down');
     scr.classList.remove('scr_up');
-  } else if (scrollY <= 100 && e.deltaY == -100) {
+  } else if (e.deltaY == -100 && scrollY === 0) {
     scr.classList.remove('scr_up');
     scr.classList.remove('scr_down');
   } else if (e.deltaY == -100 && scrollY != 0) {
@@ -13,6 +13,14 @@ window.addEventListener("wheel", (e) => {
   }
 });
 
+window.addEventListener("scroll", (e) => {
+  if (scrollY === 0) {
+    scr.classList.remove('scr_up');
+    scr.classList.remove('scr_down');
+  }
+});
+
+//lnb마우스호버시
 const li = document.querySelectorAll('.header .lnb>ul>li');
 for (let i = 0; i < li.length; i++) {
   li[i].addEventListener("mouseover", (e) => {
@@ -46,6 +54,7 @@ const x = setInterval(function () {
   }
 }, 1000);
 
+
 //검색버튼 클릭시 검색창
 const searchOpen = document.getElementById('search');
 const searchClose = document.getElementById('close');
@@ -55,10 +64,4 @@ searchOpen.addEventListener('click', () => {
 });
 searchClose.addEventListener('click', () => {
   scr.classList.remove('search_on');
-});
-
-const Top = document.querySelector('.top');
-
-Top.addEventListener('click', () => {
-  Element.$('.top').scrollTop();
 });
