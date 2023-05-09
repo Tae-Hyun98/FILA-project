@@ -157,7 +157,7 @@ h1 {
 
 .lnb {
   display: flex;
-  margin-right: 70px;
+  margin-right: 80px;
 }
 
 .lnb .bar {
@@ -174,8 +174,8 @@ h1 {
 }
 
 .lnb .lnb_nav>li {
-  margin-top: 35px;
-  padding-bottom: 35px;
+  margin-top: 20px;
+  padding-bottom: 20px;
 }
 
 .lnb .lnb_nav>li>a {
@@ -624,9 +624,9 @@ h1 {
   transition: all 0.2s;
 }
 
-.rank .rank_category .category_btn li a::before {
+/* .rank .rank_category .category_btn li a::before {
   left: 50%;
-}
+} */
 
 .rank .rank_category .category_btn li a::after {
   right: 50%;
@@ -637,16 +637,18 @@ h1 {
   content: '';
   display: block;
   position: absolute;
-  top: 32px;
+  left: 20px;
+  top: 0px;
   width: 0;
-  height: 2px;
-  background-color: #000;
+  height: 100%;
   transition: all 0.2s;
+  background: linear-gradient(to top, #bfffa1 90%, transparent 45%);
+  opacity: 0.8;
+  z-index: -1;
 }
 
-.rank .rank_category .category_btn li:hover a::before,
-.rank .rank_category .category_btn li:hover a::after {
-  width: 55px;
+.rank .rank_category .category_btn li:hover a::before {
+  width: 80%;
 }
 
 .rank .rank_category .category_btn li:hover a {
