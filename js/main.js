@@ -4,10 +4,10 @@ window.addEventListener("wheel", (e) => {
   if (e.deltaY == 100 && scrollY >= 100) {
     scr.classList.add('scr_down');
     scr.classList.remove('scr_up');
-  } else if (scrollY == 0) {
+  } else if (scrollY <= 100 && e.deltaY == -100) {
     scr.classList.remove('scr_up');
     scr.classList.remove('scr_down');
-  } else if (e.deltaY == -100) {
+  } else if (e.deltaY == -100 && scrollY != 0) {
     scr.classList.add('scr_up');
     scr.classList.remove('scr_down');
   }
@@ -46,16 +46,19 @@ const x = setInterval(function () {
   }
 }, 1000);
 
+//검색버튼 클릭시 검색창
 const searchOpen = document.getElementById('search');
-const searchWord = document.querySelector('.header .search_down');
-let state = 0;
+const searchClose = document.getElementById('close');
 
 searchOpen.addEventListener('click', () => {
-  if (state === 0) {
-    searchWord.style.display = 'none'
-    state = 1;
-  } else if (state === 1) {
-    searchWord.style.display = 'block'
-    state = 0;
-  }
+  scr.classList.add('search_on');
+});
+searchClose.addEventListener('click', () => {
+  scr.classList.remove('search_on');
+});
+
+const Top = document.querySelector('.top');
+
+Top.addEventListener('click', () => {
+  Element.$('.top').scrollTop();
 });

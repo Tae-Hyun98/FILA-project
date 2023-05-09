@@ -16,9 +16,33 @@
   <script src="/jquery.mousewheel.min.f95e68c8.js"></script>
   <script src="/jquery.easing.min.edfed67b.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script src="/import-jquery.89547f03.js" defer=""></script>
+  <script src="/import-jquery.89547f03.js"></script>
   <script src="/main.fb6bbcaf.js" defer=""></script>
   <script src="/mainswiper.d9d5165e.js" defer=""></script>
+
+  <script>//탑 바텀버튼
+$(function () {
+  $('.quick').css('top', $(window).height() / 2 - $('.quick').height() / 2);
+  $(window).scroll(function () {
+    var point = $(this).scrollTop() + ($(window).height() / 2 - $('.quick').height() / 2);
+    $('.quick').stop().animate({
+      top: point
+    }, 200);
+  });
+
+  /* $('.quick .arrow li a.top').click(function (e) {
+    e.preventDefault();
+    $('html,body').stop().animate({
+      scrollTop: 0,
+    }, 300);
+  });
+  $('.quick .arrow li a.bottom').click(function (e) {
+    e.preventDefault();
+    $('html,body').stop().animate({
+      scrollTop: $(document).height(),
+    }, 300);
+  }); */
+});</script>
 <script src="/main.c52e0fe2.js"></script></head>
 
 <body class="scroll">
@@ -341,7 +365,7 @@
           </li>
 
           <li>
-            <a href="#!">
+            <a href="#!" id="search">
               <i class="fas fa-search"></i>
             </a>
           </li>
@@ -360,6 +384,41 @@
             </a>
           </li>
         </ul>
+      </div>
+
+      <div class="search_down">
+        <div class="container">
+          <div class="input_box">
+            <button type="button" class="search_btn">search_btn</button>
+            <input type="text" placeholder="검색어 입력">
+          </div>
+          <div class="search_word">
+            <ul>
+              <li class="word_tit">인기 검색어</li>
+              <li><a href="#!">데일리슈즈</a></li>
+              <li><a href="#!">휠라레이플라이드</a></li>
+              <li><a href="#!">Fila athletics 아노락</a></li>
+              <li><a href="#!">디스럽터</a></li>
+              <li><a href="#!">휠라골프</a></li>
+              <li><a href="#!">리니어로고</a></li>
+              <li><a href="#!">키즈 바람막</a></li>
+            </ul>
+
+            <ul>
+              <li class="word_tit">추천 검색어</li>
+              <li><a href="#!">TENNIS COLLECTION</a></li>
+              <li><a href="#!">가정의 달 2종 쿠폰</a></li>
+              <li><a href="#!">DAILY SHOES RAYFLIDE</a></li>
+              <li><a href="#!">스포츠 언더웨어</a></li>
+              <li><a href="#!">가볍고 편한 키즈 운동화 #문더스트</a></li>
+            </ul>
+
+            <ul>
+              <li class="word_tit">최근 검색어</li>
+            </ul>
+          </div>
+        </div>
+        <button type="button" class="search_close" id="close">X</button>
       </div>
     </header>
 
@@ -993,95 +1052,154 @@
     </div>
 
     <footer class="footer">
-      <div class="footer_nav">
-        <ul class="footer_top">
-          <li>
-            <a href="#!">
-              <img src="/blue_fila.50f9621c.png" alt="logo">
-            </a>
-          </li>
-          <li>
-            <p>FILA IR</p>
-          </li>
-        </ul>
-        <ul>
-          <li class="f_nav_tit">
-            <a href="#!">WOMEN</a>
-          </li>
-          <li><a href="#!">의류</a></li>
-          <li><a href="#!">신발</a></li>
-          <li><a href="#!">용품</a></li>
-          <li><a href="#!">언더웨어</a></li>
-          <li><a href="#!">신상품</a></li>
-          <li><a href="#!">베스트</a></li>
-          <li><a href="#!">세일</a></li>
-        </ul>
-        <ul>
-          <li class="f_nav_tit">
-            <a href="#!">MEN</a>
-          </li>
-          <li><a href="#!">의류</a></li>
-          <li><a href="#!">신발</a></li>
-          <li><a href="#!">용품</a></li>
-          <li><a href="#!">언더웨어</a></li>
-          <li><a href="#!">신상품</a></li>
-          <li><a href="#!">베스트</a></li>
-          <li><a href="#!">세일</a></li>
-        </ul>
-        <ul>
-          <li class="f_nav_tit">
-            <a href="#!">KIDS</a>
-          </li>
-          <li><a href="#!">의류</a></li>
-          <li><a href="#!">신발</a></li>
-          <li><a href="#!">용품</a></li>
-          <li><a href="#!">신상품</a></li>
-          <li><a href="#!">베스트</a></li>
-          <li><a href="#!">세일</a></li>
-        </ul>
-        <ul>
-          <li class="f_nav_tit">
-            <a href="#!">BRAND</a>
-          </li>
-          <li><a href="#!">About Fila</a></li>
-          <li><a href="#!">Collaboration</a></li>
-          <li><a href="#!">Sustainability</a></li>
-          <li><a href="#!">Athelets</a></li>
-          <li><a href="#!">Tennis Stories</a></li>
-        </ul>
-        <ul class="f_sns">
-          <li>
-            <a href="#!">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#!">
-              <i class="fab fa-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#!">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#!">
-              <img src="/카카오톡 채널 로고 Black.800b9da3.png" alt="">
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer_list">
-        <ul>
-          <li><a href="#!">매장안내</a></li>
-          <li><a href="#!">공지사항</a></li>
-          <li><a href="#!">FILA MEMBERSHIP</a></li>
-          <li><a href="#!">대리점 개설문의</a></li>
-          <li><a href="#!">FILA 입찰 참여 안내</a></li>
-        </ul>
+      <div class="footer_inner">
+        <div class="footer_nav">
+          <ul class="footer_top">
+            <li>
+              <a href="#!">
+                <img src="/blue_fila.50f9621c.png" alt="logo">
+              </a>
+            </li>
+            <li>
+              <p>FILA IR</p>
+            </li>
+          </ul>
+
+          <ul>
+            <li class="f_nav_tit">
+              <a href="#!">WOMEN</a>
+            </li>
+            <li><a href="#!">의류</a></li>
+            <li><a href="#!">신발</a></li>
+            <li><a href="#!">용품</a></li>
+            <li><a href="#!">언더웨어</a></li>
+            <li><a href="#!">신상품</a></li>
+            <li><a href="#!">베스트</a></li>
+            <li><a href="#!">세일</a></li>
+          </ul>
+
+          <ul>
+            <li class="f_nav_tit">
+              <a href="#!">MEN</a>
+            </li>
+            <li><a href="#!">의류</a></li>
+            <li><a href="#!">신발</a></li>
+            <li><a href="#!">용품</a></li>
+            <li><a href="#!">언더웨어</a></li>
+            <li><a href="#!">신상품</a></li>
+            <li><a href="#!">베스트</a></li>
+            <li><a href="#!">세일</a></li>
+          </ul>
+
+          <ul>
+            <li class="f_nav_tit">
+              <a href="#!">KIDS</a>
+            </li>
+            <li><a href="#!">의류</a></li>
+            <li><a href="#!">신발</a></li>
+            <li><a href="#!">용품</a></li>
+            <li><a href="#!">신상품</a></li>
+            <li><a href="#!">베스트</a></li>
+            <li><a href="#!">세일</a></li>
+          </ul>
+
+          <ul>
+            <li class="f_nav_tit">
+              <a href="#!">BRAND</a>
+            </li>
+            <li><a href="#!">About Fila</a></li>
+            <li><a href="#!">Collaboration</a></li>
+            <li><a href="#!">Sustainability</a></li>
+            <li><a href="#!">Athelets</a></li>
+            <li><a href="#!">Tennis Stories</a></li>
+          </ul>
+
+
+        </div>
+
+        <div class="footer_list">
+          <ul>
+            <li><a href="#!">매장안내</a></li>
+            <li><a href="#!">공지사항</a></li>
+            <li><a href="#!">FILA MEMBERSHIP</a></li>
+            <li><a href="#!">대리점 개설문의</a></li>
+            <li><a href="#!">FILA 입찰 참여 안내</a></li>
+            <li><a href="#!">통합회원 이용약관</a></li>
+            <li><a href="#!" class="red">개인정보처리방침</a></li>
+            <li><a href="#!">제보센터</a></li>
+            <li><a href="#!" class="blue">KOREA</a></li>
+            <li><a href="#!">Family Site A</a></li>
+          </ul>
+        </div>
+
+        <div class="footer_bottom">
+          <div class="f_bom_left">
+            <p>
+              서울시 강동구 천호대로 1077 이스트센트럴타워 15층 ~ 18층 휠라코리아(주) 대표이사 : 김지헌
+              <br>
+              사업자등록번호:716-81-01573 사업자정보확인 통신판매업신고: 제 2020-서울강동-0160호
+              <br>
+              개인정보 관리책임자:이학우
+              <br><br>
+              본 사이트의 상품이미지 저작권은 휠라코리아(주)에 있으며, 내용의 무단복제를 금합니다.
+              <br>
+              콘텐츠산업진흥법에 의한 콘텐츠보호안내
+            </p>
+          </div>
+          <div class="f_bom_right">
+            <p><a href="#!">CS CENTER</a></p>
+            <p class="bold">1577-3472</p>
+            <p class="bold">filaonline@fila.com</p>
+            <p>평일 월 - 금 : 09시 - 18시 (공휴일제외)</p>
+          </div>
+
+          <div class="f_sns">
+            <ul>
+              <li><a href="#!" class="insta">insta</a></li>
+              <li><a href="#!" class="facebook">facebook</a></li>
+              <li><a href="#!" class="youtube">youtube</a></li>
+              <li><a href="#!" class="kakao">kakao</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </footer>
+
+    <div class="quick">
+      <div class="quick_box">
+        <ul class="quick_nav">
+          <li>
+            <a href="#!" class="profile bg">profile</a>
+            <a href="#!">로그인</a>
+          </li>
+          <li>
+            <a href="#!" class="recent bg">recent</a>
+            <a href="#!">최근 본 상품</a>
+          </li>
+          <li>
+            <a href="#!" class="order bg">order</a>
+            <a href="#!">주문/배송조회</a>
+          </li>
+          <li>
+            <a href="#!" class="service bg">service</a>
+            <a href="#!">설치서비스</a>
+          </li>
+        </ul>
+
+        <ul class="arrow">
+          <li>
+            <a href="#!" class="material-icons-outlined top">
+              keyboard_arrow_up
+            </a>
+          </li>
+          <li>
+            <a href="#!" class="material-icons-outlined bottom">
+              keyboard_arrow_down
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 
 

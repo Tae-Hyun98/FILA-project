@@ -18,7 +18,7 @@
   <script src="./js/jquery.mousewheel.min.js"></script>
   <script src="./js/jquery.easing.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script src="./js/import-jquery.js" defer></script>
+  <script src="./js/import-jquery.js"></script>
   <script src="./js/main.js" defer></script>
   <script src="./js/mainswiper.js" defer></script>
 
@@ -33,7 +33,7 @@
         }, 200);
       });
 
-      $('.quick .arrow li a.top').click(function (e) {
+      /* $('.quick .arrow li a.top').click(function (e) {
         e.preventDefault();
         $('html,body').stop().animate({
           scrollTop: 0,
@@ -44,7 +44,7 @@
         $('html,body').stop().animate({
           scrollTop: $(document).height(),
         }, 300);
-      });
+      }); */
     });
   </script>
 </head>
@@ -422,7 +422,7 @@
             </ul>
           </div>
         </div>
-        <button type="button" class="search_close">X</button>
+        <button type="button" class="search_close" id="close">X</button>
       </div>
     </header>
 

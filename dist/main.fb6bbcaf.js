@@ -124,10 +124,10 @@ window.addEventListener("wheel", function (e) {
   if (e.deltaY == 100 && scrollY >= 100) {
     scr.classList.add('scr_down');
     scr.classList.remove('scr_up');
-  } else if (scrollY == 0) {
+  } else if (scrollY <= 100 && e.deltaY == -100) {
     scr.classList.remove('scr_up');
     scr.classList.remove('scr_down');
-  } else if (e.deltaY == -100) {
+  } else if (e.deltaY == -100 && scrollY != 0) {
     scr.classList.add('scr_up');
     scr.classList.remove('scr_down');
   }
@@ -158,6 +158,20 @@ var x = setInterval(function () {
     document.getElementById("date").innerHTML = "드디어 출시되는 FILA 에디션!";
   }
 }, 1000);
+
+//검색버튼 클릭시 검색창
+var searchOpen = document.getElementById('search');
+var searchClose = document.getElementById('close');
+searchOpen.addEventListener('click', function () {
+  scr.classList.add('search_on');
+});
+searchClose.addEventListener('click', function () {
+  scr.classList.remove('search_on');
+});
+var Top = document.querySelector('.top');
+Top.addEventListener('click', function () {
+  Element.$('.top').scrollTop();
+});
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -183,7 +197,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "11039" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50223" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
