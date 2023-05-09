@@ -41,6 +41,11 @@ img {
 
 .product_box .product_img img {
   width: 100%;
+  transition: all 0.3s;
+}
+
+.product_box .product_img:hover img {
+  transform: scale(1.2);
 }
 
 .product_box .product_img .hover_box {
@@ -90,7 +95,7 @@ img {
 }
 
 .detail p.product_name {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   margin: 5px 0;
 }
@@ -103,6 +108,7 @@ img {
 
 .detail .buy_btn {
   position: absolute;
+  width: 30%;
   bottom: 0;
   right: 0;
 }
@@ -110,10 +116,12 @@ img {
 .detail .buy_btn a {
   display: block;
   color: #002053;
-  padding: 10px 30px;
+  padding: 5px 30px;
   border: 1px solid #ccc;
   border-radius: 30px;
   transition: all 0.3s;
+  text-align: center;
+  font-size: 18px;
 }
 
 .detail .buy_btn:hover a {
