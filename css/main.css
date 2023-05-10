@@ -1337,10 +1337,10 @@ div.an {
   position: absolute;
   top: 0;
   right: -135px;
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
 
-.quick:hover .quick_box {
+.quick .quick_box:hover {
   right: 0;
 }
 
@@ -1348,7 +1348,7 @@ div.an {
   color: red;
 }
 
-.quick:hover .arrow li a {
+.quick .quick_box:hover .arrow li a {
   text-align: center;
   padding-left: 0;
 }
@@ -1374,10 +1374,6 @@ div.an {
 }
 
 .quick .quick_nav li {
-  display: flex;
-}
-
-.quick .quick_nav li a {
   display: flex;
   align-items: center;
 }
