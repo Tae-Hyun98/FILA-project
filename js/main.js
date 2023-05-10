@@ -13,7 +13,7 @@ window.addEventListener("wheel", (e) => {
   }
 });
 
-window.addEventListener("scroll", (e) => {
+window.addEventListener("scroll", () => {
   if (scrollY === 0) {
     scr.classList.remove('scr_up');
     scr.classList.remove('scr_down');
