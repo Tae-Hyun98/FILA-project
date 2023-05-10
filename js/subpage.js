@@ -1,6 +1,5 @@
 import subData from "./sub_data.js";
 
-const subList = document.querySelector('.sub_list');
 const subProduct = document.querySelector('.list_wrap');
 for (let i = 0; i < 2; i++) {
   for (let j = 0; j < subData.length; j++) {
@@ -83,7 +82,6 @@ for (let i = 0; i < 2; i++) {
     subDiv.appendChild(subImgBox);
     subDiv.appendChild(detailDiv);
     subProduct.appendChild(subDiv);
-    subList.appendChild(subProduct);
   }
 }
 
