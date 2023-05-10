@@ -29,19 +29,18 @@ $(function () {
       top: point
     }, 200);
   });
-
-  /* $('.quick .arrow li a.top').click(function (e) {
+  $('.quick .arrow li a.top').click(function (e) {
     e.preventDefault();
     $('html,body').stop().animate({
-      scrollTop: 0,
+      scrollTop: 0
     }, 300);
   });
   $('.quick .arrow li a.bottom').click(function (e) {
     e.preventDefault();
     $('html,body').stop().animate({
-      scrollTop: $(document).height(),
+      scrollTop: $(document).height()
     }, 300);
-  }); */
+  });
 });</script>
 <script src="/main.c52e0fe2.js"></script></head>
 
@@ -146,7 +145,7 @@ $(function () {
           </li>
 
           <li>
-            <a href="#!">MEN</a>
+            <a href="/subpage.html">MEN</a>
             <div class="men_down down">
               <div class="inner">
                 <div class="category_menu">
@@ -295,6 +294,7 @@ $(function () {
                 </div>
               </div>
             </div>
+
           </li>
           <div class="bar"></div>
         </ul>
@@ -419,7 +419,9 @@ $(function () {
           </div>
         </div>
         <button type="button" class="search_close" id="close">X</button>
+        <div class="search_blur"></div>
       </div>
+      <div class="blur"></div>
     </header>
 
     <!-- 비쥬얼메인 -->
@@ -471,6 +473,7 @@ $(function () {
         </div>
       </div>
     </section>
+
 
     <div class="container">
       <!-- RANK -->
@@ -1128,7 +1131,14 @@ $(function () {
             <li><a href="#!" class="red">개인정보처리방침</a></li>
             <li><a href="#!">제보센터</a></li>
             <li><a href="#!" class="blue">KOREA</a></li>
-            <li><a href="#!">Family Site A</a></li>
+            <li>
+              <select name="" id="">
+                <option value="Family Site">Family Site</option>
+                <option value="">KEDS 온라인스토어</option>
+                <option value="">FILA 입찰공고</option>
+                <option value="">FILA Holdings</option>
+              </select>
+            </li>
           </ul>
         </div>
 

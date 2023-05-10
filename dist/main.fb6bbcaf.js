@@ -121,17 +121,27 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 //스크롤시 헤더
 var scr = document.querySelector('.scroll');
 window.addEventListener("wheel", function (e) {
-  if (e.deltaY == 100 && scrollY >= 100) {
+  var scrollUp = e.deltaY <= 0;
+  var scrollDown = e.deltaY > 0;
+  if (scrollDown && scrollY >= 100) {
     scr.classList.add('scr_down');
     scr.classList.remove('scr_up');
-  } else if (scrollY <= 100 && e.deltaY == -100) {
+  } else if (scrollUp && scrollY === 0) {
     scr.classList.remove('scr_up');
     scr.classList.remove('scr_down');
-  } else if (e.deltaY == -100 && scrollY != 0) {
+  } else if (scrollUp && scrollY !== 0) {
     scr.classList.add('scr_up');
     scr.classList.remove('scr_down');
   }
 });
+window.addEventListener("scroll", function () {
+  if (scrollY === 0) {
+    scr.classList.remove('scr_up');
+    scr.classList.remove('scr_down');
+  }
+});
+
+//lnb마우스호버시
 var li = document.querySelectorAll('.header .lnb>ul>li');
 for (var i = 0; i < li.length; i++) {
   li[i].addEventListener("mouseover", function (e) {
@@ -168,10 +178,6 @@ searchOpen.addEventListener('click', function () {
 searchClose.addEventListener('click', function () {
   scr.classList.remove('search_on');
 });
-var Top = document.querySelector('.top');
-Top.addEventListener('click', function () {
-  Element.$('.top').scrollTop();
-});
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -197,7 +203,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50223" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58587" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
