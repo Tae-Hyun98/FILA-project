@@ -1,5 +1,6 @@
 import subData from "./sub_data.js";
 
+const subList = document.querySelector('.sub_list');
 const subProduct = document.querySelector('.list_wrap');
 for (let i = 0; i < 2; i++) {
   for (let j = 0; j < subData.length; j++) {
@@ -64,7 +65,7 @@ for (let i = 0; i < 2; i++) {
     const productPrice = document.createElement('p');
     productPrice.setAttribute('class', 'product_price');
     detailLink.appendChild(productPrice);
-    const namePrice = document.createTextNode(subData[j].price+'원');
+    const namePrice = document.createTextNode(subData[j].price + '원');
     productPrice.appendChild(namePrice);
 
     //BUY버튼
@@ -82,6 +83,7 @@ for (let i = 0; i < 2; i++) {
     subDiv.appendChild(subImgBox);
     subDiv.appendChild(detailDiv);
     subProduct.appendChild(subDiv);
+    subList.appendChild(subProduct);
   }
 }
 
@@ -90,7 +92,7 @@ const scr = document.querySelector('.scroll');
 window.addEventListener("wheel", (e) => {
   const scrollUp = e.deltaY <= 0;
   const scrollDown = e.deltaY > 0;
-  
+
   if (scrollDown && scrollY >= 100) {
     scr.classList.add('scr_down');
     scr.classList.remove('scr_up');
