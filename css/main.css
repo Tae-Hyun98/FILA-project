@@ -642,7 +642,7 @@ h1 {
   width: 0;
   height: 100%;
   transition: all 0.2s;
-  background: linear-gradient(to top, #bfffa1 90%, transparent 45%);
+  background: linear-gradient(to top, #6fa6e8 90%, transparent 45%);
   opacity: 0.8;
   z-index: -1;
 }

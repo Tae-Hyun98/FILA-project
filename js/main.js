@@ -1,13 +1,13 @@
 //스크롤시 헤더
 const scr = document.querySelector('.scroll');
 window.addEventListener("wheel", (e) => {
-  if (e.deltaY == 100 && scrollY >= 100) {
+  if (e.deltaY === 100 && scrollY >= 100) {
     scr.classList.add('scr_down');
     scr.classList.remove('scr_up');
-  } else if (e.deltaY == -100 && scrollY === 0) {
+  } else if (e.deltaY === -100 && scrollY === 0) {
     scr.classList.remove('scr_up');
     scr.classList.remove('scr_down');
-  } else if (e.deltaY == -100 && scrollY != 0) {
+  } else if (e.deltaY === -100 && scrollY !== 0) {
     scr.classList.add('scr_up');
     scr.classList.remove('scr_down');
   }
