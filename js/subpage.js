@@ -1,5 +1,8 @@
 import subData from "./sub_data.js";
 
+
+
+
 const subProduct = document.querySelector('.list_wrap');
 for (let i = 0; i < 2; i++) {
   for (let j = 0; j < subData.length; j++) {
@@ -85,6 +88,19 @@ for (let i = 0; i < 2; i++) {
   }
 }
 
+//상품3개, 4개보기버튼
+const listCol = document.querySelector('.list_wrap');
+const col3Btn = document.querySelector('.col3_btn');
+const col4Btn = document.querySelector('.col4_btn');
+
+col3Btn.addEventListener('click', () => {
+  listCol.classList.add('col_3');
+  listCol.classList.remove('col_4');
+});
+col4Btn.addEventListener('click', () => {
+  listCol.classList.add('col_4');
+  listCol.classList.remove('col_3');
+});
 //스크롤시 헤더
 const scr = document.querySelector('.scroll');
 window.addEventListener("wheel", (e) => {
