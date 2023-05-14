@@ -1,10 +1,8 @@
 import subData from "./sub_data.js";
 
-
-
-
 const subProduct = document.querySelector('.list_wrap');
 const productList = document.querySelector('.product_list');
+
 for (let i = 0; i < 2; i++) {
   for (let j = 0; j < subData.length; j++) {
     //서브 상품박스
@@ -103,6 +101,7 @@ col4Btn.addEventListener('click', () => {
   listCol.classList.add('col_4');
   listCol.classList.remove('col_3');
 });
+
 //스크롤시 헤더
 const scr = document.querySelector('.scroll');
 window.addEventListener("wheel", (e) => {
@@ -149,4 +148,25 @@ searchOpen.addEventListener('click', () => {
 });
 searchClose.addEventListener('click', () => {
   scr.classList.remove('search_on');
+});
+
+
+//필터클릭시 아래로 필터다운
+const filterBtn = document.querySelector('.filter_btn a');
+const filterSpan = document.querySelector('.filter_btn >a >span')
+const filterDown = document.querySelector('.filter_down');
+let state = 0;
+
+filterBtn.addEventListener('click', () => {
+  if (state === 0) {
+    filterDown.style.height = '374px';
+    filterDown.style.opacity = '1';
+    filterSpan.innerHTML = '-';
+    state = 1;
+  } else {
+    filterDown.style.height = '0';
+    filterDown.style.opacity = '0';
+    filterSpan.innerHTML = '+';
+    state = 0;
+  }
 });
