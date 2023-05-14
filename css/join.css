@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: '노토산스', 'Noto Sans KR', '나눔고딕', 'Nanum Gothic', '돋움', 'Dotum', '굴림', 'Gulim', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+/* .container {
+  width: 1610px;
+  margin: 0 auto;
+} */
+
+.down_tit {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+}
+
+
+.header a {
+  font-size: 0;
+  display: block;
+  width: 160px;
+  height: 90px;
+  background: url(../img/Logo/blue_fila.png) no-repeat center center;
+  margin-left: 30px;
+}
+
+/**********join section************/
+.join_container {
+  width: 768px;
+  margin: 0 auto;
+}
+
+.join_tit h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.join_tit p {
+  color: red;
+  margin-bottom: 5px;
+}
+
+.join_inner {
+  width: 630px;
+  margin: 30px auto;
+}
+
+.join_form_box>ul>li {
+  margin-bottom: 20px;
+}
+
+.join_inner ul li:last-child {
+  margin-bottom: 0;
+}
+
+.join_form_box>ul>li>label {
+  font-size: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.join_inner ul li input,
+.join_inner select {
+  width: 100%;
+  height: 50px;
+  margin-top: 7px;
+  padding-left: 10px;
+}
+
+span.red {
+  color: red;
+}
+
+p.id_rule,
+p.pw_rule {
+  color: #002053;
+  font-size: 12px;
+}
+
+.idcard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.idcard span {
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+.e_mail {
+  display: flex;
+  align-items: center;
+}
+
+.e_mail span {
+  margin: 0 30px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.post_num {
+  display: flex;
+  align-items: flex-end;
+}
+
+.join_inner ul li .post_num input {
+  width: 200px;
+  margin-right: 15px;
+}
+
+.post_num a {
+  width: 120px;
+  line-height: 50px;
+  text-align: center;
+  color: #000;
+  background-color: #ccc;
+  display: block;
+  border-radius: 15px;
+}
+
+.post_address {
+  display: flex;
+}
+
+.post_address input:first-child {
+  margin-right: 15px;
+}
+
+.phone_num_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.phone_num_box>span {
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+.phone_num {
+  width: 70%;
+  height: 50px;
+  padding: 10px;
+  margin-top: 7px;
+  margin-right: 10px;
+  border: 1px solid rgba(133, 133, 133, 1);
+}
+
+.phone_num select {
+  border: none;
+  height: 34px;
+  margin-top: 0;
+  padding-left: 0;
+  outline: none;
+}
+
+
+
+/**********약관동의***********/
+.join_inner .terms_agree_box label input {
+  width: auto;
+  height: auto;
+}
+
+.terms_box {
+  margin: 50px 0;
+}
+
+.terms_box .term_tit {
+  font-size: 24px;
+  margin-left: 5px;
+}
+
+.terms_box .all_terms {
+  margin-bottom: 10px;
+}
+
+.terms_agree_box {
+  padding: 15px 15px 20px 20px;
+}
+
+.terms_agree_box .terms_agree_all label {
+  font-size: 18px;
+}
+
+.terms_agree_box label {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.terms_agree_box .terms_agree {
+  padding: 5px 0 0 15px;
+}
+
+.terms_agree_box .terms_agree ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 30px;
+}
+
+.terms_agree_box .terms_agree ul li a {
+  text-decoration: underline;
+  color: #777;
+}
+
+.join_btn_box {
+  margin: 40px 0;
+}
+
+.join_btn_box button:hover {
+  background-color: #002053;
+  color: #fff;
+}
+
+.join_btn_box button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  border: 1px solid #ccc;
+  padding: 20px 0px;
+  font-size: 16px;
+  transition: .3s;
+  background: none;
+  cursor: pointer;
+}

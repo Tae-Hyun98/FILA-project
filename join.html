@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FILA 회원가입</title>
+  <link rel="stylesheet" href="./css/join.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+    rel="stylesheet">
+  <script src="./js/join.js" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <a href="./index.html">logo</a>
+  </header>
+
+  <div class="join_container">
+    <div class="join_tit">
+      <h1>회원가입</h1>
+      <p class="red">* 표시는 필수입력사항</p>
+    </div>
+
+    <hr />
+
+    <section>
+      <div class="join_inner">
+        <form action="" name="join_info">
+          <div class="join_form_box">
+            <ul>
+              <li>
+                <label for="user_id">아이디 <span class="red">*</span></label><span class="id_valid"></span>
+                <input type="text" id="user_id" placeholder="아이디를 입력해주세요" autofocus required>
+                <p class="id_rule">- 5~15자 영문 소문자, 숫자를 사용하세요.</p>
+              </li>
+
+              <li>
+                <label for="user_pw">비밀번호 <span class="red">*</span></label><span class="pw_valid"></span>
+                <input type="password" id="user_pw" placeholder="비밀번호를 입력해주세요" required>
+                <p class="pw_rule">- 5~15자 영문, 숫자, 특수문자를 조합하여 사용하세요.</p>
+              </li>
+
+              <li>
+                <label for="user_pw_chk">비밀번호 확인 <span class="red">*</span></label><span class="eq_chk"></span>
+                <input type="password" id="user_pw_chk" placeholder="비밀번호를 입력해주세요" required>
+              </li>
+
+              <li>
+                <label for="user_name">이름 <span class="red">*</span></label><span class="chk_name"></span>
+                <input type="text" id="user_name" placeholder="이름을 입력해주세요(한글)" required>
+              </li>
+
+              <li>
+                <label for="user_idcard">주민등록번호 <span class="red">*</span></label><span class="idcard_chk"></span>
+                <div class="idcard">
+                  <input type="text" id="user_idcard" placeholder="주민등록번호" maxlength="6" required>
+                  <span>-</span>
+                  <input type="password" id="user_idcard1" maxlength="7" required>
+                </div>
+              </li>
+
+              <li>
+                <label for="user_gender">성별 <span class="red">*</span></label><span class="gender_chk"></span>
+                <select name="gender" id="user_gender">
+                  <option value="">성별</option>
+                  <option value="men">남자</option>
+                  <option value="women">여자</option>
+                </select>
+              </li>
+
+              <li>
+                <label for="user_email">이메일</label>
+                <div class="e_mail">
+                  <input type="text" id="user_email">
+                  <span>@</span>
+                  <select name="email" id="user_dot">
+                    <option value="naver.com">naver.com</option>
+                    <option value="daum.net">daum.net</option>
+                    <option value="nate.com">nate.com</option>
+                  </select>
+                </div>
+              </li>
+
+              <li>
+                <label for="user_address">주소</label>
+                <div class="post_num">
+                  <input type="text" id="user_address" placeholder="우편번호">
+                  <a href="#!">우편번호 찾기</a>
+                </div>
+                <div class="post_address">
+                  <input type="text" placeholder="도로명주소">
+                  <input type="text" placeholder="지번주소">
+                </div>
+                <input type="text" placeholder="상세주소">
+              </li>
+
+              <li>
+                <label for="user_phone">휴대전화 <span class="red">*</span></label><span></span>
+                <div class="phone_num_box">
+                  <div class="phone_num">
+                    <select name="phone_num" id="user_phone">
+                      <option value="kt">KT</option>
+                      <option value="skt">SKT</option>
+                      <option value="lg">LG</option>
+                    </select>
+                  </div>
+
+                  <input type="text" id="phone1" maxlength="3">
+                  <span> - </span>
+                  <input type="text" id="phone2" maxlength="4">
+                  <span> - </span>
+                  <input type="text" id="phone3" maxlength="4">
+                </div>
+              </li>
+            </ul>
+
+            <fieldset class="terms_box">
+              <legend class="term_tit">
+                이용약관 및 마케팅 수신동의
+              </legend>
+
+              <div class="terms_agree_box">
+                <div class="terms_agree_all">
+                  <label for="all_terms">
+                    <input type="checkbox" id="all_terms"> 약관 전체 동의합니다.
+                  </label>
+                </div>
+
+                <div class="terms_agree">
+                  <ul class="terms_agree_chk">
+                    <li>
+                      <label for="term_1">
+                        <input type="checkbox" id="term_1" class="term" required> 이용약관 동의 <span
+                          class="red">(필수)</span></label>
+                      <a href="#!">전문보기</a>
+                    </li>
+
+                    <li>
+                      <label for="term_2">
+                        <input type="checkbox" id="term_2" class="term" required> 개인정보의 수집 및 이용에 관한 동의 <span
+                          class="red">(필수)</span></label>
+                      <a href="#!">전문보기</a>
+                    </li>
+
+                    <li>
+                      <label for="term_3">
+                        <input type="checkbox" id="term_3" class="term"> 개인정보수집 및 활용에 대한 동의 <span>(선택)</span></label>
+                      <a href="#!">전문보기</a>
+                    </li>
+
+                    <li>
+                      <label for="term_4">
+                        <input type="checkbox" id="term_4" class="term"> 혜택 알림 이메일, 문자 수신 동의 <span>(선택)</span></label>
+                      <a href="#!">전문보기</a>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <hr />
+
+          <div class="join_btn_box">
+            <button type="button" id="join_btn">가입하기</button>
+          </div>
+
+        </form>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>
