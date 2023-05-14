@@ -170,3 +170,14 @@ filterBtn.addEventListener('click', () => {
     state = 0;
   }
 });
+
+//footer family
+const familySite = document.getElementById('family_site');
+
+familySite.addEventListener('change', (e) => {
+  let options = e.currentTarget.options;
+  let optionIndex = options.selectedIndex;
+  let openNewWindow = window.open('about:blank');
+
+  openNewWindow.location.href = options[optionIndex].value;
+});
