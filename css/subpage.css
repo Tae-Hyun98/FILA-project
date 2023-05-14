@@ -217,7 +217,6 @@ img {
   background: none;
   background-color: #fff;
   padding: 20px 40px 60px;
-  transition: 0.1s;
 }
 
 .header .lnb li:nth-child(1):hover .women_down,
@@ -589,18 +588,36 @@ div.col_4 .product_box {
   justify-content: space-between;
 }
 
+.filter_wrap .filter_btn a {
+  color: #000;
+  display: block;
+  padding-left: 5px;
+  font-size: 20px;
+}
+
+.filter_wrap .filter_btn a span {
+  padding-left: 15px;
+}
+
 .filter_wrap .filter_right {
   display: flex;
   align-items: center;
 }
 
+.sort_select {
+  margin-right: 20px;
+}
+
 .sort_select select {
   outline: none;
+  border: none;
+  font-size: 18px;
 }
 
 .col_box {
   display: flex;
-  margin-left: 10px;
+  padding-left: 15px;
+  border-left: 2px solid #ccc;
 }
 
 .col_box button {
@@ -611,13 +628,9 @@ div.col_4 .product_box {
   background-repeat: no-repeat;
   background-position: center center;
   display: block;
-  width: 24px;
-  height: 24px;
-  margin-left: 15px;
-}
-
-.col_box button:first-child {
-  margin-left: 0;
+  width: 25px;
+  height: 25px;
+  margin-left: 20px;
 }
 
 .col_box button.col3_btn {
