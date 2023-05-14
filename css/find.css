@@ -23,11 +23,6 @@ img {
   display: block;
 }
 
-/* .container {
-  width: 1610px;
-  margin: 0 auto;
-} */
-
 .down_tit {
   font-size: 20px;
   font-weight: 700;
@@ -388,7 +383,7 @@ img {
 
 /***********아이디/비밀번호 찾기**************/
 .find_section {
-  padding-top: 120px;
+  padding-top: 130px;
 }
 
 .find_wrap {
