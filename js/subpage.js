@@ -4,6 +4,7 @@ import subData from "./sub_data.js";
 
 
 const subProduct = document.querySelector('.list_wrap');
+const productList = document.querySelector('.product_list');
 for (let i = 0; i < 2; i++) {
   for (let j = 0; j < subData.length; j++) {
     //서브 상품박스
@@ -84,7 +85,8 @@ for (let i = 0; i < 2; i++) {
 
     subDiv.appendChild(subImgBox);
     subDiv.appendChild(detailDiv);
-    subProduct.appendChild(subDiv);
+    productList.appendChild(subDiv);
+    subProduct.appendChild(productList);
   }
 }
 
