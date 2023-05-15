@@ -589,4 +589,21 @@ img {
 
 .dp_right .tit {
   font-weight: 700;
+  padding-bottom: 15px;
+}
+
+.dp_right .color_swiper .swiper-wrapper {
+  font-size: 0;
+}
+
+.dp_right .color_swiper .swiper-wrapper li {
+  width: 85px;
+  margin-right: 5px;
+}
+
+/* .dp_right .color_swiper .swiper-wrapper .swiper-slide a {
+} */
+
+.dp_right .color_swiper .swiper-wrapper .swiper-slide a img {
+  width: 100%;
 }

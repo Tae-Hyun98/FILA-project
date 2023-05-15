@@ -46,8 +46,8 @@ searchClose.addEventListener('click', () => {
   scr.classList.remove('search_on');
 });
 
-//디테일컷 스와이프
-const image = ['detail_01.jpg', 'detail_02.jpg', 'detail_03.jpg', 'detail_04.jpg', 'detail_05.jpg', 'detail_06.jpg','detail_07.jpg','detail_08.jpg']
+//디테일컷 스와이퍼
+const image = ['detail_01.jpg', 'detail_02.jpg', 'detail_03.jpg', 'detail_04.jpg', 'detail_05.jpg', 'detail_06.jpg', 'detail_07.jpg', 'detail_08.jpg']
 const swiper = new Swiper(".detail_swiper", {
   loop: true,
   /* autoplay: {
@@ -62,4 +62,14 @@ const swiper = new Swiper(".detail_swiper", {
       return '<div class="' + className + '"><img src="../img/detail_img/' + (image[index]) + '"></div>';
     },
   }
+});
+
+//color 스와이퍼
+const swiperColor = new Swiper(".color_swiper", {
+  freeMode: true,
+  slidesPerView: 'auto',
+  /* autoplay: {
+    delay: 3000,
+  }, */
+
 });
