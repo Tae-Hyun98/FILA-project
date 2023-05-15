@@ -19,6 +19,17 @@
   <script src="./js/import-jquery.js"></script>
   <script type="module" src="./js/subpage.js" defer></script>
 
+
+  <script>
+    $(function () {
+      $('.quick a.top').click(function (e) {
+        e.preventDefault();
+        $('html,body').stop().animate({
+          scrollTop: 0,
+        }, 300);
+      });
+    });
+  </script>
 </head>
 
 <body class="scroll">

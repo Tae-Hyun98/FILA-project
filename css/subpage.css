@@ -794,14 +794,26 @@ div.col_4 .product_box .detail p.product_name {
 /***********quick*************/
 .quick {
   position: fixed;
+  right: -60px;
+  bottom: 50px;
+  transition: .3s;
+}
+
+.quick.on {
   right: 30px;
-  bottom: 20%;
 }
 
 .quick a {
   font-size: 40px;
   display: block;
   background-color: #002053;
+  color: #fff;
+}
+
+.quick:hover a {
+  font-size: 40px;
+  display: block;
+  background-color: blue;
   color: #fff;
 }
 
@@ -930,8 +942,7 @@ div.col_4 .product_box .detail p.product_name {
 }
 
 .footer .footer_bottom .f_sns {
-  width: 30%;
-  padding-left: 230px;
+  margin-right: 40px;
 }
 
 .footer .footer_bottom .f_sns ul {

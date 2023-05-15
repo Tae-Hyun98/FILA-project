@@ -229,6 +229,7 @@ exports.default = _default;
 var _sub_data = _interopRequireDefault(require("./sub_data.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var subProduct = document.querySelector('.list_wrap');
+var productList = document.querySelector('.product_list');
 for (var i = 0; i < 2; i++) {
   for (var j = 0; j < _sub_data.default.length; j++) {
     //서브 상품박스
@@ -299,9 +300,23 @@ for (var i = 0; i < 2; i++) {
     buyA.appendChild(buyText);
     subDiv.appendChild(subImgBox);
     subDiv.appendChild(detailDiv);
-    subProduct.appendChild(subDiv);
+    productList.appendChild(subDiv);
+    subProduct.appendChild(productList);
   }
 }
+
+//상품3개, 4개보기버튼
+var listCol = document.querySelector('.list_wrap');
+var col3Btn = document.querySelector('.col3_btn');
+var col4Btn = document.querySelector('.col4_btn');
+col3Btn.addEventListener('click', function () {
+  listCol.classList.add('col_3');
+  listCol.classList.remove('col_4');
+});
+col4Btn.addEventListener('click', function () {
+  listCol.classList.add('col_4');
+  listCol.classList.remove('col_3');
+});
 
 //스크롤시 헤더
 var scr = document.querySelector('.scroll');
@@ -346,6 +361,122 @@ searchOpen.addEventListener('click', function () {
 searchClose.addEventListener('click', function () {
   scr.classList.remove('search_on');
 });
+
+//필터클릭시 아래로 필터다운
+var filterBtn = document.querySelector('.filter_btn a');
+var filterSpan = document.querySelector('.filter_btn >a>span');
+var filterDown = document.querySelector('.filter_down');
+var state = 0;
+filterBtn.addEventListener('click', function () {
+  if (state === 0) {
+    filterDown.style.height = '374px';
+    filterDown.style.opacity = '1';
+    filterSpan.innerHTML = '-';
+    state = 1;
+  } else {
+    filterDown.style.height = '0';
+    filterDown.style.opacity = '0';
+    filterSpan.innerHTML = '+';
+    state = 0;
+  }
+});
+
+//filter check
+var sportChk = document.querySelectorAll('.sport');
+var sportLabel = document.querySelectorAll('.sport_filter label');
+var _loop = function _loop(_i2) {
+  sportChk[_i2].addEventListener('click', function () {
+    if (sportChk[_i2].checked) {
+      sportLabel[_i2].style.color = '#000';
+      sportLabel[_i2].style.fontWeight = '700';
+    } else {
+      sportLabel[_i2].style.color = '#777';
+      sportLabel[_i2].style.fontWeight = '400';
+    }
+  });
+};
+for (var _i2 = 0; _i2 < sportChk.length; _i2++) {
+  _loop(_i2);
+}
+
+//filter color check
+var colorChk = document.querySelectorAll('.color');
+var colorLabel = document.querySelectorAll('.color_filter label');
+var _loop2 = function _loop2(_i3) {
+  colorChk[_i3].addEventListener('click', function () {
+    if (colorChk[_i3].checked) {
+      colorLabel[_i3].classList.add('on');
+    } else {
+      colorLabel[_i3].classList.remove('on');
+    }
+  });
+};
+for (var _i3 = 0; _i3 < colorChk.length; _i3++) {
+  _loop2(_i3);
+}
+
+//filter size check
+var sizeChk = document.querySelectorAll('.size');
+var sizeLabel = document.querySelectorAll('.size_filter label');
+var _loop3 = function _loop3(_i4) {
+  sizeChk[_i4].addEventListener('click', function () {
+    if (sizeChk[_i4].checked) {
+      sizeLabel[_i4].style.color = '#fff';
+      sizeLabel[_i4].style.backgroundColor = '#002053';
+    } else {
+      sizeLabel[_i4].style.color = '#000';
+      sizeLabel[_i4].style.backgroundColor = '#fff';
+    }
+  });
+};
+for (var _i4 = 0; _i4 < sizeChk.length; _i4++) {
+  _loop3(_i4);
+}
+
+//filter price check
+var priceChk = document.querySelectorAll('.price');
+var priceLabel = document.querySelectorAll('.price_filter label');
+var _loop4 = function _loop4(_i5) {
+  priceChk[_i5].addEventListener('click', function () {
+    if (priceChk[_i5].checked) {
+      priceLabel[_i5].style.color = '#000';
+      priceLabel[_i5].style.fontWeight = '700';
+    } else {
+      priceLabel[_i5].style.color = '#777';
+      priceLabel[_i5].style.fontWeight = '400';
+    }
+  });
+};
+for (var _i5 = 0; _i5 < priceChk.length; _i5++) {
+  _loop4(_i5);
+}
+
+//filter gender check
+var genderChk = document.querySelectorAll('.gender');
+var genderLabel = document.querySelectorAll('.gender_filter label');
+var _loop5 = function _loop5(_i6) {
+  genderChk[_i6].addEventListener('click', function () {
+    if (genderChk[_i6].checked) {
+      genderLabel[_i6].style.color = '#000';
+      genderLabel[_i6].style.fontWeight = '700';
+    } else {
+      genderLabel[_i6].style.color = '#777';
+      genderLabel[_i6].style.fontWeight = '400';
+    }
+  });
+};
+for (var _i6 = 0; _i6 < genderChk.length; _i6++) {
+  _loop5(_i6);
+}
+
+//footer family
+var familySite = document.getElementById('family_site');
+familySite.addEventListener('change', function (e) {
+  var options = e.currentTarget.options;
+  var optionIndex = options.selectedIndex;
+  var openNewWindow = window.open('about:blank');
+  openNewWindow.location.href = options[optionIndex].value;
+});
 },{"./sub_data.js":"js/sub_data.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -371,7 +502,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58587" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49993" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

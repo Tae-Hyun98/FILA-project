@@ -260,3 +260,13 @@ familySite.addEventListener('change', (e) => {
 
   openNewWindow.location.href = options[optionIndex].value;
 });
+
+//quick top
+const top = document.querySelector('.quick');
+window.addEventListener('scroll', () => {
+  if (scrollY > 200) {
+    top.classList.add('on');
+  } else {
+    top.classList.remove('on');
+  }
+});
