@@ -195,3 +195,36 @@ function btnClick() {
     alert('가입완료');
   }
 }
+
+//전문보기 클릭
+const seeBtn1 = document.querySelector('.see_1');
+const seeBtn2 = document.querySelector('.see_2');
+const seeBtn3 = document.querySelector('.see_3');
+const seeBtn4 = document.querySelector('.see_4');
+const agreeBox = document.querySelectorAll('.agree_popup');
+const closeBtn = document.querySelectorAll('.agree_close_btn');
+
+
+seeBtn1.addEventListener('click', () => {
+  agreeBox[0].style.display = 'block';
+});
+
+seeBtn2.addEventListener('click', () => {
+  agreeBox[1].style.display = 'block';
+});
+
+seeBtn3.addEventListener('click', () => {
+  agreeBox[2].style.display = 'block';
+});
+
+seeBtn4.addEventListener('click', () => {
+  agreeBox[3].style.display = 'block';
+});
+
+for (let i = 0; i < closeBtn.length; i++) {
+  closeBtn[i].addEventListener('click', () => {
+    if (closeBtn[i]) {
+      agreeBox[i].style.display = 'none';
+    }
+  });
+}

@@ -247,3 +247,56 @@ p.pw_rule {
   background: none;
   cursor: pointer;
 }
+
+
+
+/**********popup************/
+.agree_popup {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.agree_popup .popup_box {
+  position: fixed;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  width: 600px;
+  padding: 20px 40px;
+}
+
+.agree_popup .popup_box .agree_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+
+}
+
+.agree_popup .popup_box .agree_head button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.agree_popup .popup_box .agree_text {
+  overflow-y: auto;
+}
+
+.agree_popup .popup_box .agree_text .agree_box {
+  padding: 20px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  height: 500px;
+  word-break: keep-all;
+  line-height: 1.5;
+  font-size: 13px;
+}

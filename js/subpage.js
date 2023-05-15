@@ -88,6 +88,7 @@ for (let i = 0; i < 2; i++) {
   }
 }
 
+
 //상품3개, 4개보기버튼
 const listCol = document.querySelector('.list_wrap');
 const col3Btn = document.querySelector('.col3_btn');
@@ -153,7 +154,7 @@ searchClose.addEventListener('click', () => {
 
 //필터클릭시 아래로 필터다운
 const filterBtn = document.querySelector('.filter_btn a');
-const filterSpan = document.querySelector('.filter_btn >a >span')
+const filterSpan = document.querySelector('.filter_btn >a>span')
 const filterDown = document.querySelector('.filter_down');
 let state = 0;
 
@@ -170,6 +171,84 @@ filterBtn.addEventListener('click', () => {
     state = 0;
   }
 });
+
+//filter check
+const sportChk = document.querySelectorAll('.sport');
+const sportLabel = document.querySelectorAll('.sport_filter label');
+
+for (let i = 0; i < sportChk.length; i++) {
+  sportChk[i].addEventListener('click', () => {
+    if (sportChk[i].checked) {
+      sportLabel[i].style.color = '#000';
+      sportLabel[i].style.fontWeight = '700';
+    } else {
+      sportLabel[i].style.color = '#777'
+      sportLabel[i].style.fontWeight = '400'
+    }
+  });
+}
+
+//filter color check
+const colorChk = document.querySelectorAll('.color');
+const colorLabel = document.querySelectorAll('.color_filter label');
+
+for (let i = 0; i < colorChk.length; i++) {
+  colorChk[i].addEventListener('click', () => {
+    if (colorChk[i].checked) {
+      colorLabel[i].classList.add('on');
+    } else {
+      colorLabel[i].classList.remove('on');
+    }
+  });
+}
+
+//filter size check
+const sizeChk = document.querySelectorAll('.size');
+const sizeLabel = document.querySelectorAll('.size_filter label');
+
+for (let i = 0; i < sizeChk.length; i++) {
+  sizeChk[i].addEventListener('click', () => {
+    if (sizeChk[i].checked) {
+      sizeLabel[i].style.color = '#fff';
+      sizeLabel[i].style.backgroundColor = '#002053';
+    } else {
+      sizeLabel[i].style.color = '#000'
+      sizeLabel[i].style.backgroundColor = '#fff'
+    }
+  });
+}
+
+//filter price check
+const priceChk = document.querySelectorAll('.price');
+const priceLabel = document.querySelectorAll('.price_filter label');
+
+for (let i = 0; i < priceChk.length; i++) {
+  priceChk[i].addEventListener('click', () => {
+    if (priceChk[i].checked) {
+      priceLabel[i].style.color = '#000';
+      priceLabel[i].style.fontWeight = '700';
+    } else {
+      priceLabel[i].style.color = '#777'
+      priceLabel[i].style.fontWeight = '400'
+    }
+  });
+}
+
+//filter gender check
+const genderChk = document.querySelectorAll('.gender');
+const genderLabel = document.querySelectorAll('.gender_filter label');
+
+for (let i = 0; i < genderChk.length; i++) {
+  genderChk[i].addEventListener('click', () => {
+    if (genderChk[i].checked) {
+      genderLabel[i].style.color = '#000';
+      genderLabel[i].style.fontWeight = '700';
+    } else {
+      genderLabel[i].style.color = '#777'
+      genderLabel[i].style.fontWeight = '400'
+    }
+  });
+}
 
 //footer family
 const familySite = document.getElementById('family_site');
