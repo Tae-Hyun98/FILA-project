@@ -47,13 +47,19 @@ searchClose.addEventListener('click', () => {
 });
 
 //디테일컷 스와이프
-let swiper = new Swiper(".detail_swiper", {
+const image = ['detail_01.jpg', 'detail_02.jpg', 'detail_03.jpg', 'detail_04.jpg', 'detail_05.jpg', 'detail_06.jpg','detail_07.jpg','detail_08.jpg']
+const swiper = new Swiper(".detail_swiper", {
   loop: true,
-  autoplay: {
+  /* autoplay: {
     delay: 3000,
-  },
+  }, */
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
+    bulletClass: "preview_img",
+    bulletActiveClass: "swiper-pagination-active",
+    renderBullet: function (index, className) {
+      return '<div class="' + className + '"><img src="../img/detail_img/' + (image[index]) + '"></div>';
+    },
   }
 });
