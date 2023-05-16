@@ -17,6 +17,15 @@
   <script src="/import-jquery.89547f03.js"></script>
   <script type="module" src="/subpage.75add7d0.js" defer=""></script>
 
+
+  <script>$(function () {
+  $('.quick a.top').click(function (e) {
+    e.preventDefault();
+    $('html,body').stop().animate({
+      scrollTop: 0
+    }, 300);
+  });
+});</script>
 <script src="/subpage.20c89f74.js"></script></head>
 
 <body class="scroll">
