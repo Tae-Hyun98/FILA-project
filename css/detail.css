@@ -29,6 +29,11 @@ img {
   color: #000;
 }
 
+.container {
+  width: 1440px;
+  margin: 0 auto;
+}
+
 /*************scroll header**************/
 .scroll.scr_up .header {
   visibility: hidden;
@@ -457,7 +462,6 @@ img {
 .detail_product {
   display: flex;
   margin-top: 130px;
-  padding: 0 40px;
 }
 
 .dp_left {
@@ -467,10 +471,11 @@ img {
 }
 
 .dp_left .detail_video {
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .dp_left>div {
+  position: relative;
   width: calc(50% - 5px);
   font-size: 0;
 }
@@ -480,12 +485,8 @@ img {
   height: auto;
 }
 
-.detail_swiper {
-  overflow: hidden;
-}
-
 .detail_swiper .swiper-wrapper .swiper-slide {
-  opacity: 0;
+  opacity: 0.5;
 }
 
 .detail_swiper .swiper-wrapper .swiper-slide.swiper-slide-active {
@@ -496,40 +497,51 @@ img {
   width: 100%;
 }
 
-.detail_swiper .swiper-wrap .swiper-pagination {
-  position: absolute;
-  bottom: 0;
+.dp_left .swiper-wrap {
+  width: 100%;
+}
+
+.swiper-wrap .swiper-pagination.swiper-pagination-bullets {
+  position: relative;
+  bottom: var(--swiper-pagination-bottom, -10px);
   left: 0;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
   width: 100%;
-  background-color: #fff;
   cursor: pointer;
 }
 
-.detail_swiper .swiper-wrap .swiper-pagination .preview_img {
-  width: calc(25% - 5px);
-  margin-right: 5px;
-  opacity: 0.5;
+.swiper-wrap .swiper-pagination .preview_img {
+  width: 12%;
+  opacity: 0.6;
+  font-size: 0;
 }
 
-.detail_swiper .swiper-wrap .swiper-pagination .preview_img.swiper-pagination-active {
+.swiper-wrap .swiper-pagination .preview_img:nth-child(5),
+.swiper-wrap .swiper-pagination .preview_img:nth-child(6),
+.swiper-wrap .swiper-pagination .preview_img:nth-child(7),
+.swiper-wrap .swiper-pagination .preview_img:nth-child(8) {
+  margin-bottom: 0;
+}
+
+.swiper-wrap .swiper-pagination .preview_img.swiper-pagination-active {
+  box-shadow: 0px 0px 5px black;
+  border: 1px solid black;
   opacity: 1;
 }
 
-.detail_swiper .swiper-wrap .swiper-pagination .preview_img:nth-child(4n) {
+.swiper-wrap .swiper-pagination .preview_img:nth-child(4n) {
   margin-right: 0;
 }
 
-.detail_swiper .swiper-wrap .swiper-pagination .preview_img img {
+.swiper-wrap .swiper-pagination .preview_img img {
   width: 100%;
-  height: 100px;
 }
 
 .dp_left .dp_banner {
   width: 100%;
   height: 100px;
-  margin-top: 50px;
+  margin-top: 20px;
   background-color: blanchedalmond;
   border: 1px solid black;
 }
@@ -540,7 +552,7 @@ img {
 
 .dp_right {
   width: 25%;
-  padding-left: 10px;
+  padding-left: 30px;
 }
 
 .dp_right .dp_category {
