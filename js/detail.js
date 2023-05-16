@@ -71,5 +71,4 @@ const swiperColor = new Swiper(".color_swiper", {
   /* autoplay: {
     delay: 3000,
   }, */
-
 });
