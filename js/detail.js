@@ -72,3 +72,22 @@ const swiperColor = new Swiper(".color_swiper", {
     delay: 3000,
   }, */
 });
+
+
+
+//sheet menu
+/* const sheetMenu = document.querySelector('input[name="sheet"]').checked;
+const sheetLabel = document.querySelectorAll('.sheet_menu ul li label');
+
+for (let i = 0; i < sheetMenu.length; i++) {
+  sheetLabel[i].addEventListener('click',()=>{  
+    if (sheetMenu[i]) {
+    sheetLabel[i].style.backgroundColor = "#002053";
+    sheetLabel[i].style.color = "#fff";
+  } else {
+    sheetLabel[i].style.backgroundColor = "#fff";
+    sheetLabel[i].style.color = "#000";
+  }
+});
+}
+ */
