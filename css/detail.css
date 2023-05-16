@@ -475,7 +475,6 @@ img {
 }
 
 .dp_left>div {
-  position: relative;
   width: calc(50% - 5px);
   font-size: 0;
 }
@@ -514,7 +513,6 @@ img {
 .swiper-wrap .swiper-pagination .preview_img {
   width: 12%;
   opacity: 0.6;
-  font-size: 0;
 }
 
 .swiper-wrap .swiper-pagination .preview_img:nth-child(5),
@@ -539,19 +537,48 @@ img {
 }
 
 .dp_left .dp_banner {
+  position: relative;
   width: 100%;
-  height: 100px;
-  margin-top: 20px;
-  background-color: blanchedalmond;
-  border: 1px solid black;
+  height: 250px;
+  font-size: 0;
+  margin-top: 30px;
+  background-image: url(../img/detail_img/fila-banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 
 .dp_left .dp_banner a {
-  font-size: 12px;
+  position: absolute;
+  left: 0;
+  top: 100px;
+  width: 50%;
+  padding: 50px 30px;
+  background-color: #fff;
+}
+
+.dp_left .dp_banner p {
+  position: relative;
+  color: #000;
+  font-size: 26px;
+  font-weight: 700;
+  padding-left: 15px;
+  text-align: center;
+}
+
+.dp_left .dp_banner p::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -6px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: url(../img/detail_img/F.png) no-repeat center;
+  background-size: cover;
 }
 
 .dp_right {
-  width: 25%;
   padding-left: 30px;
 }
 
@@ -602,6 +629,10 @@ img {
 .dp_right .tit {
   font-weight: 700;
   padding-bottom: 15px;
+}
+
+.dp_right .color_swiper {
+  border: 1px solid black;
 }
 
 .dp_right .color_swiper .swiper-wrapper {
