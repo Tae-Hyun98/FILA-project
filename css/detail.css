@@ -821,20 +821,20 @@ input::-webkit-inner-spin-button {
   position: relative;
 }
 
-.product_sheet .sheet_menu ul {
+.product_sheet .sheet_menu .list {
   display: flex;
   align-items: center;
 }
 
-.product_sheet .sheet_menu ul li {
+.product_sheet .sheet_menu .list li {
   position: relative;
   width: 20%;
 }
 
-.product_sheet .sheet_menu ul li input {
-  position: absolute;
-  opacity: 0;
+.product_sheet .sheet_menu .list li .content {
+  display: none;
 }
+
 
 .product_sheet .sheet_menu ul li label {
   display: block;
@@ -848,11 +848,6 @@ input::-webkit-inner-spin-button {
   cursor: pointer;
 }
 
-.product_sheet .product_info {
-  position: relative;
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
-}
 
 .product_info ul li {
   display: flex;
