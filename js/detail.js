@@ -36,15 +36,15 @@ for (let i = 0; i < li.length; i++) {
 
 
 //검색버튼 클릭시 검색창
-const searchOpen = document.getElementById('search');
-const searchClose = document.getElementById('close');
-
-searchOpen.addEventListener('click', () => {
+const searchOpen = document.getElementById('search').addEventListener('click', () => {
   scr.classList.add('search_on');
 });
-searchClose.addEventListener('click', () => {
+
+const searchClose = document.getElementById('close').addEventListener('click', () => {
   scr.classList.remove('search_on');
-});
+});;
+
+
 
 //디테일컷 스와이퍼
 const image = ['detail_01.jpg', 'detail_02.jpg', 'detail_03.jpg', 'detail_04.jpg', 'detail_05.jpg', 'detail_06.jpg', 'detail_07.jpg', 'detail_08.jpg']
@@ -85,6 +85,17 @@ sizeBtn.addEventListener('click', () => {
     sizePopup.style.display = 'none';
   });
 });
+
+
+//수량 + -
+const qtyNum = document.querySelector('.qty_num');
+
+const mius = document.querySelector('.mius').addEventListener('click', () => {
+  qtyNum.value--;
+})
+const plus = document.querySelector('.plus').addEventListener('click', () => {
+  qtyNum.value++;
+})
 
 
 //sheet menu
@@ -132,7 +143,7 @@ const inputId = document.getElementById('input_id');
 const inputTxt = document.getElementById('input_txt');
 const reviewList = document.querySelector('.review_list');
 let today = new Date();
-let dayFormat = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+let dayFormat = today.getFullYear() + '.' + (today.getMonth() + 1) + '.' + today.getDate();
 let count = 1;
 
 addBtn.addEventListener('click', reviewAdd);
