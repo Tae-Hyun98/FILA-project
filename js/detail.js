@@ -111,3 +111,59 @@ for (let i = 0; i < sheetList.length; i++) {
     document.querySelector(activeContents).style.display = 'block';
   });
 }
+
+
+//리뷰등록
+const addBtn = document.getElementById('add_btn');
+const inputId = document.getElementById('input_id');
+const inputTxt = document.getElementById('input_txt');
+
+const reviewList = document.querySelector('.review_list');
+
+addBtn.addEventListener('click', reviewAdd);
+
+function reviewAdd() {
+  if (inputId.value != '' && inputTxt.value != '') {
+    let Li = document.createElement('li');
+    let Pno = document.createElement('p');
+    let Pnum = document.createTextNode(1);
+    let Pstar = document.createElement('p');
+    let Prating=document.createTextNode('★★★');
+    let Ptext = document.createElement('p');
+    let Pid = document.createElement('p');
+    let Ptoday = document.createElement('p');
+    let Pdel = document.createElement('p');
+    let del = document.createTextNode('X');
+    let userId = document.createTextNode(inputId.value);
+    let userTxt = document.createTextNode(inputTxt.value);
+
+    Li.appendChild(Pno);
+    Li.appendChild(Pstar);
+    Li.appendChild(Ptext);
+    Li.appendChild(Pid);
+    Li.appendChild(Ptoday);
+    Li.appendChild(Pdel);
+
+    Pstar.appendChild(Prating);
+    Pno.appendChild(Pnum);
+    Ptext.appendChild(userTxt);
+    Pid.appendChild(userId);
+    Pdel.appendChild(del);
+    Pdel.setAttribute('class', 'delete');
+    reviewList.appendChild(Li);
+
+    inputId.value = '';
+    inputTxt.value = '';
+
+    let delBtn = document.querySelectorAll('.delete');
+    for (let i = 0; i < delBtn.length; i++) {
+      delBtn[i].addEventListener('click', function () {
+        if (delBtn[i].parentNode.parentNode) {
+          this.parentNode.parentNode.removeChild(this.parentNode);
+        }
+      });
+    }
+  } else {
+    alert('값을 입력하세요');
+  }
+}
