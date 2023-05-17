@@ -91,22 +91,23 @@ for (let i = 0; i < tabList.length; i++) {
     activeContent = this.getAttribute('href');
     document.querySelector(activeContent).style.display = 'block';
   });
-
 }
 
-//sheet menu
-/* const sheetMenu = document.querySelector('input[name="sheet"]').checked;
-const sheetLabel = document.querySelectorAll('.sheet_menu ul li label');
+//review sheet
+const sheetList = document.querySelectorAll('.tab_menu ul li');
+const tabContents = document.querySelectorAll('.tab_menu .tab_cont>div');
+let activeContents = '';
 
-for (let i = 0; i < sheetMenu.length; i++) {
-  sheetLabel[i].addEventListener('click',()=>{  
-    if (sheetMenu[i]) {
-    sheetLabel[i].style.backgroundColor = "#002053";
-    sheetLabel[i].style.color = "#fff";
-  } else {
-    sheetLabel[i].style.backgroundColor = "#fff";
-    sheetLabel[i].style.color = "#000";
-  }
-});
+for (let i = 0; i < sheetList.length; i++) {
+  sheetList[i].querySelector('.sheet_tit').addEventListener('click', function (e) {
+    e.preventDefault();
+    for (let j = 0; j < sheetList.length; j++) {
+      sheetList[j].classList.remove('on');
+      tabContents[j].style.display = 'none';
+    }
+    this.parentNode.classList.add('on');
+
+    activeContents = this.getAttribute('href');
+    document.querySelector(activeContents).style.display = 'block';
+  });
 }
- */

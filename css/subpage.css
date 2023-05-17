@@ -544,7 +544,7 @@ img {
 }
 
 .filter_down>.filter_box>div {
-  width: 13%;
+  width: 25%;
 }
 
 .filter_down .all_filter ul li a {
@@ -599,7 +599,7 @@ img {
 }
 
 .filter_down .color_filter {
-  margin-right: 50px;
+  padding-right: 50px;
 }
 
 .filter_down .color_filter ul {
@@ -647,7 +647,7 @@ img {
 }
 
 .filter_down .size_filter {
-  margin-right: 50px;
+  padding-right: 50px;
 }
 
 .filter_down .size_filter ul {
