@@ -117,8 +117,10 @@ for (let i = 0; i < sheetList.length; i++) {
 const addBtn = document.getElementById('add_btn');
 const inputId = document.getElementById('input_id');
 const inputTxt = document.getElementById('input_txt');
-
 const reviewList = document.querySelector('.review_list');
+let today = new Date();
+let dayFormat = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDay();
+let count = 1;
 
 addBtn.addEventListener('click', reviewAdd);
 
@@ -126,13 +128,14 @@ function reviewAdd() {
   if (inputId.value != '' && inputTxt.value != '') {
     let Li = document.createElement('li');
     let Pno = document.createElement('p');
-    let Pnum = document.createTextNode(1);
+    let Pnum = document.createTextNode(count);
     let Pstar = document.createElement('p');
-    let Prating=document.createTextNode('★★★');
+    let Prating = document.createTextNode('★★★');
     let Ptext = document.createElement('p');
     let Pid = document.createElement('p');
     let Ptoday = document.createElement('p');
-    let Pdel = document.createElement('p');
+    let Today = document.createTextNode(dayFormat);
+    let Pdel = document.createElement('button');
     let del = document.createTextNode('X');
     let userId = document.createTextNode(inputId.value);
     let userTxt = document.createTextNode(inputTxt.value);
@@ -144,16 +147,19 @@ function reviewAdd() {
     Li.appendChild(Ptoday);
     Li.appendChild(Pdel);
 
+    Ptoday.appendChild(Today);
     Pstar.appendChild(Prating);
     Pno.appendChild(Pnum);
     Ptext.appendChild(userTxt);
     Pid.appendChild(userId);
     Pdel.appendChild(del);
     Pdel.setAttribute('class', 'delete');
+
     reviewList.appendChild(Li);
 
     inputId.value = '';
     inputTxt.value = '';
+    count++;
 
     let delBtn = document.querySelectorAll('.delete');
     for (let i = 0; i < delBtn.length; i++) {
