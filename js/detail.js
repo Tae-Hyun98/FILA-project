@@ -74,6 +74,25 @@ const swiperColor = new Swiper(".color_swiper", {
 });
 
 
+//sheet menu
+const tabList = document.querySelectorAll('.sheet_menu .list li');
+const contents = document.querySelectorAll('.sheet_menu .content ul');
+let activeContent = '';
+
+for (let i = 0; i < tabList.length; i++) {
+  tabList[i].querySelector('.tab_tit').addEventListener('click', function (e) {
+    e.preventDefault();
+    for (let j = 0; j < tabList.length; j++) {
+      tabList[j].classList.remove('on');
+      contents[j].style.display = 'none';
+    }
+    this.parentNode.classList.add('on');
+
+    activeContent = this.getAttribute('href');
+    document.querySelector(activeContent).style.display = 'block';
+  });
+
+}
 
 //sheet menu
 /* const sheetMenu = document.querySelector('input[name="sheet"]').checked;
