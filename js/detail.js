@@ -74,6 +74,19 @@ const swiperColor = new Swiper(".color_swiper", {
 });
 
 
+//실측사이즈 클릭시팝업
+const sizeBtn = document.getElementById('size_btn');
+const sizePopup = document.querySelector('.size_wrap');
+const popupClose = document.querySelector('.close');
+
+sizeBtn.addEventListener('click', () => {
+  sizePopup.style.display = 'block';
+  popupClose.addEventListener('click', () => {
+    sizePopup.style.display = 'none';
+  });
+});
+
+
 //sheet menu
 const tabList = document.querySelectorAll('.sheet_menu .list li');
 const contents = document.querySelectorAll('.sheet_menu .content ul');
@@ -119,7 +132,7 @@ const inputId = document.getElementById('input_id');
 const inputTxt = document.getElementById('input_txt');
 const reviewList = document.querySelector('.review_list');
 let today = new Date();
-let dayFormat = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDay();
+let dayFormat = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 let count = 1;
 
 addBtn.addEventListener('click', reviewAdd);
