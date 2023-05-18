@@ -1128,12 +1128,83 @@ input::-webkit-inner-spin-button {
   border: 1px solid #ccc;
   background-color: #fff;
   font-weight: 700;
+  font-size: 20px;
   height: 70px;
   cursor: pointer;
   transition: .1s;
 }
 
-.tab_inquiry .inquiry_tit button:hover{
+.tab_inquiry .inquiry_tit button:hover {
   background-color: #002053;
   color: #fff;
+}
+
+.tab_inquiry .inqlist_tit {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0px;
+  border-bottom: 1px solid #777;
+  text-align: center;
+}
+
+.tab_inquiry .inqlist_tit p:nth-child(1),
+.tab_inquiry .inquiry_list ul li span:nth-child(1) {
+  width: 10%;
+}
+
+.tab_inquiry .inqlist_tit p:nth-child(2),
+.tab_inquiry .inquiry_list ul li span:nth-child(2) {
+  width: 40%;
+}
+
+.tab_inquiry .inqlist_tit p:nth-child(3),
+.tab_inquiry .inquiry_list ul li span:nth-child(3) {
+  width: 10%;
+}
+
+.tab_inquiry .inqlist_tit p:nth-child(4),
+.tab_inquiry .inquiry_list ul li span:nth-child(4) {
+  width: 10%;
+}
+
+.tab_inquiry .inqlist_tit p:nth-child(5),
+.tab_inquiry .inquiry_list ul li span:nth-child(5) {
+  width: 10%;
+}
+
+.tab_inquiry .inquiry_list ul li {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab_inquiry .inquiry_list ul li span {
+  font-size: 16px;
+  line-height: 60px;
+}
+
+.tab_inquiry .inquiry_list ul li span:nth-child(2) {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.inquiry_write_wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.inquiry_write_wrap .inquiry_write{
+  background-color: #fff;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  width: 700px;
+  height: 700px;
 }
