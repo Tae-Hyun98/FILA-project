@@ -691,7 +691,7 @@ h1 {
 .rank_order .rank_bottom ul li.active a {
   color: #002053;
   font-weight: 700;
-  font-size: 23px;
+  font-size: 21px;
 }
 
 .rank .rank_bottom ul li {
@@ -987,7 +987,7 @@ h1 {
 }
 
 /*************배경이미지 fix************/
-div.an {
+/* div.an {
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -999,7 +999,7 @@ div.an {
   height: 800px;
   background: url(../img/fix.jpg) no-repeat top fixed;
   background-size: cover;
-}
+} */
 
 /*************MAGAZINE***********/
 .magazine {
@@ -1014,6 +1014,7 @@ div.an {
   display: flex;
   overflow: hidden;
   margin-top: 30px;
+  padding: 0 50px;
 }
 
 .magazine .magazine_box>div {
@@ -1036,13 +1037,13 @@ div.an {
 
 .magazine .magazine_box>div>div img {
   width: 100%;
-  height: 600px;
+  height: 610px;
 }
 
 .magazine .magazine_box>div .magazine_desc {
   position: absolute;
   width: 100%;
-  height: 600px;
+  height: 100%;
   top: 0;
   right: -100%;
   background-color: rgba(0, 0, 0, 0.6);
@@ -1073,7 +1074,7 @@ div.an {
   display: block;
   text-align: center;
   font-weight: 700;
-  font-size: 34px;
+  font-size: 32px;
   margin-top: 30px;
   color: #000;
 }
@@ -1091,6 +1092,7 @@ div.an {
 .recommand .recommand_box {
   display: flex;
   margin-top: 30px;
+  padding: 0 50px;
 }
 
 .recommand .recommand_box .rec_img {
@@ -1176,14 +1178,10 @@ div.an {
 
 /***********footer************/
 .footer {
+  width: 100%;
   margin-top: 100px;
-  padding: 50px 20px;
+  padding: 50px;
   background-color: rgb(238, 238, 238);
-}
-
-.footer_inner {
-  width: 1610px;
-  margin: 0 auto;
 }
 
 .footer .footer_nav {
@@ -1270,10 +1268,6 @@ div.an {
   letter-spacing: 1px;
 }
 
-.footer .footer_bottom .f_bom_left {
-  width: 50%;
-}
-
 .footer .footer_bottom .f_bom_right p a {
   display: block;
   font-size: 22px;
@@ -1299,8 +1293,7 @@ div.an {
 }
 
 .footer .footer_bottom .f_sns {
-  width: 30%;
-  padding-left: 230px;
+  padding-right: 30px;
 }
 
 .footer .footer_bottom .f_sns ul {
@@ -1335,64 +1328,60 @@ div.an {
 /*************quick_menu***********/
 .quick {
   position: absolute;
-  width: 200px;
-  height: 382px;
-  right: 0;
+  right: 0px;
+  width: 225px;
+  height: 224px;
   z-index: 9999;
   overflow: hidden;
 }
 
 .quick .quick_box {
+  display: flex;
+  width: 100%;
+  align-items: center;
   position: absolute;
+  right: -140px;
   top: 0;
-  right: -135px;
-  transition: all 0.2s;
+  transition: all 0.3s;
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 5px;
+  overflow: hidden;
 }
 
 .quick .quick_box:hover {
   right: 0;
 }
 
+.quick .quick_box .quick_menu a {
+  width: 130px;
+  display: block;
+  color: #000;
+  font-weight: 700;
+  font-size: 18px;
+  transition: .3s;
+}
+
 .quick .quick_box ul li:hover a {
   color: red;
 }
 
-.quick .quick_box:hover .arrow li a {
-  text-align: center;
-  padding-left: 0;
-}
-
-.quick ul li {
-  width: 200px;
-  background-color: #fff;
-  border: 1px solid black;
-}
-
-.quick ul li a {
-  display: block;
-  line-height: 55px;
+.quick .quick_nav li {
+  margin: 0 15px;
 }
 
 .quick .quick_nav li a.bg {
   width: 50px;
   height: 50px;
-  margin: 10px 0 10px 10px;
   font-size: 0;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
 }
 
-.quick .quick_nav li {
-  display: flex;
-  align-items: center;
-}
-
-.quick .quick_nav li a:nth-child(2) {
-  width: 70%;
-  font-size: 18px;
-  font-weight: 700;
-  color: #000;
-  padding-left: 20px;
+.quick ul li a {
+  display: block;
+  line-height: 53px;
 }
 
 .quick .quick_nav li a.profile {
@@ -1411,13 +1400,31 @@ div.an {
   background-image: url(../img/quick_menu/05.png);
 }
 
-.quick .arrow {
+.arrow {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  bottom: 30px;
+  right: 50px;
   padding-top: 10px;
+  z-index: 2;
 }
 
-.quick .arrow li a {
+.arrow a {
   color: #000;
   font-size: 40px;
-  padding-left: 15px;
+  border: 1px solid #ccc;
   line-height: 40px;
+  background-color: #fff;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+.arrow a:hover {
+  background-color: #002053;
+  color: #fff;
+}
+
+.arrow a:last-child {
+  margin-bottom: 0;
 }

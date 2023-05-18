@@ -89,18 +89,37 @@ sizeBtn.addEventListener('click', () => {
 
 //수량 + -
 const qtyNum = document.querySelector('.qty_num');
-let qtyValue = qtyNum.value;
 const totalSum = document.getElementById('sum');
 
 const mius = document.querySelector('.mius').addEventListener('click', () => {
-  qtyNum.value--;
+  if (qtyNum.value > 1) {
+    qtyNum.value--;
+    let result = qtyNum.value * 99000;
+    totalSum.innerHTML = result.toLocaleString('ko-KR');
+  } else {
+    alert('최소 1개는 시켜야돼요');
+  }
 });
+const plusDis = document.querySelector('.plus');
 const plus = document.querySelector('.plus').addEventListener('click', () => {
-  qtyNum.value++;
+  if (qtyNum.value >= 0 && qtyNum.value < 10) {
+    qtyNum.value++;
+    let result = qtyNum.value * 99000;
+    totalSum.innerHTML = result.toLocaleString('ko-KR');
+  } else {
+    alert('10개이상은 안돼요');
+  }
 });
 
-const total = qtyValue.addEvetListener('change', () => {
-  totalSum.innerText = qtyValue * 99000;
+
+const qtyChan = qtyNum.addEventListener('change', () => {
+  if (qtyNum.value > 0 && qtyNum.value <= 10) {
+    let result = qtyNum.value * 99000;
+    totalSum.innerHTML = result.toLocaleString('ko-KR');
+  } else {
+    qtyNum.value = 1;
+    alert('수량을 입력해주세요 1~10');
+  }
 });
 
 

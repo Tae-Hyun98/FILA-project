@@ -712,7 +712,6 @@ img {
   width: 100%;
   border: 1px solid #ccc;
   display: flex;
-  justify-content: center;
   margin-top: 50px;
 }
 
@@ -723,20 +722,23 @@ img {
   background-color: #fff;
   background-repeat: no-repeat;
   background-position: center center;
-  width: 57px;
+  width: 25%;
   line-height: 65px;
   cursor: pointer;
 }
 
 .product_qty .mius {
+  border-right: 1px solid #ccc;
   background-image: url(../img/detail_img/qty_mius.svg);
 }
 
 .product_qty .plus {
+  border-left: 1px solid #ccc;
   background-image: url(../img/detail_img/qty_plus.svg);
 }
 
 .product_qty input {
+  width: 50%;
   text-align: center;
   border: none;
   outline: none;
