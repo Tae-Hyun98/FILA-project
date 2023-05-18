@@ -221,3 +221,16 @@
       alert('값을 입력하세요');
     }
   }
+
+
+
+  //문의하기
+  const inqPopup = document.querySelector('.inquiry_write_wrap');
+
+  const inqBtn = document.getElementById('inq_btn').addEventListener('click', () => {
+    inqPopup.style.display = 'block';
+  });
+
+  const inqClose = document.querySelector('.write_close').addEventListener('click', () => {
+    inqPopup.style.display = 'none';
+  });
