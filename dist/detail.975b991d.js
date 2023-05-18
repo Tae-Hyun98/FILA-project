@@ -203,14 +203,33 @@ sizeBtn.addEventListener('click', function () {
 var qtyNum = document.querySelector('.qty_num');
 var totalSum = document.getElementById('sum');
 var mius = document.querySelector('.mius').addEventListener('click', function () {
-  qtyNum.value--;
+  if (qtyNum.value > 1) {
+    qtyNum.value--;
+    var result = qtyNum.value * 99000;
+    totalSum.innerHTML = result.toLocaleString('ko-KR');
+  } else {
+    alert('최소 1개는 시켜야돼요');
+  }
 });
+var plusDis = document.querySelector('.plus');
 var plus = document.querySelector('.plus').addEventListener('click', function () {
-  qtyNum.value++;
+  if (qtyNum.value >= 0 && qtyNum.value < 10) {
+    qtyNum.value++;
+    var result = qtyNum.value * 99000;
+    totalSum.innerHTML = result.toLocaleString('ko-KR');
+  } else {
+    alert('10개이상은 안돼요');
+  }
 });
-function total() {
-  var price = 99000;
-}
+var qtyChan = qtyNum.addEventListener('change', function () {
+  if (qtyNum.value > 0 && qtyNum.value <= 10) {
+    var result = qtyNum.value * 99000;
+    totalSum.innerHTML = result.toLocaleString('ko-KR');
+  } else {
+    qtyNum.value = 1;
+    alert('수량을 입력해주세요 1~10');
+  }
+});
 
 //sheet menu
 var tabList = document.querySelectorAll('.sheet_menu .list li');
@@ -327,7 +346,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50589" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61152" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

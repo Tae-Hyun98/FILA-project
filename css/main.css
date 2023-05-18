@@ -531,8 +531,8 @@ h1 {
   right: 20px;
 }
 
-.arrow .swiper-button-prev,
-.arrow .swiper-button-next {
+.visual_arrow .swiper-button-prev,
+.visual_arrow .swiper-button-next {
   width: 50px;
   height: 60px;
   color: #fff;
@@ -543,14 +543,14 @@ h1 {
   z-index: 1;
 }
 
-.arrow .swiper-button-next {
+.visual_arrow .swiper-button-next {
   left: auto;
   right: 100px;
   z-index: 1;
 }
 
-.arrow .swiper-button-prev::after,
-.arrow .swiper-button-next::after {
+.visual_arrow .swiper-button-prev::after,
+.visual_arrow .swiper-button-next::after {
   font-size: 50px;
 }
 
@@ -623,10 +623,6 @@ h1 {
   transition: all 0.2s;
 }
 
-/* .rank .rank_category .category_btn li a::before {
-  left: 50%;
-} */
-
 .rank .rank_category .category_btn li a::after {
   right: 50%;
 }
@@ -658,7 +654,7 @@ h1 {
   position: relative;
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
+  margin: 50px 50px 0 50px;
 }
 
 .rank_order {
@@ -870,6 +866,10 @@ h1 {
 .new_arrival .new_arrival_category ul li:hover a {
   background-color: #002053;
   color: #fff;
+}
+
+.newSwiper_box {
+  margin: 0 50px;
 }
 
 .newSwiper {
@@ -1152,6 +1152,7 @@ h1 {
 
 .sns .sns_box .sns_list {
   width: 100%;
+  padding: 0 50px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -1162,8 +1163,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-.sns .sns_box .sns_list li:nth-child(5),
-.sns .sns_box .sns_list li:nth-child(10) {
+.sns .sns_box .sns_list li:nth-child(5n) {
   margin-right: 0;
 }
 
@@ -1329,9 +1329,9 @@ h1 {
 .quick {
   position: absolute;
   right: 0px;
-  width: 225px;
+  width: 85px;
   height: 224px;
-  z-index: 9999;
+  transition: .3s;
   overflow: hidden;
 }
 
@@ -1340,13 +1340,18 @@ h1 {
   width: 100%;
   align-items: center;
   position: absolute;
-  right: -140px;
+  right: 0px;
   top: 0;
   transition: all 0.3s;
   background-color: #fff;
   border: 1px solid black;
   padding: 5px;
+  z-index: 9999;
   overflow: hidden;
+}
+
+.quick:hover {
+  width: 220px;
 }
 
 .quick .quick_box:hover {
@@ -1405,7 +1410,7 @@ h1 {
   display: flex;
   flex-direction: column;
   bottom: 30px;
-  right: 50px;
+  right: 40px;
   padding-top: 10px;
   z-index: 2;
 }

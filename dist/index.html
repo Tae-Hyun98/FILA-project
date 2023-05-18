@@ -29,13 +29,13 @@ $(function () {
       top: point
     }, 200);
   });
-  $('.quick .arrow li a.top').click(function (e) {
+  $('.arrow a.top').click(function (e) {
     e.preventDefault();
     $('html,body').stop().animate({
       scrollTop: 0
     }, 300);
   });
-  $('.quick .arrow li a.bottom').click(function (e) {
+  $('.arrow a.bottom').click(function (e) {
     e.preventDefault();
     $('html,body').stop().animate({
       scrollTop: $(document).height()
@@ -467,7 +467,7 @@ $(function () {
           <div class="swiper-pagination2"></div>
         </div>
 
-        <div class="arrow">
+        <div class="visual_arrow">
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
         </div>
@@ -475,227 +475,229 @@ $(function () {
     </section>
 
 
-    <div class="container">
-      <!-- RANK -->
-      <section class="rank">
-        <h1>랭킹</h1>
-        <div class="rank_category">
-          <ul class="category_btn">
-            <li><a href="#!">#티셔츠&팬츠</a></li>
-            <li><a href="#!">#레이플라이드</a></li>
-            <li><a href="#!">#헤리티지</a></li>
-            <li><a href="#!">#온라인단독</a></li>
-            <li><a href="#!">#타르가</a></li>
-            <li><a href="#!">#테니스</a></li>
-            <li><a href="#!">#런닝화</a></li>
-          </ul>
-        </div>
-        <div class="rank_box">
-          <div class="rank_order">
-            <div class="rank_top">
-              <h3>#티셔츠&팬츠</h3>
-            </div>
-            <div class="rank_bottom">
-              <ul>
-                <li class="active">
-                  <a href="#!"><span>01</span>베이직 리니어 반팔티</a>
-                </li>
-                <li>
-                  <a href="#!"><span>02</span>3D 빅로고 반팔티</a>
-                </li>
-                <li>
-                  <a href="#!"><span>03</span>컴포트핏 인터내셔널 로고 반팔티</a>
-                </li>
-                <li>
-                  <a href="#!"><span>04</span>컴포트핏 인터내셔널 반팔 맨투맨</a>
-                </li>
-                <li>
-                  <a href="#!"><span>05</span>컴포트핏 조거팬츠</a>
-                </li>
-                <li>
-                  <a href="#!"><span>06</span>이지팬츠</a>
-                </li>
-              </ul>
-            </div>
+    <!-- RANK -->
+    <section class="rank">
+      <h1>랭킹</h1>
+      <div class="rank_category">
+        <ul class="category_btn">
+          <li><a href="#!">#티셔츠&팬츠</a></li>
+          <li><a href="#!">#레이플라이드</a></li>
+          <li><a href="#!">#헤리티지</a></li>
+          <li><a href="#!">#온라인단독</a></li>
+          <li><a href="#!">#타르가</a></li>
+          <li><a href="#!">#테니스</a></li>
+          <li><a href="#!">#런닝화</a></li>
+        </ul>
+      </div>
+
+      <div class="rank_box">
+        <div class="rank_order">
+          <div class="rank_top">
+            <h3>#티셔츠&팬츠</h3>
           </div>
+          
+          <div class="rank_bottom">
+            <ul>
+              <li class="active">
+                <a href="#!"><span>01</span>베이직 리니어 반팔티</a>
+              </li>
+              <li>
+                <a href="#!"><span>02</span>3D 빅로고 반팔티</a>
+              </li>
+              <li>
+                <a href="#!"><span>03</span>컴포트핏 인터내셔널 로고 반팔티</a>
+              </li>
+              <li>
+                <a href="#!"><span>04</span>컴포트핏 인터내셔널 반팔 맨투맨</a>
+              </li>
+              <li>
+                <a href="#!"><span>05</span>컴포트핏 조거팬츠</a>
+              </li>
+              <li>
+                <a href="#!"><span>06</span>이지팬츠</a>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-          <div class="rankSwiper">
-            <div class="swiper-wrapper">
-              <!-- Rank Slides -->
-              <div class="swiper-slide">
-                <div class="rank_img">
-                  <a href="#!">
-                    <img src="/01.476e1a7b.jpg" alt="rank">
-                  </a>
-                  <div class="rank_desc">
-                    <ul>
-                      <li>
-                        <p><a href="#!">스트레치 카고 조거팬츠</a></p>
-                        <p><a href="#!">119,000원</a></p>
-                      </li>
-                      <li>
-                        <span class="material-icons-outlined">
-                          <a href="#!"> favorite_border</a>
-                        </span>
-                        <span class="material-icons-outlined">
-                          <a href="#!">local_mall</a>
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-              </div>
-              <div class="swiper-slide">
-                <div class="rank_img">
-                  <a href="#!">
-                    <img src="/02.c00bb298.jpg" alt="rank">
-                  </a>
-                  <div class="rank_desc">
-                    <ul>
-                      <li>
-                        <p><a href="#!">스트레치 카고 조거팬츠</a></p>
-                        <p><a href="#!">119,000원</a></p>
-                      </li>
-                      <li>
-                        <span class="material-icons-outlined">
-                          <a href="#!"> favorite_border</a>
-                        </span>
-                        <span class="material-icons-outlined">
-                          <a href="#!">local_mall</a>
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="rank_img">
-                  <a href="#!">
-                    <img src="/03.0b408042.jpg" alt="rank">
-                  </a>
-                  <div class="rank_desc">
-                    <ul>
-                      <li>
-                        <p><a href="#!">스트레치 카고 조거팬츠</a></p>
-                        <p><a href="#!">119,000원</a></p>
-                      </li>
-                      <li>
-                        <span class="material-icons-outlined">
-                          <a href="#!"> favorite_border</a>
-                        </span>
-                        <span class="material-icons-outlined">
-                          <a href="#!">local_mall</a>
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
+        <div class="rankSwiper">
+          <div class="swiper-wrapper">
+            <!-- Rank Slides -->
+            <div class="swiper-slide">
+              <div class="rank_img">
+                <a href="#!">
+                  <img src="/01.476e1a7b.jpg" alt="rank">
+                </a>
+                <div class="rank_desc">
+                  <ul>
+                    <li>
+                      <p><a href="#!">스트레치 카고 조거팬츠</a></p>
+                      <p><a href="#!">119,000원</a></p>
+                    </li>
+                    <li>
+                      <span class="material-icons-outlined">
+                        <a href="#!"> favorite_border</a>
+                      </span>
+                      <span class="material-icons-outlined">
+                        <a href="#!">local_mall</a>
+                      </span>
+                    </li>
+                  </ul>
                 </div>
               </div>
 
-              <div class="swiper-slide">
-                <div class="rank_img">
-                  <a href="#!">
-                    <img src="/04.f0ae7952.jpg" alt="rank">
-                  </a>
-                  <div class="rank_desc">
-                    <ul>
-                      <li>
-                        <p><a href="#!">스트레치 카고 조거팬츠</a></p>
-                        <p><a href="#!">119,000원</a></p>
-                      </li>
-                      <li>
-                        <span class="material-icons-outlined">
-                          <a href="#!"> favorite_border</a>
-                        </span>
-                        <span class="material-icons-outlined">
-                          <a href="#!">local_mall</a>
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="rank_img">
-                  <a href="#!">
-                    <img src="/05.c5e3968c.jpg" alt="rank">
-                  </a>
-                  <div class="rank_desc">
-                    <ul>
-                      <li>
-                        <p><a href="#!">스트레치 카고 조거팬츠</a></p>
-                        <p><a href="#!">119,000원</a></p>
-                      </li>
-                      <li>
-                        <span class="material-icons-outlined">
-                          <a href="#!"> favorite_border</a>
-                        </span>
-                        <span class="material-icons-outlined">
-                          <a href="#!">local_mall</a>
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="rank_img">
-                  <a href="#!">
-                    <img src="/06.e8112851.jpg" alt="rank">
-                  </a>
-                  <div class="rank_desc">
-                    <ul>
-                      <li>
-                        <p><a href="#!">스트레치 카고 조거팬츠</a></p>
-                        <p><a href="#!">119,000원</a></p>
-                      </li>
-                      <li>
-                        <span class="material-icons-outlined">
-                          <a href="#!"> favorite_border</a>
-                        </span>
-                        <span class="material-icons-outlined">
-                          <a href="#!">local_mall</a>
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="rank_img">
+                <a href="#!">
+                  <img src="/02.c00bb298.jpg" alt="rank">
+                </a>
+                <div class="rank_desc">
+                  <ul>
+                    <li>
+                      <p><a href="#!">스트레치 카고 조거팬츠</a></p>
+                      <p><a href="#!">119,000원</a></p>
+                    </li>
+                    <li>
+                      <span class="material-icons-outlined">
+                        <a href="#!"> favorite_border</a>
+                      </span>
+                      <span class="material-icons-outlined">
+                        <a href="#!">local_mall</a>
+                      </span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
+
+            <div class="swiper-slide">
+              <div class="rank_img">
+                <a href="#!">
+                  <img src="/03.0b408042.jpg" alt="rank">
+                </a>
+                <div class="rank_desc">
+                  <ul>
+                    <li>
+                      <p><a href="#!">스트레치 카고 조거팬츠</a></p>
+                      <p><a href="#!">119,000원</a></p>
+                    </li>
+                    <li>
+                      <span class="material-icons-outlined">
+                        <a href="#!"> favorite_border</a>
+                      </span>
+                      <span class="material-icons-outlined">
+                        <a href="#!">local_mall</a>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="rank_img">
+                <a href="#!">
+                  <img src="/04.f0ae7952.jpg" alt="rank">
+                </a>
+                <div class="rank_desc">
+                  <ul>
+                    <li>
+                      <p><a href="#!">스트레치 카고 조거팬츠</a></p>
+                      <p><a href="#!">119,000원</a></p>
+                    </li>
+                    <li>
+                      <span class="material-icons-outlined">
+                        <a href="#!"> favorite_border</a>
+                      </span>
+                      <span class="material-icons-outlined">
+                        <a href="#!">local_mall</a>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="rank_img">
+                <a href="#!">
+                  <img src="/05.c5e3968c.jpg" alt="rank">
+                </a>
+                <div class="rank_desc">
+                  <ul>
+                    <li>
+                      <p><a href="#!">스트레치 카고 조거팬츠</a></p>
+                      <p><a href="#!">119,000원</a></p>
+                    </li>
+                    <li>
+                      <span class="material-icons-outlined">
+                        <a href="#!"> favorite_border</a>
+                      </span>
+                      <span class="material-icons-outlined">
+                        <a href="#!">local_mall</a>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="rank_img">
+                <a href="#!">
+                  <img src="/06.e8112851.jpg" alt="rank">
+                </a>
+                <div class="rank_desc">
+                  <ul>
+                    <li>
+                      <p><a href="#!">스트레치 카고 조거팬츠</a></p>
+                      <p><a href="#!">119,000원</a></p>
+                    </li>
+                    <li>
+                      <span class="material-icons-outlined">
+                        <a href="#!"> favorite_border</a>
+                      </span>
+                      <span class="material-icons-outlined">
+                        <a href="#!">local_mall</a>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="time_sale">
-        <div class="edition">
-          <div class="edition_video">
-            <video autoplay="" muted="" loop="" src="/time_video.c3bda9ce.mp4" type="video/mp4"></video>
-          </div>
-          <div class="countdown_box">
-            <h1>FILA NEW EDITION</h1>
-            <p id="date"></p>
-          </div>
+    <section class="time_sale">
+      <div class="edition">
+        <div class="edition_video">
+          <video autoplay="" muted="" loop="" src="/time_video.c3bda9ce.mp4" type="video/mp4"></video>
         </div>
-      </section>
-
-
-      <!-- NEW_ARRIVAL -->
-      <section class="new_arrival">
-        <h1>NEW ARRIVAL</h1>
-        <div class="new_arrival_category">
-          <ul>
-            <li><a href="#!">#티셔츠&팬츠</a></li>
-            <li><a href="#!">#헤리티지</a></li>
-            <li><a href="#!">#온라인 단독</a></li>
-            <li><a href="#!">#테니스</a></li>
-            <li><a href="#!">#신발</a></li>
-          </ul>
+        <div class="countdown_box">
+          <h1>FILA NEW EDITION</h1>
+          <p id="date"></p>
         </div>
+      </div>
+    </section>
 
+
+    <!-- NEW_ARRIVAL -->
+    <section class="new_arrival">
+      <h1>NEW ARRIVAL</h1>
+      <div class="new_arrival_category">
+        <ul>
+          <li><a href="#!">#티셔츠&팬츠</a></li>
+          <li><a href="#!">#헤리티지</a></li>
+          <li><a href="#!">#온라인 단독</a></li>
+          <li><a href="#!">#테니스</a></li>
+          <li><a href="#!">#신발</a></li>
+        </ul>
+      </div>
+
+      <div class="newSwiper_box">
         <div class="newSwiper">
           <div class="swiper-wrapper">
             <!-- Slides -->
@@ -884,336 +886,332 @@ $(function () {
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- fix_img -->
+    <!--  fix_img
       <section class="fix_content">
         <div class="an">
           <div class="bgi"></div>
         </div>
-      </section>
+      </section> -->
 
-      <!-- MAGAZINE -->
-      <section class="magazine">
-        <h1>MAGAZINE</h1>
-        <div class="magazine_box">
-          <div class="magazine_img_box">
-            <div class="magazine_img">
-              <a href="#!">
-                <img src="/01.4e2ea7f8.jpg" alt="magazine">
-              </a>
-              <div class="magazine_desc">
-                <p>LIFE STYLE<br>
-                  PANTS COLLECTION</p>
-                <p>편안함이 돋보이는<br>
-                  라이프스타일 팬츠를 소개합니다<br>
-                  레귤러, 컴포트, 와이드 등<br>
-                  데일리 팬츠 컬렉션을 만나보세요.</p>
-              </div>
+    <!-- MAGAZINE -->
+    <section class="magazine">
+      <h1>MAGAZINE</h1>
+      <div class="magazine_box">
+        <div class="magazine_img_box">
+          <div class="magazine_img">
+            <a href="#!">
+              <img src="/01.4e2ea7f8.jpg" alt="magazine">
+            </a>
+            <div class="magazine_desc">
+              <p>LIFE STYLE<br>
+                PANTS COLLECTION</p>
+              <p>편안함이 돋보이는<br>
+                라이프스타일 팬츠를 소개합니다<br>
+                레귤러, 컴포트, 와이드 등<br>
+                데일리 팬츠 컬렉션을 만나보세요.</p>
             </div>
-            <p class="maga_tit"><a href="#!">LIFE STYLE PANTS COLLECTION</a></p>
           </div>
+          <p class="maga_tit"><a href="#!">LIFE STYLE PANTS COLLECTION</a></p>
+        </div>
 
-          <div class="magazine_img_box">
-            <div class="magazine_img">
-              <a href="#!">
-                <img src="/02.7db741c7.jpg" alt="magazine">
-              </a>
-              <div class="magazine_desc">
-                <p>FILA TENNIS HERITAGE<br>WHITE LINE</p>
-                <p class="mg_b">비욘 보그와 함께한 영광의 순간을 재현한<br>
-                  휠라 테니스 헤리티지<br>
-                  코트 위에서도, 코트 밖에서도<br>
-                  FILA의 스포츠 DNA는 테니스로부터 시작합니다.</p>
-              </div>
+        <div class="magazine_img_box">
+          <div class="magazine_img">
+            <a href="#!">
+              <img src="/02.7db741c7.jpg" alt="magazine">
+            </a>
+            <div class="magazine_desc">
+              <p>FILA TENNIS HERITAGE<br>WHITE LINE</p>
+              <p class="mg_b">비욘 보그와 함께한 영광의 순간을 재현한<br>
+                휠라 테니스 헤리티지<br>
+                코트 위에서도, 코트 밖에서도<br>
+                FILA의 스포츠 DNA는 테니스로부터 시작합니다.</p>
             </div>
-            <p class="maga_tit"><a href="#!">FILA TENNIS HERITAGE</a></p>
           </div>
+          <p class="maga_tit"><a href="#!">FILA TENNIS HERITAGE</a></p>
+        </div>
 
-          <div class="magazine_img_box">
-            <div class="magazine_img">
-              <a href="#!">
-                <img src="/03.6bf1335f.jpg" alt="magazine">
-              </a>
-              <div class="magazine_desc">
-                <p>TARGA CLUB LT<br>
-                  PREMIUM COURT SNEAKER
-                </p>
-                <p>TARGA CLUB LT는 천연 소가죽 갑피와<br>
-                  Energized Soft insert™ 인솔을 사용하여<br>
-                  편안한 쿠션감을 제공하는 프리미엄 코트화입니다.
-                </p>
+        <div class="magazine_img_box">
+          <div class="magazine_img">
+            <a href="#!">
+              <img src="/03.6bf1335f.jpg" alt="magazine">
+            </a>
+            <div class="magazine_desc">
+              <p>TARGA CLUB LT<br>
+                PREMIUM COURT SNEAKER
+              </p>
+              <p>TARGA CLUB LT는 천연 소가죽 갑피와<br>
+                Energized Soft insert™ 인솔을 사용하여<br>
+                편안한 쿠션감을 제공하는 프리미엄 코트화입니다.
+              </p>
+            </div>
+          </div>
+          <p class="maga_tit"><a href="#!">LARGA CLUB LT</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="recommand_style">
+      <div class="recommand">
+        <h1>추천 코디</h1>
+        <div class="recommand_box">
+          <div class="rec_img">
+            <img src="/02.a8ac42fd.jpg" alt="recommand">
+            <div class="rec_plus plus">
+              <span class="material-icons-outlined">
+                add
+              </span>
+              <div class="rec_desc">
+                <p>테니스 라이프 카라원피스</p>
               </div>
             </div>
-            <p class="maga_tit"><a href="#!">LARGA CLUB LT</a></p>
+
+            <div class="rec_plus plus1">
+              <span class="material-icons-outlined">
+                add
+              </span>
+              <div class="rec_desc">
+                <p>테니스 로고테잎 니삭스</p>
+              </div>
+            </div>
+          </div>
+          <div class="rec_img">
+            <img src="/03.caa4aabe.jpg" alt="recommand">
+          </div>
+          <div class="rec_img">
+            <img src="/22.ae77603f.jpg" alt="recommand">
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="recommand_style">
-        <div class="recommand">
-          <h1>추천 코디</h1>
-          <div class="recommand_box">
-            <div class="rec_img">
-              <img src="/02.a8ac42fd.jpg" alt="recommand">
-              <div class="rec_plus plus">
-                <span class="material-icons-outlined">
-                  add
-                </span>
-                <div class="rec_desc">
-                  <p>테니스 라이프 카라원피스</p>
-                </div>
-              </div>
+    <section class="sns_section">
+      <div class="sns">
+        <h1>SNS</h1>
+        <div class="sns_box">
+          <ul class="sns_list">
+            <li>
+              <a href="#!">
+                <img src="/base.32aace55.png" alt="sns" style="background-image:url(/01.640d710e.jpg);">
+              </a>
+            </li>
 
-              <div class="rec_plus plus1">
-                <span class="material-icons-outlined">
-                  add
-                </span>
-                <div class="rec_desc">
-                  <p>테니스 로고테잎 니삭스</p>
-                </div>
-              </div>
-            </div>
-            <div class="rec_img">
-              <img src="/03.caa4aabe.jpg" alt="recommand">
-            </div>
-            <div class="rec_img">
-              <img src="/22.ae77603f.jpg" alt="recommand">
-            </div>
-          </div>
+            <li>
+              <a href="#!">
+                <img src="/base.32aace55.png" alt="sns" style="background-image:url(/02.b92d687e.jpg);">
+              </a>
+            </li>
+
+            <li>
+              <a href="#!">
+                <img src="/base.32aace55.png" alt="sns" style="background-image:url(/03.f02b0eaf.jpg);">
+              </a>
+            </li>
+
+            <li>
+              <a href="#!">
+                <img src="/base.32aace55.png" alt="sns" style="background-image:url(/04.4f7dd0e2.jpg);">
+              </a>
+            </li>
+
+            <li>
+              <a href="#!">
+                <img src="/base.32aace55.png" alt="sns" style="background-image:url(/05.36b2130b.jpg);">
+              </a>
+            </li>
+
+            <li>
+              <a href="#!">
+                <img src="/base.32aace55.png" alt="sns" style="background-image:url(/06.9c49d177.jpg);">
+              </a>
+            </li>
+
+            <li>
+              <a href="#!">
+                <img src="/base.32aace55.png" alt="sns" style="background-image:url(/07.b5a468f5.jpg);">
+              </a>
+            </li>
+
+            <li>
+              <a href="#!">
+                <img src="/base.32aace55.png" alt="sns" style="background-image:url(/08.466bc2ab.jpg);">
+              </a>
+            </li>
+
+            <li>
+              <a href="#!">
+                <img src="/base.32aace55.png" alt="sns" style="background-image:url(/09.9a937367.jpg);">
+              </a>
+            </li>
+
+            <li>
+              <a href="#!">
+                <img src="/base.32aace55.png" alt="sns" style="background-image:url(/10.5df629fb.jpg);">
+              </a>
+            </li>
+          </ul>
         </div>
-      </section>
-
-      <section class="sns_section">
-        <div class="sns">
-          <h1>SNS</h1>
-          <div class="sns_box">
-            <ul class="sns_list">
-              <li>
-                <a href="#!">
-                  <img src="/base.32aace55.png" alt="sns" style="background-image:url(/01.640d710e.jpg);">
-                </a>
-              </li>
-
-              <li>
-                <a href="#!">
-                  <img src="/base.32aace55.png" alt="sns" style="background-image:url(/02.b92d687e.jpg);">
-                </a>
-              </li>
-
-              <li>
-                <a href="#!">
-                  <img src="/base.32aace55.png" alt="sns" style="background-image:url(/03.f02b0eaf.jpg);">
-                </a>
-              </li>
-
-              <li>
-                <a href="#!">
-                  <img src="/base.32aace55.png" alt="sns" style="background-image:url(/04.4f7dd0e2.jpg);">
-                </a>
-              </li>
-
-              <li>
-                <a href="#!">
-                  <img src="/base.32aace55.png" alt="sns" style="background-image:url(/05.36b2130b.jpg);">
-                </a>
-              </li>
-
-              <li>
-                <a href="#!">
-                  <img src="/base.32aace55.png" alt="sns" style="background-image:url(/06.9c49d177.jpg);">
-                </a>
-              </li>
-
-              <li>
-                <a href="#!">
-                  <img src="/base.32aace55.png" alt="sns" style="background-image:url(/07.b5a468f5.jpg);">
-                </a>
-              </li>
-
-              <li>
-                <a href="#!">
-                  <img src="/base.32aace55.png" alt="sns" style="background-image:url(/08.466bc2ab.jpg);">
-                </a>
-              </li>
-
-              <li>
-                <a href="#!">
-                  <img src="/base.32aace55.png" alt="sns" style="background-image:url(/09.9a937367.jpg);">
-                </a>
-              </li>
-
-              <li>
-                <a href="#!">
-                  <img src="/base.32aace55.png" alt="sns" style="background-image:url(/10.5df629fb.jpg);">
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
     <footer class="footer">
-      <div class="footer_inner">
-        <div class="footer_nav">
-          <ul class="footer_top">
-            <li>
-              <a href="#!">
-                <img src="/blue_fila.50f9621c.png" alt="logo">
-              </a>
-            </li>
-            <li>
-              <p>FILA IR</p>
-            </li>
-          </ul>
-
-          <ul>
-            <li class="f_nav_tit">
-              <a href="#!">WOMEN</a>
-            </li>
-            <li><a href="#!">의류</a></li>
-            <li><a href="#!">신발</a></li>
-            <li><a href="#!">용품</a></li>
-            <li><a href="#!">언더웨어</a></li>
-            <li><a href="#!">신상품</a></li>
-            <li><a href="#!">베스트</a></li>
-            <li><a href="#!">세일</a></li>
-          </ul>
-
-          <ul>
-            <li class="f_nav_tit">
-              <a href="#!">MEN</a>
-            </li>
-            <li><a href="#!">의류</a></li>
-            <li><a href="#!">신발</a></li>
-            <li><a href="#!">용품</a></li>
-            <li><a href="#!">언더웨어</a></li>
-            <li><a href="#!">신상품</a></li>
-            <li><a href="#!">베스트</a></li>
-            <li><a href="#!">세일</a></li>
-          </ul>
-
-          <ul>
-            <li class="f_nav_tit">
-              <a href="#!">KIDS</a>
-            </li>
-            <li><a href="#!">의류</a></li>
-            <li><a href="#!">신발</a></li>
-            <li><a href="#!">용품</a></li>
-            <li><a href="#!">신상품</a></li>
-            <li><a href="#!">베스트</a></li>
-            <li><a href="#!">세일</a></li>
-          </ul>
-
-          <ul>
-            <li class="f_nav_tit">
-              <a href="#!">BRAND</a>
-            </li>
-            <li><a href="#!">About Fila</a></li>
-            <li><a href="#!">Collaboration</a></li>
-            <li><a href="#!">Sustainability</a></li>
-            <li><a href="#!">Athelets</a></li>
-            <li><a href="#!">Tennis Stories</a></li>
-          </ul>
-
-
-        </div>
-
-        <div class="footer_list">
-          <ul>
-            <li><a href="#!">매장안내</a></li>
-            <li><a href="#!">공지사항</a></li>
-            <li><a href="#!">FILA MEMBERSHIP</a></li>
-            <li><a href="#!">대리점 개설문의</a></li>
-            <li><a href="#!">FILA 입찰 참여 안내</a></li>
-            <li><a href="#!">통합회원 이용약관</a></li>
-            <li><a href="#!" class="red">개인정보처리방침</a></li>
-            <li><a href="#!">제보센터</a></li>
-            <li><a href="#!" class="blue">KOREA</a></li>
-            <li>
-              <select name="" id="family_site">
-                <option value="">Family Site</option>
-                <option value="https://www.keds.co.kr/main/main.asp">KEDS 온라인스토어</option>
-                <option value="https://www.nicedocu.com/web/buyer/main/index.jsp">FILA 입찰공고</option>
-                <option value="http://filaholdings.com/kr/main/index.asp">FILA Holdings</option>
-              </select>
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer_bottom">
-          <div class="f_bom_left">
-            <p>
-              서울시 강동구 천호대로 1077 이스트센트럴타워 15층 ~ 18층 휠라코리아(주) 대표이사 : 김지헌
-              <br>
-              사업자등록번호:716-81-01573 사업자정보확인 통신판매업신고: 제 2020-서울강동-0160호
-              <br>
-              개인정보 관리책임자:이학우
-              <br><br>
-              본 사이트의 상품이미지 저작권은 휠라코리아(주)에 있으며, 내용의 무단복제를 금합니다.
-              <br>
-              콘텐츠산업진흥법에 의한 콘텐츠보호안내
-            </p>
-          </div>
-          <div class="f_bom_right">
-            <p><a href="#!">CS CENTER</a></p>
-            <p class="bold">1577-3472</p>
-            <p class="bold">filaonline@fila.com</p>
-            <p>평일 월 - 금 : 09시 - 18시 (공휴일제외)</p>
-          </div>
-
-          <div class="f_sns">
-            <ul>
-              <li><a href="#!" class="insta">insta</a></li>
-              <li><a href="#!" class="facebook">facebook</a></li>
-              <li><a href="#!" class="youtube">youtube</a></li>
-              <li><a href="#!" class="kakao">kakao</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <div class="quick">
-      <div class="quick_box">
-        <ul class="quick_nav">
+      <div class="footer_nav">
+        <ul class="footer_top">
           <li>
-            <a href="#!" class="profile bg">profile</a>
-            <a href="/login.html">로그인</a>
-          </li>
-          <li>
-            <a href="#!" class="recent bg">recent</a>
-            <a href="#!">최근 본 상품</a>
-          </li>
-          <li>
-            <a href="#!" class="order bg">order</a>
-            <a href="#!">주문/배송조회</a>
-          </li>
-          <li>
-            <a href="#!" class="service bg">service</a>
-            <a href="#!">설치서비스</a>
-          </li>
-        </ul>
-
-        <ul class="arrow">
-          <li>
-            <a href="#!" class="material-icons-outlined top">
-              keyboard_arrow_up
+            <a href="#!">
+              <img src="/blue_fila.50f9621c.png" alt="logo">
             </a>
           </li>
           <li>
-            <a href="#!" class="material-icons-outlined bottom">
-              keyboard_arrow_down
-            </a>
+            <p>FILA IR</p>
+          </li>
+        </ul>
+
+        <ul>
+          <li class="f_nav_tit">
+            <a href="#!">WOMEN</a>
+          </li>
+          <li><a href="#!">의류</a></li>
+          <li><a href="#!">신발</a></li>
+          <li><a href="#!">용품</a></li>
+          <li><a href="#!">언더웨어</a></li>
+          <li><a href="#!">신상품</a></li>
+          <li><a href="#!">베스트</a></li>
+          <li><a href="#!">세일</a></li>
+        </ul>
+
+        <ul>
+          <li class="f_nav_tit">
+            <a href="#!">MEN</a>
+          </li>
+          <li><a href="#!">의류</a></li>
+          <li><a href="#!">신발</a></li>
+          <li><a href="#!">용품</a></li>
+          <li><a href="#!">언더웨어</a></li>
+          <li><a href="#!">신상품</a></li>
+          <li><a href="#!">베스트</a></li>
+          <li><a href="#!">세일</a></li>
+        </ul>
+
+        <ul>
+          <li class="f_nav_tit">
+            <a href="#!">KIDS</a>
+          </li>
+          <li><a href="#!">의류</a></li>
+          <li><a href="#!">신발</a></li>
+          <li><a href="#!">용품</a></li>
+          <li><a href="#!">신상품</a></li>
+          <li><a href="#!">베스트</a></li>
+          <li><a href="#!">세일</a></li>
+        </ul>
+
+        <ul>
+          <li class="f_nav_tit">
+            <a href="#!">BRAND</a>
+          </li>
+          <li><a href="#!">About Fila</a></li>
+          <li><a href="#!">Collaboration</a></li>
+          <li><a href="#!">Sustainability</a></li>
+          <li><a href="#!">Athelets</a></li>
+          <li><a href="#!">Tennis Stories</a></li>
+        </ul>
+
+
+      </div>
+
+      <div class="footer_list">
+        <ul>
+          <li><a href="#!">매장안내</a></li>
+          <li><a href="#!">공지사항</a></li>
+          <li><a href="#!">FILA MEMBERSHIP</a></li>
+          <li><a href="#!">대리점 개설문의</a></li>
+          <li><a href="#!">FILA 입찰 참여 안내</a></li>
+          <li><a href="#!">통합회원 이용약관</a></li>
+          <li><a href="#!" class="red">개인정보처리방침</a></li>
+          <li><a href="#!">제보센터</a></li>
+          <li><a href="#!" class="blue">KOREA</a></li>
+          <li>
+            <select name="" id="family_site">
+              <option value="">Family Site</option>
+              <option value="https://www.keds.co.kr/main/main.asp">KEDS 온라인스토어</option>
+              <option value="https://www.nicedocu.com/web/buyer/main/index.jsp">FILA 입찰공고</option>
+              <option value="http://filaholdings.com/kr/main/index.asp">FILA Holdings</option>
+            </select>
           </li>
         </ul>
       </div>
+
+      <div class="footer_bottom">
+        <div class="f_bom_left">
+          <p>
+            서울시 강동구 천호대로 1077 이스트센트럴타워 15층 ~ 18층 휠라코리아(주) 대표이사 : 김지헌
+            <br>
+            사업자등록번호:716-81-01573 사업자정보확인 통신판매업신고: 제 2020-서울강동-0160호
+            <br>
+            개인정보 관리책임자:이학우
+            <br><br>
+            본 사이트의 상품이미지 저작권은 휠라코리아(주)에 있으며, 내용의 무단복제를 금합니다.
+            <br>
+            콘텐츠산업진흥법에 의한 콘텐츠보호안내
+          </p>
+        </div>
+
+        <div class="f_bom_right">
+          <p><a href="#!">CS CENTER</a></p>
+          <p class="bold">1577-3472</p>
+          <p class="bold">filaonline@fila.com</p>
+          <p>평일 월 - 금 : 09시 - 18시 (공휴일제외)</p>
+        </div>
+
+        <div class="f_sns">
+          <ul>
+            <li><a href="#!" class="insta">insta</a></li>
+            <li><a href="#!" class="facebook">facebook</a></li>
+            <li><a href="#!" class="youtube">youtube</a></li>
+            <li><a href="#!" class="kakao">kakao</a></li>
+          </ul>
+        </div>
+      </div>
+  </footer></div>
+  
+
+  <div class="quick">
+    <div class="quick_box">
+      <ul class="quick_nav">
+        <li>
+          <a href="#!" class="profile bg">profile</a>
+        </li>
+        <li>
+          <a href="#!" class="recent bg">recent</a>
+        </li>
+        <li>
+          <a href="#!" class="order bg">order</a>
+        </li>
+        <li>
+          <a href="#!" class="service bg">service</a>
+        </li>
+      </ul>
+
+      <ul class="quick_menu">
+        <li><a href="/login.html">로그인</a></li>
+        <li><a href="/login.html">최근 본 상품</a></li>
+        <li><a href="/login.html">주문/배송조회</a></li>
+        <li><a href="/login.html">설치서비스</a></li>
+      </ul>
     </div>
   </div>
 
 
-
+  <div class="arrow">
+    <a href="#!" class="material-icons-outlined top">
+      keyboard_arrow_up
+    </a>
+    <a href="#!" class="material-icons-outlined bottom">
+      keyboard_arrow_down
+    </a>
+  </div>
 
 
   <!-- <script>
