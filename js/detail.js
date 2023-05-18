@@ -89,19 +89,21 @@ sizeBtn.addEventListener('click', () => {
 
 //수량 + -
 const qtyNum = document.querySelector('.qty_num');
+let qtyValue = qtyNum.value;
 const totalSum = document.getElementById('sum');
 
 const mius = document.querySelector('.mius').addEventListener('click', () => {
   qtyNum.value--;
-})
+});
 const plus = document.querySelector('.plus').addEventListener('click', () => {
   qtyNum.value++;
-})
+});
 
-function total() {
-  let price = 99000;
-  
-}
+const total = qtyValue.addEvetListener('change', () => {
+  totalSum.innerText = qtyValue * 99000;
+});
+
+
 
 //sheet menu
 const tabList = document.querySelectorAll('.sheet_menu .list li');
