@@ -123,10 +123,9 @@
   });
 
 
-
   //sheet menu
   const tabList = document.querySelectorAll('.sheet_menu .list li');
-  const contents = document.querySelectorAll('.sheet_menu .content ul');
+  const infoContents = document.querySelectorAll('.sheet_menu .content ul');
   let activeContent = '';
 
   for (let i = 0; i < tabList.length; i++) {
@@ -134,7 +133,7 @@
       e.preventDefault();
       for (let j = 0; j < tabList.length; j++) {
         tabList[j].classList.remove('on');
-        contents[j].style.display = 'none';
+        infoContents[j].style.display = 'none';
       }
       this.parentNode.classList.add('on');
 
@@ -144,24 +143,22 @@
   }
 
   //review sheet
-  window.onload = function () {
-    const sheetList = document.querySelectorAll('.tab_menu>ul>li');
-    const tabContents = document.querySelectorAll('.tab_menu .tab_cont .tab');
-    let activeContents = '';
+  const sheetList = document.querySelectorAll('.tab_menu>ul>li');
+  const tabContents = document.querySelectorAll('.tab_menu .tab_cont .tab');
+  let activeContents = '';
 
-    for (let i = 0; i < sheetList.length; i++) {
-      sheetList[i].querySelector('.sheet_tit').addEventListener('click', function (e) {
-        e.preventDefault();
-        for (let j = 0; j < sheetList.length; j++) {
-          sheetList[j].classList.remove('on');
-          tabContents[j].style.display = 'none';
-        }
-        this.parentNode.classList.add('on');
+  for (let i = 0; i < sheetList.length; i++) {
+    sheetList[i].querySelector('.sheet_tit').addEventListener('click', function (e) {
+      e.preventDefault();
+      for (let j = 0; j < sheetList.length; j++) {
+        sheetList[j].classList.remove('on');
+        tabContents[j].style.display = 'none';
+      }
+      this.parentNode.classList.add('on');
 
-        activeContents = this.getAttribute('href');
-        document.querySelector(activeContents).style.display = 'block';
-      });
-    }
+      activeContents = this.getAttribute('href');
+      document.querySelector(activeContents).style.display = 'block';
+    });
   }
 
   //리뷰등록
@@ -224,5 +221,3 @@
       alert('값을 입력하세요');
     }
   }
-
-  
