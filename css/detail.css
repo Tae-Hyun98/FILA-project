@@ -1248,7 +1248,7 @@ input::-webkit-inner-spin-button {
   width: 150px;
 }
 
-.inquiry_write .write_content .inq_tit p {
+.inquiry_write .write_content p {
   line-height: 50px;
   font-size: 18px;
   font-weight: 700;
@@ -1274,4 +1274,17 @@ input::-webkit-inner-spin-button {
   width: 250px;
   height: 50px;
   outline: none;
+}
+
+.inquiry_write .write_content .inq_context p {
+  margin: 0 0 10px 0;
+}
+
+.inquiry_write .write_content .inq_context textarea {
+  width: 100%;
+  resize: none;
+  outline: none;
+  padding: 15px;
+  border: 1px solid #ccc;
+  font-size: 16px;
 }
