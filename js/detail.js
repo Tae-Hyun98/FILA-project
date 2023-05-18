@@ -89,6 +89,7 @@ sizeBtn.addEventListener('click', () => {
 
 //수량 + -
 const qtyNum = document.querySelector('.qty_num');
+const totalSum = document.getElementById('sum');
 
 const mius = document.querySelector('.mius').addEventListener('click', () => {
   qtyNum.value--;
@@ -97,6 +98,10 @@ const plus = document.querySelector('.plus').addEventListener('click', () => {
   qtyNum.value++;
 })
 
+function total() {
+  let price = 99000;
+  
+}
 
 //sheet menu
 const tabList = document.querySelectorAll('.sheet_menu .list li');
