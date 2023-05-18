@@ -904,6 +904,14 @@ input::-webkit-inner-spin-button {
   border: 1px solid #ccc;
 }
 
+.product_sheet .sheet_menu .content ul {
+  display: none;
+}
+
+.product_sheet .sheet_menu .content ul:first-child {
+  display: block;
+}
+
 .product_sheet .sheet_menu .content ul li {
   display: flex;
   align-items: center;
@@ -1199,10 +1207,10 @@ input::-webkit-inner-spin-button {
   background: rgba(0, 0, 0, 0.6);
 }
 
-.inquiry_write_wrap .inquiry_write{
+.inquiry_write_wrap .inquiry_write {
   background-color: #fff;
   position: absolute;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
   width: 700px;
