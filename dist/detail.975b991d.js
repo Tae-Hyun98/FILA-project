@@ -233,14 +233,14 @@ var qtyChan = qtyNum.addEventListener('change', function () {
 
 //sheet menu
 var tabList = document.querySelectorAll('.sheet_menu .list li');
-var contents = document.querySelectorAll('.sheet_menu .content ul');
+var infoContents = document.querySelectorAll('.sheet_menu .content ul');
 var activeContent = '';
 for (var _i = 0; _i < tabList.length; _i++) {
   tabList[_i].querySelector('.tab_tit').addEventListener('click', function (e) {
     e.preventDefault();
     for (var j = 0; j < tabList.length; j++) {
       tabList[j].classList.remove('on');
-      contents[j].style.display = 'none';
+      infoContents[j].style.display = 'none';
     }
     this.parentNode.classList.add('on');
     activeContent = this.getAttribute('href');
@@ -249,8 +249,8 @@ for (var _i = 0; _i < tabList.length; _i++) {
 }
 
 //review sheet
-var sheetList = document.querySelectorAll('.tab_menu ul li');
-var tabContents = document.querySelectorAll('.tab_menu .tab_cont>div');
+var sheetList = document.querySelectorAll('.tab_menu>ul>li');
+var tabContents = document.querySelectorAll('.tab_menu .tab_cont .tab');
 var activeContents = '';
 for (var _i2 = 0; _i2 < sheetList.length; _i2++) {
   sheetList[_i2].querySelector('.sheet_tit').addEventListener('click', function (e) {
@@ -280,7 +280,7 @@ function reviewAdd() {
     var Pno = document.createElement('p');
     var Pnum = document.createTextNode(count);
     var Pstar = document.createElement('p');
-    var Prating = document.createTextNode('★★★');
+    var Prating = document.createTextNode('★★★★★');
     var Ptext = document.createElement('p');
     var Pid = document.createElement('p');
     var Ptoday = document.createElement('p');
@@ -321,6 +321,15 @@ function reviewAdd() {
     alert('값을 입력하세요');
   }
 }
+
+//문의하기
+var inqPopup = document.querySelector('.inquiry_write_wrap');
+var inqBtn = document.getElementById('inq_btn').addEventListener('click', function () {
+  inqPopup.style.display = 'block';
+});
+var inqClose = document.querySelector('.write_close').addEventListener('click', function () {
+  inqPopup.style.display = 'none';
+});
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -346,7 +355,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61152" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63986" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

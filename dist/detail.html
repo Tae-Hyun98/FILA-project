@@ -858,7 +858,7 @@
             </ul>
 
             <div class="tab_cont">
-              <div id="sheet1" class="tab_review">
+              <div id="sheet1" class="tab_review tab">
                 <div class="review_box">
 
                   <div class="review_img">
@@ -897,15 +897,100 @@
                 </div>
               </div>
 
-              <div id="sheet2" class="tab_inquiry">
+              <div id="sheet2" class="tab_inquiry tab">
                 <div class="inquiry_tit">
-                  <div class="inq_img">
-                    <img src="/detail_01.8108f267.jpg" alt="img">
-                  </div>
+                  <div class="tit_img"></div>
                   <p>테니스 퍼포먼스 배색 카라티셔츠</p>
                   <button type="button" id="inq_btn">문의하기</button>
                 </div>
 
+                <div class="inqlist_tit">
+                  <p>번호</p>
+                  <p>제목</p>
+                  <p>작성자</p>
+                  <p>날짜</p>
+                  <p>상태</p>
+                </div>
+
+                <div class="inquiry_list">
+                  <ul class="inq_list">
+                    <li>
+                      <span>1</span>
+                      <span>배송언제오나요??</span>
+                      <span>kw1234</span>
+                      <span>2023.5.1</span>
+                      <span>답변중</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="inquiry_write_wrap">
+                  <div class="inquiry_write">
+                    <div class="write_top">
+                      <h2>문의하기</h2>
+                      <span class="material-icons-outlined write_close">
+                        close
+                      </span>
+                    </div>
+
+                    <div class="write_content">
+
+                      <!-- <div class="inq_sele">
+                        <span>문의 카테고리</span>
+                        <select name="" id="">
+                          <option value="">----선택해주세요----</option>
+                          <option value="delivery">배송관련</option>
+                          <option value="refund">환불관련</option>
+                          <option value="other">기타문의</option>
+                        </select>
+                      </div>
+
+                      <div class="inq_id">
+                        <span>아이디</span>
+                        <input type="text" placeholder="아이디를 입력해주세요">
+                      </div>
+
+                      <div class="inq_tit">
+                        <span>제목</span>
+                        <input type="text" placeholder="제목을 입력해주세요">
+                      </div> -->
+                      <div class="inq_top">
+                        <div class="inq_tit">
+                          <p>카테고리</p>
+                          <p>아이디</p>
+                          <p>제목</p>
+                        </div>
+
+                        <div class="inq_content">
+
+                          <div class="inq_sele">
+                            <select name="" id="">
+                              <option value="">----선택해주세요----</option>
+                              <option value="delivery">배송관련</option>
+                              <option value="refund">환불관련</option>
+                              <option value="other">기타문의</option>
+                            </select>
+                          </div>
+
+                          <div class="inq_id">
+                            <input type="text" placeholder="아이디를 입력해주세요">
+                          </div>
+
+                          <div class="inq_title">
+                            <input type="text" placeholder="제목을 입력해주세요">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="inq_context">
+                        <p>내용</p>
+                        <textarea name="context" id="" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
+                      </div>
+
+                      <button type="button" id="write_btn">문의하기</button>
+                    </div>
+                  </div>
+                </div>
               </div>
 
             </div>
