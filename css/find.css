@@ -292,8 +292,8 @@ img {
 }
 
 .header .search_down .container {
-  width: 1440px;
-  margin: 0 auto;
+  width: auto;
+  padding: 0 130px;
 }
 
 .header .search_down .input_box {
@@ -336,7 +336,7 @@ img {
   position: absolute;
   width: 50px;
   height: 50px;
-  top: 15px;
+  top: 24px;
   right: 50px;
   border: 0;
   background: none;

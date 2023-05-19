@@ -335,8 +335,8 @@ img {
 }
 
 .header .search_down .container {
-  width: 1440px;
-  margin: 0 auto;
+  width: auto;
+  padding: 0 130px;
 }
 
 .header .search_down .input_box {
@@ -379,7 +379,7 @@ img {
   position: absolute;
   width: 50px;
   height: 50px;
-  top: 20px;
+  top: 24px;
   right: 50px;
   border: 0;
   background: none;
@@ -1287,4 +1287,13 @@ input::-webkit-inner-spin-button {
   padding: 15px;
   border: 1px solid #ccc;
   font-size: 16px;
+}
+
+.inquiry_write .write_content>button {
+  width: 100%;
+  margin-top: 20px;
+  height: 50px;
+  font-size: 18px;
+  background-color: #fff;
+  cursor: pointer;
 }
