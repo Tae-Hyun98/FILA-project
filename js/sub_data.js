@@ -1,130 +1,181 @@
-const subData = [
-  {
-    id: "data01",
+const subData = [{
+    id: 1,
     category: "공용 오버핏 라이프스타일",
     name: "헤리티지 세리프 로고 루즈핏 반팔티",
-    price: "32,000",
+    price: 32000,
     src: "../img/Sub_img/01.jpg",
+    review: 5,
   },
 
   {
-    id: "data02",
+    id: 2,
     category: "공용",
     name: "헤리티지 세리프 로고 루즈핏 반팔티",
-    price: "32,000",
-    src: "../img/Sub_img/02.jpg"
+    price: 12000,
+    src: "../img/Sub_img/02.jpg",
+    review: 9,
   },
 
   {
-    id: "data03",
+    id: 3,
     category: "공용",
     name: "FILATECH 아노락 하프 집업",
-    price: "99,000",
-    src: "../img/Sub_img/03.jpg"
+    price: 99000,
+    src: "../img/Sub_img/03.jpg",
+    review: 15,
   },
 
   {
-    id: "data04",
+    id: 4,
     category: "공용 컴포트핏 러닝",
     name: "FILATECH 후드 경량자켓",
-    price: "109,000",
-    src: "../img/Sub_img/04.jpg"
+    price: 109000,
+    src: "../img/Sub_img/04.jpg",
+    review: 1,
   },
 
   {
-    id: "data05",
+    id: 5,
     category: "공용",
     name: "FILA ITALIA 반팔티셔츠",
-    price: "32,000",
-    src: "../img/Sub_img/05.jpg"
+    price: 32000,
+    src: "../img/Sub_img/05.jpg",
+    review: 20
   },
 
   {
-    id: "data06",
+    id: 6,
     category: "공용",
     name: "FILA ITALIA 반팔티셔츠",
-    price: "32,000",
-    src: "../img/Sub_img/06.jpg"
+    price: 25000,
+    src: "../img/Sub_img/06.jpg",
+    review: 4
   },
 
   {
-    id: "data07",
+    id: 7,
     category: "공용",
     name: "오버핏 코쿤 볼 패딩",
-    price: "139,000",
-    src: "../img/Sub_img/07.jpg"
+    price: 139000,
+    src: "../img/Sub_img/07.jpg",
+    review: 50
   },
 
   {
-    id: "data08",
+    id: 8,
     category: "공용",
     name: "스몰로고 맨투맨",
-    price: "59,000",
-    src: "../img/Sub_img/08.jpg"
+    price: 59000,
+    src: "../img/Sub_img/08.jpg",
+    review: 3
   },
 
   {
-    id: "data09",
+    id: 9,
     category: "공용",
     name: "헤리티지 로고 후드",
-    price: "69,000",
-    src: "../img/Sub_img/09.jpg"
+    price: 69000,
+    src: "../img/Sub_img/09.jpg",
+    review: 49
   },
 
   {
-    id: "data10",
+    id: 10,
     category: "공용 레귤러핏 러닝",
     name: "FILA SPORTS 후디",
-    price: "69,000",
-    src: "../img/Sub_img/10.jpg"
+    price: 69000,
+    src: "../img/Sub_img/10.jpg",
+    review: 42
   },
 
   {
-    id: "data11",
+    id: 11,
     category: "공용",
     name: "FILATECH 아노락 하프 집업",
-    price: "99,000",
-    src: "../img/Sub_img/11.jpg"
+    price: 99000,
+    src: "../img/Sub_img/11.jpg",
+    review: 46
   },
 
   {
-    id: "data12",
+    id: 12,
     category: "공용",
     name: "노카라 퀄팅 자켓",
-    price: "89,000",
-    src: "../img/Sub_img/12.jpg"
+    price: 89000,
+    src: "../img/Sub_img/12.jpg",
+    review: 60
   },
 
   {
-    id: "data13",
+    id: 13,
     category: "공용",
     name: "스몰로고 맨투맨",
-    price: "59,000",
-    src: "../img/Sub_img/13.jpg"
+    price: 59000,
+    src: "../img/Sub_img/13.jpg",
+    review: 20
   },
 
   {
-    id: "data14",
+    id: 14,
     category: "공용 라이프스타일",
     name: "컴포트핏 인터내셔널 와이드팬츠",
-    price: "89,000",
-    src: "../img/Sub_img/14.jpg"
+    price: 89000,
+    src: "../img/Sub_img/14.jpg",
+    review: 12
   },
 
   {
-    id: "data15",
+    id: 15,
     category: "공용",
     name: "리버시블 후드 플리스",
-    price: "109,000",
-    src: "../img/Sub_img/15.jpg"
+    price: 109000,
+    src: "../img/Sub_img/15.jpg",
+    review: 1
   },
 
   {
-    id: "data16",
+    id: 16,
     category: "공용",
     name: "브이 배색 경량 자켓",
-    price: "119,000",
-    src: "../img/Sub_img/16.jpg"
+    price: 119000,
+    src: "../img/Sub_img/16.jpg",
+    review: 0
+  },
+
+  {
+    id: 17,
+    category: "공용 신상품",
+    name: "FILA ITALIA 반팔티셔츠",
+    price: 39000,
+    src: "../img/Sub_img/17.jpg",
+    review: 100
+  },
+
+  {
+    id: 18,
+    category: "남성 공용 신상품",
+    name: "오버핏 코쿤 볼 패딩",
+    price: 139000,
+    src: "../img/Sub_img/18.jpg",
+    review: 66
+  },
+
+  {
+    id: 19,
+    category: "남성 공용 신상품",
+    name: "오버핏 코쿤 볼 패딩",
+    price: 139000,
+    src: "../img/Sub_img/19.jpg",
+    review: 56
+  },
+
+  {
+    id: 20,
+    category: "공용 신상품",
+    name: "<온라인 단독>헤리티지 세리프 루즈핏 반팔티",
+    price: 38000,
+    src: "../img/Sub_img/20.jpg",
+    review: 17
   },
 ]
 

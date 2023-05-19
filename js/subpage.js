@@ -2,88 +2,133 @@ import subData from "./sub_data.js";
 
 const subProduct = document.querySelector('.list_wrap');
 const productList = document.querySelector('.product_list');
-for (let i = 0; i < subData.length; i++) {
-  //서브 상품박스
-  const subDiv = document.createElement('div');
-  subDiv.setAttribute('class', 'product_box');
 
-  const subImgBox = document.createElement('div');
-  subImgBox.setAttribute('class', 'product_img');
+//상품 순서 정렬
+const filterSele = document.getElementById('order');
 
-  const imgLink = document.createElement('a');
-  imgLink.setAttribute('href', "#!");
-  subImgBox.appendChild(imgLink);
+filterSele.addEventListener('change', () => {
+  if (filterSele.value === 'name') {
+    subData.sort(function (a, b) { //이름 오름차순
+      return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+    });
+    productList.innerHTML = '';
+    bindData();
+  } else if (filterSele.value === 'desc') {
+    subData.sort(function (a, b) { //가격내림차순
+      return a.price - b.price;
+    });
+    productList.innerHTML = '';
+    bindData();
+  } else if (filterSele.value === 'asc') {
+    subData.sort(function (a, b) { //가격오름차순
+      return b.price - a.price;
+    });
+    productList.innerHTML = '';
+    bindData();
+  } else if (filterSele.value === 'new') {
+    subData.sort(function (a, b) { //신상품
+      return a.id > b.id ? -1 : a.id < b.id ? 1 : 0;
+    });
+    productList.innerHTML = '';
+    bindData();
+  } else if (filterSele.value === 'review') {
+    subData.sort(function (a, b) { //리뷰순정렬
+      return a.review > b.review ? -1 : a.review < b.review ? 1 : 0;
+    });
+    productList.innerHTML = '';
+    bindData();
+  }
+})
 
-  const subImg = document.createElement('img');
-  subImg.setAttribute('src', subData[i].src);
-  imgLink.appendChild(subImg);
 
-  const detailDiv = document.createElement('div');
-  detailDiv.setAttribute('class', 'detail');
+//상품리스트 객체
+let bindData = function () {
+  for (let i = 0; i < subData.length; i++) {
+    //서브 상품박스
+    const subDiv = document.createElement('div');
+    subDiv.setAttribute('class', 'product_box');
 
-  const detailLink = document.createElement('a');
-  detailLink.setAttribute('href', '#!');
-  detailDiv.appendChild(detailLink);
+    const subImgBox = document.createElement('div');
+    subImgBox.setAttribute('class', 'product_img');
 
-  //상품박스 호버했을때
-  const hoverDiv = document.createElement('div');
-  hoverDiv.setAttribute('class', 'hover_box');
-  subImgBox.appendChild(hoverDiv);
+    const imgLink = document.createElement('a');
+    imgLink.setAttribute('href', "#!");
+    subImgBox.appendChild(imgLink);
 
-  const cartDiv = document.createElement('div');
-  hoverDiv.appendChild(cartDiv);
-  const cartSpan = document.createElement('span');
-  cartSpan.setAttribute('class', 'material-icons-outlined');
-  const cartText = document.createTextNode('shopping_cart');
-  cartDiv.appendChild(cartSpan);
-  cartSpan.appendChild(cartText);
+    const subImg = document.createElement('img');
+    subImg.setAttribute('src', subData[i].src);
+    imgLink.appendChild(subImg);
 
-  const likeDiv = document.createElement('div');
-  hoverDiv.appendChild(likeDiv);
-  const likeSpan = document.createElement('span');
-  likeSpan.setAttribute('class', 'material-icons-outlined');
-  const likeText = document.createTextNode('favorite');
-  likeDiv.appendChild(likeSpan);
-  likeSpan.appendChild(likeText);
+    const detailDiv = document.createElement('div');
+    detailDiv.setAttribute('class', 'detail');
 
-  //카테고리
-  const cateGory = document.createElement('p');
-  cateGory.setAttribute('class', 'category');
-  detailLink.appendChild(cateGory);
-  const cateGoryText = document.createTextNode(subData[i].category);
-  cateGory.appendChild(cateGoryText);
+    const detailLink = document.createElement('a');
+    detailLink.setAttribute('href', '#!');
+    detailDiv.appendChild(detailLink);
 
-  //상품이름
-  const productName = document.createElement('p');
-  productName.setAttribute('class', 'product_name');
-  detailLink.appendChild(productName);
-  const nameText = document.createTextNode(subData[i].name);
-  productName.appendChild(nameText);
+    //상품박스 호버했을때
+    const hoverDiv = document.createElement('div');
+    hoverDiv.setAttribute('class', 'hover_box');
+    subImgBox.appendChild(hoverDiv);
 
-  //상품가격
-  const productPrice = document.createElement('p');
-  productPrice.setAttribute('class', 'product_price');
-  detailLink.appendChild(productPrice);
-  const namePrice = document.createTextNode(subData[i].price + '원');
-  productPrice.appendChild(namePrice);
+    const cartDiv = document.createElement('div');
+    hoverDiv.appendChild(cartDiv);
+    const cartSpan = document.createElement('span');
+    cartSpan.setAttribute('class', 'material-icons-outlined');
+    const cartText = document.createTextNode('shopping_cart');
+    cartDiv.appendChild(cartSpan);
+    cartSpan.appendChild(cartText);
 
-  //BUY버튼
-  const buyDiv = document.createElement('div');
-  buyDiv.setAttribute('class', 'buy_btn');
-  detailDiv.appendChild(buyDiv);
+    const likeDiv = document.createElement('div');
+    hoverDiv.appendChild(likeDiv);
+    const likeSpan = document.createElement('span');
+    likeSpan.setAttribute('class', 'material-icons-outlined');
+    const likeText = document.createTextNode('favorite');
+    likeDiv.appendChild(likeSpan);
+    likeSpan.appendChild(likeText);
 
-  const buyA = document.createElement('a');
-  buyA.setAttribute('href', '#!');
-  buyDiv.appendChild(buyA);
+    //카테고리
+    const cateGory = document.createElement('p');
+    cateGory.setAttribute('class', 'category');
+    detailLink.appendChild(cateGory);
+    const cateGoryText = document.createTextNode(subData[i].category);
+    cateGory.appendChild(cateGoryText);
 
-  const buyText = document.createTextNode('BUY');
-  buyA.appendChild(buyText);
+    //상품이름
+    const productName = document.createElement('p');
+    productName.setAttribute('class', 'product_name');
+    detailLink.appendChild(productName);
+    const nameText = document.createTextNode(subData[i].name);
+    productName.appendChild(nameText);
 
-  subDiv.appendChild(subImgBox);
-  subDiv.appendChild(detailDiv);
-  productList.appendChild(subDiv);
-  subProduct.appendChild(productList);
+    //상품가격
+    const productPrice = document.createElement('p');
+    productPrice.setAttribute('class', 'product_price');
+    detailLink.appendChild(productPrice);
+    const namePrice = document.createTextNode(subData[i].price.toLocaleString('ko-KR') + '원');
+    productPrice.appendChild(namePrice);
+
+    //BUY버튼
+    const buyDiv = document.createElement('div');
+    buyDiv.setAttribute('class', 'buy_btn');
+    detailDiv.appendChild(buyDiv);
+
+    const buyA = document.createElement('a');
+    buyA.setAttribute('href', '#!');
+    buyDiv.appendChild(buyA);
+
+    const buyText = document.createTextNode('BUY');
+    buyA.appendChild(buyText);
+
+    subDiv.appendChild(subImgBox);
+    subDiv.appendChild(detailDiv);
+    productList.appendChild(subDiv);
+    subProduct.appendChild(productList);
+  }
+
 }
+bindData();
+
 /* 
 const count = 0;
 window.onscroll = function () {
@@ -359,22 +404,3 @@ window.addEventListener('scroll', () => {
     top.classList.remove('on');
   }
 });
-
-
-
-//상품 순서 정렬
-/* for (let i = 0; i < subData.length; i++) {
-  console.log(JSON.stringify(subData[i]), '<br/>');
-} */
-const filterSele = document.getElementById('order');
-const filterValue = document.getElementById('order').value;
-const listName = document.querySelector('.product_list>div');
-const sortName = _.sortBy(subData, 'name');
-
-
-
-filterSele.addEventListener('change', () => {
-  if (filterSele.value === 'name') {
-   subData.sortName;
-  }
-})
