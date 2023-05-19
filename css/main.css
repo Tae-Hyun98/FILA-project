@@ -136,7 +136,7 @@ h1 {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 130vh;
   backdrop-filter: blur(20px);
   z-index: -1;
 }
@@ -458,8 +458,9 @@ h1 {
 .header .search_blur {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: -1;
   backdrop-filter: blur(20px);
 }
@@ -1343,7 +1344,7 @@ h1 {
   background-color: #fff;
   border: 1px solid black;
   padding: 10px 0;
-  z-index: 9999;
+  z-index: 9998;
   overflow: hidden;
 }
 
