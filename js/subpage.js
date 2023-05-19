@@ -38,7 +38,29 @@ filterSele.addEventListener('change', () => {
     productList.innerHTML = '';
     bindData();
   }
-})
+});
+
+/* const input1 = document.getElementById('price01');
+
+input1.addEventListener('click', () => {
+  if (input1.checked) {
+    subData.filter(function (e) {
+      return e.price <= 39000;
+    });
+    /* let result = subData.filter(sub => sub.price <= 39000); 
+    productList.innerHTML = '';
+    bindData();
+  }
+
+}); */
+
+/* function priceFilter() {
+  function getPrice(value) {
+    return value.price <= 39000;
+  }
+  const newPrice=subData.filter(getPrice);
+} */
+
 
 
 //상품리스트 객체
@@ -107,6 +129,12 @@ let bindData = function () {
     detailLink.appendChild(productPrice);
     const namePrice = document.createTextNode(subData[i].price.toLocaleString('ko-KR') + '원');
     productPrice.appendChild(namePrice);
+
+    //리뷰수
+    const reviSpan = document.createElement('span');
+    const reviCount = document.createTextNode('★(' + subData[i].review + ')');
+    productPrice.appendChild(reviSpan);
+    reviSpan.appendChild(reviCount);
 
     //BUY버튼
     const buyDiv = document.createElement('div');
@@ -383,6 +411,8 @@ for (let i = 0; i < genderChk.length; i++) {
     }
   });
 }
+
+
 
 //footer family
 const familySite = document.getElementById('family_site');
