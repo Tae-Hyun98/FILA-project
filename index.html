@@ -969,7 +969,9 @@
                 add
               </span>
               <div class="rec_desc">
-                <p>테니스 라이프 카라원피스</p>
+                <p class="de_tit">테니스 라이프 카라원피스</p>
+                <p class="de_price">32,000원</p>
+                <a href="#!" class="purchase_btn">구매하러가기</a>
               </div>
             </div>
 
@@ -978,15 +980,61 @@
                 add
               </span>
               <div class="rec_desc">
-                <p>테니스 로고테잎 니삭스</p>
+                <p class="de_tit">테니스 로고테잎 니삭스</p>
+                <p class="de_price">12,000원</p>
+                <a href="#!" class="purchase_btn">구매하러가기</a>
               </div>
             </div>
           </div>
+
           <div class="rec_img">
             <img src="./img/Main_img/Recommand/03.jpg" alt="recommand">
+            <div class="rec_plus plus2">
+              <span class="material-icons-outlined">
+                add
+              </span>
+              <div class="rec_desc">
+                <p class="de_tit">리니어 PU 볼링백</p>
+                <p class="de_price">99,000원</p>
+                <a href="#!" class="purchase_btn">구매하러가기</a>
+              </div>
+            </div>
+
+            <div class="rec_plus plus3">
+              <span class="material-icons-outlined">
+                add
+              </span>
+              <div class="rec_desc">
+                <p class="de_tit">휠라 스피드서브 T9화이트라인</p>
+                <p class="de_price">179,000원</p>
+                <a href="#!" class="purchase_btn">구매하러가기</a>
+              </div>
+            </div>
           </div>
+
           <div class="rec_img">
             <img src="./img/Main_img/Recommand/22.jpg" alt="recommand">
+            <div class="rec_plus plus4">
+              <span class="material-icons-outlined">
+                add
+              </span>
+              <div class="rec_desc">
+                <p class="de_tit">컴포트핏 인터내셔널 카라티</p>
+                <p class="de_price">79,000원</p>
+                <a href="#!" class="purchase_btn">구매하러가기</a>
+              </div>
+            </div>
+
+            <div class="rec_plus plus5">
+              <span class="material-icons-outlined">
+                add
+              </span>
+              <div class="rec_desc">
+                <p class="de_tit">컴포트핏 인터내셔널 4부 반바지</p>
+                <p class="de_price">69,000원</p>
+                <a href="#!" class="purchase_btn">구매하러가기</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1133,7 +1181,6 @@
           <li><a href="#!">Tennis Stories</a></li>
         </ul>
 
-
       </div>
 
       <div class="footer_list">
@@ -1206,7 +1253,7 @@
         <li>
           <a href="#!" class="order bg">order</a>
         </li>
-        
+
         <li>
           <a href="#!" class="service bg">service</a>
         </li>
@@ -1232,87 +1279,6 @@
   </div>
 
 
-  <!-- <script>
-    //비쥬얼메인
-let swiper = new Swiper(".myswiper", {
-  loop: true,
-  autoplay: {
-    delay: 3000,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-    type: "fraction",
-    renderBullet: function (index, className) {
-      return '<span class=""' + className + '>' +
-        (index + 1) + '</span>'
-    }
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-
-let pagingSwiper = new Swiper(".myswiper", {
-  loop: true,
-  pagination: {
-    loop: true,
-    el: ".swiper-pagination2",
-    type: "progressbar",
-
-  },
-});
-swiper.controller.control = pagingSwiper;
-
-//랭킹
-let rankSwiper = new Swiper(".rankSwiper", {
-  loop: true,
-  loopAdditionalSlides: 1,
-  centeredSlides: true,
-  slidesPerGroup: 1,
-  slidesPerView: 3,
-  slideToClickedSlide: true,
-  autoplay: {
-    delay: 3500,
-    disableOnInteraction: false,
-  },
-
-  on: {
-    activeIndexChange: function () {
-      $('.rank_order .rank_bottom ul li').removeClass('active');
-      $('.rank_order .rank_bottom ul li').eq(this.realIndex).addClass('active');
-    }
-  },
-
-});
-$(function () {
-  $('.rank_order .rank_bottom ul li').click(function (e) {
-    e.preventDefault();
-    let index = $(this).index();
-    rankSwiper.slideToLoop(index);
-  });
-});
-
-
-//NEW ARRIVAL
-const newSwiper = new Swiper(".newSwiper", {
-  loop: true,
-  centeredSlides: true,
-  slidesPerView: 3,
-  slidesPerGroup: 1,
-  slidesPerView: "auto",
-  /*  autoplay: {
-     delay: 4000,
-     disableOnInteraction: false,
-   }, */
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-  </script> -->
 </body>
 
 </html>

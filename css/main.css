@@ -1099,7 +1099,7 @@ h1 {
 .recommand .recommand_box .rec_img {
   position: relative;
   width: 33.3333%;
-  margin-right: 20px;
+  margin-right: 30px;
 }
 
 .recommand .recommand_box .rec_img img {
@@ -1117,16 +1117,44 @@ h1 {
 
 .recommand .recommand_box .plus {
   top: 350px;
-  left: calc(50% - 90px);
+  left: calc(50% - 50px);
 }
 
 .recommand .recommand_box .plus1 {
   bottom: 150px;
-  right: calc(50% - 110px);
+  right: calc(50% - 60px);
+}
+
+.recommand .recommand_box .plus2 {
+  top: 350px;
+  left: calc(50% + 60px);
+}
+
+.recommand .recommand_box .plus3 {
+  bottom: 120px;
+  right: calc(50% - 60px);
+}
+
+.recommand .recommand_box .plus4 {
+  top: 250px;
+  left: calc(50% - 50px);
+}
+
+.recommand .recommand_box .plus5 {
+  bottom: 280px;
+  right: calc(50% - 60px);
+}
+
+.recommand .recommand_box .rec_plus.plus3 .rec_desc {
+  width: 270px;
+}
+
+.recommand .recommand_box .rec_plus.plus5 .rec_desc {
+  width: 270px;
 }
 
 .recommand .recommand_box .rec_plus span {
-  border: 1px solid #ccc;
+  border: 1px solid #777;
   background-color: #fff;
   border-radius: 50%;
   padding: 5px;
@@ -1135,12 +1163,45 @@ h1 {
 
 .recommand .recommand_box .rec_plus .rec_desc {
   position: absolute;
-  background-color: #ccc;
-  width: 180px;
-  height: 50px;
+  left: -80px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  width: 250px;
   margin-top: 5px;
-  padding: 0 5px;
+  padding: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: .2s;
 }
+
+.recommand .recommand_box .rec_plus .rec_desc .de_tit {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 5px 0;
+}
+
+.recommand .recommand_box .rec_plus .rec_desc .de_price {
+  text-align: right;
+  padding: 5px 0;
+  font-size: 16px;
+}
+
+.recommand .recommand_box .rec_plus .rec_desc .purchase_btn {
+  display: block;
+  color: #fff;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #000;
+  margin: 5px 20px;
+  padding: 10px 0;
+}
+
+.recommand .recommand_box .rec_plus:hover .rec_desc {
+  opacity: 1;
+  visibility: visible;
+}
+
 
 /************sns*************/
 .sns h1 {

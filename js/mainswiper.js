@@ -33,12 +33,12 @@ swiper.controller.control = pagingSwiper;
 //랭킹
 let rankSwiper = new Swiper(".rankSwiper", {
   loop: true,
-  loopAdditionalSlides: 2,
+  loopAdditionalSlides: 3,
   centeredSlides: true,
   slidesPerGroup: 1,
   slidesPerView: 3,
-  slideToClickedSlide: true,
-  speed: 500,
+  //slideToClickedSlide: true,
+  //speed: 700,
   autoplay: {
     delay: 3500,
     disableOnInteraction: false,
@@ -77,7 +77,7 @@ const newSwiper = new Swiper(".newSwiper", {
   initialSlide: 0,
   observeParents: true,
   roundLengths: true,
-  speed: 1000,
+  speed: 500,
   /*  autoplay: {
      delay: 3000,
      disableOnInteraction: false,
