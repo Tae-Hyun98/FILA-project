@@ -661,6 +661,7 @@ h1 {
 .rank_order {
   position: absolute;
   margin-top: 50px;
+  margin-left: 30px;
   z-index: 2;
   width: 26%;
   flex-shrink: 1;
@@ -672,6 +673,7 @@ h1 {
 
 .rank .rank_top h3 {
   font-size: 34px;
+  padding-left: 15px;
   padding-bottom: 15px;
 }
 
@@ -695,7 +697,7 @@ h1 {
 
 .rank .rank_bottom ul li a {
   display: block;
-  padding: 5px;
+  padding: 5px 5px 5px 25px;
   line-height: 70px;
   font-size: 18px;
   font-weight: 400;
@@ -728,7 +730,7 @@ h1 {
   bottom: 0;
   transform: translateY(100%);
   transition: all 0.3s;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .rankSwiper .rank_img:hover .rank_desc {
@@ -741,7 +743,7 @@ h1 {
 }
 
 .rankSwiper .rank_img .rank_desc ul li {
-  width: 60%;
+  width: 76%;
   height: 100px;
   padding: 10px 25px;
 }
@@ -756,12 +758,19 @@ h1 {
 .rankSwiper .rank_img .rank_desc ul li a {
   display: block;
   color: #fff;
+  font-weight: 700;
   line-height: 40px;
   font-size: 22px;
 }
 
-.rankSwiper .rank_img .rank_desc ul li a.rank_icon {
-  font-size: 45px;
+.rankSwiper .rank_img .rank_desc ul li .rank_icon {
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.rankSwiper .rank_img .rank_desc ul li .rank_icon:hover {
+  color: red;
 }
 
 .rankSwiper .swiper-wrapper .swiper-slide {
@@ -1470,31 +1479,22 @@ h1 {
   background-image: url(../img/quick_menu/05.png);
 }
 
-.arrow {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  bottom: 30px;
-  right: 40px;
-  padding-top: 10px;
-  z-index: 2;
-}
-
 .arrow a {
+  display: block;
   color: #000;
   font-size: 40px;
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
   border: 1px solid #ccc;
-  line-height: 40px;
   background-color: #fff;
-  padding: 0 10px;
-  margin-bottom: 10px;
+  padding: 5px 10px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 5;
 }
 
 .arrow a:hover {
   background-color: #002053;
   color: #fff;
-}
-
-.arrow a:last-child {
-  margin-bottom: 0;
 }

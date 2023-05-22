@@ -34,7 +34,7 @@ for (let i = 0; i < li.length; i++) {
 }
 
 //카운트다운
-const countDown = new Date("May 5, 2023 22:22:00").getTime();
+const countDown = new Date("May 30, 2023 22:22:00").getTime();
 
 const x = setInterval(function () {
 
@@ -88,7 +88,7 @@ const rankImg = document.querySelectorAll('.rankSwiper .rank_img a img');
 const rankDesc = document.querySelectorAll('.rank_desc ul li .desc_tit');
 const rankDescPrice = document.querySelectorAll('.rank_desc ul li .desc_price');
 
-const cateTit = ['#티셔츠&팬츠', '#온라인단독', '#타르가', '#테니스', '#런닝화'];
+const cateTit = ['# 티셔츠&팬츠', '# 온라인단독', '# 타르가', '# 테니스', '# 런닝화'];
 
 const shirtsArray = ['베이직 리니어 반팔티', '3D 빅로고 반팔티', '컴포트핏 인터내셔널 로고 반팔티', '컴포트핏 인터내셔널 반팔 맨투맨', '컴포트핏 조거팬츠', '이지팬츠'];
 
@@ -175,3 +175,51 @@ for (let i = 0; i < rankCategory.length; i++) {
     });
   }
 };
+
+
+//탑,바텀버튼
+const topBtn = document.querySelector('.top');
+const bottomBtn = document.querySelector('.bottom');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300 && window.scrollY < 3500) {
+    gsap.to(bottomBtn, 0.1, {
+      opacity: 1,
+      visibility: 'visible'
+    });
+    gsap.to(topBtn, 0.1, {
+      opacity: 0,
+      visibility: 'hidden'
+    })
+  } else if (window.scrollY >= 3500) {
+    gsap.to(topBtn, 0.1, {
+      opacity: 1,
+      visibility: 'visible'
+    });
+    gsap.to(bottomBtn, 0.1, {
+      opacity: 0,
+      visibility: 'hidden'
+    });
+  } else {
+    gsap.to(topBtn, 0.1, {
+      opacity: 0,
+      visibility: 'hidden'
+    });
+    gsap.to(bottomBtn, 0.1, {
+      opacity: 0,
+      visibility: 'hidden'
+    });
+  }
+});
+
+topBtn.addEventListener('click', () => {
+  gsap.to(window, 0.5, {
+    scrollTo: 0
+  });
+});
+
+bottomBtn.addEventListener('click', () => {
+  gsap.to(window, 0.5, {
+    scrollTo: 7000
+  });
+});
