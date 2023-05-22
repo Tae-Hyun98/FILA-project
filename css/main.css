@@ -679,6 +679,7 @@ h1 {
 
 .rank .rank_bottom {
   margin-top: 10px;
+  counter-reset: counter;
 }
 
 .rank_order .rank_bottom ul li.active {
@@ -704,8 +705,13 @@ h1 {
   color: rgb(102, 102, 102);
 }
 
-.rank .rank_bottom ul li a span {
-  padding: 0 15px;
+.rank .rank_bottom ul li a::before {
+  display: inline-block;
+  counter-increment: counter;
+  content: '0'counter(counter);
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
 }
 
 .rankSwiper {
@@ -751,12 +757,13 @@ h1 {
 }
 
 .rankSwiper .rank_img .rank_desc ul li a {
+  display: block;
   color: #fff;
   line-height: 40px;
-  font-size: 24px;
+  font-size: 22px;
 }
 
-.rankSwiper .rank_img .rank_desc ul li span a {
+.rankSwiper .rank_img .rank_desc ul li a.rank_icon {
   font-size: 45px;
 }
 

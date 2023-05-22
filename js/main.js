@@ -78,3 +78,93 @@ familySite.addEventListener('change', (e) => {
 
   openNewWindow.location.href = options[optionIndex].value;
 });
+
+
+//카테고리클릭시 들어가는거
+/* const shirts = document.getElementById('Tshirts');
+const online = document.getElementById('online');
+const targa = document.getElementById('targa');
+const tennis = document.getElementById('tennis');
+const running = document.getElementById('running'); */
+
+const rankCategory = document.querySelectorAll('.rank_category ul li a');
+const categoryTit = document.querySelector('.rank_top h3');
+const rankIndi = document.querySelectorAll('.rank_bottom ul li a');
+const rankImg = document.querySelectorAll('.rankSwiper .rank_img a img');
+const rankDesc = document.querySelectorAll('.rank_desc ul li .desc_tit');
+const rankDescPrice = document.querySelectorAll('.rank_desc ul li .desc_price');
+
+const cateTit = ['#티셔츠&팬츠', '#온라인단독', '#타르가', '#테니스', '#런닝화'];
+
+const shirtsArray = ['베이직 리니어 반팔티', '3D 빅로고 반팔티', '컴포트핏 인터내셔널 로고 반팔티', '컴포트핏 인터내셔널 반팔 맨투맨', '컴포트핏 조거팬츠', '이지팬츠'];
+
+const shirtsImg = ['../img/Main_img/Ranking_img/T&pants/01.jpg', '../img/Main_img/Ranking_img/T&pants/02.jpg', '../img/Main_img/Ranking_img/T&pants/03.jpg', '../img/Main_img/Ranking_img/T&pants/04.jpg', '../img/Main_img/Ranking_img/T&pants/05.jpg', '../img/Main_img/Ranking_img/T&pants/06.jpg']
+
+const shirtsPrice = ['39,000원', '32,000원', '38,000원', '29,000원', '24,000원', '18,000원'];
+
+const onlineArray = ['Fila athletics 아노락', 'Fila tennis 블럭 자켓', 'Fila tennis 블럭 하프넥 아노락', 'Sportslife 아치로고 맨투맨', 'Sportslife 아치로고 반팔 티셔츠', 'ball boy 반팔 티셔츠'];
+
+const onlineImg = ['../img/Main_img/Ranking_img/Online/01.jpg', '../img/Main_img/Ranking_img/Online/02.jpg', '../img/Main_img/Ranking_img/Online/03.jpg', '../img/Main_img/Ranking_img/Online/04.jpg', '../img/Main_img/Ranking_img/Online/05.jpg', '../img/Main_img/Ranking_img/Online/06.jpg'];
+
+const onlinePrice = ['109,000원', '129,000원', '129,000원', '69,000원', '42,000원', '39,000원'];
+
+const targaArray = ['타르가 클래식', '타르가 OG 1988 BB', '타르가 OG 1988', '타르가 클럽 LT', '타르가 88/22', '타르가 클래식 808'];
+
+const targaImg = ['../img/Main_img/Ranking_img/Targa/01.jpg', '../img/Main_img/Ranking_img/Targa/02.jpg', '../img/Main_img/Ranking_img/Targa/03.jpg', '../img/Main_img/Ranking_img/Targa/04.jpg', '../img/Main_img/Ranking_img/Targa/05.jpg', '../img/Main_img/Ranking_img/Targa/06.jpg'];
+
+const targaPrice = ['89,000원', '179,000원', '149,000원', '109,000원', '79,000원', '88,000원'];
+
+const tennisArray = ['테니스 로고테잎 니삭스', '휠라 스피드서브 T9US', 'WHITE LINE 라켓 슬링백', '테니스 타월', '테니스 탁텔 하드볼캡', '테니스 헤어밴드'];
+
+const tennisImg = ['../img/Main_img/Ranking_img/Tennis/01.jpg', '../img/Main_img/Ranking_img/Tennis/02.jpg', '../img/Main_img/Ranking_img/Tennis/03.jpg', '../img/Main_img/Ranking_img/Tennis/04.jpg', '../img/Main_img/Ranking_img/Tennis/05.jpg', '../img/Main_img/Ranking_img/Tennis/06.jpg'];
+
+const tennisPrice = ['15,000원', '179,000원', '99,000원', '49,000원', '49,000원', '9,900원'];
+
+
+
+
+
+
+for (let i = 0; i < rankCategory.length; i++) {
+  if (i === 0) {
+    rankCategory[i].addEventListener('click', () => {
+      categoryTit.innerHTML = cateTit[i];
+      for (let j = 0; j < rankIndi.length; j++) {
+        rankIndi[j].innerHTML = shirtsArray[j];
+        rankImg[j].setAttribute('src', shirtsImg[j]);
+        rankDesc[j].innerHTML = shirtsArray[j];
+        rankDescPrice[j].innerHTML = shirtsPrice[j];
+      }
+    });
+  } else if (i === 1) {
+    rankCategory[i].addEventListener('click', () => {
+      categoryTit.innerHTML = cateTit[i];
+      for (let j = 0; j < rankIndi.length; j++) {
+        rankIndi[j].innerHTML = onlineArray[j];
+        rankImg[j].setAttribute('src', onlineImg[j]);
+        rankDesc[j].innerHTML = onlineArray[j];
+        rankDescPrice[j].innerHTML = onlinePrice[j];
+      }
+    });
+  } else if (i === 2) {
+    rankCategory[i].addEventListener('click', () => {
+      categoryTit.innerHTML = cateTit[i];
+      for (let j = 0; j < rankIndi.length; j++) {
+        rankIndi[j].innerHTML = targaArray[j];
+        rankImg[j].setAttribute('src', targaImg[j]);
+        rankDesc[j].innerHTML = targaArray[j];
+        rankDescPrice[j].innerHTML = targaPrice[j];
+      }
+    });
+  } else if (i === 3) {
+    rankCategory[i].addEventListener('click', () => {
+      categoryTit.innerHTML = cateTit[i];
+      for (let j = 0; j < rankIndi.length; j++) {
+        rankIndi[j].innerHTML = tennisArray[j];
+        rankImg[j].setAttribute('src', tennisImg[j]);
+        rankDesc[j].innerHTML = tennisArray[j];
+        rankDescPrice[j].innerHTML = tennisPrice[j];
+      }
+    });
+  }
+};
