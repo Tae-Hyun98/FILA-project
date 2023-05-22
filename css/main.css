@@ -655,17 +655,15 @@ h1 {
   position: relative;
   display: flex;
   justify-content: space-between;
-  margin: 50px 50px 0 50px;
+  padding: 50px 50px 0 50px;
 }
 
 .rank_order {
   position: absolute;
-  top: 35px;
-  left: 30px;
+  margin-top: 50px;
   z-index: 2;
   width: 26%;
   flex-shrink: 1;
-  margin-right: 30px;
 }
 
 .rank .rank_top {
@@ -674,11 +672,10 @@ h1 {
 
 .rank .rank_top h3 {
   font-size: 34px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
 
 .rank .rank_bottom {
-  margin-top: 10px;
   counter-reset: counter;
 }
 
@@ -768,7 +765,7 @@ h1 {
 }
 
 .rankSwiper .swiper-wrapper .swiper-slide {
-  width: 550px;
+  width: 580px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s;
@@ -786,7 +783,7 @@ h1 {
 }
 
 .rankSwiper .swiper-slide.swiper-slide-active {
-  margin: 0 15px;
+  margin: 0 10px;
   transform: scale(1);
   opacity: 1;
   visibility: visible;
@@ -1093,7 +1090,16 @@ h1 {
 }
 
 .recommand h1 {
+  position: relative;
   text-align: center;
+}
+
+.recommand h1 span {
+  font-size: 16px;
+  position: absolute;
+  margin-left: 15px;
+  color: blue;
+  top: 20px;
 }
 
 .recommand .recommand_box {

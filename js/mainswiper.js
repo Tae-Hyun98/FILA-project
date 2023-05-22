@@ -33,9 +33,8 @@ swiper.controller.control = pagingSwiper;
 //랭킹
 let rankSwiper = new Swiper(".rankSwiper", {
   loop: true,
-  loopAdditionalSlides: 3,
+  loopAdditionalSlides: 1,
   centeredSlides: true,
-  slidesPerGroup: 1,
   slidesPerView: 3,
   //slideToClickedSlide: true,
   //speed: 700,
@@ -56,6 +55,16 @@ let rankSwiper = new Swiper(".rankSwiper", {
   },
 
 });
+
+let slides = document.querySelectorAll('.swiper-slide');
+for (let i of slides) {
+  i.addEventListener('mouseover', () => {
+    rankSwiper.autoplay.stop();
+  });
+  i.addEventListener('mouseout', () => {
+    rankSwiper.autoplay.start();
+  });
+}
 
 $('.rank_order .rank_bottom ul li').click(function (e) {
   e.preventDefault();
