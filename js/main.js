@@ -114,12 +114,17 @@ const targaImg = ['../img/Main_img/Ranking_img/Targa/01.jpg', '../img/Main_img/R
 
 const targaPrice = ['89,000원', '179,000원', '149,000원', '109,000원', '79,000원', '88,000원'];
 
-const tennisArray = ['테니스 로고테잎 니삭스', '휠라 스피드서브 T9US', 'WHITE LINE 라켓 슬링백', '테니스 타월', '테니스 탁텔 하드볼캡', '테니스 헤어밴드'];
+const tennisArray = ['테니스 소프트 볼캡', 'FILA 테니스 라켓 슬링백', 'WHITE LINE 라켓 슬링백', '테니스 타월', '테니스 탁텔 하드볼캡', '테니스 헤어밴드'];
 
 const tennisImg = ['../img/Main_img/Ranking_img/Tennis/01.jpg', '../img/Main_img/Ranking_img/Tennis/02.jpg', '../img/Main_img/Ranking_img/Tennis/03.jpg', '../img/Main_img/Ranking_img/Tennis/04.jpg', '../img/Main_img/Ranking_img/Tennis/05.jpg', '../img/Main_img/Ranking_img/Tennis/06.jpg'];
 
-const tennisPrice = ['15,000원', '179,000원', '99,000원', '49,000원', '49,000원', '9,900원'];
+const tennisPrice = ['39,000원', '79,000원', '99,000원', '49,000원', '49,000원', '9,900원'];
 
+const runningArray = ['테니스 소프트 볼캡', 'FILA 테니스 라켓 슬링백', 'WHITE LINE 라켓 슬링백', '테니스 타월', '테니스 탁텔 하드볼캡', '테니스 헤어밴드'];
+
+const runningImg = ['../img/Main_img/Ranking_img/Tennis/01.jpg', '../img/Main_img/Ranking_img/Tennis/02.jpg', '../img/Main_img/Ranking_img/Tennis/03.jpg', '../img/Main_img/Ranking_img/Tennis/04.jpg', '../img/Main_img/Ranking_img/Tennis/05.jpg', '../img/Main_img/Ranking_img/Tennis/06.jpg'];
+
+const runningPrice = ['39,000원', '79,000원', '99,000원', '49,000원', '49,000원', '9,900원'];
 
 
 
