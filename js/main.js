@@ -81,12 +81,6 @@ familySite.addEventListener('change', (e) => {
 
 
 //카테고리클릭시 들어가는거
-/* const shirts = document.getElementById('Tshirts');
-const online = document.getElementById('online');
-const targa = document.getElementById('targa');
-const tennis = document.getElementById('tennis');
-const running = document.getElementById('running'); */
-
 const rankCategory = document.querySelectorAll('.rank_category ul li a');
 const categoryTit = document.querySelector('.rank_top h3');
 const rankIndi = document.querySelectorAll('.rank_bottom ul li a');
@@ -120,13 +114,11 @@ const tennisImg = ['../img/Main_img/Ranking_img/Tennis/01.jpg', '../img/Main_img
 
 const tennisPrice = ['39,000원', '79,000원', '99,000원', '49,000원', '49,000원', '9,900원'];
 
-const runningArray = ['테니스 소프트 볼캡', 'FILA 테니스 라켓 슬링백', 'WHITE LINE 라켓 슬링백', '테니스 타월', '테니스 탁텔 하드볼캡', '테니스 헤어밴드'];
+const runningArray = ['휠라 플로트 맥시', '휠라 NRE I3', '휠라 플로트 프라임', '휠라 플로트 엘리트', '휠라 RGB 플렉스 3.0', '휠라 NRE I3'];
 
-const runningImg = ['../img/Main_img/Ranking_img/Tennis/01.jpg', '../img/Main_img/Ranking_img/Tennis/02.jpg', '../img/Main_img/Ranking_img/Tennis/03.jpg', '../img/Main_img/Ranking_img/Tennis/04.jpg', '../img/Main_img/Ranking_img/Tennis/05.jpg', '../img/Main_img/Ranking_img/Tennis/06.jpg'];
+const runningImg = ['../img/Main_img/Ranking_img/Running/01.jpg', '../img/Main_img/Ranking_img/Running/02.jpg', '../img/Main_img/Ranking_img/Running/03.jpg', '../img/Main_img/Ranking_img/Running/04.jpg', '../img/Main_img/Ranking_img/Running/05.jpg', '../img/Main_img/Ranking_img/Running/06.jpg'];
 
-const runningPrice = ['39,000원', '79,000원', '99,000원', '49,000원', '49,000원', '9,900원'];
-
-
+const runningPrice = ['189,000원', '109,000원', '159,000원', '199,000원', '89,000원', '109,000원'];
 
 
 
@@ -169,6 +161,16 @@ for (let i = 0; i < rankCategory.length; i++) {
         rankImg[j].setAttribute('src', tennisImg[j]);
         rankDesc[j].innerHTML = tennisArray[j];
         rankDescPrice[j].innerHTML = tennisPrice[j];
+      }
+    });
+  } else if (i === 4) {
+    rankCategory[i].addEventListener('click', () => {
+      categoryTit.innerHTML = cateTit[i];
+      for (let j = 0; j < rankIndi.length; j++) {
+        rankIndi[j].innerHTML = runningArray[j];
+        rankImg[j].setAttribute('src', runningImg[j]);
+        rankDesc[j].innerHTML = runningArray[j];
+        rankDescPrice[j].innerHTML = runningPrice[j];
       }
     });
   }
