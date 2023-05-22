@@ -1241,9 +1241,11 @@ h1 {
 }
 
 .sns .sns_box .sns_list li {
+  position: relative;
   width: calc(20% - 12px);
   margin-right: 15px;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .sns .sns_box .sns_list li:nth-child(5n) {
@@ -1257,6 +1259,43 @@ h1 {
   background-repeat: no-repeat;
 }
 
+.sns .sns_list .sns_hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: .3s;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sns .sns_list li:hover .sns_hover {
+  transform: translateY(0);
+}
+
+.sns .sns_list .sns_hover .tag {
+  position: absolute;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.sns .sns_list .sns_hover .tag p.tag_tit {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 50px;
+}
+
+.sns .sns_list .sns_hover .tag p {
+  display: inline-block;
+  padding: 0 5px;
+  color: #fff;
+  font-size: 16px;
+}
 
 /***********footer************/
 .footer {
