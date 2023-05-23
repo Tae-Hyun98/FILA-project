@@ -26,11 +26,11 @@ filterSele.addEventListener('change', () => {
     productList.innerHTML = '';
     bindData();
   } else if (filterSele.value === 'new') {
-    subData.sort(function (a, b) { //신상품
+    const a = subData.sort(function (a, b) { //신상품
       return a.id > b.id ? -1 : a.id < b.id ? 1 : 0;
     });
     productList.innerHTML = '';
-    bindData();
+    bindData(a);
   } else if (filterSele.value === 'review') {
     subData.sort(function (a, b) { //리뷰순정렬
       return a.review > b.review ? -1 : a.review < b.review ? 1 : 0;
@@ -73,7 +73,7 @@ for (let i = 0; i < colorChk.length; i++) {
 
 
 
-colorLabel[1].addEventListener('click', () => {
+/* colorLabel[1].addEventListener('click', () => {
   const listBlack = subData.filter(function (a) {
     return a.color === 'black';
   });
@@ -81,7 +81,7 @@ colorLabel[1].addEventListener('click', () => {
   productList.innerHTML = listBlack;
   bindData();
 });
-
+ */
 
 
 
@@ -353,16 +353,16 @@ window.onscroll = function () {
 
 //상품3개, 4개보기버튼
 const listCol = document.querySelector('.list_wrap');
-const col3Btn = document.querySelector('.col3_btn');
 const col4Btn = document.querySelector('.col4_btn');
+const col5Btn = document.querySelector('.col5_btn');
 
-col3Btn.addEventListener('click', () => {
-  listCol.classList.add('col_3');
-  listCol.classList.remove('col_4');
-});
 col4Btn.addEventListener('click', () => {
   listCol.classList.add('col_4');
-  listCol.classList.remove('col_3');
+  listCol.classList.remove('col_5');
+});
+col5Btn.addEventListener('click', () => {
+  listCol.classList.add('col_5');
+  listCol.classList.remove('col_4');
 });
 
 //스크롤시 헤더
