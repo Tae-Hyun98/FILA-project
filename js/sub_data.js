@@ -95,7 +95,7 @@ const subData = [{
     price: 69000,
     src: "../img/Sub_img/10.jpg",
     review: 42,
-    color:'white'
+    color:'gray'
   },
 
   {
