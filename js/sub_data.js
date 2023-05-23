@@ -25,7 +25,7 @@ const subData = [{
     price: 99000,
     src: "../img/Sub_img/03.jpg",
     review: 15,
-    color:'white'
+    color:'gray'
   },
 
   {
@@ -65,14 +65,14 @@ const subData = [{
     price: 139000,
     src: "../img/Sub_img/07.jpg",
     review: 50,
-    color:'white'
+    color:'beige'
   },
 
   {
     id: 8,
     category: "공용",
     name: "스몰로고 맨투맨",
-    price: 59000,
+    price: 49000,
     src: "../img/Sub_img/08.jpg",
     review: 3,
     color: 'black'
@@ -85,7 +85,7 @@ const subData = [{
     price: 69000,
     src: "../img/Sub_img/09.jpg",
     review: 49,
-    color:'white'
+    color:'gray'
   },
 
   {
@@ -105,7 +105,7 @@ const subData = [{
     price: 99000,
     src: "../img/Sub_img/11.jpg",
     review: 46,
-    color:'white'
+    color:'beige'
   },
 
   {
@@ -125,7 +125,7 @@ const subData = [{
     price: 59000,
     src: "../img/Sub_img/13.jpg",
     review: 20,
-    color:'white'
+    color:'gray'
   },
 
   {
@@ -145,7 +145,7 @@ const subData = [{
     price: 109000,
     src: "../img/Sub_img/15.jpg",
     review: 1,
-    color:'white'
+    color:'beige'
   },
 
   {
@@ -155,7 +155,7 @@ const subData = [{
     price: 119000,
     src: "../img/Sub_img/16.jpg",
     review: 0,
-    color:'white'
+    color:'mix'
   },
 
   {
@@ -165,7 +165,7 @@ const subData = [{
     price: 39000,
     src: "../img/Sub_img/17.jpg",
     review: 100,
-    color:'white'
+    color:'blue'
   },
 
   {
@@ -195,7 +195,7 @@ const subData = [{
     price: 38000,
     src: "../img/Sub_img/20.jpg",
     review: 17,
-    color:'white'
+    color:'navy'
   },
 ]
 
