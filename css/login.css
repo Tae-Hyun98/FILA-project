@@ -165,6 +165,11 @@ img {
   line-height: 1.1;
 }
 
+.search_on .header .search_down {
+  opacity: 1;
+  visibility: visible;
+}
+
 /**************header_down_menu*************/
 .header .lnb .lnb_nav .down {
   visibility: hidden;

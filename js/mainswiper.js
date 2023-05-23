@@ -76,17 +76,13 @@ $('.rank_order .rank_bottom ul li').click(function (e) {
 //NEW ARRIVAL
 const newSwiper = new Swiper(".newSwiper", {
   loop: true,
-  init: true,
   loopAdditionalSlides: 1,
   centeredSlides: true,
   slidesPerView: 3,
-  slidesPerGroup: 1,
   slidesPerView: "auto",
   observer: true,
-  initialSlide: 0,
   observeParents: true,
-  roundLengths: true,
-  speed: 500,
+  speed: 700,
   /*  autoplay: {
      delay: 3000,
      disableOnInteraction: false,

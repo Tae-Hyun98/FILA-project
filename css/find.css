@@ -29,6 +29,10 @@ img {
   color: #000;
 }
 
+.search_on .header .search_down {
+  opacity: 1;
+  visibility: visible;
+}
 
 /***************header********************/
 .header {

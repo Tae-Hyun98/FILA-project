@@ -46,3 +46,16 @@ function clickPwBtn() {
     alert('정보를 입력해주세요');
   }
 }
+
+
+//검색버튼 클릭시 검색창
+const scr = document.querySelector('body');
+const searchOpen = document.getElementById('search');
+const searchClose = document.getElementById('close');
+
+searchOpen.addEventListener('click', () => {
+  scr.classList.add('search_on');
+});
+searchClose.addEventListener('click', () => {
+  scr.classList.remove('search_on');
+});
