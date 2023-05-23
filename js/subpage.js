@@ -26,11 +26,11 @@ filterSele.addEventListener('change', () => {
     productList.innerHTML = '';
     bindData();
   } else if (filterSele.value === 'new') {
-    const a = subData.sort(function (a, b) { //신상품
+    subData.sort(function (a, b) { //신상품
       return a.id > b.id ? -1 : a.id < b.id ? 1 : 0;
     });
     productList.innerHTML = '';
-    bindData(a);
+    bindData();
   } else if (filterSele.value === 'review') {
     subData.sort(function (a, b) { //리뷰순정렬
       return a.review > b.review ? -1 : a.review < b.review ? 1 : 0;
@@ -40,26 +40,114 @@ filterSele.addEventListener('change', () => {
   }
 });
 
-//컬러필터
-//const lists = subData;
-/* for (let i = 0; i < colorChk.length; i++) {
-  for (let j = 0; j < lists.length; j++) {
-    colorChk[i].addEventListener('click', () => {
 
-      if (colorChk[i].checked) {
-        lists.filter((list) => {
-          return list.color === 'black';
-        })
-        productList.innerHTML = ''
-        bindData(lists);
-      }
-    })
+//컬러선택
+const blackChk = document.getElementById('color_02');
+
+blackChk.addEventListener('click', () => {
+  if (blackChk.checked) {
+    let Newch = subData.filter(function (a) {
+      return a.color === 'black';
+    });
+    productList.innerHTML = '';
+    console.log(Newch)
+    for (let i = 0; i < Newch.length; i++) {
+      //서브 상품박스
+      const subDiv = document.createElement('div');
+      subDiv.setAttribute('class', 'product_box');
+
+      const subImgBox = document.createElement('div');
+      subImgBox.setAttribute('class', 'product_img');
+
+      const imgLink = document.createElement('a');
+      imgLink.setAttribute('href', "#!");
+      subImgBox.appendChild(imgLink);
+
+      const subImg = document.createElement('img');
+      subImg.setAttribute('src', Newch[i].src);
+      imgLink.appendChild(subImg);
+
+      const detailDiv = document.createElement('div');
+      detailDiv.setAttribute('class', 'detail');
+
+      const detailLink = document.createElement('a');
+      detailLink.setAttribute('href', '#!');
+      detailDiv.appendChild(detailLink);
+
+      //상품박스 호버했을때
+      const hoverDiv = document.createElement('div');
+      hoverDiv.setAttribute('class', 'hover_box');
+      subImgBox.appendChild(hoverDiv);
+
+      const cartDiv = document.createElement('div');
+      hoverDiv.appendChild(cartDiv);
+      const cartSpan = document.createElement('span');
+      cartSpan.setAttribute('class', 'material-icons-outlined');
+      const cartText = document.createTextNode('shopping_cart');
+      cartDiv.appendChild(cartSpan);
+      cartSpan.appendChild(cartText);
+
+      const likeDiv = document.createElement('div');
+      hoverDiv.appendChild(likeDiv);
+      const likeSpan = document.createElement('span');
+      likeSpan.setAttribute('class', 'material-icons-outlined');
+      const likeText = document.createTextNode('favorite');
+      likeDiv.appendChild(likeSpan);
+      likeSpan.appendChild(likeText);
+
+      //카테고리
+      const cateGory = document.createElement('p');
+      cateGory.setAttribute('class', 'category');
+      detailLink.appendChild(cateGory);
+      const cateGoryText = document.createTextNode(Newch[i].category);
+      cateGory.appendChild(cateGoryText);
+
+      //상품이름
+      const productName = document.createElement('p');
+      productName.setAttribute('class', 'product_name');
+      detailLink.appendChild(productName);
+      const nameText = document.createTextNode(Newch[i].name);
+      productName.appendChild(nameText);
+
+      //상품가격
+      const productPrice = document.createElement('p');
+      productPrice.setAttribute('class', 'product_price');
+      detailLink.appendChild(productPrice);
+      const namePrice = document.createTextNode(Newch[i].price.toLocaleString('ko-KR') + '원');
+      productPrice.appendChild(namePrice);
+
+      //리뷰수
+      const reviSpan = document.createElement('span');
+      const reviCount = document.createTextNode('★(' + Newch[i].review + ')');
+      productPrice.appendChild(reviSpan);
+      reviSpan.appendChild(reviCount);
+
+      //BUY버튼
+      const buyDiv = document.createElement('div');
+      buyDiv.setAttribute('class', 'buy_btn');
+      detailDiv.appendChild(buyDiv);
+
+      const buyA = document.createElement('a');
+      buyA.setAttribute('href', '#!');
+      buyDiv.appendChild(buyA);
+
+      const buyText = document.createTextNode('BUY');
+      buyA.appendChild(buyText);
+
+      subDiv.appendChild(subImgBox);
+      subDiv.appendChild(detailDiv);
+      productList.appendChild(subDiv);
+      subProduct.appendChild(productList);
+    }
+  }else{
+    productList.innerHTML='';
+    bindData();
   }
-} */
+});
+
 //filter color check
 const colorChk = document.querySelectorAll('.color');
 const colorLabel = document.querySelectorAll('.color_filter label');
-const subBox = document.querySelectorAll('.product_list .product_box');
 
 for (let i = 0; i < colorChk.length; i++) {
   colorChk[i].addEventListener('click', () => {
@@ -70,18 +158,6 @@ for (let i = 0; i < colorChk.length; i++) {
     }
   });
 }
-
-
-
-/* colorLabel[1].addEventListener('click', () => {
-  const listBlack = subData.filter(function (a) {
-    return a.color === 'black';
-  });
-
-  productList.innerHTML = listBlack;
-  bindData();
-});
- */
 
 
 
@@ -351,7 +427,7 @@ window.onscroll = function () {
 } */
 
 
-//상품3개, 4개보기버튼
+//상품4개, 5개보기버튼
 const listCol = document.querySelector('.list_wrap');
 const col4Btn = document.querySelector('.col4_btn');
 const col5Btn = document.querySelector('.col5_btn');
