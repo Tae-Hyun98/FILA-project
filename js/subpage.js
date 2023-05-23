@@ -40,7 +40,19 @@ filterSele.addEventListener('change', () => {
   }
 });
 
-
+const priceFi = document.getElementById('price01');
+const ar01 = subData.filter(function (pri) {
+  return pri.price <= 39000;
+});
+priceFi.addEventListener('click', () => {
+  if (priceFi.checked) {
+    productList.innerHTML = '';
+    priobj(ar01);
+  } else {
+    productList.innerHTML = '';
+    bindData();
+  }
+});
 //컬러선택
 const blackChk = document.getElementById('color_02');
 
@@ -50,7 +62,7 @@ blackChk.addEventListener('click', () => {
       return a.color === 'black';
     });
     productList.innerHTML = '';
-    console.log(Newch)
+
     for (let i = 0; i < Newch.length; i++) {
       //서브 상품박스
       const subDiv = document.createElement('div');
@@ -139,12 +151,103 @@ blackChk.addEventListener('click', () => {
       productList.appendChild(subDiv);
       subProduct.appendChild(productList);
     }
-  }else{
-    productList.innerHTML='';
+  } else {
+    productList.innerHTML = '';
     bindData();
   }
 });
 
+
+function priobj(obj) {
+  for (let i = 0; i < obj.length; i++) {
+    //서브 상품박스
+    const subDiv = document.createElement('div');
+    subDiv.setAttribute('class', 'product_box');
+
+    const subImgBox = document.createElement('div');
+    subImgBox.setAttribute('class', 'product_img');
+
+    const imgLink = document.createElement('a');
+    imgLink.setAttribute('href', "#!");
+    subImgBox.appendChild(imgLink);
+
+    const subImg = document.createElement('img');
+    subImg.setAttribute('src', obj[i].src);
+    imgLink.appendChild(subImg);
+
+    const detailDiv = document.createElement('div');
+    detailDiv.setAttribute('class', 'detail');
+
+    const detailLink = document.createElement('a');
+    detailLink.setAttribute('href', '#!');
+    detailDiv.appendChild(detailLink);
+
+    //상품박스 호버했을때
+    const hoverDiv = document.createElement('div');
+    hoverDiv.setAttribute('class', 'hover_box');
+    subImgBox.appendChild(hoverDiv);
+
+    const cartDiv = document.createElement('div');
+    hoverDiv.appendChild(cartDiv);
+    const cartSpan = document.createElement('span');
+    cartSpan.setAttribute('class', 'material-icons-outlined');
+    const cartText = document.createTextNode('shopping_cart');
+    cartDiv.appendChild(cartSpan);
+    cartSpan.appendChild(cartText);
+
+    const likeDiv = document.createElement('div');
+    hoverDiv.appendChild(likeDiv);
+    const likeSpan = document.createElement('span');
+    likeSpan.setAttribute('class', 'material-icons-outlined');
+    const likeText = document.createTextNode('favorite');
+    likeDiv.appendChild(likeSpan);
+    likeSpan.appendChild(likeText);
+
+    //카테고리
+    const cateGory = document.createElement('p');
+    cateGory.setAttribute('class', 'category');
+    detailLink.appendChild(cateGory);
+    const cateGoryText = document.createTextNode(obj[i].category);
+    cateGory.appendChild(cateGoryText);
+
+    //상품이름
+    const productName = document.createElement('p');
+    productName.setAttribute('class', 'product_name');
+    detailLink.appendChild(productName);
+    const nameText = document.createTextNode(obj[i].name);
+    productName.appendChild(nameText);
+
+    //상품가격
+    const productPrice = document.createElement('p');
+    productPrice.setAttribute('class', 'product_price');
+    detailLink.appendChild(productPrice);
+    const namePrice = document.createTextNode(obj[i].price.toLocaleString('ko-KR') + '원');
+    productPrice.appendChild(namePrice);
+
+    //리뷰수
+    const reviSpan = document.createElement('span');
+    const reviCount = document.createTextNode('★(' + obj[i].review + ')');
+    productPrice.appendChild(reviSpan);
+    reviSpan.appendChild(reviCount);
+
+    //BUY버튼
+    const buyDiv = document.createElement('div');
+    buyDiv.setAttribute('class', 'buy_btn');
+    detailDiv.appendChild(buyDiv);
+
+    const buyA = document.createElement('a');
+    buyA.setAttribute('href', '#!');
+    buyDiv.appendChild(buyA);
+
+    const buyText = document.createTextNode('BUY');
+    buyA.appendChild(buyText);
+
+    subDiv.appendChild(subImgBox);
+    subDiv.appendChild(detailDiv);
+    productList.appendChild(subDiv);
+    subProduct.appendChild(productList);
+  }
+}
 //filter color check
 const colorChk = document.querySelectorAll('.color');
 const colorLabel = document.querySelectorAll('.color_filter label');
@@ -158,6 +261,9 @@ for (let i = 0; i < colorChk.length; i++) {
     }
   });
 }
+
+
+//가격필터
 
 
 
