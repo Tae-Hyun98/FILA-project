@@ -40,6 +40,97 @@ filterSele.addEventListener('change', () => {
   }
 });
 
+//컬러필터
+//const lists = subData;
+/* for (let i = 0; i < colorChk.length; i++) {
+  for (let j = 0; j < lists.length; j++) {
+    colorChk[i].addEventListener('click', () => {
+
+      if (colorChk[i].checked) {
+        lists.filter((list) => {
+          return list.color === 'black';
+        })
+        productList.innerHTML = ''
+        bindData(lists);
+      }
+    })
+  }
+} */
+//filter color check
+const colorChk = document.querySelectorAll('.color');
+const colorLabel = document.querySelectorAll('.color_filter label');
+const subBox = document.querySelectorAll('.product_list .product_box');
+
+for (let i = 0; i < colorChk.length; i++) {
+  colorChk[i].addEventListener('click', () => {
+    if (colorChk[i].checked) {
+      colorLabel[i].classList.add('on');
+    } else {
+      colorLabel[i].classList.remove('on');
+    }
+  });
+}
+
+
+
+colorLabel[1].addEventListener('click', () => {
+  const listBlack = subData.filter(function (a) {
+    return a.color === 'black';
+  });
+
+  productList.innerHTML = listBlack;
+  bindData();
+});
+
+
+
+
+/* const listBlack = subData.filter(function (data) {
+  return data.color === 'black';
+});
+console.log(listBlack)  */
+/* colorChk.addEventListener('click', () => {
+  if (filterSele.value === 'name') {
+    subData.filter(function (a, b) { //이름 오름차순
+      return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+    });
+    productList.innerHTML = '';
+    bindData();
+  } else if (filterSele.value === 'desc') {
+    subData.sort(function (a, b) { //가격내림차순
+      return a.price - b.price;
+    });
+    productList.innerHTML = '';
+    bindData();
+  } else if (filterSele.value === 'asc') {
+    subData.sort(function (a, b) { //가격오름차순
+      return b.price - a.price;
+    });
+    productList.innerHTML = '';
+    bindData();
+  }
+}); */
+
+/* colorChk.forEach(chk => chk.addEventListener('click', () => { 
+for(let i=0;i<lists.length;i++){
+    if (lists[i].color === 'black') {
+      subBox[i].style.display = 'block'
+    } else if (lists[i].color != 'black') {
+      subBox[i].style.display = 'none'
+    }
+  }
+}));
+ */
+
+/* for (let i = 0; i < colorChk.length; i++) {
+  colorChk[i].addEventListener('click', () => {
+    if (colorChk[i].checked && lists[i].color === 'black') {
+      productList[i].style.display = 'none';
+    } else if (!colorChk[i].checked) {
+      productList[i].style.display = 'flex'
+    }
+  })
+} */
 
 /* const input1 = document.getElementById('price01');
 
@@ -61,11 +152,19 @@ input1.addEventListener('click', () => {
   }
   const newPrice=subData.filter(getPrice);
 } */
-
-
+/* colorLabel[1].addEventListener('click', () => {
+  subData.filter(function (emp) {
+    if (emp.color === 'black') {
+      return emp;
+    }
+    productList.innerHTML = '';
+    bindData();
+  });
+});
+ */
 
 //상품리스트 객체
-let bindData = function () {
+function bindData() {
   for (let i = 0; i < subData.length; i++) {
     //서브 상품박스
     const subDiv = document.createElement('div');
@@ -351,59 +450,10 @@ for (let i = 0; i < sportChk.length; i++) {
   });
 }
 
-//filter color check
-const colorChk = document.querySelectorAll('.color');
-const colorLabel = document.querySelectorAll('.color_filter label');
-const subBox = document.querySelectorAll('.product_list .product_box');
-
-for (let i = 0; i < colorChk.length; i++) {
-  colorChk[i].addEventListener('click', () => {
-    if (colorChk[i].checked) {
-      colorLabel[i].classList.add('on');
-    } else {
-      colorLabel[i].classList.remove('on');
-    }
-  });
-}
-
-//컬러필터
-const lists = subData;
-//const listBlack = lists.filter(list => list.color === 'black');
-/* for (let i = 0; i < colorChk.length; i++) {
-  for (let j = 0; j < lists.length; j++) {
-    colorChk[i].addEventListener('click', () => {
-
-      if (colorChk[i].checked) {
-        lists.filter((list) => {
-          return list.color === 'black';
-        })
-        productList.innerHTML = ''
-        bindData(lists);
-      }
-    })
-  }
-} */
 
 
-colorChk.forEach(chk => chk.addEventListener('click', () => { 
-for(let i=0;i<lists.length;i++){
-    if (lists[i].color === 'black') {
-      subBox[i].style.display = 'block'
-    } else if (lists[i].color != 'black') {
-      subBox[i].style.display = 'none'
-    }
-  }
-}));
 
-/* for (let i = 0; i < colorChk.length; i++) {
-  colorChk[i].addEventListener('click', () => {
-    if (colorChk[i].checked && lists[i].color === 'black') {
-      productList[i].style.display = 'none';
-    } else if (!colorChk[i].checked) {
-      productList[i].style.display = 'flex'
-    }
-  })
-} */
+
 //filter size check
 const sizeChk = document.querySelectorAll('.size');
 const sizeLabel = document.querySelectorAll('.size_filter label');

@@ -25,6 +25,7 @@ const subData = [{
     price: 99000,
     src: "../img/Sub_img/03.jpg",
     review: 15,
+    color:'white'
   },
 
   {
@@ -43,7 +44,8 @@ const subData = [{
     name: "FILA ITALIA 반팔티셔츠",
     price: 32000,
     src: "../img/Sub_img/05.jpg",
-    review: 20
+    review: 20,
+    color:'white'
   },
 
   {
@@ -62,7 +64,8 @@ const subData = [{
     name: "오버핏 코쿤 볼 패딩",
     price: 139000,
     src: "../img/Sub_img/07.jpg",
-    review: 50
+    review: 50,
+    color:'white'
   },
 
   {
@@ -81,7 +84,8 @@ const subData = [{
     name: "헤리티지 로고 후드",
     price: 69000,
     src: "../img/Sub_img/09.jpg",
-    review: 49
+    review: 49,
+    color:'white'
   },
 
   {
@@ -90,7 +94,8 @@ const subData = [{
     name: "FILA SPORTS 후디",
     price: 69000,
     src: "../img/Sub_img/10.jpg",
-    review: 42
+    review: 42,
+    color:'white'
   },
 
   {
@@ -99,7 +104,8 @@ const subData = [{
     name: "FILATECH 아노락 하프 집업",
     price: 99000,
     src: "../img/Sub_img/11.jpg",
-    review: 46
+    review: 46,
+    color:'white'
   },
 
   {
@@ -118,7 +124,8 @@ const subData = [{
     name: "스몰로고 맨투맨",
     price: 59000,
     src: "../img/Sub_img/13.jpg",
-    review: 20
+    review: 20,
+    color:'white'
   },
 
   {
@@ -137,7 +144,8 @@ const subData = [{
     name: "리버시블 후드 플리스",
     price: 109000,
     src: "../img/Sub_img/15.jpg",
-    review: 1
+    review: 1,
+    color:'white'
   },
 
   {
@@ -146,7 +154,8 @@ const subData = [{
     name: "브이 배색 경량 자켓",
     price: 119000,
     src: "../img/Sub_img/16.jpg",
-    review: 0
+    review: 0,
+    color:'white'
   },
 
   {
@@ -155,7 +164,8 @@ const subData = [{
     name: "FILA ITALIA 반팔티셔츠",
     price: 39000,
     src: "../img/Sub_img/17.jpg",
-    review: 100
+    review: 100,
+    color:'white'
   },
 
   {
@@ -174,7 +184,8 @@ const subData = [{
     name: "오버핏 코쿤 볼 패딩",
     price: 139000,
     src: "../img/Sub_img/19.jpg",
-    review: 56
+    review: 56,
+    color:'white'
   },
 
   {
@@ -183,7 +194,8 @@ const subData = [{
     name: "<온라인 단독>헤리티지 세리프 루즈핏 반팔티",
     price: 38000,
     src: "../img/Sub_img/20.jpg",
-    review: 17
+    review: 17,
+    color:'white'
   },
 ]
 
