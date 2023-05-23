@@ -41,29 +41,24 @@ filterSele.addEventListener('change', () => {
 });
 
 const priceFi = document.getElementById('price01');
-const ar01 = subData.filter(function (pri) {
-  return pri.price <= 39000;
-});
+const price39000 = subData.filter((pr39)=>pr39.price<=39000);
 priceFi.addEventListener('click', () => {
   if (priceFi.checked) {
-    productList.innerHTML = '';
-    priobj(ar01);
+    priobj(price39000);
   } else {
     productList.innerHTML = '';
     bindData();
   }
 });
+
 //컬러선택
 const blackChk = document.getElementById('color_02');
+const black01 = subData.filter((color) => color.color === 'black');
 
 blackChk.addEventListener('click', () => {
   if (blackChk.checked) {
-    let Newch = subData.filter(function (a) {
-      return a.color === 'black';
-    });
-    productList.innerHTML = '';
-
-    for (let i = 0; i < Newch.length; i++) {
+    priobj(black01);
+    /* for (let i = 0; i < Newch.length; i++) {
       //서브 상품박스
       const subDiv = document.createElement('div');
       subDiv.setAttribute('class', 'product_box');
@@ -150,15 +145,16 @@ blackChk.addEventListener('click', () => {
       subDiv.appendChild(detailDiv);
       productList.appendChild(subDiv);
       subProduct.appendChild(productList);
-    }
+    } */
   } else {
     productList.innerHTML = '';
     bindData();
   }
 });
 
-
+//리스트 객체함수
 function priobj(obj) {
+  productList.innerHTML = '';
   for (let i = 0; i < obj.length; i++) {
     //서브 상품박스
     const subDiv = document.createElement('div');
