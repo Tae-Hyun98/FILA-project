@@ -2,7 +2,7 @@ const subData = [{
     id: 1,
     category: "공용 오버핏 라이프스타일",
     name: "헤리티지 세리프 로고 루즈핏 반팔티",
-    price: 32000,
+    price: 41000,
     src: "../img/Sub_img/01.jpg",
     review: 5,
     color: 'black'
