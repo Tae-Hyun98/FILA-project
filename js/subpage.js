@@ -434,3 +434,7 @@ window.addEventListener('scroll', () => {
     top.classList.remove('on');
   }
 });
+
+//상품개수표시
+const totalProduct = document.getElementById('total');
+totalProduct.innerHTML = subData.length;
