@@ -893,9 +893,8 @@ h1 {
 
 .newSwiper .swiper-wrapper .swiper-slide {
   width: 860px;
-  height: 600px;
   transform: scale(0.8);
-  opacity: 0.5;
+  opacity: 0.6;
   transition: all 0.3s;
 }
 
@@ -916,8 +915,12 @@ h1 {
   opacity: 1;
 }
 
-.newSwiper .swiper-slide.swiper-slide-prev .new_img {
+.newSwiper .swiper-slide.swiper-slide-prev .new_box {
   transform: translateX(300px);
+}
+
+.newSwiper .swiper-slide.swiper-slide-next .new_box {
+  transform: translateX(100px);
 }
 
 .newSwiper .swiper-slide.swiper-slide-prev,
@@ -941,12 +944,11 @@ h1 {
 
 .new_box .new_img img {
   width: 500px;
-  height: 596px;
+  height: 600px;
 }
 
 .new_box .new_desc {
   position: relative;
-  width: 400px;
   background-color: #eee;
   padding: 30px 15px 0 15px;
 }
