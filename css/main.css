@@ -1245,6 +1245,7 @@ h1 {
   width: calc(20% - 12px);
   margin-right: 15px;
   margin-bottom: 20px;
+  border: 1px solid #ccc;
   overflow: hidden;
 }
 
@@ -1263,16 +1264,40 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-  transform: translateY(100%);
   width: 100%;
   height: 100%;
   text-align: center;
+}
+
+.sns .sns_list .sns_hover::before,
+.sns .sns_list .sns_hover::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
   transition: .3s;
-  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sns .sns_list li:hover .sns_hover::before,
+.sns .sns_list li:hover .sns_hover::after {
+  width: 50%;
+}
+
+.sns .sns_list .sns_hover::before {
+  left: 50%;
+}
+
+.sns .sns_list .sns_hover::after {
+  right: 50%;
 }
 
 .sns .sns_list li:hover .sns_hover {
-  transform: translateY(0);
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+
 }
 
 .sns .sns_list .sns_hover .tag {
@@ -1281,20 +1306,29 @@ h1 {
   transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
+  z-index: 10;
 }
 
 .sns .sns_list .sns_hover .tag p.tag_tit {
   display: block;
   font-size: 22px;
   font-weight: 700;
-  line-height: 50px;
+  padding-bottom: 10px;
 }
 
 .sns .sns_list .sns_hover .tag p {
   display: inline-block;
   padding: 0 5px;
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+}
+
+.sns .sns_list .sns_hover:hover .tag p {
+  opacity: 1;
+  visibility: visible;
 }
 
 /***********footer************/
