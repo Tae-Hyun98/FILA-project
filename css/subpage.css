@@ -676,21 +676,16 @@ img {
 
 /*************sub_list*************/
 .product_list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 50px;
+  grid-template-columns: repeat(5, 1fr);
+  transition: .3s;
 }
 
-div.col_3 .product_box {
-  width: calc(25% - 15px);
-}
-
-div.col_3 .product_box:nth-child(4n),
-div.col_4 .product_box:nth-child(5n) {
-  margin-right: 0;
-}
-
-div.col_4 .product_box {
-  width: calc(20% - 16px);
+div.col_3 .product_list {
+  grid-column-gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 div.col_4 .product_box .detail p.product_name {
@@ -699,8 +694,6 @@ div.col_4 .product_box .detail p.product_name {
 
 .product_box {
   transition: .3s;
-  margin-right: 20px;
-  margin-bottom: 40px;
 }
 
 .product_box .product_img {

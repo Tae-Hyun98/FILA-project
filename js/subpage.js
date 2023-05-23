@@ -40,6 +40,7 @@ filterSele.addEventListener('change', () => {
   }
 });
 
+
 /* const input1 = document.getElementById('price01');
 
 input1.addEventListener('click', () => {
@@ -367,18 +368,42 @@ for (let i = 0; i < colorChk.length; i++) {
 
 //컬러필터
 const lists = subData;
-const listBlack = lists.filter(list => list.color === 'black');
-console.log(listBlack);
-const colorFilter = lists.filter((list, index, arr) => {
-  arr.pop();
-  return !list.color === 'black';
-})
+//const listBlack = lists.filter(list => list.color === 'black');
+/* for (let i = 0; i < colorChk.length; i++) {
+  for (let j = 0; j < lists.length; j++) {
+    colorChk[i].addEventListener('click', () => {
 
-if (colorChk[1].checked) {
-  productList.innerHTML = ''
-  subBox(colorFilter);
-}
+      if (colorChk[i].checked) {
+        lists.filter((list) => {
+          return list.color === 'black';
+        })
+        productList.innerHTML = ''
+        bindData(lists);
+      }
+    })
+  }
+} */
 
+
+colorChk.forEach(chk => chk.addEventListener('click', () => { 
+for(let i=0;i<lists.length;i++){
+    if (lists[i].color === 'black') {
+      subBox[i].style.display = 'block'
+    } else if (lists[i].color != 'black') {
+      subBox[i].style.display = 'none'
+    }
+  }
+}));
+
+/* for (let i = 0; i < colorChk.length; i++) {
+  colorChk[i].addEventListener('click', () => {
+    if (colorChk[i].checked && lists[i].color === 'black') {
+      productList[i].style.display = 'none';
+    } else if (!colorChk[i].checked) {
+      productList[i].style.display = 'flex'
+    }
+  })
+} */
 //filter size check
 const sizeChk = document.querySelectorAll('.size');
 const sizeLabel = document.querySelectorAll('.size_filter label');
