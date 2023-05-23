@@ -5,6 +5,7 @@ const subData = [{
     price: 32000,
     src: "../img/Sub_img/01.jpg",
     review: 5,
+    color: 'black'
   },
 
   {
@@ -14,6 +15,7 @@ const subData = [{
     price: 12000,
     src: "../img/Sub_img/02.jpg",
     review: 9,
+    color: 'white'
   },
 
   {
@@ -32,6 +34,7 @@ const subData = [{
     price: 109000,
     src: "../img/Sub_img/04.jpg",
     review: 1,
+    color: 'black'
   },
 
   {
@@ -49,7 +52,8 @@ const subData = [{
     name: "FILA ITALIA 반팔티셔츠",
     price: 25000,
     src: "../img/Sub_img/06.jpg",
-    review: 4
+    review: 4,
+    color: 'black'
   },
 
   {
@@ -67,7 +71,8 @@ const subData = [{
     name: "스몰로고 맨투맨",
     price: 59000,
     src: "../img/Sub_img/08.jpg",
-    review: 3
+    review: 3,
+    color: 'black'
   },
 
   {
@@ -103,7 +108,8 @@ const subData = [{
     name: "노카라 퀄팅 자켓",
     price: 89000,
     src: "../img/Sub_img/12.jpg",
-    review: 60
+    review: 60,
+    color: 'black'
   },
 
   {
@@ -121,7 +127,8 @@ const subData = [{
     name: "컴포트핏 인터내셔널 와이드팬츠",
     price: 89000,
     src: "../img/Sub_img/14.jpg",
-    review: 12
+    review: 12,
+    color: 'black'
   },
 
   {
@@ -157,7 +164,8 @@ const subData = [{
     name: "오버핏 코쿤 볼 패딩",
     price: 139000,
     src: "../img/Sub_img/18.jpg",
-    review: 66
+    review: 66,
+    color: 'black'
   },
 
   {

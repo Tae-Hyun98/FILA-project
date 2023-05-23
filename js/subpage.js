@@ -353,6 +353,7 @@ for (let i = 0; i < sportChk.length; i++) {
 //filter color check
 const colorChk = document.querySelectorAll('.color');
 const colorLabel = document.querySelectorAll('.color_filter label');
+const subBox = document.querySelectorAll('.product_list .product_box');
 
 for (let i = 0; i < colorChk.length; i++) {
   colorChk[i].addEventListener('click', () => {
@@ -362,6 +363,20 @@ for (let i = 0; i < colorChk.length; i++) {
       colorLabel[i].classList.remove('on');
     }
   });
+}
+
+//컬러필터
+const lists = subData;
+const listBlack = lists.filter(list => list.color === 'black');
+console.log(listBlack);
+const colorFilter = lists.filter((list, index, arr) => {
+  arr.pop();
+  return !list.color === 'black';
+})
+
+if (colorChk[1].checked) {
+  productList.innerHTML = ''
+  subBox(colorFilter);
 }
 
 //filter size check
