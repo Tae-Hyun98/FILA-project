@@ -15,7 +15,7 @@
     "parcel-plugin-static-files-copy": "^2.6.0",
     "postcss": "^8.4.23",
     "sass": "^1.62.1",
-    "sass-loader": "^13.2.2"
+    "sass-loader": "^13.3.0"
   },
   "dependencies": {
     "jquery": "^3.6.4",
@@ -23,5 +23,4 @@
     "swiper": "^9.2.4"
   },
   "description": ""
-  
 }
