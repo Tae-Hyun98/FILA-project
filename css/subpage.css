@@ -1006,3 +1006,17 @@ div.col_5 .product_box .detail p.product_name {
   background-color: #002053;
   color: #fff;
 }
+
+.popup{
+  position: fixed;
+  top: 130px;
+  left: 250px;
+  z-index: 9999;
+  color: #000;
+  background-color: #fff;
+  width: 250px;
+  padding: 50px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+}

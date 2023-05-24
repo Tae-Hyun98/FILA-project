@@ -607,3 +607,11 @@ bottomBtn.addEventListener('click', () => {
     scrollTo: 7000
   });
 });
+
+
+const popup = document.querySelector('.popup');
+const closeBtn = document.getElementById('close_btn');
+
+closeBtn.addEventListener('click', () => {
+  popup.style.display = 'none';
+});
