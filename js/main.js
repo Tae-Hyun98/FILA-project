@@ -104,7 +104,7 @@ const onlinePrice = ['109,000원', '129,000원', '129,000원', '69,000원', '42,
 
 const targaArray = ['타르가 클래식', '타르가 OG 1988 BB', '타르가 OG 1988', '타르가 클럽 LT', '타르가 88/22', '타르가 클래식 808'];
 
-const targaImg = ['./img/Main_img/Ranking_img/Targa/01.jpg', './img/Main_img/Ranking_img/Targa/02.jpg', '../img/Main_img/Ranking_img/Targa/03.jpg', './img/Main_img/Ranking_img/Targa/04.jpg', './img/Main_img/Ranking_img/Targa/05.jpg', './img/Main_img/Ranking_img/Targa/06.jpg'];
+const targaImg = ['./img/Main_img/Ranking_img/Targa/01.jpg', './img/Main_img/Ranking_img/Targa/02.jpg', './img/Main_img/Ranking_img/Targa/03.jpg', './img/Main_img/Ranking_img/Targa/04.jpg', './img/Main_img/Ranking_img/Targa/05.jpg', './img/Main_img/Ranking_img/Targa/06.jpg'];
 
 const targaPrice = ['89,000원', '179,000원', '149,000원', '109,000원', '79,000원', '88,000원'];
 
