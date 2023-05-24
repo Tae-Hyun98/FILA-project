@@ -575,7 +575,7 @@ window.addEventListener('scroll', () => {
       opacity: 0,
       visibility: 'hidden'
     })
-  } else if (window.scrollY >= 3500) {
+  } else if (window.scrollY >= 2000) {
     gsap.to(topBtn, 0.1, {
       opacity: 1,
       visibility: 'visible'
