@@ -203,7 +203,7 @@ var onlineArray = ['Fila athletics 아노락', 'Fila tennis 블럭 자켓', 'Fil
 var onlineImg = ['./img/Main_img/Ranking_img/Online/01.jpg', './img/Main_img/Ranking_img/Online/02.jpg', './img/Main_img/Ranking_img/Online/03.jpg', './img/Main_img/Ranking_img/Online/04.jpg', './img/Main_img/Ranking_img/Online/05.jpg', './img/Main_img/Ranking_img/Online/06.jpg'];
 var onlinePrice = ['109,000원', '129,000원', '129,000원', '69,000원', '42,000원', '39,000원'];
 var targaArray = ['타르가 클래식', '타르가 OG 1988 BB', '타르가 OG 1988', '타르가 클럽 LT', '타르가 88/22', '타르가 클래식 808'];
-var targaImg = ['./img/Main_img/Ranking_img/Targa/01.jpg', './img/Main_img/Ranking_img/Targa/02.jpg', '../img/Main_img/Ranking_img/Targa/03.jpg', './img/Main_img/Ranking_img/Targa/04.jpg', './img/Main_img/Ranking_img/Targa/05.jpg', './img/Main_img/Ranking_img/Targa/06.jpg'];
+var targaImg = ['./img/Main_img/Ranking_img/Targa/01.jpg', './img/Main_img/Ranking_img/Targa/02.jpg', './img/Main_img/Ranking_img/Targa/03.jpg', './img/Main_img/Ranking_img/Targa/04.jpg', './img/Main_img/Ranking_img/Targa/05.jpg', './img/Main_img/Ranking_img/Targa/06.jpg'];
 var targaPrice = ['89,000원', '179,000원', '149,000원', '109,000원', '79,000원', '88,000원'];
 var tennisArray = ['테니스 소프트 볼캡', 'FILA 테니스 라켓 슬링백', 'WHITE LINE 라켓 슬링백', '테니스 타월', '테니스 탁텔 하드볼캡', '테니스 헤어밴드'];
 var tennisImg = ['./img/Main_img/Ranking_img/Tennis/01.jpg', './img/Main_img/Ranking_img/Tennis/02.jpg', './img/Main_img/Ranking_img/Tennis/03.jpg', './img/Main_img/Ranking_img/Tennis/04.jpg', './img/Main_img/Ranking_img/Tennis/05.jpg', './img/Main_img/Ranking_img/Tennis/06.jpg'];
@@ -418,7 +418,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55260" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56045" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
