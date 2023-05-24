@@ -454,11 +454,16 @@ img {
 
 /**********filter*********/
 .list_container {
-  padding: 0 60px;
+  padding: 0 50px;
 }
 
 .filter_wrap {
   margin: 30px 0;
+}
+
+#total {
+  font-size: 16px;
+  padding-left: 10px;
 }
 
 .filter_wrap .filter_top {
@@ -510,19 +515,19 @@ img {
   margin-left: 20px;
 }
 
-.col_box button.col3_btn {
+.col_box button.col4_btn {
   background-image: url(/ico_col3_off_24x24.9769a628.png);
 }
 
-.col_3 .filter_wrap .col_box .col3_btn {
+.col_4 .filter_wrap .col_box .col4_btn {
   background-image: url(/ico_col3_on_24x24.20860d9a.png);
 }
 
-.col_box button.col4_btn {
+.col_box button.col5_btn {
   background-image: url(/ico_col4_off_24x24.78353dfc.png);
 }
 
-.col_4 .filter_wrap .col_box .col4_btn {
+.col_5 .filter_wrap .col_box .col5_btn {
   background-image: url(/ico_col4_on_24x24.7cc16732.png);
 }
 
@@ -673,29 +678,30 @@ img {
 .product_list {
   display: flex;
   flex-wrap: wrap;
-}
-
-div.col_3 .product_box {
-  width: calc(25% - 15px);
-}
-
-div.col_3 .product_box:nth-child(4n),
-div.col_4 .product_box:nth-child(5n) {
-  margin-right: 0;
-}
-
-div.col_4 .product_box {
-  width: calc(20% - 16px);
-}
-
-div.col_4 .product_box .detail p.product_name {
-  font-size: 16px;
+  transition: .3s;
 }
 
 .product_box {
+  margin-right: 15px;
+  margin-bottom: 70px;
   transition: .3s;
-  margin-right: 20px;
-  margin-bottom: 40px;
+}
+
+div.col_4 .product_list .product_box:nth-child(4n),
+div.col_5 .product_list .product_box:nth-child(5n) {
+  margin-right: 0;
+}
+
+div.col_4 .product_list .product_box {
+  width: calc(25% - 12px);
+}
+
+div.col_5 .product_list .product_box {
+  width: calc(20% - 12px);
+}
+
+div.col_5 .product_box .detail p.product_name {
+  font-size: 16px;
 }
 
 .product_box .product_img {
@@ -747,7 +753,7 @@ div.col_4 .product_box .detail p.product_name {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  padding: 10px 0;
+  padding: 10px 0 0;
 }
 
 .detail>a {
@@ -803,31 +809,6 @@ div.col_4 .product_box .detail p.product_name {
   color: #fff;
 }
 
-/***********quick*************/
-.quick {
-  position: fixed;
-  right: -60px;
-  bottom: 50px;
-  transition: .3s;
-}
-
-.quick.on {
-  right: 30px;
-}
-
-.quick a {
-  font-size: 40px;
-  display: block;
-  background-color: #002053;
-  color: #fff;
-}
-
-.quick:hover a {
-  font-size: 40px;
-  display: block;
-  background-color: blue;
-  color: #fff;
-}
 
 /***********footer************/
 .footer {
@@ -985,5 +966,28 @@ div.col_4 .product_box .detail p.product_name {
 .footer .footer_bottom .f_sns li a.kakao {
   background-image: url(/kakao_ch.e942f459.svg);
 }
+
+/***********arrow*************/
+.arrow a {
+  display: block;
+  color: #000;
+  font-size: 40px;
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 5px 10px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 5;
+  transition: .1s;
+}
+
+.arrow a:hover {
+  background-color: #002053;
+  color: #fff;
+}
+
 
 /*# sourceMappingURL=/subpage.20c89f74.css.map */

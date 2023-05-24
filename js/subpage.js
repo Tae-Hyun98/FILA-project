@@ -8,35 +8,20 @@ const filterSele = document.getElementById('order');
 
 filterSele.addEventListener('change', () => {
   if (filterSele.value === 'name') {
-    subData.sort(function (a, b) { //이름 오름차순
-      return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
-    });
-    productList.innerHTML = '';
-    bindData();
+    const name = subData.sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0); //이름 오름차순
+    priobj(name);
   } else if (filterSele.value === 'desc') {
-    subData.sort(function (a, b) { //가격내림차순
-      return a.price - b.price;
-    });
-    productList.innerHTML = '';
-    bindData();
+    const desc = subData.sort((a, b) => a.price - b.price); //가격내림차순
+    priobj(desc);
   } else if (filterSele.value === 'asc') {
-    subData.sort(function (a, b) { //가격오름차순
-      return b.price - a.price;
-    });
-    productList.innerHTML = '';
-    bindData();
+    const asc = subData.sort((a, b) => b.price - a.price); //가격오름차순
+    priobj(asc);
   } else if (filterSele.value === 'new') {
-    subData.sort(function (a, b) { //신상품
-      return a.id > b.id ? -1 : a.id < b.id ? 1 : 0;
-    });
-    productList.innerHTML = '';
-    bindData();
+    const newProduct = subData.sort((a, b) => a.id > b.id ? -1 : a.id < b.id ? 1 : 0); //신상품
+    priobj(newProduct);
   } else if (filterSele.value === 'review') {
-    subData.sort(function (a, b) { //리뷰순정렬
-      return a.review > b.review ? -1 : a.review < b.review ? 1 : 0;
-    });
-    productList.innerHTML = '';
-    bindData();
+    const review = subData.sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0); //리뷰순정렬
+    priobj(review);
   }
 });
 
@@ -83,11 +68,6 @@ for (let i = 0; i < colorChk.length; i++) {
   });
 }
 
-/* function colorSelect(a,b){
-  subData.filter(function(a,b){
-
-  })
-} */
 
 function colorFun() {
   subData.filter(function (a, b) {
@@ -556,15 +536,6 @@ familySite.addEventListener('change', (e) => {
   openNewWindow.location.href = options[optionIndex].value;
 });
 
-//quick top
-const top = document.querySelector('.quick');
-window.addEventListener('scroll', () => {
-  if (scrollY > 200) {
-    top.classList.add('on');
-  } else {
-    top.classList.remove('on');
-  }
-});
 
 //상품개수표시
 const totalProduct = document.getElementById('total');

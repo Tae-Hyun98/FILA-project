@@ -20,7 +20,11 @@
   <script src="/main.fb6bbcaf.js" defer=""></script>
   <script src="/mainswiper.d9d5165e.js" defer=""></script>
 
-  <script>//탑 바텀버튼
+  <!-- gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+
+  <script>//퀵메뉴
 $(function () {
   $('.quick').css('top', $(window).height() / 2 - $('.quick').height() / 2);
   $(window).scroll(function () {
@@ -28,18 +32,6 @@ $(function () {
     $('.quick').stop().animate({
       top: point
     }, 200);
-  });
-  $('.arrow a.top').click(function (e) {
-    e.preventDefault();
-    $('html,body').stop().animate({
-      scrollTop: 0
-    }, 300);
-  });
-  $('.arrow a.bottom').click(function (e) {
-    e.preventDefault();
-    $('html,body').stop().animate({
-      scrollTop: $(document).height()
-    }, 300);
   });
 });</script>
 <script src="/main.c52e0fe2.js"></script></head>
@@ -358,23 +350,11 @@ $(function () {
 
       <div class="gnb_area">
         <ul class="gnb">
-          <li>
-            <a href="#!">
-              <i class="fas fa-map-marker-alt"></i>
-            </a>
-          </li>
+          <li><a href="#!"><i class="fas fa-map-marker-alt"></i></a></li>
 
-          <li>
-            <a href="#!" id="search">
-              <i class="fas fa-search"></i>
-            </a>
-          </li>
+          <li><a href="#!" id="search"><i class="fas fa-search"></i></a></li>
 
-          <li>
-            <a href="#!">
-              <i class="far fa-user"></i>
-            </a>
-          </li>
+          <li><a href="#!"><i class="far fa-user"></i></a></li>
 
           <li>
             <a href="#!">
@@ -480,41 +460,39 @@ $(function () {
       <h1>랭킹</h1>
       <div class="rank_category">
         <ul class="category_btn">
-          <li><a href="#!">#티셔츠&팬츠</a></li>
-          <li><a href="#!">#레이플라이드</a></li>
-          <li><a href="#!">#헤리티지</a></li>
-          <li><a href="#!">#온라인단독</a></li>
-          <li><a href="#!">#타르가</a></li>
-          <li><a href="#!">#테니스</a></li>
-          <li><a href="#!">#런닝화</a></li>
+          <li><a href="#!"># 티셔츠&팬츠</a></li>
+          <li><a href="#!"># 온라인단독</a></li>
+          <li><a href="#!"># 타르가</a></li>
+          <li><a href="#!"># 테니스</a></li>
+          <li><a href="#!"># 런닝화</a></li>
         </ul>
       </div>
 
       <div class="rank_box">
         <div class="rank_order">
           <div class="rank_top">
-            <h3>#티셔츠&팬츠</h3>
+            <h3># 티셔츠&팬츠</h3>
           </div>
 
           <div class="rank_bottom">
             <ul>
               <li class="active">
-                <a href="#!"><span>01</span>베이직 리니어 반팔티</a>
+                <a href="#!">베이직 리니어 반팔티</a>
               </li>
               <li>
-                <a href="#!"><span>02</span>3D 빅로고 반팔티</a>
+                <a href="#!">3D 빅로고 반팔티</a>
               </li>
               <li>
-                <a href="#!"><span>03</span>컴포트핏 인터내셔널 로고 반팔티</a>
+                <a href="#!">컴포트핏 인터내셔널 로고 반팔티</a>
               </li>
               <li>
-                <a href="#!"><span>04</span>컴포트핏 인터내셔널 반팔 맨투맨</a>
+                <a href="#!">컴포트핏 인터내셔널 반팔 맨투맨</a>
               </li>
               <li>
-                <a href="#!"><span>05</span>컴포트핏 조거팬츠</a>
+                <a href="#!">컴포트핏 조거팬츠</a>
               </li>
               <li>
-                <a href="#!"><span>06</span>이지팬츠</a>
+                <a href="#!">이지팬츠</a>
               </li>
             </ul>
           </div>
@@ -522,7 +500,6 @@ $(function () {
 
         <div class="rankSwiper">
           <div class="swiper-wrapper">
-            <!-- Rank Slides -->
             <div class="swiper-slide">
               <div class="rank_img">
                 <a href="#!">
@@ -531,16 +508,17 @@ $(function () {
                 <div class="rank_desc">
                   <ul>
                     <li>
-                      <p><a href="#!">스트레치 카고 조거팬츠</a></p>
-                      <p><a href="#!">119,000원</a></p>
+                      <a href="#!" class="desc_tit">베이직 리니어 반팔티</a>
+                      <a href="#!" class="desc_price">39,000원</a>
                     </li>
+
                     <li>
-                      <span class="material-icons-outlined">
-                        <a href="#!"> favorite_border</a>
-                      </span>
-                      <span class="material-icons-outlined">
-                        <a href="#!">local_mall</a>
-                      </span>
+                      <a class="material-icons-outlined rank_icon">
+                        favorite
+                      </a>
+                      <a class="material-icons-outlined rank_icon">
+                        local_mall
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -555,16 +533,17 @@ $(function () {
                 <div class="rank_desc">
                   <ul>
                     <li>
-                      <p><a href="#!">스트레치 카고 조거팬츠</a></p>
-                      <p><a href="#!">119,000원</a></p>
+                      <a href="#!" class="desc_tit">3D 빅로고 반팔티</a>
+                      <a href="#!" class="desc_price">32,000원</a>
                     </li>
+
                     <li>
-                      <span class="material-icons-outlined">
-                        <a href="#!"> favorite_border</a>
-                      </span>
-                      <span class="material-icons-outlined">
-                        <a href="#!">local_mall</a>
-                      </span>
+                      <a class="material-icons-outlined rank_icon">
+                        favorite
+                      </a>
+                      <a class="material-icons-outlined rank_icon">
+                        local_mall
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -579,16 +558,17 @@ $(function () {
                 <div class="rank_desc">
                   <ul>
                     <li>
-                      <p><a href="#!">스트레치 카고 조거팬츠</a></p>
-                      <p><a href="#!">119,000원</a></p>
+                      <a href="#!" class="desc_tit">컴포트핏 인터내셔널 로고 반팔티</a>
+                      <a href="#!" class="desc_price">38,000원</a>
                     </li>
+
                     <li>
-                      <span class="material-icons-outlined">
-                        <a href="#!"> favorite_border</a>
-                      </span>
-                      <span class="material-icons-outlined">
-                        <a href="#!">local_mall</a>
-                      </span>
+                      <a class="material-icons-outlined rank_icon">
+                        favorite
+                      </a>
+                      <a class="material-icons-outlined rank_icon">
+                        local_mall
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -603,16 +583,17 @@ $(function () {
                 <div class="rank_desc">
                   <ul>
                     <li>
-                      <p><a href="#!">스트레치 카고 조거팬츠</a></p>
-                      <p><a href="#!">119,000원</a></p>
+                      <a href="#!" class="desc_tit">컴포트핏 인터내셔널 반팔 맨투맨</a>
+                      <a href="#!" class="desc_price">29,000원</a>
                     </li>
+
                     <li>
-                      <span class="material-icons-outlined">
-                        <a href="#!"> favorite_border</a>
-                      </span>
-                      <span class="material-icons-outlined">
-                        <a href="#!">local_mall</a>
-                      </span>
+                      <a class="material-icons-outlined rank_icon">
+                        favorite
+                      </a>
+                      <a class="material-icons-outlined rank_icon">
+                        local_mall
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -627,16 +608,17 @@ $(function () {
                 <div class="rank_desc">
                   <ul>
                     <li>
-                      <p><a href="#!">스트레치 카고 조거팬츠</a></p>
-                      <p><a href="#!">119,000원</a></p>
+                      <a href="#!" class="desc_tit">컴포트핏 조거팬츠</a>
+                      <a href="#!" class="desc_price">24,000원</a>
                     </li>
+
                     <li>
-                      <span class="material-icons-outlined">
-                        <a href="#!"> favorite_border</a>
-                      </span>
-                      <span class="material-icons-outlined">
-                        <a href="#!">local_mall</a>
-                      </span>
+                      <a class="material-icons-outlined rank_icon">
+                        favorite
+                      </a>
+                      <a class="material-icons-outlined rank_icon">
+                        local_mall
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -651,16 +633,17 @@ $(function () {
                 <div class="rank_desc">
                   <ul>
                     <li>
-                      <p><a href="#!">스트레치 카고 조거팬츠</a></p>
-                      <p><a href="#!">119,000원</a></p>
+                      <a href="#!" class="desc_tit">이지팬츠</a>
+                      <a href="#!" class="desc_price">18,000원</a>
                     </li>
+
                     <li>
-                      <span class="material-icons-outlined">
-                        <a href="#!"> favorite_border</a>
-                      </span>
-                      <span class="material-icons-outlined">
-                        <a href="#!">local_mall</a>
-                      </span>
+                      <a class="material-icons-outlined rank_icon">
+                        favorite
+                      </a>
+                      <a class="material-icons-outlined rank_icon">
+                        local_mall
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -690,9 +673,7 @@ $(function () {
       <div class="new_arrival_category">
         <ul>
           <li><a href="#!">#티셔츠&팬츠</a></li>
-          <li><a href="#!">#헤리티지</a></li>
           <li><a href="#!">#온라인 단독</a></li>
-          <li><a href="#!">#테니스</a></li>
           <li><a href="#!">#신발</a></li>
         </ul>
       </div>
@@ -955,7 +936,7 @@ $(function () {
 
     <section class="recommand_style">
       <div class="recommand">
-        <h1>추천 코디</h1>
+        <h1>추천 코디 <span>상품의 +에 마우스를 올려보세요</span></h1>
         <div class="recommand_box">
           <div class="rec_img">
             <img src="/02.a8ac42fd.jpg" alt="recommand">
@@ -964,7 +945,9 @@ $(function () {
                 add
               </span>
               <div class="rec_desc">
-                <p>테니스 라이프 카라원피스</p>
+                <p class="de_tit">테니스 라이프 카라원피스</p>
+                <p class="de_price">32,000원</p>
+                <a href="#!" class="purchase_btn">구매하러가기</a>
               </div>
             </div>
 
@@ -973,15 +956,61 @@ $(function () {
                 add
               </span>
               <div class="rec_desc">
-                <p>테니스 로고테잎 니삭스</p>
+                <p class="de_tit">테니스 로고테잎 니삭스</p>
+                <p class="de_price">12,000원</p>
+                <a href="#!" class="purchase_btn">구매하러가기</a>
               </div>
             </div>
           </div>
+
           <div class="rec_img">
             <img src="/03.caa4aabe.jpg" alt="recommand">
+            <div class="rec_plus plus2">
+              <span class="material-icons-outlined">
+                add
+              </span>
+              <div class="rec_desc">
+                <p class="de_tit">리니어 PU 볼링백</p>
+                <p class="de_price">99,000원</p>
+                <a href="#!" class="purchase_btn">구매하러가기</a>
+              </div>
+            </div>
+
+            <div class="rec_plus plus3">
+              <span class="material-icons-outlined">
+                add
+              </span>
+              <div class="rec_desc">
+                <p class="de_tit">휠라 스피드서브 T9화이트라인</p>
+                <p class="de_price">179,000원</p>
+                <a href="#!" class="purchase_btn">구매하러가기</a>
+              </div>
+            </div>
           </div>
+
           <div class="rec_img">
             <img src="/22.ae77603f.jpg" alt="recommand">
+            <div class="rec_plus plus4">
+              <span class="material-icons-outlined">
+                add
+              </span>
+              <div class="rec_desc">
+                <p class="de_tit">컴포트핏 인터내셔널 카라티</p>
+                <p class="de_price">79,000원</p>
+                <a href="#!" class="purchase_btn">구매하러가기</a>
+              </div>
+            </div>
+
+            <div class="rec_plus plus5">
+              <span class="material-icons-outlined">
+                add
+              </span>
+              <div class="rec_desc">
+                <p class="de_tit">컴포트핏 인터내셔널 4부 반바지</p>
+                <p class="de_price">69,000원</p>
+                <a href="#!" class="purchase_btn">구매하러가기</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -995,60 +1024,145 @@ $(function () {
             <li>
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/01.640d710e.jpg);">
+                <div class="sns_hover">
+                  <div class="tag">
+                    <p class="tag_tit">FEEL THE WIND</p>
+                    <p>#FILA</p>
+                    <p>#휠라바람막이</p>
+                    <p>#휠라아우터</p>
+                  </div>
+                </div>
               </a>
+
             </li>
 
             <li>
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/02.b92d687e.jpg);">
+                <div class="sns_hover">
+                  <div class="tag">
+                    <p class="tag_tit">RAY FLIDE V2</p>
+                    <p>#FILA</p>
+                    <p>#RAYFILDEV2</p>
+                    <p>#레이플라이드v2</p>
+                  </div>
+                </div>
               </a>
             </li>
 
             <li>
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/03.f02b0eaf.jpg);">
+                <div class="sns_hover">
+                  <div class="tag">
+                    <p class="tag_tit">괌 테니스 당첨자 발표</p>
+                    <p>#FILA</p>
+                    <p>#괌 테니스</p>
+                    <p>#당첨자 발표</p>
+                  </div>
+                </div>
               </a>
             </li>
 
             <li>
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/04.4f7dd0e2.jpg);">
+                <div class="sns_hover">
+                  <div class="tag">
+                    <p class="tag_tit">다가오는 여름, 드리프트 튜브 쏭과 나만의 색찾기!</p>
+                    <p>#FILA</p>
+                    <p>#플립플랍</p>
+                    <p>#드리프터튜브</p>
+                  </div>
+                </div>
               </a>
             </li>
 
             <li>
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/05.36b2130b.jpg);">
+                <div class="sns_hover">
+                  <div class="tag">
+                    <p class="tag_tit">휠라와 함께 색다른 테니스 스타일을 즐겨보세요!</p>
+                    <p>#FILA</p>
+                    <p>#FILATENNIS</p>
+                    <p>#데일리테니스</p>
+                  </div>
+                </div>
               </a>
             </li>
 
             <li>
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/06.9c49d177.jpg);">
+                <div class="sns_hover">
+                  <div class="tag">
+                    <p class="tag_tit">FILA Outfits</p>
+                    <p>#FILA</p>
+                    <p>#휠라카라티</p>
+                    <p>#데일리테니스</p>
+                  </div>
+                </div>
               </a>
             </li>
 
             <li>
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/07.b5a468f5.jpg);">
+                <div class="sns_hover">
+                  <div class="tag">
+                    <p class="tag_tit">FILA TENNIS COLLECTION</p>
+                    <p>#FILA</p>
+                    <p>#테니스룩</p>
+                    <p>#데일리테니스</p>
+                    <p>#테니스모자</p>
+                  </div>
+                </div>
               </a>
             </li>
 
             <li>
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/08.466bc2ab.jpg);">
+                <div class="sns_hover">
+                  <div class="tag">
+                    <p class="tag_tit">2023 WHITE OPEN SEOUL LOOKING</p>
+                    <p>#FILA</p>
+                    <p>#화이트오픈서울</p>
+                    <p>#광화문</p>
+                  </div>
+                </div>
               </a>
             </li>
 
             <li>
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/09.9a937367.jpg);">
+                <div class="sns_hover">
+                  <div class="tag">
+                    <p class="tag_tit">FILA TENNIS HERITAGE
+                    </p>
+                    <p>#FILA</p>
+                    <p>#HERITAGE</p>
+                    <p>#청담 분더샵</p>
+                    <p>#화이트라인 팝업스토어</p>
+                  </div>
+                </div>
+
               </a>
             </li>
 
             <li>
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/10.5df629fb.jpg);">
+                <div class="sns_hover">
+                  <div class="tag">
+                    <p class="tag_tit">2023 WHITE OPEN SEOUL</p>
+                    <p>#FILA</p>
+                    <p>#화이트오픈서울</p>
+                    <p>#골든블랑</p>
+                  </div>
+                </div>
               </a>
             </li>
           </ul>
@@ -1056,6 +1170,8 @@ $(function () {
       </div>
     </section>
 
+
+    <!-- footer -->
     <footer class="footer">
       <div class="footer_nav">
         <ul class="footer_top">
@@ -1118,7 +1234,6 @@ $(function () {
           <li><a href="#!">Tennis Stories</a></li>
         </ul>
 
-
       </div>
 
       <div class="footer_list">
@@ -1174,9 +1289,10 @@ $(function () {
           </ul>
         </div>
       </div>
-  </footer></div>
-  
+    </footer>
+  </div>
 
+  <!-- 퀵메뉴버튼 -->
   <div class="quick">
     <div class="quick_box">
       <ul class="quick_nav">
@@ -1191,7 +1307,7 @@ $(function () {
         <li>
           <a href="#!" class="order bg">order</a>
         </li>
-        
+
         <li>
           <a href="#!" class="service bg">service</a>
         </li>
@@ -1206,7 +1322,7 @@ $(function () {
     </div>
   </div>
 
-
+  <!-- 탑,바텀버튼 -->
   <div class="arrow">
     <a href="#!" class="material-icons-outlined top">
       keyboard_arrow_up
@@ -1217,87 +1333,6 @@ $(function () {
   </div>
 
 
-  <!-- <script>
-    //비쥬얼메인
-let swiper = new Swiper(".myswiper", {
-  loop: true,
-  autoplay: {
-    delay: 3000,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-    type: "fraction",
-    renderBullet: function (index, className) {
-      return '<span class=""' + className + '>' +
-        (index + 1) + '</span>'
-    }
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-
-let pagingSwiper = new Swiper(".myswiper", {
-  loop: true,
-  pagination: {
-    loop: true,
-    el: ".swiper-pagination2",
-    type: "progressbar",
-
-  },
-});
-swiper.controller.control = pagingSwiper;
-
-//랭킹
-let rankSwiper = new Swiper(".rankSwiper", {
-  loop: true,
-  loopAdditionalSlides: 1,
-  centeredSlides: true,
-  slidesPerGroup: 1,
-  slidesPerView: 3,
-  slideToClickedSlide: true,
-  autoplay: {
-    delay: 3500,
-    disableOnInteraction: false,
-  },
-
-  on: {
-    activeIndexChange: function () {
-      $('.rank_order .rank_bottom ul li').removeClass('active');
-      $('.rank_order .rank_bottom ul li').eq(this.realIndex).addClass('active');
-    }
-  },
-
-});
-$(function () {
-  $('.rank_order .rank_bottom ul li').click(function (e) {
-    e.preventDefault();
-    let index = $(this).index();
-    rankSwiper.slideToLoop(index);
-  });
-});
-
-
-//NEW ARRIVAL
-const newSwiper = new Swiper(".newSwiper", {
-  loop: true,
-  centeredSlides: true,
-  slidesPerView: 3,
-  slidesPerGroup: 1,
-  slidesPerView: "auto",
-  /*  autoplay: {
-     delay: 4000,
-     disableOnInteraction: false,
-   }, */
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-  </script> -->
 </body>
 
 </html>

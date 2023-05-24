@@ -14,19 +14,13 @@
   <script src="/jquery.scrollTo.min.119b2d33.js"></script>
   <script src="/jquery.mousewheel.min.f95e68c8.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script src="/import-jquery.89547f03.js"></script>
+  <script src="/import-jquery.89547f03.js" defer=""></script>
   <script type="module" src="/subpage.75add7d0.js" defer=""></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
 
-
-  <script>$(function () {
-  $('.quick a.top').click(function (e) {
-    e.preventDefault();
-    $('html,body').stop().animate({
-      scrollTop: 0
-    }, 300);
-  });
-});</script>
+  <!-- gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
 <script src="/subpage.20c89f74.js"></script></head>
 
 <body class="scroll">
@@ -37,7 +31,7 @@
     <div class="lnb">
       <ul class="lnb_nav">
         <li>
-          <a href="#!">WOMEN</a>
+          <a href="/detail.html">WOMEN</a>
           <div class="women_down down">
             <div class="inner">
               <div class="category_menu">
@@ -445,8 +439,8 @@
               </div>
 
               <div class="col_box">
-                <button type="button" class="col3_btn">3</button>
                 <button type="button" class="col4_btn">4</button>
+                <button type="button" class="col5_btn">5</button>
               </div>
             </div>
           </div>
@@ -458,6 +452,7 @@
                 <ul>
                   <li class="on">
                     <a href="#!">전체</a>
+                    <span id="total"></span>
                   </li>
 
                   <li>
@@ -527,7 +522,7 @@
                   <li>
                     <input type="checkbox" id="color_01" class="color">
                     <label for="color_01">
-                      <img src="/BEIGE.dca81350.png" alt="BEIGE">
+                      <img src="/WHITE.b8f82531.png" alt="WHITE">
                     </label>
                   </li>
 
@@ -541,7 +536,7 @@
                   <li>
                     <input type="checkbox" id="color_03" class="color">
                     <label for="color_03">
-                      <img src="/BLUE.f6db7394.png" alt="BLUE">
+                      <img src="/GREY.44d6af56.png" alt="GREY">
                     </label>
                   </li>
 
@@ -555,7 +550,7 @@
                   <li>
                     <input type="checkbox" id="color_05" class="color">
                     <label for="color_05">
-                      <img src="/GREY.44d6af56.png" alt="GREY">
+                      <img src="/BLUE.f6db7394.png" alt="BLUE">
                     </label>
                   </li>
 
@@ -611,7 +606,7 @@
                   <li>
                     <input type="checkbox" id="color_13" class="color">
                     <label for="color_13">
-                      <img src="/WHITE.b8f82531.png" alt="WHITE">
+                      <img src="/BEIGE.dca81350.png" alt="BEIGE">
                     </label>
                   </li>
 
@@ -709,17 +704,17 @@
 
                   <li>
                     <input type="checkbox" id="price02" class="price">
-                    <label for="price02">39,000~49,000</label>
+                    <label for="price02">40,000~49,000</label>
                   </li>
 
                   <li>
                     <input type="checkbox" id="price03" class="price">
-                    <label for="price03">49,000~59,000</label>
+                    <label for="price03">50,000~59,000</label>
                   </li>
 
                   <li>
                     <input type="checkbox" id="price04" class="price">
-                    <label for="price04">59,000~79,000</label>
+                    <label for="price04">60,000~79,000</label>
                   </li>
 
                   <li>
@@ -759,11 +754,7 @@
     </div>
   </section>
 
-  <div class="quick">
-    <a href="#!" class="material-icons-outlined top">
-      keyboard_arrow_up
-    </a>
-  </div>
+
 
   <footer class="footer">
     <div class="footer_inner">
@@ -885,6 +876,16 @@
       </div>
     </div>
   </footer>
+
+  <!-- 탑,바텀버튼 -->
+  <div class="arrow">
+    <a href="#!" class="material-icons-outlined top">
+      keyboard_arrow_up
+    </a>
+    <a href="#!" class="material-icons-outlined bottom">
+      keyboard_arrow_down
+    </a>
+  </div>
 </body>
 
 </html>
