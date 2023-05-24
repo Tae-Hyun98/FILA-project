@@ -63,7 +63,7 @@ for (let a = 0; a < priceFilter.length; a++) {
       priobj(price79000);
     } else {
       productList.innerHTML = '';
-      bindData();
+      priobj(subData);
     }
   });
 }
@@ -89,6 +89,11 @@ for (let i = 0; i < colorChk.length; i++) {
   })
 } */
 
+function colorFun() {
+  subData.filter(function (a, b) {
+    return a.color === b;
+  });
+}
 //컬러필터
 const white = subData.filter((color01) => color01.color === 'white');
 const black = subData.filter((color01) => color01.color === 'black');
@@ -105,17 +110,17 @@ const red = subData.filter((color01) => color01.color === 'red');
 const beige = subData.filter((color01) => color01.color === 'beige');
 const yellow = subData.filter((color01) => color01.color === 'yellow');
 
-for(let i=0;i<colorChk.length;i++){
-colorChk[i].addEventListener('click', () => {
-  if (colorChk[0].checked) {
-    priobj(white);
-  } else if(colorChk[1].checked) {
-    priobj(black);
-  }else{
-    productList.innerHTML = '';
-    bindData();
-  }
-});
+for (let i = 0; i < colorChk.length; i++) {
+  colorChk[i].addEventListener('click', () => {
+    if (colorChk[0].checked) {
+      priobj(white);
+    } else if (colorChk[1].checked) {
+      priobj(black);
+    } else {
+      productList.innerHTML = '';
+      priobj(subData);
+    }
+  });
 }
 
 //리스트 객체함수
