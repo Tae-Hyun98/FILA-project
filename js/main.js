@@ -227,10 +227,85 @@ bottomBtn.addEventListener('click', () => {
 
 
 //팝업닫기
-
 const popup = document.querySelector('.popup');
 const popupClose = document.getElementById('popup_close');
 
 popupClose.addEventListener('click', () => {
   popup.style.display = 'none';
 });
+
+
+//magazine 나타나기
+const magzEls = document.querySelectorAll('.magazine_box>div');
+window.addEventListener('scroll', () => {
+  if (window.scrollY >= 3800) {
+    gsap.to(magzEls[0], 0.5, {
+      opacity: 1,
+      translateX: 0
+    })
+    gsap.to(magzEls[1], 0.5, {
+      delay: 0.5,
+      opacity: 1,
+      translateY: 0
+    })
+    gsap.to(magzEls[2], 0.5, {
+      delay: 1,
+      opacity: 1,
+      translateX: 0
+    })
+  }
+})
+
+const snsEls = document.querySelectorAll('.sns_list li');
+window.addEventListener('scroll', () => {
+  if (window.scrollY >= 5600) {
+    gsap.to(snsEls[0], 0.5, {
+      delay: 2,
+      opacity: 1,
+      translateX: 0
+    })
+    gsap.to(snsEls[1], 0.5, {
+      delay: 1.5,
+      opacity: 1,
+      translateX: 0
+    })
+    gsap.to(snsEls[2], 0.5, {
+      delay: 1,
+      opacity: 1,
+      translateX: 0
+    })
+    gsap.to(snsEls[3], 0.5, {
+      delay: 0.5,
+      opacity: 1,
+      translateX: 0
+    })
+    gsap.to(snsEls[4], 0.5, {
+      opacity: 1,
+      translateX: 0
+    })
+    gsap.to(snsEls[5], 0.5, {
+      opacity: 1,
+      translateX: 0
+    })
+    gsap.to(snsEls[6], 0.5, {
+      delay: 0.5,
+      opacity: 1,
+      translateX: 0
+    })
+    gsap.to(snsEls[7], 0.5, {
+      delay: 1,
+      opacity: 1,
+      translateX: 0
+    })
+    gsap.to(snsEls[8], 0.5, {
+      delay: 1.5,
+      opacity: 1,
+      translateX: 0
+    })
+    gsap.to(snsEls[9], 0.5, {
+      delay: 2,
+      opacity: 1,
+      translateX: 0
+    })
+  }
+})

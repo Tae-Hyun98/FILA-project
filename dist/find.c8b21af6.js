@@ -138,6 +138,13 @@ var userData = [{
   idcard_back: '1234567',
   userid: 'green',
   password: '12345'
+}, {
+  id: 'data03',
+  username: '가나다',
+  idcard_front: '123456',
+  idcard_back: '1234567',
+  userid: 'abcde',
+  password: '12345!'
 }];
 var _default = userData;
 exports.default = _default;
@@ -216,7 +223,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49719" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52078" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

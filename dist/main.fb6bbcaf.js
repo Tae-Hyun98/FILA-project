@@ -312,6 +312,14 @@ bottomBtn.addEventListener('click', function () {
     scrollTo: 7000
   });
 });
+
+//팝업닫기
+
+var popup = document.querySelector('.popup');
+var popupClose = document.getElementById('popup_close');
+popupClose.addEventListener('click', function () {
+  popup.style.display = 'none';
+});
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -337,7 +345,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49719" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52078" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

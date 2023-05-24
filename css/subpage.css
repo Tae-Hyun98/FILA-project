@@ -710,7 +710,8 @@ div.col_5 .product_list .product_box:nth-child(5n) {
 }
 
 div.col_4 .product_list .product_box {
-  width: calc(25% - 12px);
+  width: calc(25% - 15px);
+  margin-right: 20px;
 }
 
 div.col_5 .product_list .product_box {

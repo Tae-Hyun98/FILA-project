@@ -24,7 +24,7 @@ const userData = [
     idcard_back: '1234567',
     userid: 'abcde',
     password: '12345!',
-  }
+  },
 ]
 
 export default userData;

@@ -336,7 +336,6 @@ for (var a = 0; a < priceFilter.length; a++) {
     } else if (priceFilter[4].checked) {
       priobj(price79000);
     } else {
-      productList.innerHTML = '';
       priobj(_sub_data.default);
     }
   });
@@ -357,11 +356,7 @@ var _loop = function _loop(i) {
 for (var i = 0; i < colorChk.length; i++) {
   _loop(i);
 }
-function colorFun() {
-  _sub_data.default.filter(function (a, b) {
-    return a.color === b;
-  });
-}
+
 //컬러필터
 var white = _sub_data.default.filter(function (color01) {
   return color01.color === 'white';
@@ -411,8 +406,31 @@ for (var _i = 0; _i < colorChk.length; _i++) {
       priobj(white);
     } else if (colorChk[1].checked) {
       priobj(black);
+    } else if (colorChk[2].checked) {
+      priobj(gray);
+    } else if (colorChk[3].checked) {
+      priobj(green);
+    } else if (colorChk[4].checked) {
+      priobj(blue);
+    } else if (colorChk[5].checked) {
+      priobj(khaki);
+    } else if (colorChk[6].checked) {
+      priobj(mix);
+    } else if (colorChk[7].checked) {
+      priobj(navy);
+    } else if (colorChk[8].checked) {
+      priobj(neon);
+    } else if (colorChk[9].checked) {
+      priobj(orange);
+    } else if (colorChk[10].checked) {
+      priobj(pink);
+    } else if (colorChk[11].checked) {
+      priobj(red);
+    } else if (colorChk[12].checked) {
+      priobj(beige);
+    } else if (colorChk[13].checked) {
+      priobj(yellow);
     } else {
-      productList.innerHTML = '';
       priobj(_sub_data.default);
     }
   });
@@ -904,7 +922,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49719" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52078" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
