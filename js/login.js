@@ -45,9 +45,6 @@ loninBtn.addEventListener('click', () => {
         alert('아이디가 틀렸습니다.');
       } else if (loginId.value === userData[i].userid && loginPw.value !== userData[i].password) {
         alert('비밀번호가 틀렸습니다.');
-      } else if (loginId.value !== userData[i].userid && loginPw.value !== userData[i].password) {
-        alert('일치하는 정보가 없습니다.');
-        break;
       }
     }
   }
