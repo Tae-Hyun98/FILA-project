@@ -197,6 +197,26 @@ const subData = [{
     review: 17,
     color:'navy'
   },
+
+  {
+    id: 21,
+    category: "남성 신상품",
+    name: "FILA ITALIA 반팔티셔츠",
+    price: 32000,
+    src: "../img/Sub_img/21.jpg",
+    review: 2,
+    color:'orange'
+  },
+
+  {
+    id: 22,
+    category: "공용 신상품 라이프스타일",
+    name: "핫써머 씨어서커 아노락 바람막이",
+    price: 55000,
+    src: "../img/Sub_img/22.jpg",
+    review: 0,
+    color:'blue'
+  },
 ]
 
 export default subData;
