@@ -59,7 +59,7 @@
       bulletClass: "preview_img",
       bulletActiveClass: "swiper-pagination-active",
       renderBullet: function (index, className) {
-        return '<div class="' + className + '"><img src="../img/detail_img/' + (image[index]) + '"></div>';
+        return '<div class="' + className + '"><img src="./img/detail_img/' + (image[index]) + '"></div>';
       },
     }
   });
