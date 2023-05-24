@@ -500,6 +500,7 @@ function priobj(obj) {
     subProduct.appendChild(productList);
   }
 }
+priobj(_sub_data.default);
 
 //가격필터
 /* const listBlack = subData.filter(function (data) {
@@ -580,88 +581,99 @@ input1.addEventListener('click', () => {
 });
  */
 
-//초기상품리스트 
+/* //초기상품리스트 
 function bindData() {
-  for (var _i3 = 0; _i3 < _sub_data.default.length; _i3++) {
+  for (let i = 0; i < subData.length; i++) {
     //서브 상품박스
-    var subDiv = document.createElement('div');
+    const subDiv = document.createElement('div');
     subDiv.setAttribute('class', 'product_box');
-    var subImgBox = document.createElement('div');
+
+    const subImgBox = document.createElement('div');
     subImgBox.setAttribute('class', 'product_img');
-    var imgLink = document.createElement('a');
+
+    const imgLink = document.createElement('a');
     imgLink.setAttribute('href', "#!");
     subImgBox.appendChild(imgLink);
-    var subImg = document.createElement('img');
-    subImg.setAttribute('src', _sub_data.default[_i3].src);
+
+    const subImg = document.createElement('img');
+    subImg.setAttribute('src', subData[i].src);
     imgLink.appendChild(subImg);
-    var detailDiv = document.createElement('div');
+
+    const detailDiv = document.createElement('div');
     detailDiv.setAttribute('class', 'detail');
-    var detailLink = document.createElement('a');
+
+    const detailLink = document.createElement('a');
     detailLink.setAttribute('href', '#!');
     detailDiv.appendChild(detailLink);
 
     //상품박스 호버했을때
-    var hoverDiv = document.createElement('div');
+    const hoverDiv = document.createElement('div');
     hoverDiv.setAttribute('class', 'hover_box');
     subImgBox.appendChild(hoverDiv);
-    var cartDiv = document.createElement('div');
+
+    const cartDiv = document.createElement('div');
     hoverDiv.appendChild(cartDiv);
-    var cartSpan = document.createElement('span');
+    const cartSpan = document.createElement('span');
     cartSpan.setAttribute('class', 'material-icons-outlined');
-    var cartText = document.createTextNode('shopping_cart');
+    const cartText = document.createTextNode('shopping_cart');
     cartDiv.appendChild(cartSpan);
     cartSpan.appendChild(cartText);
-    var likeDiv = document.createElement('div');
+
+    const likeDiv = document.createElement('div');
     hoverDiv.appendChild(likeDiv);
-    var likeSpan = document.createElement('span');
+    const likeSpan = document.createElement('span');
     likeSpan.setAttribute('class', 'material-icons-outlined');
-    var likeText = document.createTextNode('favorite');
+    const likeText = document.createTextNode('favorite');
     likeDiv.appendChild(likeSpan);
     likeSpan.appendChild(likeText);
 
     //카테고리
-    var cateGory = document.createElement('p');
+    const cateGory = document.createElement('p');
     cateGory.setAttribute('class', 'category');
     detailLink.appendChild(cateGory);
-    var cateGoryText = document.createTextNode(_sub_data.default[_i3].category);
+    const cateGoryText = document.createTextNode(subData[i].category);
     cateGory.appendChild(cateGoryText);
 
     //상품이름
-    var productName = document.createElement('p');
+    const productName = document.createElement('p');
     productName.setAttribute('class', 'product_name');
     detailLink.appendChild(productName);
-    var nameText = document.createTextNode(_sub_data.default[_i3].name);
+    const nameText = document.createTextNode(subData[i].name);
     productName.appendChild(nameText);
 
     //상품가격
-    var productPrice = document.createElement('p');
+    const productPrice = document.createElement('p');
     productPrice.setAttribute('class', 'product_price');
     detailLink.appendChild(productPrice);
-    var namePrice = document.createTextNode(_sub_data.default[_i3].price.toLocaleString('ko-KR') + '원');
+    const namePrice = document.createTextNode(subData[i].price.toLocaleString('ko-KR') + '원');
     productPrice.appendChild(namePrice);
 
     //리뷰수
-    var reviSpan = document.createElement('span');
-    var reviCount = document.createTextNode('★(' + _sub_data.default[_i3].review + ')');
+    const reviSpan = document.createElement('span');
+    const reviCount = document.createTextNode('★(' + subData[i].review + ')');
     productPrice.appendChild(reviSpan);
     reviSpan.appendChild(reviCount);
 
     //BUY버튼
-    var buyDiv = document.createElement('div');
+    const buyDiv = document.createElement('div');
     buyDiv.setAttribute('class', 'buy_btn');
     detailDiv.appendChild(buyDiv);
-    var buyA = document.createElement('a');
+
+    const buyA = document.createElement('a');
     buyA.setAttribute('href', '#!');
     buyDiv.appendChild(buyA);
-    var buyText = document.createTextNode('BUY');
+
+    const buyText = document.createTextNode('BUY');
     buyA.appendChild(buyText);
+
     subDiv.appendChild(subImgBox);
     subDiv.appendChild(detailDiv);
     productList.appendChild(subDiv);
     subProduct.appendChild(productList);
   }
+
 }
-bindData();
+bindData(); */
 
 //상품4개, 5개보기버튼
 var listCol = document.querySelector('.list_wrap');
@@ -701,11 +713,11 @@ window.addEventListener("scroll", function () {
 
 //lnb마우스호버시
 var li = document.querySelectorAll('.header .lnb>ul>li');
-for (var _i4 = 0; _i4 < li.length; _i4++) {
-  li[_i4].addEventListener("mouseover", function (e) {
+for (var _i3 = 0; _i3 < li.length; _i3++) {
+  li[_i3].addEventListener("mouseover", function (e) {
     scr.classList.add('bg_on');
   });
-  li[_i4].addEventListener("mouseout", function (e) {
+  li[_i3].addEventListener("mouseout", function (e) {
     scr.classList.remove('bg_on');
   });
 }
@@ -742,73 +754,73 @@ filterBtn.addEventListener('click', function () {
 //filter check
 var sportChk = document.querySelectorAll('.sport');
 var sportLabel = document.querySelectorAll('.sport_filter label');
-var _loop2 = function _loop2(_i5) {
-  sportChk[_i5].addEventListener('click', function () {
-    if (sportChk[_i5].checked) {
-      sportLabel[_i5].style.color = '#000';
-      sportLabel[_i5].style.fontWeight = '700';
+var _loop2 = function _loop2(_i4) {
+  sportChk[_i4].addEventListener('click', function () {
+    if (sportChk[_i4].checked) {
+      sportLabel[_i4].style.color = '#000';
+      sportLabel[_i4].style.fontWeight = '700';
     } else {
-      sportLabel[_i5].style.color = '#777';
-      sportLabel[_i5].style.fontWeight = '400';
+      sportLabel[_i4].style.color = '#777';
+      sportLabel[_i4].style.fontWeight = '400';
     }
   });
 };
-for (var _i5 = 0; _i5 < sportChk.length; _i5++) {
-  _loop2(_i5);
+for (var _i4 = 0; _i4 < sportChk.length; _i4++) {
+  _loop2(_i4);
 }
 
 //filter size check
 var sizeChk = document.querySelectorAll('.size');
 var sizeLabel = document.querySelectorAll('.size_filter label');
-var _loop3 = function _loop3(_i6) {
-  sizeChk[_i6].addEventListener('click', function () {
-    if (sizeChk[_i6].checked) {
-      sizeLabel[_i6].style.color = '#fff';
-      sizeLabel[_i6].style.backgroundColor = '#002053';
+var _loop3 = function _loop3(_i5) {
+  sizeChk[_i5].addEventListener('click', function () {
+    if (sizeChk[_i5].checked) {
+      sizeLabel[_i5].style.color = '#fff';
+      sizeLabel[_i5].style.backgroundColor = '#002053';
     } else {
-      sizeLabel[_i6].style.color = '#000';
-      sizeLabel[_i6].style.backgroundColor = '#fff';
+      sizeLabel[_i5].style.color = '#000';
+      sizeLabel[_i5].style.backgroundColor = '#fff';
     }
   });
 };
-for (var _i6 = 0; _i6 < sizeChk.length; _i6++) {
-  _loop3(_i6);
+for (var _i5 = 0; _i5 < sizeChk.length; _i5++) {
+  _loop3(_i5);
 }
 
 //filter price check
 var priceChk = document.querySelectorAll('.price');
 var priceLabel = document.querySelectorAll('.price_filter label');
-var _loop4 = function _loop4(_i7) {
-  priceChk[_i7].addEventListener('click', function () {
-    if (priceChk[_i7].checked) {
-      priceLabel[_i7].style.color = '#000';
-      priceLabel[_i7].style.fontWeight = '700';
+var _loop4 = function _loop4(_i6) {
+  priceChk[_i6].addEventListener('click', function () {
+    if (priceChk[_i6].checked) {
+      priceLabel[_i6].style.color = '#000';
+      priceLabel[_i6].style.fontWeight = '700';
     } else {
-      priceLabel[_i7].style.color = '#777';
-      priceLabel[_i7].style.fontWeight = '400';
+      priceLabel[_i6].style.color = '#777';
+      priceLabel[_i6].style.fontWeight = '400';
     }
   });
 };
-for (var _i7 = 0; _i7 < priceChk.length; _i7++) {
-  _loop4(_i7);
+for (var _i6 = 0; _i6 < priceChk.length; _i6++) {
+  _loop4(_i6);
 }
 
 //filter gender check
 var genderChk = document.querySelectorAll('.gender');
 var genderLabel = document.querySelectorAll('.gender_filter label');
-var _loop5 = function _loop5(_i8) {
-  genderChk[_i8].addEventListener('click', function () {
-    if (genderChk[_i8].checked) {
-      genderLabel[_i8].style.color = '#000';
-      genderLabel[_i8].style.fontWeight = '700';
+var _loop5 = function _loop5(_i7) {
+  genderChk[_i7].addEventListener('click', function () {
+    if (genderChk[_i7].checked) {
+      genderLabel[_i7].style.color = '#000';
+      genderLabel[_i7].style.fontWeight = '700';
     } else {
-      genderLabel[_i8].style.color = '#777';
-      genderLabel[_i8].style.fontWeight = '400';
+      genderLabel[_i7].style.color = '#777';
+      genderLabel[_i7].style.fontWeight = '400';
     }
   });
 };
-for (var _i8 = 0; _i8 < genderChk.length; _i8++) {
-  _loop5(_i8);
+for (var _i7 = 0; _i7 < genderChk.length; _i7++) {
+  _loop5(_i7);
 }
 
 //footer family

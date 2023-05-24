@@ -195,6 +195,7 @@ function priobj(obj) {
     subProduct.appendChild(productList);
   }
 }
+priobj(subData);
 
 
 //가격필터
@@ -276,7 +277,7 @@ input1.addEventListener('click', () => {
 });
  */
 
-//초기상품리스트 
+/* //초기상품리스트 
 function bindData() {
   for (let i = 0; i < subData.length; i++) {
     //서브 상품박스
@@ -368,7 +369,7 @@ function bindData() {
   }
 
 }
-bindData();
+bindData(); */
 
 
 //상품4개, 5개보기버튼
