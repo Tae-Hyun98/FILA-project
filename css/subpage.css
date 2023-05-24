@@ -809,31 +809,6 @@ div.col_5 .product_box .detail p.product_name {
   color: #fff;
 }
 
-/***********quick*************/
-.quick {
-  position: fixed;
-  right: -60px;
-  bottom: 50px;
-  transition: .3s;
-}
-
-.quick.on {
-  right: 30px;
-}
-
-.quick a {
-  font-size: 40px;
-  display: block;
-  background-color: #002053;
-  color: #fff;
-}
-
-.quick:hover a {
-  font-size: 40px;
-  display: block;
-  background-color: blue;
-  color: #fff;
-}
 
 /***********footer************/
 .footer {
@@ -990,4 +965,26 @@ div.col_5 .product_box .detail p.product_name {
 
 .footer .footer_bottom .f_sns li a.kakao {
   background-image: url(../img/Main_img/Sns/kakao_ch.svg);
+}
+
+/***********arrow*************/
+.arrow a {
+  display: block;
+  color: #000;
+  font-size: 40px;
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 5px 10px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 5;
+  transition: .1s;
+}
+
+.arrow a:hover {
+  background-color: #002053;
+  color: #fff;
 }

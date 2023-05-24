@@ -20,17 +20,9 @@
   <script type="module" src="./js/subpage.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
 
-
-  <script>
-    $(function () {
-      $('.quick a.top').click(function (e) {
-        e.preventDefault();
-        $('html,body').stop().animate({
-          scrollTop: 0,
-        }, 300);
-      });
-    });
-  </script>
+  <!-- gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
 </head>
 
 <body class="scroll">
@@ -764,11 +756,7 @@
     </div>
   </section>
 
-  <div class="quick">
-    <a href="#!" class="material-icons-outlined top">
-      keyboard_arrow_up
-    </a>
-  </div>
+
 
   <footer class="footer">
     <div class="footer_inner">
@@ -890,6 +878,16 @@
       </div>
     </div>
   </footer>
+
+  <!-- 탑,바텀버튼 -->
+  <div class="arrow">
+    <a href="#!" class="material-icons-outlined top">
+      keyboard_arrow_up
+    </a>
+    <a href="#!" class="material-icons-outlined bottom">
+      keyboard_arrow_down
+    </a>
+  </div>
 </body>
 
 </html>

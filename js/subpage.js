@@ -569,3 +569,51 @@ window.addEventListener('scroll', () => {
 //상품개수표시
 const totalProduct = document.getElementById('total');
 totalProduct.innerHTML = subData.length;
+
+
+//탑,바텀버튼
+const topBtn = document.querySelector('.top');
+const bottomBtn = document.querySelector('.bottom');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300 && window.scrollY < 3500) {
+    gsap.to(bottomBtn, 0.1, {
+      opacity: 1,
+      visibility: 'visible'
+    });
+    gsap.to(topBtn, 0.1, {
+      opacity: 0,
+      visibility: 'hidden'
+    })
+  } else if (window.scrollY >= 3500) {
+    gsap.to(topBtn, 0.1, {
+      opacity: 1,
+      visibility: 'visible'
+    });
+    gsap.to(bottomBtn, 0.1, {
+      opacity: 0,
+      visibility: 'hidden'
+    });
+  } else {
+    gsap.to(topBtn, 0.1, {
+      opacity: 0,
+      visibility: 'hidden'
+    });
+    gsap.to(bottomBtn, 0.1, {
+      opacity: 0,
+      visibility: 'hidden'
+    });
+  }
+});
+
+topBtn.addEventListener('click', () => {
+  gsap.to(window, 0.5, {
+    scrollTo: 0
+  });
+});
+
+bottomBtn.addEventListener('click', () => {
+  gsap.to(window, 0.5, {
+    scrollTo: 7000
+  });
+});
