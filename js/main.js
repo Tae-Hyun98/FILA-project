@@ -223,3 +223,14 @@ bottomBtn.addEventListener('click', () => {
     scrollTo: 7000
   });
 });
+
+
+
+//팝업닫기
+
+const popup = document.querySelector('.popup');
+const popupClose = document.getElementById('popup_close');
+
+popupClose.addEventListener('click', () => {
+  popup.style.display = 'none';
+});
