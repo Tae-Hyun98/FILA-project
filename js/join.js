@@ -99,14 +99,20 @@ function checkName() {
 function checkIdcard() {
   const idcardValue = userIdcard.value;
   const idcardLength = userIdcard.value.length;
+  const idcardValue1 = userIdcard1.value;
+  const idcardLength1 = userIdcard1.value.length;
   if (!idcardPattern.test(idcardValue) || idcardValue === '' || idcardLength <= 5) {
     idcardSpan.innerHTML = '형식을 지켜주세요'
     userIdcard.style.background = 'none'
-  } else {
+  } else if (idcardLength === 6) {
     userIdcard1.focus();
+    idcardSpan.innerHTML = '';
     userIdcard.style.background = 'lightsteelBlue';
+  } else if (idcardLength === 6 && (idcardLength1 === '' || idcardValue1 < 7)) {
+    idcardSpan.innerHTML = '형식을 지켜주세요'
   }
 }
+
 
 //성별선택
 function checkGender() {
