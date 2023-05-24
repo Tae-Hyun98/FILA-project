@@ -174,7 +174,7 @@ var swiper = new Swiper(".detail_swiper", {
     bulletClass: "preview_img",
     bulletActiveClass: "swiper-pagination-active",
     renderBullet: function renderBullet(index, className) {
-      return '<div class="' + className + '"><img src="../img/detail_img/' + image[index] + '"></div>';
+      return '<div class="' + className + '"><img src="./img/detail_img/' + image[index] + '"></div>';
     }
   }
 });
@@ -355,7 +355,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52078" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55260" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

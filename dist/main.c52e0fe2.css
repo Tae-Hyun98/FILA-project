@@ -1019,20 +1019,7 @@ h1 {
   color: rgb(153, 153, 153);
 }
 
-/*************배경이미지 fix************/
-/* div.an {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  margin-top: 150px;
-}
 
-.an .bgi {
-  width: 100%;
-  height: 800px;
-  background: url(../img/fix.jpg) no-repeat top fixed;
-  background-size: cover;
-} */
 
 /*************MAGAZINE***********/
 .magazine {
@@ -1053,6 +1040,19 @@ h1 {
 .magazine .magazine_box>div {
   width: 33.3333%;
   margin-right: 20px;
+  opacity: 0;
+}
+
+.magazine .magazine_box>div:nth-child(1) {
+  transform: translateX(-100%);
+}
+
+.magazine .magazine_box>div:nth-child(2) {
+  transform: translateY(-100%);
+}
+
+.magazine .magazine_box>div:nth-child(3) {
+  transform: translateX(100%);
 }
 
 .magazine .magazine_box .magazine_img_box .magazine_img {
@@ -1258,6 +1258,7 @@ h1 {
   padding: 0 50px;
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .sns .sns_box .sns_list li {
@@ -1267,6 +1268,23 @@ h1 {
   margin-bottom: 20px;
   border: 1px solid #ccc;
   overflow: hidden;
+  opacity: 0;
+}
+
+.sns .sns_box .sns_list li:nth-child(1),
+.sns .sns_box .sns_list li:nth-child(2),
+.sns .sns_box .sns_list li:nth-child(3),
+.sns .sns_box .sns_list li:nth-child(4),
+.sns .sns_box .sns_list li:nth-child(5) {
+  transform: translateX(-1000%)
+}
+
+.sns .sns_box .sns_list li:nth-child(6),
+.sns .sns_box .sns_list li:nth-child(7),
+.sns .sns_box .sns_list li:nth-child(8),
+.sns .sns_box .sns_list li:nth-child(9),
+.sns .sns_box .sns_list li:nth-child(10) {
+  transform: translateX(1000%)
 }
 
 .sns .sns_box .sns_list li:nth-child(5n) {

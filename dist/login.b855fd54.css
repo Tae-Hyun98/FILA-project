@@ -34,7 +34,7 @@ img {
 .header {
   position: fixed;
   width: 100%;
-  height: 90px;
+  height: 80px;
   top: 0;
   left: 0;
   display: flex;
@@ -49,7 +49,7 @@ img {
 .header .blur {
   display: none;
   position: absolute;
-  top: 90px;
+  top: 80px;
   left: 0;
   width: 100%;
   height: 130vh;
@@ -65,7 +65,7 @@ img {
 .header .logo a {
   display: block;
   width: 120px;
-  height: 45px;
+  height: 40px;
   background: url(/blue_fila.50f9621c.png) no-repeat center;
   background-size: contain;
 }
@@ -89,8 +89,8 @@ img {
 }
 
 .lnb .lnb_nav>li {
-  margin-top: 20px;
-  padding-bottom: 20px;
+  margin-top: 12px;
+  padding-bottom: 12px;
 }
 
 .lnb .lnb_nav>li>a {
@@ -691,6 +691,22 @@ img {
 
 .footer .footer_bottom .f_sns li a.kakao {
   background-image: url(/kakao_ch.e942f459.svg);
+}
+
+
+/**********popup**************/
+.popup {
+  position: fixed;
+  top: 200px;
+  left: 200px;
+  padding: 50px;
+  border: 1px solid black;
+  font-size: 18px;
+}
+
+.popup .id1 {
+  border-top: 1px solid black;
+  padding-top: 20px;
 }
 
 /*# sourceMappingURL=/login.b855fd54.css.map */
