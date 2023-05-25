@@ -240,29 +240,27 @@ popupClose.addEventListener('click', () => {
 //magazine 나타나기
 const magzEls = document.querySelectorAll('.magazine_box>div');
 window.addEventListener('scroll', () => {
-  if (window.scrollY >= 3800) {
-    gsap.to(magzEls[0], 0.5, {
-      opacity: 1,
-      translateX: 0
-    })
-    gsap.to(magzEls[1], 0.5, {
-      delay: 0.5,
+  if (window.scrollY >= 3600) {
+    gsap.to(magzEls[0], 0.4, {
       opacity: 1,
       translateY: 0
     })
-    gsap.to(magzEls[2], 0.5, {
-      delay: 1,
+    gsap.to(magzEls[1], 0.4, {
       opacity: 1,
-      translateX: 0
+      translateY: 0
     })
-    gsap.to(magzEls[3], 0.5, {
-      delay: 1,
+    gsap.to(magzEls[2], 0.4, {
       opacity: 1,
-      translateX: 0
+      translateY: 0
+    })
+    gsap.to(magzEls[3], 0.4, {
+      opacity: 1,
+      translateY: 0
     })
   }
 })
 
+//sns
 const snsEls = document.querySelectorAll('.sns_list li');
 window.addEventListener('scroll', () => {
   if (window.scrollY >= 5600) {

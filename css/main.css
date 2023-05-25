@@ -1089,20 +1089,18 @@ h1 {
 
 .magazine .magazine_box>div {
   width: 33.3333%;
-  margin-right: 20px;
+  margin-right: 15px;
   opacity: 0;
 }
 
-.magazine .magazine_box>div:nth-child(1) {
-  transform: translateX(-100%);
-}
-
-.magazine .magazine_box>div:nth-child(2) {
+.magazine .magazine_box>div:nth-child(1),
+.magazine .magazine_box>div:nth-child(3) {
   transform: translateY(-100%);
 }
 
-.magazine .magazine_box>div:nth-child(3) {
-  transform: translateX(100%);
+.magazine .magazine_box>div:nth-child(2),
+.magazine .magazine_box>div:nth-child(4) {
+  transform: translateY(100%);
 }
 
 .magazine .magazine_box .magazine_img_box .magazine_img {
@@ -1120,7 +1118,7 @@ h1 {
 
 .magazine .magazine_box>div>div img {
   width: 100%;
-  height: 610px;
+  height: 600px;
 }
 
 .magazine .magazine_box>div .magazine_desc {
@@ -1149,7 +1147,7 @@ h1 {
 
 .magazine .magazine_box>div>div p:last-child {
   bottom: 50px;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 60px;
 }
 
@@ -1157,7 +1155,7 @@ h1 {
   display: block;
   text-align: center;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 28px;
   margin-top: 30px;
   color: #000;
 }
@@ -1189,12 +1187,12 @@ h1 {
 .recommand .recommand_box .rec_img {
   position: relative;
   width: 33.3333%;
-  margin-right: 30px;
+  margin-right: 35px;
 }
 
 .recommand .recommand_box .rec_img img {
   width: 100%;
-  height: 750px;
+  height: 700px;
 }
 
 .recommand .recommand_box .rec_img:last-child {
@@ -1206,8 +1204,8 @@ h1 {
 }
 
 .recommand .recommand_box .plus {
-  top: 350px;
-  left: calc(50% - 50px);
+  top: 300px;
+  left: calc(50% - 75px);
 }
 
 .recommand .recommand_box .plus1 {
@@ -1216,18 +1214,18 @@ h1 {
 }
 
 .recommand .recommand_box .plus2 {
-  top: 350px;
+  top: 310px;
   left: calc(50% + 60px);
 }
 
 .recommand .recommand_box .plus3 {
-  bottom: 120px;
+  bottom: 95px;
   right: calc(50% - 60px);
 }
 
 .recommand .recommand_box .plus4 {
-  top: 250px;
-  left: calc(50% - 50px);
+  top: 190px;
+  left: calc(50% - 85px);
 }
 
 .recommand .recommand_box .plus5 {
@@ -1237,7 +1235,7 @@ h1 {
 
 .recommand .recommand_box .rec_plus.plus3 .rec_desc,
 .recommand .recommand_box .rec_plus.plus5 .rec_desc {
-  width: 270px;
+  width: 285px;
 }
 
 .recommand .recommand_box .rec_plus span {
@@ -1251,12 +1249,13 @@ h1 {
 .recommand .recommand_box .rec_plus .rec_desc {
   position: absolute;
   left: -80px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid #ccc;
-  width: 250px;
+  width: 260px;
   margin-top: 5px;
-  padding: 10px;
+  padding: 10px 20px;
   opacity: 0;
+  z-index: 10;
   visibility: hidden;
   transition: 0.2s;
 }
@@ -1280,8 +1279,8 @@ h1 {
   text-align: center;
   border-radius: 20px;
   background-color: #000;
-  margin: 5px 20px;
-  padding: 10px 0;
+  margin: 5px 0px;
+  padding: 10px 20px;
 }
 
 .recommand .recommand_box .rec_plus:hover .rec_desc {
