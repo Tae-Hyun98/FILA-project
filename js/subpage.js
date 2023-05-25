@@ -70,20 +70,16 @@ for (let i = 0; i < colorChk.length; i++) {
 
 
 //컬러필터
-const white = subData.filter((color01) => color01.color === 'white');
-const black = subData.filter((color01) => color01.color === 'black');
-const gray = subData.filter((color01) => color01.color === 'gray');
-const green = subData.filter((color01) => color01.color === 'green');
-const blue = subData.filter((color01) => color01.color === 'blue');
-const khaki = subData.filter((color01) => color01.color === 'khaki');
-const mix = subData.filter((color01) => color01.color === 'mix');
-const navy = subData.filter((color01) => color01.color === 'navy');
-const neon = subData.filter((color01) => color01.color === 'neon');
-const orange = subData.filter((color01) => color01.color === 'orange');
-const pink = subData.filter((color01) => color01.color === 'pink');
-const red = subData.filter((color01) => color01.color === 'red');
-const beige = subData.filter((color01) => color01.color === 'beige');
-const yellow = subData.filter((color01) => color01.color === 'yellow');
+const white = subData.filter((Color) => Color.color === 'white');
+const black = subData.filter((Color) => Color.color === 'black');
+const gray = subData.filter((Color) => Color.color === 'gray');
+const green = subData.filter((Color) => Color.color === 'green');
+const blue = subData.filter((Color) => Color.color === 'blue');
+const mix = subData.filter((Color) => Color.color === 'mix');
+const navy = subData.filter((Color) => Color.color === 'navy');
+const orange = subData.filter((Color) => Color.color === 'orange');
+const red = subData.filter((Color) => Color.color === 'red');
+const beige = subData.filter((Color) => Color.color === 'beige');
 
 for (let i = 0; i < colorChk.length; i++) {
   colorChk[i].addEventListener('click', () => {
@@ -98,23 +94,15 @@ for (let i = 0; i < colorChk.length; i++) {
     } else if (colorChk[4].checked) {
       priobj(blue);
     } else if (colorChk[5].checked) {
-      priobj(khaki);
-    } else if (colorChk[6].checked) {
       priobj(mix);
-    } else if (colorChk[7].checked) {
+    } else if (colorChk[6].checked) {
       priobj(navy);
-    } else if (colorChk[8].checked) {
-      priobj(neon);
-    } else if (colorChk[9].checked) {
+    } else if (colorChk[7].checked) {
       priobj(orange);
-    } else if (colorChk[10].checked) {
-      priobj(pink);
-    } else if (colorChk[11].checked) {
+    } else if (colorChk[8].checked) {
       priobj(red);
-    } else if (colorChk[12].checked) {
+    } else if (colorChk[9].checked) {
       priobj(beige);
-    } else if (colorChk[13].checked) {
-      priobj(yellow);
     } else {
       priobj(subData);
     }
@@ -133,7 +121,7 @@ function priobj(obj) {
     subImgBox.setAttribute('class', 'product_img');
 
     const imgLink = document.createElement('a');
-    imgLink.setAttribute('href', "../detail.html");
+    imgLink.setAttribute('href', '../detail.html');
     subImgBox.appendChild(imgLink);
 
     const subImg = document.createElement('img');
@@ -144,7 +132,7 @@ function priobj(obj) {
     detailDiv.setAttribute('class', 'detail');
 
     const detailLink = document.createElement('a');
-    detailLink.setAttribute('href', '#!');
+    detailLink.setAttribute('href', '../detail.html');
     detailDiv.appendChild(detailLink);
 
     //상품박스 호버했을때
