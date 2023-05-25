@@ -133,7 +133,7 @@ function priobj(obj) {
     subImgBox.setAttribute('class', 'product_img');
 
     const imgLink = document.createElement('a');
-    imgLink.setAttribute('href', "#!");
+    imgLink.setAttribute('href', "../detail.html");
     subImgBox.appendChild(imgLink);
 
     const subImg = document.createElement('img');
