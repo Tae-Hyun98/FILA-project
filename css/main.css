@@ -1566,8 +1566,10 @@ h1 {
 .quick {
   position: absolute;
   right: 0px;
-  width: 240px;
+  width: 90px;
   height: 265px;
+  transition: .3s;
+  z-index: 9999;
   overflow: hidden;
 }
 
@@ -1577,7 +1579,7 @@ h1 {
   position: absolute;
   right: -150px;
   top: 0;
-  transition: 0.3s;
+  transition: .3s;
   background-color: #fff;
   border: 1px solid #777;
   padding: 10px 0;
@@ -1585,7 +1587,11 @@ h1 {
   overflow: hidden;
 }
 
-.quick .quick_box:hover {
+.quick:hover {
+  width: 240px;
+}
+
+.quick:hover .quick_box {
   right: 0;
 }
 

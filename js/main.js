@@ -255,6 +255,11 @@ window.addEventListener('scroll', () => {
       opacity: 1,
       translateX: 0
     })
+    gsap.to(magzEls[3], 0.5, {
+      delay: 1,
+      opacity: 1,
+      translateX: 0
+    })
   }
 })
 
