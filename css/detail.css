@@ -1040,6 +1040,20 @@ input::-webkit-inner-spin-button {
   color: #fff;
 }
 
+.rating {
+  padding-left: 15px;
+}
+
+.rating_star {
+  font-size: 26px;
+  cursor: pointer;
+  color: #dabd18b2;
+}
+
+.star i {
+  font-size: 18px;
+}
+
 .tab_review .context input {
   width: 250px;
   height: 50px;
@@ -1089,7 +1103,7 @@ input::-webkit-inner-spin-button {
 }
 
 .tab_review .review_list li p:nth-child(2) {
-  width: 13%;
+  width: 15%;
 }
 
 .tab_review .review_list li p:nth-child(3) {
@@ -1097,6 +1111,7 @@ input::-webkit-inner-spin-button {
   line-height: 30px;
   text-align: left;
   padding-left: 20px;
+  font-size: 18px;
 }
 
 .tab_review .review_list li p:nth-child(4) {
@@ -1170,6 +1185,7 @@ input::-webkit-inner-spin-button {
   padding: 15px 0px;
   border-bottom: 1px solid #777;
   text-align: center;
+  font-size: 18px;
 }
 
 .tab_inquiry .inqlist_tit p:nth-child(1),
@@ -1179,12 +1195,12 @@ input::-webkit-inner-spin-button {
 
 .tab_inquiry .inqlist_tit p:nth-child(2),
 .tab_inquiry .inquiry_list ul li span:nth-child(2) {
-  width: 40%;
+  width: 10%;
 }
 
 .tab_inquiry .inqlist_tit p:nth-child(3),
 .tab_inquiry .inquiry_list ul li span:nth-child(3) {
-  width: 10%;
+  width: 35%;
 }
 
 .tab_inquiry .inqlist_tit p:nth-child(4),
@@ -1194,6 +1210,11 @@ input::-webkit-inner-spin-button {
 
 .tab_inquiry .inqlist_tit p:nth-child(5),
 .tab_inquiry .inquiry_list ul li span:nth-child(5) {
+  width: 10%;
+}
+
+.tab_inquiry .inqlist_tit p:nth-child(6),
+.tab_inquiry .inquiry_list ul li span:nth-child(6) {
   width: 10%;
 }
 
@@ -1209,9 +1230,9 @@ input::-webkit-inner-spin-button {
   line-height: 60px;
 }
 
-.tab_inquiry .inquiry_list ul li span:nth-child(2) {
+.tab_inquiry .inquiry_list ul li span:nth-child(3) {
   text-align: left;
-  padding-left: 20px;
+  padding-left: 30px;
 }
 
 .inquiry_write_wrap {
@@ -1465,4 +1486,30 @@ input::-webkit-inner-spin-button {
 
 .footer .footer_bottom .f_sns li a.kakao {
   background-image: url(../img/Main_img/Sns/kakao_ch.svg);
+}
+
+
+.arrow {
+  position: fixed;
+  z-index: 5;
+  right: 30px;
+  bottom: 40px;
+}
+
+.arrow a {
+  display: block;
+  color: #000;
+  font-size: 36px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 5px 10px;
+  transition: 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  margin-bottom: 5px;
+}
+
+.arrow a:hover {
+  background-color: #002053;
+  color: #fff;
 }

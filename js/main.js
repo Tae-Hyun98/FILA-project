@@ -46,9 +46,10 @@ const x = setInterval(function () {
   let hours = Math.floor((timer % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   let minutes = Math.floor((timer % (1000 * 60 * 60)) / (1000 * 60));
   let seconds = Math.floor((timer % (1000 * 60)) / 1000);
+  
   document.getElementById("date").style.fontSize = '50px';
-  document.getElementById("date").innerHTML = days + "일 " + hours + "시 " +
-    minutes + "분 " + seconds + "초 ";
+  document.getElementById("date").innerHTML = days + " 일 " + hours + " :  " +
+    minutes + " : " + seconds + " ";
 
   if (timer < 0) {
     clearInterval(x);
