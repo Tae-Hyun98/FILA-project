@@ -46,7 +46,7 @@ const x = setInterval(function () {
   let hours = Math.floor((timer % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   let minutes = Math.floor((timer % (1000 * 60 * 60)) / (1000 * 60));
   let seconds = Math.floor((timer % (1000 * 60)) / 1000);
-  
+
   document.getElementById("date").style.fontSize = '50px';
   document.getElementById("date").innerHTML = days + " 일 " + hours + " :  " +
     minutes + " : " + seconds + " ";
@@ -246,14 +246,17 @@ window.addEventListener('scroll', () => {
       translateY: 0
     })
     gsap.to(magzEls[1], 0.4, {
+      delay: 0.3,
       opacity: 1,
       translateY: 0
     })
     gsap.to(magzEls[2], 0.4, {
+      delay: 0.6,
       opacity: 1,
       translateY: 0
     })
     gsap.to(magzEls[3], 0.4, {
+      delay: 0.9,
       opacity: 1,
       translateY: 0
     })

@@ -421,7 +421,6 @@ h1 {
   opacity: 0;
   padding-top: 10px;
   background-color: #fff;
-  transition: all 0.1s;
 }
 
 .header .search_down .container {
@@ -510,7 +509,7 @@ h1 {
 
 .header .search_blur {
   position: fixed;
-  top: 0;
+  top: 90px;
   left: 0;
   width: 100%;
   height: 100vh;
@@ -814,8 +813,8 @@ h1 {
 
 .rankSwiper .rank_img .rank_desc ul li {
   width: 76%;
-  height: 100px;
-  padding: 10px 25px;
+  height: 110px;
+  padding: 15px 25px;
 }
 
 .rankSwiper .rank_img .rank_desc ul li:nth-child(2) {
@@ -852,17 +851,16 @@ h1 {
 
 .rankSwiper .swiper-wrapper .swiper-slide img {
   width: 100%;
-  height: 680px;
+  height: 690px;
 }
 
 .rankSwiper .swiper-wrapper .swiper-slide.swiper-slide-next {
-  opacity: 0.3;
+  opacity: 0.4;
   transform: scale(0.8);
   visibility: visible;
 }
 
 .rankSwiper .swiper-slide.swiper-slide-active {
-  margin: 0 10px;
   transform: scale(1);
   opacity: 1;
   visibility: visible;
@@ -877,21 +875,22 @@ h1 {
   position: relative;
   overflow: hidden;
   height: 800px;
+  background-color: #101010;
+  z-index: -2;
 }
 
 .time_sale .edition .edition_video {
   position: absolute;
-  left: 0;
-  top: 0;
   width: 100%;
+  top: -10px;
   z-index: -1;
 }
 
 .time_sale .edition .edition_video video {
   width: 100%;
-  height: 940px;
-  -o-object-fit: fill;
-  object-fit: fill;
+  height: 960px;
+  outline: 0;
+  border: 0;
 }
 
 .time_sale .countdown_box {
@@ -908,6 +907,7 @@ h1 {
 
 .time_sale .countdown_box p {
   color: #fff;
+  font-weight: 700;
 }
 
 /***************NEW_ARRIVAL*************/
@@ -1082,6 +1082,7 @@ h1 {
 
 .magazine .magazine_box {
   display: flex;
+  justify-content: space-between;
   overflow: hidden;
   margin-top: 30px;
   padding: 0 50px;
@@ -1089,7 +1090,7 @@ h1 {
 
 .magazine .magazine_box>div {
   width: 33.3333%;
-  margin-right: 15px;
+  margin-right: 10px;
   opacity: 0;
 }
 
@@ -1248,7 +1249,7 @@ h1 {
 
 .recommand .recommand_box .rec_plus .rec_desc {
   position: absolute;
-  left: -80px;
+  left: -90px;
   background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid #ccc;
   width: 260px;
