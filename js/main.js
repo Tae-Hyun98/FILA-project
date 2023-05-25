@@ -182,16 +182,17 @@ const topBtn = document.querySelector('.top');
 const bottomBtn = document.querySelector('.bottom');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 300 && window.scrollY < 3500) {
+  if (window.scrollY > 400 && window.scrollY < 6500) {
+    gsap.to(topBtn, 0.1, {
+      opacity: 1,
+      visibility: 'visible'
+    });
     gsap.to(bottomBtn, 0.1, {
       opacity: 1,
       visibility: 'visible'
     });
-    gsap.to(topBtn, 0.1, {
-      opacity: 0,
-      visibility: 'hidden'
-    })
-  } else if (window.scrollY >= 3500) {
+
+  } else if (window.scrollY >= 6500) {
     gsap.to(topBtn, 0.1, {
       opacity: 1,
       visibility: 'visible'

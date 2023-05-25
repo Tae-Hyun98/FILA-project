@@ -1638,17 +1638,20 @@ h1 {
   position: fixed;
   z-index: 5;
   right: 30px;
-  bottom: 50px;
+  bottom: 40px;
 }
 
 .arrow a {
   display: block;
   color: #000;
-  font-size: 40px;
+  font-size: 36px;
   border: 1px solid #ccc;
   background-color: #fff;
   padding: 5px 10px;
-  transition: 0.1s;
+  transition: 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  margin-bottom: 5px;
 }
 
 .arrow a:hover {
