@@ -80,14 +80,14 @@ const newSwiper = new Swiper(".newSwiper", {
   loop: true,
   loopAdditionalSlides: 1,
   centeredSlides: true,
-  slidesPerView: 3,
-  spaceBetween:50,
+  slidesPerView: 'auto',
+  observer: true,
+  observeParents: true,
+ /*  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  }, */
 
-  /*  autoplay: {
-     delay: 3000,
-     disableOnInteraction: false,
-   },
-  */
 
   navigation: {
     nextEl: ".swiper-button-next",
