@@ -603,3 +603,32 @@ const closeBtn = document.getElementById('close_btn');
 closeBtn.addEventListener('click', () => {
   popup.style.display = 'none';
 });
+
+//페이지네이션
+const pages = document.getElementById('pages');
+
+
+function addPage(totalData, currentPage) {
+  const pageCount = 5;
+  const totalPage = Math.ceil(totalData / 20); //총페이지수
+  let pageGroup = Math.ceil(currentPage / pageCount);
+
+  let last = pageGroup * pageCount;
+  if (last > totalPage) {
+    last = totalPage
+  }
+  let first = last - (pageCount - 1);
+  const next = last + 1;
+  const prev = first - 1;
+  if (totalPage < 1) {
+    first = last;
+  }
+  const pageLi = document.createElement('li');
+  for (let i = first; i <= last; i++) {
+    pages.appendChild(pageLi);
+    pageLi.innerHTML = (`<span>${i}</span>`);
+  }
+
+}
+addPage(subData.lengh, 20)
+console.log(subData.length);
