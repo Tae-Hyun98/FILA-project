@@ -980,13 +980,8 @@ h1 {
 }
 
 .newSwiper .swiper-slide.swiper-slide-next .new_box {
-  transform: translateX(50px);
+  transform: translateX(60px);
 }
-
-/* .newSwiper .swiper-slide.swiper-slide-prev,
-.newSwiper .swiper-slide.swiper-slide-next {
-  border: none;
-} */
 
 .newSwiper .swiper-button-prev {
   left: 22%;
@@ -1003,7 +998,7 @@ h1 {
 }
 
 .new_box .new_img img {
-  width: 490px;
+  width: 500px;
 }
 
 .new_box .new_desc {
