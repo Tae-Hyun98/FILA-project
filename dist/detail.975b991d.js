@@ -118,6 +118,12 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/detail.js":[function(require,module,exports) {
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 //스크롤시 헤더
 var scr = document.querySelector('.scroll');
 window.addEventListener("wheel", function (e) {
@@ -265,11 +271,31 @@ for (var _i2 = 0; _i2 < sheetList.length; _i2++) {
   });
 }
 
+//별점
+var ratingStars = _toConsumableArray(document.querySelectorAll(".rating_star"));
+function RatingStar(stars) {
+  var starClassActive = "fas fa-star rating_star";
+  var starClassInactive = "far fa-star rating_star";
+  var starsLength = stars.length;
+  stars.map(function (star) {
+    star.addEventListener('click', function () {
+      var i = stars.indexOf(star);
+      if (star.className === starClassInactive) {
+        for (i; i >= 0; --i) stars[i].className = starClassActive;
+      } else {
+        for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
+      }
+    });
+  });
+}
+RatingStar(ratingStars);
+
 //리뷰등록
 var addBtn = document.getElementById('add_btn');
 var inputId = document.getElementById('input_id');
 var inputTxt = document.getElementById('input_txt');
 var reviewList = document.querySelector('.review_list');
+var starBtn = document.querySelector('.rating');
 var today = new Date();
 var dayFormat = today.getFullYear() + '.' + (today.getMonth() + 1) + '.' + today.getDate();
 var count = 1;
@@ -280,7 +306,6 @@ function reviewAdd() {
     var Pno = document.createElement('p');
     var Pnum = document.createTextNode(count);
     var Pstar = document.createElement('p');
-    var Prating = document.createTextNode('★★★★★');
     var Ptext = document.createElement('p');
     var Pid = document.createElement('p');
     var Ptoday = document.createElement('p');
@@ -296,16 +321,19 @@ function reviewAdd() {
     Li.appendChild(Ptoday);
     Li.appendChild(Pdel);
     Ptoday.appendChild(Today);
-    Pstar.appendChild(Prating);
     Pno.appendChild(Pnum);
     Ptext.appendChild(userTxt);
     Pid.appendChild(userId);
     Pdel.appendChild(del);
     Pdel.setAttribute('class', 'delete');
+    Pstar.setAttribute('class', 'star');
     reviewList.appendChild(Li);
     inputId.value = '';
     inputTxt.value = '';
     count++;
+
+    //별점출력
+    Pstar.innerHTML = starBtn.innerHTML;
     var delBtn = document.querySelectorAll('.delete');
     var _loop = function _loop(_i3) {
       delBtn[_i3].addEventListener('click', function () {
@@ -329,6 +357,103 @@ var inqBtn = document.getElementById('inq_btn').addEventListener('click', functi
 });
 var inqClose = document.querySelector('.write_close').addEventListener('click', function () {
   inqPopup.style.display = 'none';
+});
+var wriBtn = document.getElementById('write_btn');
+var inqOpt = document.getElementById('inq_option');
+var inqId = document.querySelector('.inq_id input');
+var inqTit = document.querySelector('.inq_title input');
+var inqContext = document.querySelector('.inq_context textarea');
+var inqList = document.querySelector('.inq_list');
+var countInq = 2;
+wriBtn.addEventListener('click', inquiryAdd);
+wriBtn.addEventListener('click', function () {
+  inqPopup.style.display = 'none';
+});
+
+/*   let Options = inqOpt.options[inqOpt.selectedIndex].innerText; */
+
+/*   selectOpt = selectOpt.options[selectOpt.selectedIndex].value; */
+var Options = inqOpt.options[inqOpt.selectedIndex].value.innerText;
+function inquiryAdd() {
+  if (inqOpt.value != '' && inqId.value != '' && inqTit.value != '' && inqContext.value != '') {
+    var Li = document.createElement('li');
+    var span = document.createElement('span');
+    var _count = document.createTextNode(countInq);
+    var span1 = document.createElement('span');
+    var span2 = document.createElement('span');
+    var span3 = document.createElement('span');
+    var span4 = document.createElement('span');
+    var span5 = document.createElement('span');
+    var answer = document.createTextNode('답변중');
+    var Today = document.createTextNode(dayFormat);
+    var option = document.createTextNode(Options);
+    var userId = document.createTextNode(inqId.value);
+    var inqTitle = document.createTextNode(inqTit.value);
+    //let userTxt = document.createTextNode(inqContext.value);
+
+    Li.appendChild(span);
+    Li.appendChild(span1);
+    Li.appendChild(span2);
+    Li.appendChild(span3);
+    Li.appendChild(span4);
+    Li.appendChild(span5);
+    span.appendChild(_count);
+    span1.appendChild(option);
+    span2.appendChild(inqTitle);
+    span3.appendChild(userId);
+    span4.appendChild(Today);
+    span5.appendChild(answer);
+    inqList.appendChild(Li);
+    inqId.value = '';
+    inqContext.value = '';
+    inqOpt.value = '';
+    inqTit.value = '';
+    countInq++;
+  }
+}
+
+//탑,바텀버튼
+var topBtn = document.querySelector('.top');
+var bottomBtn = document.querySelector('.bottom');
+window.addEventListener('scroll', function () {
+  if (window.scrollY > 400 && window.scrollY < 2500) {
+    gsap.to(topBtn, 0.1, {
+      opacity: 1,
+      visibility: 'visible'
+    });
+    gsap.to(bottomBtn, 0.1, {
+      opacity: 1,
+      visibility: 'visible'
+    });
+  } else if (window.scrollY >= 2500) {
+    gsap.to(topBtn, 0.1, {
+      opacity: 1,
+      visibility: 'visible'
+    });
+    gsap.to(bottomBtn, 0.1, {
+      opacity: 0,
+      visibility: 'hidden'
+    });
+  } else {
+    gsap.to(topBtn, 0.1, {
+      opacity: 0,
+      visibility: 'hidden'
+    });
+    gsap.to(bottomBtn, 0.1, {
+      opacity: 0,
+      visibility: 'hidden'
+    });
+  }
+});
+topBtn.addEventListener('click', function () {
+  gsap.to(window, 0.5, {
+    scrollTo: 0
+  });
+});
+bottomBtn.addEventListener('click', function () {
+  gsap.to(window, 0.5, {
+    scrollTo: 7000
+  });
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -355,7 +480,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56045" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53849" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

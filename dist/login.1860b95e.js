@@ -153,6 +153,17 @@ exports.default = _default;
 
 var _login_data = _interopRequireDefault(require("./login_data.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+//검색버튼 클릭시 검색창
+var scr = document.querySelector('body');
+var searchOpen = document.getElementById('search');
+var searchClose = document.getElementById('close');
+searchOpen.addEventListener('click', function () {
+  scr.classList.add('search_on');
+});
+searchClose.addEventListener('click', function () {
+  scr.classList.remove('search_on');
+});
+
 //눈표시누르면 input type -> text 끄면 input type -> password
 var loginId = document.getElementById('login_id');
 var loginPw = document.getElementById('login_pw');
@@ -173,15 +184,13 @@ function inputPassword() {
 }
 loninBtn.addEventListener('click', function () {
   for (var i = 0; i < _login_data.default.length; i++) {
-    if (loginId.value !== '' && loginPw.value !== '' && (loginId.value === _login_data.default[i].userid || loginPw.value === _login_data.default[i].password)) {
+    if (loginId.value !== '' && loginPw.value !== '' || loginId.value === _login_data.default[i].userid || loginPw.value === _login_data.default[i].password) {
       if (loginId.value === _login_data.default[i].userid && loginPw.value === _login_data.default[i].password) {
         alert('로그인성공');
       } else if (loginId.value !== _login_data.default[i].userid && loginPw.value === _login_data.default[i].password) {
         alert('아이디가 틀렸습니다.');
       } else if (loginId.value === _login_data.default[i].userid && loginPw.value !== _login_data.default[i].password) {
         alert('비밀번호가 틀렸습니다.');
-      } else if (loginId.value !== _login_data.default[i].userid && loginPw.value !== _login_data.default[i].password) {
-        alert('일치하는 정보 없음');
       }
     }
   }
@@ -218,7 +227,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56045" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53849" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

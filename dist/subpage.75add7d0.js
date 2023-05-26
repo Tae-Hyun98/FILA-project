@@ -394,47 +394,35 @@ for (var i = 0; i < colorChk.length; i++) {
 }
 
 //컬러필터
-var white = _sub_data.default.filter(function (color01) {
-  return color01.color === 'white';
+var white = _sub_data.default.filter(function (Color) {
+  return Color.color === 'white';
 });
-var black = _sub_data.default.filter(function (color01) {
-  return color01.color === 'black';
+var black = _sub_data.default.filter(function (Color) {
+  return Color.color === 'black';
 });
-var gray = _sub_data.default.filter(function (color01) {
-  return color01.color === 'gray';
+var gray = _sub_data.default.filter(function (Color) {
+  return Color.color === 'gray';
 });
-var green = _sub_data.default.filter(function (color01) {
-  return color01.color === 'green';
+var green = _sub_data.default.filter(function (Color) {
+  return Color.color === 'green';
 });
-var blue = _sub_data.default.filter(function (color01) {
-  return color01.color === 'blue';
+var blue = _sub_data.default.filter(function (Color) {
+  return Color.color === 'blue';
 });
-var khaki = _sub_data.default.filter(function (color01) {
-  return color01.color === 'khaki';
+var mix = _sub_data.default.filter(function (Color) {
+  return Color.color === 'mix';
 });
-var mix = _sub_data.default.filter(function (color01) {
-  return color01.color === 'mix';
+var navy = _sub_data.default.filter(function (Color) {
+  return Color.color === 'navy';
 });
-var navy = _sub_data.default.filter(function (color01) {
-  return color01.color === 'navy';
+var orange = _sub_data.default.filter(function (Color) {
+  return Color.color === 'orange';
 });
-var neon = _sub_data.default.filter(function (color01) {
-  return color01.color === 'neon';
+var red = _sub_data.default.filter(function (Color) {
+  return Color.color === 'red';
 });
-var orange = _sub_data.default.filter(function (color01) {
-  return color01.color === 'orange';
-});
-var pink = _sub_data.default.filter(function (color01) {
-  return color01.color === 'pink';
-});
-var red = _sub_data.default.filter(function (color01) {
-  return color01.color === 'red';
-});
-var beige = _sub_data.default.filter(function (color01) {
-  return color01.color === 'beige';
-});
-var yellow = _sub_data.default.filter(function (color01) {
-  return color01.color === 'yellow';
+var beige = _sub_data.default.filter(function (Color) {
+  return Color.color === 'beige';
 });
 for (var _i = 0; _i < colorChk.length; _i++) {
   colorChk[_i].addEventListener('click', function () {
@@ -449,23 +437,15 @@ for (var _i = 0; _i < colorChk.length; _i++) {
     } else if (colorChk[4].checked) {
       priobj(blue);
     } else if (colorChk[5].checked) {
-      priobj(khaki);
-    } else if (colorChk[6].checked) {
       priobj(mix);
-    } else if (colorChk[7].checked) {
+    } else if (colorChk[6].checked) {
       priobj(navy);
-    } else if (colorChk[8].checked) {
-      priobj(neon);
-    } else if (colorChk[9].checked) {
+    } else if (colorChk[7].checked) {
       priobj(orange);
-    } else if (colorChk[10].checked) {
-      priobj(pink);
-    } else if (colorChk[11].checked) {
+    } else if (colorChk[8].checked) {
       priobj(red);
-    } else if (colorChk[12].checked) {
+    } else if (colorChk[9].checked) {
       priobj(beige);
-    } else if (colorChk[13].checked) {
-      priobj(yellow);
     } else {
       priobj(_sub_data.default);
     }
@@ -482,7 +462,7 @@ function priobj(obj) {
     var subImgBox = document.createElement('div');
     subImgBox.setAttribute('class', 'product_img');
     var imgLink = document.createElement('a');
-    imgLink.setAttribute('href', "#!");
+    imgLink.setAttribute('href', '../detail.html');
     subImgBox.appendChild(imgLink);
     var subImg = document.createElement('img');
     subImg.setAttribute('src', obj[_i2].src);
@@ -490,7 +470,7 @@ function priobj(obj) {
     var detailDiv = document.createElement('div');
     detailDiv.setAttribute('class', 'detail');
     var detailLink = document.createElement('a');
-    detailLink.setAttribute('href', '#!');
+    detailLink.setAttribute('href', '../detail.html');
     detailDiv.appendChild(detailLink);
 
     //상품박스 호버했을때
@@ -903,7 +883,7 @@ window.addEventListener('scroll', function () {
       opacity: 0,
       visibility: 'hidden'
     });
-  } else if (window.scrollY >= 3500) {
+  } else if (window.scrollY >= 2000) {
     gsap.to(topBtn, 0.1, {
       opacity: 1,
       visibility: 'visible'
@@ -933,6 +913,11 @@ bottomBtn.addEventListener('click', function () {
     scrollTo: 7000
   });
 });
+var popup = document.querySelector('.popup');
+var closeBtn = document.getElementById('close_btn');
+closeBtn.addEventListener('click', function () {
+  popup.style.display = 'none';
+});
 },{"./sub_data.js":"js/sub_data.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -958,7 +943,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56045" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53849" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

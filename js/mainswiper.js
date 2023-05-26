@@ -36,8 +36,10 @@ let rankSwiper = new Swiper(".rankSwiper", {
   loopAdditionalSlides: 1,
   centeredSlides: true,
   slidesPerView: 3,
+  observer: true,
+  observeParents: true,
   //slideToClickedSlide: true,
-  //speed: 700,
+  // speed: 700,
   autoplay: {
     delay: 3500,
     disableOnInteraction: false,
@@ -79,15 +81,14 @@ const newSwiper = new Swiper(".newSwiper", {
   loopAdditionalSlides: 1,
   centeredSlides: true,
   slidesPerView: 3,
-  slidesPerView: "auto",
-  observer: true,
-  observeParents: true,
-  speed: 700,
+  spaceBetween:50,
+
   /*  autoplay: {
      delay: 3000,
      disableOnInteraction: false,
    },
   */
+
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",

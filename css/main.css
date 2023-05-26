@@ -174,7 +174,7 @@ h1 {
   overflow: hidden;
 }
 
-.lnb .lnb_nav .brand a {
+.lnb .lnb_nav .brand>a {
   padding-left: 25px;
 }
 
@@ -390,8 +390,7 @@ h1 {
 
 .header .brand_down .brand_menu img {
   width: 100%;
-  height: 380px;
-  transition: transform 0.4s;
+  transition: transform 0.3s;
 }
 
 .header .brand_down .brand_menu li a .brand_img:hover img {
@@ -681,7 +680,7 @@ h1 {
   padding: 0 30px;
   font-size: 18px;
   line-height: 30px;
-  font-weight: 400;
+  font-weight: 500;
   color: rgb(102, 102, 102);
   letter-spacing: 1px;
   transition: all 0.2s;
@@ -723,7 +722,7 @@ h1 {
 
 .rank_order {
   position: absolute;
-  margin-top: 50px;
+  margin-top: 25px;
   margin-left: 30px;
   z-index: 2;
   width: 26%;
@@ -778,7 +777,7 @@ h1 {
 
 .rankSwiper {
   position: relative;
-  width: 100%;
+  margin-left: 90px;
   overflow: hidden;
 }
 
@@ -837,7 +836,7 @@ h1 {
 }
 
 .rankSwiper .swiper-wrapper .swiper-slide {
-  width: 580px;
+  width: 30%;
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s;
@@ -845,7 +844,7 @@ h1 {
 
 .rankSwiper .swiper-wrapper .swiper-slide img {
   width: 100%;
-  height: 690px;
+  height: 640px;
 }
 
 .rankSwiper .swiper-wrapper .swiper-slide.swiper-slide-next {
@@ -950,7 +949,6 @@ h1 {
 
 .newSwiper {
   position: relative;
-  width: 100%;
   overflow: hidden;
 }
 
@@ -958,7 +956,6 @@ h1 {
   width: 860px;
   transform: scale(0.8);
   opacity: 0.6;
-  transition: all 0.3s;
 }
 
 .newSwiper .swiper-wrapper .swiper-slide .new_desc {
@@ -1007,7 +1004,7 @@ h1 {
 
 .new_box .new_img img {
   width: 500px;
-  height: 600px;
+  height: 610px;
 }
 
 .new_box .new_desc {
@@ -1113,7 +1110,6 @@ h1 {
 
 .magazine .magazine_box>div>div img {
   width: 100%;
-  height: 600px;
 }
 
 .magazine .magazine_box>div .magazine_desc {
@@ -1134,16 +1130,16 @@ h1 {
 }
 
 .magazine .magazine_box>div>div p:first-child {
-  top: 60px;
-  font-size: 32px;
+  top: 40px;
+  font-size: 30px;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
 .magazine .magazine_box>div>div p:last-child {
-  bottom: 50px;
+  bottom: 40px;
   font-size: 18px;
-  line-height: 60px;
+  line-height: 50px;
 }
 
 .magazine .magazine_box .maga_tit a {
@@ -1697,4 +1693,3 @@ h1 {
   font-size: 20px;
 }
 
-/*# sourceMappingURL=main.css.map */

@@ -162,7 +162,7 @@ var x = setInterval(function () {
   var minutes = Math.floor(timer % (1000 * 60 * 60) / (1000 * 60));
   var seconds = Math.floor(timer % (1000 * 60) / 1000);
   document.getElementById("date").style.fontSize = '50px';
-  document.getElementById("date").innerHTML = days + "일 " + hours + "시 " + minutes + "분 " + seconds + "초 ";
+  document.getElementById("date").innerHTML = days + " 일 " + hours + " :  " + minutes + " : " + seconds + " ";
   if (timer < 0) {
     clearInterval(x);
     document.getElementById("date").innerHTML = "드디어 출시되는 FILA 에디션!";
@@ -273,16 +273,16 @@ for (var _i = 0; _i < rankCategory.length; _i++) {
 var topBtn = document.querySelector('.top');
 var bottomBtn = document.querySelector('.bottom');
 window.addEventListener('scroll', function () {
-  if (window.scrollY > 300 && window.scrollY < 3500) {
+  if (window.scrollY > 400 && window.scrollY < 6500) {
+    gsap.to(topBtn, 0.1, {
+      opacity: 1,
+      visibility: 'visible'
+    });
     gsap.to(bottomBtn, 0.1, {
       opacity: 1,
       visibility: 'visible'
     });
-    gsap.to(topBtn, 0.1, {
-      opacity: 0,
-      visibility: 'hidden'
-    });
-  } else if (window.scrollY >= 3500) {
+  } else if (window.scrollY >= 6500) {
     gsap.to(topBtn, 0.1, {
       opacity: 1,
       visibility: 'visible'
@@ -323,26 +323,33 @@ popupClose.addEventListener('click', function () {
 //magazine 나타나기
 var magzEls = document.querySelectorAll('.magazine_box>div');
 window.addEventListener('scroll', function () {
-  if (window.scrollY >= 3800) {
-    gsap.to(magzEls[0], 0.5, {
-      opacity: 1,
-      translateX: 0
-    });
-    gsap.to(magzEls[1], 0.5, {
-      delay: 0.5,
+  if (window.scrollY >= 3600) {
+    gsap.to(magzEls[0], 0.4, {
       opacity: 1,
       translateY: 0
     });
-    gsap.to(magzEls[2], 0.5, {
-      delay: 1,
+    gsap.to(magzEls[1], 0.4, {
+      delay: 0.3,
       opacity: 1,
-      translateX: 0
+      translateY: 0
+    });
+    gsap.to(magzEls[2], 0.4, {
+      delay: 0.6,
+      opacity: 1,
+      translateY: 0
+    });
+    gsap.to(magzEls[3], 0.4, {
+      delay: 0.9,
+      opacity: 1,
+      translateY: 0
     });
   }
 });
+
+//sns
 var snsEls = document.querySelectorAll('.sns_list li');
 window.addEventListener('scroll', function () {
-  if (window.scrollY >= 5600) {
+  if (window.scrollY >= 5550) {
     gsap.to(snsEls[0], 0.5, {
       delay: 2,
       opacity: 1,
@@ -418,7 +425,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56045" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53849" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

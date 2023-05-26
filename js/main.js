@@ -266,7 +266,7 @@ window.addEventListener('scroll', () => {
 //sns
 const snsEls = document.querySelectorAll('.sns_list li');
 window.addEventListener('scroll', () => {
-  if (window.scrollY >= 5600) {
+  if (window.scrollY >= 5550) {
     gsap.to(snsEls[0], 0.5, {
       delay: 2,
       opacity: 1,

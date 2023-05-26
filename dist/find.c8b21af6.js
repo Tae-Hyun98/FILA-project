@@ -171,12 +171,13 @@ findPwBtn.addEventListener('click', clickPwBtn);
 //아이디찾기 버튼
 function clickBtn() {
   if (findName.value !== '' && idcardFront.value !== '' && idcardBack.value !== '') {
-    for (var i = 0; i < _login_data.default.length; i++) {
-      if (findName.value === _login_data.default[i].username && idcardFront.value === _login_data.default[i].idcard_front && idcardBack.value === _login_data.default[i].idcard_back) {
-        alert('회원님의 아이디는' + _login_data.default[i].userid + '입니다.');
-        break;
-      }
-    }
+    _login_data.default.forEach(function (vl) {
+      if (findName.value === vl.username && idcardFront.value === vl.idcard_front && idcardBack.value === vl.idcard_back) {
+        alert("\uD68C\uC6D0\uB2D8\uC758 \uC544\uC774\uB514\uB294 ".concat(vl.userid, " \uC785\uB2C8\uB2E4"));
+      } /* else if (findName.value !== vl.username || idcardFront.value !== vl.idcard_front || idcardBack.value !== vl.idcard_back) {
+        alert('다시 입력해주세요');
+        } */
+    });
   } else {
     alert('정보를 입력해주세요.');
   }
@@ -188,16 +189,27 @@ function clickPwBtn() {
     for (var i = 0; i < _login_data.default.length; i++) {
       if (userId.value === _login_data.default[i].userid && userName.value === _login_data.default[i].username && idcardFrontPw.value === _login_data.default[i].idcard_front && idcardBackPw.value === _login_data.default[i].idcard_back) {
         alert('회원님의 비밀번호는 : ' + _login_data.default[i].password + '입니다.');
-        break;
-      } else {
-        alert('정보를 확인해주세요');
-        break;
       }
+      /* else if ((userId.value !== userData[i].userid) || (userName.value !== userData[i].username) || (idcardFrontPw.value !== userData[i].idcard_front) || (idcardBackPw.value !== userData[i].idcard_back)) {
+             alert('정보를 확인해주세요');
+             break;
+           } */
     }
   } else {
     alert('정보를 입력해주세요');
   }
 }
+
+//검색버튼 클릭시 검색창
+var scr = document.querySelector('body');
+var searchOpen = document.getElementById('search');
+var searchClose = document.getElementById('close');
+searchOpen.addEventListener('click', function () {
+  scr.classList.add('search_on');
+});
+searchClose.addEventListener('click', function () {
+  scr.classList.remove('search_on');
+});
 },{"./login_data.js":"js/login_data.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -223,7 +235,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56045" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53849" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -118,11 +118,9 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/mainswiper.js":[function(require,module,exports) {
-var _Swiper;
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 //비쥬얼메인
 var swiper = new Swiper(".myswiper", {
   loop: true,
@@ -155,11 +153,13 @@ swiper.controller.control = pagingSwiper;
 //랭킹
 var rankSwiper = new Swiper(".rankSwiper", {
   loop: true,
+  loopAdditionalSlides: 1,
   centeredSlides: true,
-  slidesPerGroup: 1,
   slidesPerView: 3,
-  slideToClickedSlide: true,
-  speed: 1000,
+  observer: true,
+  observeParents: true,
+  //slideToClickedSlide: true,
+  // speed: 700,
   autoplay: {
     delay: 3500,
     disableOnInteraction: false
@@ -176,6 +176,24 @@ var rankSwiper = new Swiper(".rankSwiper", {
   }
 });
 
+var slides = document.querySelectorAll('.swiper-slide');
+var _iterator = _createForOfIteratorHelper(slides),
+  _step;
+try {
+  for (_iterator.s(); !(_step = _iterator.n()).done;) {
+    var i = _step.value;
+    i.addEventListener('mouseover', function () {
+      rankSwiper.autoplay.stop();
+    });
+    i.addEventListener('mouseout', function () {
+      rankSwiper.autoplay.start();
+    });
+  }
+} catch (err) {
+  _iterator.e(err);
+} finally {
+  _iterator.f();
+}
 $('.rank_order .rank_bottom ul li').click(function (e) {
   e.preventDefault();
   var index = $(this).index();
@@ -183,17 +201,23 @@ $('.rank_order .rank_bottom ul li').click(function (e) {
 });
 
 //NEW ARRIVAL
-var newSwiper = new Swiper(".newSwiper", (_Swiper = {
+var newSwiper = new Swiper(".newSwiper", {
   loop: true,
-  init: true,
   loopAdditionalSlides: 1,
   centeredSlides: true,
   slidesPerView: 3,
-  slidesPerGroup: 1
-}, _defineProperty(_Swiper, "slidesPerView", "auto"), _defineProperty(_Swiper, "observer", true), _defineProperty(_Swiper, "initialSlide", 0), _defineProperty(_Swiper, "observeParents", true), _defineProperty(_Swiper, "roundLengths", true), _defineProperty(_Swiper, "speed", 1000), _defineProperty(_Swiper, "navigation", {
-  nextEl: ".swiper-button-next",
-  prevEl: ".swiper-button-prev"
-}), _Swiper));
+  spaceBetween: 50,
+  /*  autoplay: {
+     delay: 3000,
+     disableOnInteraction: false,
+   },
+  */
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  }
+});
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -219,7 +243,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56045" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53849" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

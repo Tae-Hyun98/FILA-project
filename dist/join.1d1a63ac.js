@@ -208,12 +208,17 @@ function checkName() {
 function checkIdcard() {
   var idcardValue = userIdcard.value;
   var idcardLength = userIdcard.value.length;
+  var idcardValue1 = userIdcard1.value;
+  var idcardLength1 = userIdcard1.value.length;
   if (!idcardPattern.test(idcardValue) || idcardValue === '' || idcardLength <= 5) {
     idcardSpan.innerHTML = '형식을 지켜주세요';
     userIdcard.style.background = 'none';
-  } else {
+  } else if (idcardLength === 6) {
     userIdcard1.focus();
+    idcardSpan.innerHTML = '';
     userIdcard.style.background = 'lightsteelBlue';
+  } else if (idcardLength === 6 && (idcardLength1 === '' || idcardValue1 < 7)) {
+    idcardSpan.innerHTML = '형식을 지켜주세요';
   }
 }
 
@@ -352,7 +357,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56045" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53849" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
