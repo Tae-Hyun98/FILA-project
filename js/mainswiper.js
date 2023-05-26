@@ -34,6 +34,7 @@ swiper.controller.control = pagingSwiper;
 let rankSwiper = new Swiper(".rankSwiper", {
   loop: true,
   loopAdditionalSlides: 1,
+  loopedSlides: 2,
   centeredSlides: true,
   slidesPerView: 3,
   observer: true,
@@ -79,14 +80,16 @@ $('.rank_order .rank_bottom ul li').click(function (e) {
 const newSwiper = new Swiper(".newSwiper", {
   loop: true,
   loopAdditionalSlides: 1,
+  loopedSlides: 2,
   centeredSlides: true,
   slidesPerView: 'auto',
   observer: true,
+
   observeParents: true,
- /*  autoplay: {
+  autoplay: {
     delay: 3000,
     disableOnInteraction: false,
-  }, */
+  },
 
 
   navigation: {
