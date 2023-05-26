@@ -605,30 +605,59 @@ closeBtn.addEventListener('click', () => {
 });
 
 //페이지네이션
-const pages = document.getElementById('pages');
 
 
-function addPage(totalData, currentPage) {
-  const pageCount = 5;
-  const totalPage = Math.ceil(totalData / 20); //총페이지수
-  let pageGroup = Math.ceil(currentPage / pageCount);
+function addPage() {
+  const dataLeng = subData.length;
+  let currentPage=1;
+  const onePage = 20; //한페이지에뜰 상품
+  const pageCount = 5; //한화면에 보여질 페이지개수
+  const totalPage = Math.ceil(dataLeng / onePage); //총페이지수
+  const pageGroup = Math.ceil(currentPage / pageCount); //페이지네이션그룹
+  const pages = document.getElementById('pages');
 
-  let last = pageGroup * pageCount;
+
+  let first = ((pageGroup - 1) * pageCount) + 1; //한페이지 그룹의 첫번째페이지 번호
+  let last = pageGroup * pageCount; //마지막페이지번호
+
   if (last > totalPage) {
-    last = totalPage
+    last = totalPage;
   }
-  let first = last - (pageCount - 1);
   const next = last + 1;
   const prev = first - 1;
-  if (totalPage < 1) {
-    first = last;
-  }
-  const pageLi = document.createElement('li');
-  for (let i = first; i <= last; i++) {
-    pages.appendChild(pageLi);
-    pageLi.innerHTML = (`<span>${i}</span>`);
+
+  if (prev > 0) {
+    const preA = document.createElement('a');
+    preA.setAttribute('href', '#!');
+    preA.innerHTML = '<';
+    pages.appendChild(preA);
   }
 
+  for (let i = first; i <= last; i++) {
+    const a = document.createElement('a');
+    a.setAttribute('href', '#!');
+    a.setAttribute('class', `pg page${i}`);
+    a.innerHTML = i;
+    pages.appendChild(a);
+  }
+
+  if (last < totalPage) {
+    const endA = document.createElement('a');
+    endA.setAttribute('href', '#!');
+    endA.innerHTML = '>';
+    pages.appendChild(endA);
+  }
 }
-addPage(subData.lengh, 20)
-console.log(subData.length);
+addPage();
+const pageBtn = document.querySelectorAll('.pg');
+
+
+pageBtn.forEach((item,idx) => {
+  item.addEventListener('click', (e) => {
+    e.preventDefault();
+    for (c of pageBtn) {
+      c.classList.remove('active');
+    }
+    item[0].classList.add('active');
+  })
+});

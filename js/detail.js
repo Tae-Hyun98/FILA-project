@@ -270,17 +270,14 @@
 
   let countInq = 2;
   wriBtn.addEventListener('click', inquiryAdd);
-  wriBtn.addEventListener('click', () => {
-    inqPopup.style.display = 'none';
-  })
+ /*  wriBtn.addEventListener('click', () => {
+      inqPopup.style.display = 'none';
+  }) */
 
-  /*   let Options = inqOpt.options[inqOpt.selectedIndex].innerText; */
-
-  /*   selectOpt = selectOpt.options[selectOpt.selectedIndex].value; */
-  let Options = inqOpt.options[inqOpt.selectedIndex].value.innerText;
 
   function inquiryAdd() {
     if (inqOpt.value != '' && inqId.value != '' && inqTit.value != '' && inqContext.value != '') {
+      const optext = inqOpt.options[inqOpt.selectedIndex].text; //옵션값 text만
       let Li = document.createElement('li');
       let span = document.createElement('span');
       let count = document.createTextNode(countInq);
@@ -291,10 +288,9 @@
       let span5 = document.createElement('span');
       let answer = document.createTextNode('답변중');
       let Today = document.createTextNode(dayFormat);
-      let option = document.createTextNode(Options);
+      let option = document.createTextNode(optext);
       let userId = document.createTextNode(inqId.value);
       let inqTitle = document.createTextNode(inqTit.value);
-      //let userTxt = document.createTextNode(inqContext.value);
 
 
       Li.appendChild(span);
@@ -318,7 +314,10 @@
       inqOpt.value = '';
       inqTit.value = '';
       countInq++;
-
+      inqPopup.style.display = 'none'
+    } else {
+      alert('입력되지 않은 칸이 있습니다.');
+      inqPopup.style.display = 'block'
     }
   }
 

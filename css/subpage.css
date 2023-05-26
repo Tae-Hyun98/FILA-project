@@ -1043,3 +1043,34 @@ div.col_5 .product_box .detail p.product_name {
   font-size: 16px;
   font-weight: 700;
 }
+
+
+/**********pagenation***********/
+.js_paging {}
+
+#pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pages a {
+  color: #000;
+  font-size: 18px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  padding: 5px 15px;
+}
+
+#pages a:hover {
+  background-color: #ccc;
+  color: #fff;
+}
+
+#pages a.active {
+  background-color: #002053;
+}
+
+#pages a:last-child {
+  margin-right: 0;
+}
