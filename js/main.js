@@ -24,14 +24,14 @@ window.addEventListener("scroll", () => {
 
 //lnb마우스호버시
 const li = document.querySelectorAll('.header .lnb>ul>li');
-for (let i = 0; i < li.length; i++) {
-  li[i].addEventListener("mouseover", (e) => {
+li.forEach((item) => {
+  item.addEventListener("mouseover", () => {
     scr.classList.add('bg_on');
   });
-  li[i].addEventListener("mouseout", (e) => {
+  item.addEventListener("mouseout", () => {
     scr.classList.remove('bg_on');
   });
-}
+});
 
 //카운트다운
 const countDown = new Date("May 30, 2023 22:22:00").getTime();
@@ -237,29 +237,21 @@ popupClose.addEventListener('click', () => {
 });
 
 
+function func() {
+
+}
 //magazine 나타나기
-const magzEls = document.querySelectorAll('.magazine_box>div');
+const magaEls = document.querySelectorAll('.magazine_box>div');
+
 window.addEventListener('scroll', () => {
   if (window.scrollY >= 3600) {
-    gsap.to(magzEls[0], 0.4, {
-      opacity: 1,
-      translateY: 0
-    })
-    gsap.to(magzEls[1], 0.4, {
-      delay: 0.3,
-      opacity: 1,
-      translateY: 0
-    })
-    gsap.to(magzEls[2], 0.4, {
-      delay: 0.6,
-      opacity: 1,
-      translateY: 0
-    })
-    gsap.to(magzEls[3], 0.4, {
-      delay: 0.9,
-      opacity: 1,
-      translateY: 0
-    })
+    magaEls.forEach((item, idx) => {
+      gsap.to(item, 0.4, {
+        delay: (idx + 1) * 0.4,
+        opacity: 1,
+        translateY: 0
+      })
+    });
   }
 })
 
@@ -267,7 +259,24 @@ window.addEventListener('scroll', () => {
 const snsEls = document.querySelectorAll('.sns_list li');
 window.addEventListener('scroll', () => {
   if (window.scrollY >= 5550) {
-    gsap.to(snsEls[0], 0.5, {
+    snsEls.forEach((item, idx) => {
+      if (idx >= 0 && idx < 5) {
+        idx+=4
+        gsap.to(item, 0.5, {
+          delay: (idx- 1) * 0.5,
+          opacity: 1,
+          translateX: 0
+        })
+      } else if (idx >= 5 && idx < 10) {
+        idx += 5
+        gsap.to(item, 0.5, {
+          delay: (idx+ 1) * 0.5,
+          opacity: 1,
+          translateX: 0
+        })
+      }
+    })
+    /* gsap.to(snsEls[0], 0.5, {
       delay: 2,
       opacity: 1,
       translateX: 0
@@ -314,6 +323,6 @@ window.addEventListener('scroll', () => {
       delay: 2,
       opacity: 1,
       translateX: 0
-    })
+    }) */
   }
 })
