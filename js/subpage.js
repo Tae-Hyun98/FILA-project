@@ -648,23 +648,24 @@ pageBtn.forEach((item, idx) => {
   });
 });
 
-const row = document.querySelectorAll('.product_box');
+const product = document.querySelectorAll('.product_box');
 const prevBtn = document.querySelector('.prev');
 
 function displayData(idx) {
-  let subArray = [...row];
+  let productArray = [...product];
   let start = idx * onePage;
   let end = start + onePage;
 
-  for (let sd of subArray) {
+  for (let sd of productArray) {
     sd.style.display = 'none';
   }
 
-  let subSlice = subArray.slice(start, end);
+  let subSlice = productArray.slice(start, end);
 
   for (let ss of subSlice) {
     ss.style.display = '';
   }
+
   for (let pb of pageBtn) {
     pb.classList.remove('active');
   }
@@ -673,5 +674,6 @@ function displayData(idx) {
     if (idx > 0)
       displayData(idx - 1)
   });
+
 }
 displayData(0)
