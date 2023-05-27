@@ -604,60 +604,74 @@ closeBtn.addEventListener('click', () => {
   popup.style.display = 'none';
 });
 
+
+
+
 //페이지네이션
 
+const dataLeng = subData.length;
+const currentPage = 1;
+const onePage = 20; //한페이지에뜰 상품
+const pageCount = 5; //한화면에 보여질 페이지개수
+const totalPage = Math.ceil(dataLeng / onePage); //총페이지수
+const pageGroup = Math.ceil(currentPage / pageCount); //페이지네이션그룹
 
-function addPage() {
-  const dataLeng = subData.length;
-  let currentPage=1;
-  const onePage = 20; //한페이지에뜰 상품
-  const pageCount = 5; //한화면에 보여질 페이지개수
-  const totalPage = Math.ceil(dataLeng / onePage); //총페이지수
-  const pageGroup = Math.ceil(currentPage / pageCount); //페이지네이션그룹
-  const pages = document.getElementById('pages');
+const pages = document.getElementById('pages');
+const pageCont = Math.ceil(dataLeng / onePage);
 
+let last = pageGroup * pageCount; //마지막페이지번호
+let first = last - (pageCount - 1); //한페이지 그룹의 첫번째페이지 번호
 
-  let first = ((pageGroup - 1) * pageCount) + 1; //한페이지 그룹의 첫번째페이지 번호
-  let last = pageGroup * pageCount; //마지막페이지번호
+/* if (last > totalPage) {
+  last = totalPage;
+} */
+const next = last + 1;
+const prev = first - 1;
 
-  if (last > totalPage) {
-    last = totalPage;
-  }
-  const next = last + 1;
-  const prev = first - 1;
-
-  if (prev > 0) {
-    const preA = document.createElement('a');
-    preA.setAttribute('href', '#!');
-    preA.innerHTML = '<';
-    pages.appendChild(preA);
-  }
-
-  for (let i = first; i <= last; i++) {
-    const a = document.createElement('a');
-    a.setAttribute('href', '#!');
-    a.setAttribute('class', `pg page${i}`);
-    a.innerHTML = i;
-    pages.appendChild(a);
-  }
-
-  if (last < totalPage) {
-    const endA = document.createElement('a');
-    endA.setAttribute('href', '#!');
-    endA.innerHTML = '>';
-    pages.appendChild(endA);
-  }
+if (prev >= 0) {
+  pages.innerHTML += `<a href='#!' class='prev'><</a>`
 }
-addPage();
+
+for (let i = 1; i <= pageCont; i++) {
+  pages.innerHTML += `<a href='#!' class='pg'>${i}</a>`;
+}
+
+if (last <= totalPage) {
+  pages.innerHTML += `<a href='#!' class='next'>></a>`
+}
+
+//page버튼에 idx값 반환
 const pageBtn = document.querySelectorAll('.pg');
-
-
-pageBtn.forEach((item,idx) => {
-  item.addEventListener('click', (e) => {
-    e.preventDefault();
-    for (c of pageBtn) {
-      c.classList.remove('active');
-    }
-    item[0].classList.add('active');
-  })
+pageBtn.forEach((item, idx) => {
+  item.addEventListener('click', () => {
+    displayData(idx);
+  });
 });
+
+const row = document.querySelectorAll('.product_box');
+const prevBtn = document.querySelector('.prev');
+
+function displayData(idx) {
+  let subArray = [...row];
+  let start = idx * onePage;
+  let end = start + onePage;
+
+  for (let sd of subArray) {
+    sd.style.display = 'none';
+  }
+
+  let subSlice = subArray.slice(start, end);
+
+  for (let ss of subSlice) {
+    ss.style.display = '';
+  }
+  for (let pb of pageBtn) {
+    pb.classList.remove('active');
+  }
+  pageBtn[idx].classList.add('active');
+  prevBtn.addEventListener('click', () => {
+    if (idx > 0)
+      displayData(idx - 1)
+  });
+}
+displayData(0)

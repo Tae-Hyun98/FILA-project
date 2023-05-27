@@ -716,6 +716,7 @@ img {
 
 /*************sub_list*************/
 .product_list {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   transition: .3s;
@@ -1069,6 +1070,7 @@ div.col_5 .product_box .detail p.product_name {
 
 #pages a.active {
   background-color: #002053;
+  color: #fff;
 }
 
 #pages a:last-child {
