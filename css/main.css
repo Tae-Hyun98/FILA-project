@@ -945,6 +945,11 @@ h1 {
   color: #fff;
 }
 
+.newSwiper_box {
+  height: 690px;
+  overflow: hidden;
+}
+
 .swiper.newSwiper {
   height: auto;
   position: relative;
@@ -961,6 +966,7 @@ h1 {
 .newSwiper .swiper-wrapper .swiper-slide .new_desc {
   opacity: 0;
   visibility: hidden;
+  transition: .3s;
 }
 
 .newSwiper .swiper-slide.swiper-slide-active {
@@ -995,6 +1001,7 @@ h1 {
 
 .new_box {
   display: flex;
+  transition: .3s;
 }
 
 .new_box .new_img img {

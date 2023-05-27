@@ -84,6 +84,7 @@ const newSwiper = new Swiper(".newSwiper", {
   centeredSlides: true,
   slidesPerView: 'auto',
   observer: true,
+  speed: 700,
 
   observeParents: true,
   autoplay: {
