@@ -40,11 +40,6 @@ img {
   display: block;
 }
 
-.scroll.bg_on.scr_up .header {
-  visibility: visible;
-  opacity: 1;
-}
-
 /***************header********************/
 .header {
   position: fixed;
@@ -58,7 +53,6 @@ img {
   transition: all 0.1s;
   background: #fff;
   z-index: 9999;
-  box-shadow: 0px 0px 3px #ccc;
 }
 
 .header .blur {
@@ -433,11 +427,11 @@ img {
 
 .header .search_blur {
   position: absolute;
-  top: 0;
+  top: 80px;
   width: 100%;
   height: 100vh;
   z-index: -1;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
 }
 
 

@@ -61,3 +61,15 @@ searchOpen.addEventListener('click', () => {
 searchClose.addEventListener('click', () => {
   scr.classList.remove('search_on');
 });
+
+
+//lnb마우스호버시
+const li = document.querySelectorAll('.header .lnb>ul>li');
+li.forEach((lis) => {
+  lis.addEventListener('mouseover', () => {
+    scr.classList.add('bg_on')
+  });
+  lis.addEventListener('mouseout', () => {
+    scr.classList.remove('bg_on');
+  });
+})
