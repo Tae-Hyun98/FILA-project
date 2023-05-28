@@ -52,10 +52,13 @@ loninBtn.addEventListener('click', () => {
     if ((loginId.value !== '' && loginPw.value !== '') || (loginId.value === userData[i].userid || loginPw.value === userData[i].password)) {
       if (loginId.value === userData[i].userid && loginPw.value === userData[i].password) {
         alert('로그인성공');
+        return true;
       } else if (loginId.value !== userData[i].userid && loginPw.value === userData[i].password) {
         alert('아이디가 틀렸습니다.');
+        return false;
       } else if (loginId.value === userData[i].userid && loginPw.value !== userData[i].password) {
         alert('비밀번호가 틀렸습니다.');
+        return false;
       }
     }
   }
