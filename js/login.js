@@ -1,5 +1,16 @@
 import userData from "./login_data.js";
 
+//lnb마우스호버시
+const li = document.querySelectorAll('.header .lnb>ul>li');
+li.forEach((lis) => {
+  lis.addEventListener('mouseover', () => {
+    scr.classList.add('bg_on')
+  });
+  lis.addEventListener('mouseout', () => {
+    scr.classList.remove('bg_on');
+  });
+})
+
 //검색버튼 클릭시 검색창
 const scr = document.querySelector('body');
 const searchOpen = document.getElementById('search');
@@ -55,5 +66,4 @@ loninBtn.addEventListener('click', () => {
   } else if (loginId.value === '' && loginPw.value !== '') {
     alert('아이디를 입력해주세요.');
   }
-
 });

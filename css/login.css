@@ -29,6 +29,21 @@ img {
   color: #000;
 }
 
+/*************scroll header**************/
+.scroll.scr_up.search_on .header {
+  transform: translateY(0%);
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll.bg_on .header .blur {
+  display: block;
+}
+
+.scroll.bg_on.scr_up .header {
+  visibility: visible;
+  opacity: 1;
+}
 
 /***************header********************/
 .header {
@@ -48,12 +63,12 @@ img {
 
 .header .blur {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 80px;
   left: 0;
   width: 100%;
-  height: 130vh;
-  backdrop-filter: blur(20px);
+  height: 100vh;
+  backdrop-filter: blur(10px);
   z-index: -1;
 }
 
@@ -65,7 +80,7 @@ img {
 .header .logo a {
   display: block;
   width: 120px;
-  height: 40px;
+  height: 45px;
   background: url(../img/Logo/blue_fila.png) no-repeat center;
   background-size: contain;
 }
@@ -79,7 +94,6 @@ img {
   width: 1px;
   height: 12px;
   background-color: #000;
-  margin: 0 20px;
 }
 
 .lnb .lnb_nav {
@@ -89,8 +103,8 @@ img {
 }
 
 .lnb .lnb_nav>li {
-  margin-top: 12px;
-  padding-bottom: 12px;
+  margin-top: 17px;
+  padding-bottom: 17px;
 }
 
 .lnb .lnb_nav>li>a {
@@ -103,17 +117,9 @@ img {
   letter-spacing: 1px;
 }
 
-.lnb .lnb_nav>li>a::before {
-  left: 50%;
-}
-
-.lnb .lnb_nav>li>a::after {
-  right: 50%;
-}
-
 .lnb .lnb_nav>li>a::before,
 .lnb .lnb_nav>li>a::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 43px;
   display: block;
@@ -121,6 +127,10 @@ img {
   height: 2px;
   background-color: #000;
   transition: all 0.2s;
+}
+
+.lnb .lnb_nav .brand a {
+  padding-left: 25px;
 }
 
 .lnb .lnb_nav>li:hover>a::before,
@@ -133,6 +143,34 @@ img {
 .lnb .lnb_nav>li:nth-child(3):hover>a::before,
 .lnb .lnb_nav>li:nth-child(3):hover>a::after {
   width: 25px;
+}
+
+.lnb .lnb_nav>li:nth-child(3)>a {
+  padding-right: 25px;
+}
+
+.lnb .lnb_nav>li>a::before {
+  left: 50%;
+}
+
+.lnb .lnb_nav>li>a::after {
+  right: 50%;
+}
+
+.lnb .lnb_nav>li:nth-child(3)>a::before {
+  left: 43%;
+}
+
+.lnb .lnb_nav>li:nth-child(3)>a::after {
+  right: 57%;
+}
+
+.lnb .lnb_nav>li.brand>a::before {
+  left: 54%;
+}
+
+.lnb .lnb_nav>li.brand>a::after {
+  right: 45%;
 }
 
 .gnb {
@@ -305,7 +343,7 @@ img {
   visibility: hidden;
   position: absolute;
   width: 100%;
-  top: 90px;
+  top: 80px;
   left: 0;
   opacity: 0;
   padding-top: 10px;

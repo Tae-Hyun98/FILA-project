@@ -80,7 +80,6 @@ searchClose.addEventListener('click', () => {
 
 
 
-
 //카테고리클릭시 들어가는거
 const rankCategory = document.querySelectorAll('.rank_category ul li a');
 const categoryTit = document.querySelector('.rank_top h3');

@@ -25,14 +25,14 @@
 
   //lnb마우스호버시
   const li = document.querySelectorAll('.header .lnb>ul>li');
-  for (let i = 0; i < li.length; i++) {
-    li[i].addEventListener("mouseover", (e) => {
-      scr.classList.add('bg_on');
+  li.forEach((lis) => {
+    lis.addEventListener('mouseover', () => {
+      scr.classList.add('bg_on')
     });
-    li[i].addEventListener("mouseout", (e) => {
+    lis.addEventListener('mouseout', () => {
       scr.classList.remove('bg_on');
     });
-  }
+  })
 
 
   //검색버튼 클릭시 검색창
@@ -270,9 +270,9 @@
 
   let countInq = 2;
   wriBtn.addEventListener('click', inquiryAdd);
- /*  wriBtn.addEventListener('click', () => {
-      inqPopup.style.display = 'none';
-  }) */
+  /*  wriBtn.addEventListener('click', () => {
+       inqPopup.style.display = 'none';
+   }) */
 
 
   function inquiryAdd() {

@@ -279,99 +279,6 @@ displayData(0)
 
 
 
-/* //초기상품리스트 
-function bindData() {
-  for (let i = 0; i < subData.length; i++) {
-    //서브 상품박스
-    const subDiv = document.createElement('div');
-    subDiv.setAttribute('class', 'product_box');
-
-    const subImgBox = document.createElement('div');
-    subImgBox.setAttribute('class', 'product_img');
-
-    const imgLink = document.createElement('a');
-    imgLink.setAttribute('href', "#!");
-    subImgBox.appendChild(imgLink);
-
-    const subImg = document.createElement('img');
-    subImg.setAttribute('src', subData[i].src);
-    imgLink.appendChild(subImg);
-
-    const detailDiv = document.createElement('div');
-    detailDiv.setAttribute('class', 'detail');
-
-    const detailLink = document.createElement('a');
-    detailLink.setAttribute('href', '#!');
-    detailDiv.appendChild(detailLink);
-
-    //상품박스 호버했을때
-    const hoverDiv = document.createElement('div');
-    hoverDiv.setAttribute('class', 'hover_box');
-    subImgBox.appendChild(hoverDiv);
-
-    const cartDiv = document.createElement('div');
-    hoverDiv.appendChild(cartDiv);
-    const cartSpan = document.createElement('span');
-    cartSpan.setAttribute('class', 'material-icons-outlined');
-    const cartText = document.createTextNode('shopping_cart');
-    cartDiv.appendChild(cartSpan);
-    cartSpan.appendChild(cartText);
-
-    const likeDiv = document.createElement('div');
-    hoverDiv.appendChild(likeDiv);
-    const likeSpan = document.createElement('span');
-    likeSpan.setAttribute('class', 'material-icons-outlined');
-    const likeText = document.createTextNode('favorite');
-    likeDiv.appendChild(likeSpan);
-    likeSpan.appendChild(likeText);
-
-    //카테고리
-    const cateGory = document.createElement('p');
-    cateGory.setAttribute('class', 'category');
-    detailLink.appendChild(cateGory);
-    const cateGoryText = document.createTextNode(subData[i].category);
-    cateGory.appendChild(cateGoryText);
-
-    //상품이름
-    const productName = document.createElement('p');
-    productName.setAttribute('class', 'product_name');
-    detailLink.appendChild(productName);
-    const nameText = document.createTextNode(subData[i].name);
-    productName.appendChild(nameText);
-
-    //상품가격
-    const productPrice = document.createElement('p');
-    productPrice.setAttribute('class', 'product_price');
-    detailLink.appendChild(productPrice);
-    const namePrice = document.createTextNode(subData[i].price.toLocaleString('ko-KR') + '원');
-    productPrice.appendChild(namePrice);
-
-    //리뷰수
-    const reviSpan = document.createElement('span');
-    const reviCount = document.createTextNode('★(' + subData[i].review + ')');
-    productPrice.appendChild(reviSpan);
-    reviSpan.appendChild(reviCount);
-
-    //BUY버튼
-    const buyDiv = document.createElement('div');
-    buyDiv.setAttribute('class', 'buy_btn');
-    detailDiv.appendChild(buyDiv);
-
-    const buyA = document.createElement('a');
-    buyA.setAttribute('href', '#!');
-    buyDiv.appendChild(buyA);
-
-    const buyText = document.createTextNode('BUY');
-    buyA.appendChild(buyText);
-
-    subDiv.appendChild(subImgBox);
-    subDiv.appendChild(detailDiv);
-    productList.appendChild(subDiv);
-    subProduct.appendChild(productList);
-  }
-
-}
-bindData(); */
 
 
 //상품4개, 5개보기버튼
@@ -417,14 +324,14 @@ window.addEventListener("scroll", () => {
 
 //lnb마우스호버시
 const li = document.querySelectorAll('.header .lnb>ul>li');
-for (let i = 0; i < li.length; i++) {
-  li[i].addEventListener("mouseover", (e) => {
-    scr.classList.add('bg_on');
+li.forEach((lis) => {
+  lis.addEventListener('mouseover', () => {
+    scr.classList.add('bg_on')
   });
-  li[i].addEventListener("mouseout", (e) => {
+  lis.addEventListener('mouseout', () => {
     scr.classList.remove('bg_on');
   });
-}
+})
 
 
 //검색버튼 클릭시 검색창
