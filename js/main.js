@@ -1,3 +1,12 @@
+import {
+  cateTit,
+  shirtsData,
+  onlineData,
+  targaData,
+  tennisData,
+  runningData
+} from "./rank_data.js";
+
 //스크롤시 헤더
 const scr = document.querySelector('.scroll');
 window.addEventListener("wheel", (e) => {
@@ -69,6 +78,61 @@ searchClose.addEventListener('click', () => {
   scr.classList.remove('search_on');
 });
 
+
+
+
+//카테고리클릭시 들어가는거
+const rankCategory = document.querySelectorAll('.rank_category ul li a');
+const categoryTit = document.querySelector('.rank_top h3');
+const rankIndi = document.querySelectorAll('.rank_bottom ul li a');
+const rankImg = document.querySelectorAll('.rankSwiper .rank_img a img');
+const rankDesc = document.querySelectorAll('.rank_desc ul li .desc_tit');
+const rankDescPrice = document.querySelectorAll('.rank_desc ul li .desc_price');
+
+rankCategory.forEach((item, idx) => {
+  item.addEventListener('click', () => {
+    categoryTit.innerHTML = cateTit[idx];
+    if (idx === 0) {
+      rankIndi.forEach((ranks, idx) => {
+        rankIndi[idx].innerHTML = shirtsData[idx].name;
+        rankImg[idx].setAttribute('src', shirtsData[idx].image);
+        rankDesc[idx].innerHTML = shirtsData[idx].name;
+        rankDescPrice[idx].innerHTML = shirtsData[idx].price;
+      });
+    } else if (idx === 1) {
+      rankIndi.forEach((ranks, idx) => {
+        rankIndi[idx].innerHTML = onlineData[idx].name;
+        rankImg[idx].setAttribute('src', onlineData[idx].image);
+        rankDesc[idx].innerHTML = onlineData[idx].name;
+        rankDescPrice[idx].innerHTML = onlineData[idx].price;
+      });
+    } else if (idx === 2) {
+      rankIndi.forEach((ranks, idx) => {
+        rankIndi[idx].innerHTML = targaData[idx].name;
+        rankImg[idx].setAttribute('src', targaData[idx].image);
+        rankDesc[idx].innerHTML = targaData[idx].name;
+        rankDescPrice[idx].innerHTML = targaData[idx].price;
+      });
+    } else if (idx === 3) {
+      rankIndi.forEach((ranks, idx) => {
+        rankIndi[idx].innerHTML = tennisData[idx].name;
+        rankImg[idx].setAttribute('src', tennisData[idx].image);
+        rankDesc[idx].innerHTML = tennisData[idx].name;
+        rankDescPrice[idx].innerHTML = tennisData[idx].price;
+      });
+    } else if (idx === 4) {
+      rankIndi.forEach((ranks, idx) => {
+        rankIndi[idx].innerHTML = runningData[idx].name;
+        rankImg[idx].setAttribute('src', runningData[idx].image);
+        rankDesc[idx].innerHTML = runningData[idx].name;
+        rankDescPrice[idx].innerHTML = runningData[idx].price;
+      });
+    }
+  })
+})
+
+
+
 //footer family
 const familySite = document.getElementById('family_site');
 
@@ -81,101 +145,6 @@ familySite.addEventListener('change', (e) => {
 });
 
 
-//카테고리클릭시 들어가는거
-const rankCategory = document.querySelectorAll('.rank_category ul li a');
-const categoryTit = document.querySelector('.rank_top h3');
-const rankIndi = document.querySelectorAll('.rank_bottom ul li a');
-const rankImg = document.querySelectorAll('.rankSwiper .rank_img a img');
-const rankDesc = document.querySelectorAll('.rank_desc ul li .desc_tit');
-const rankDescPrice = document.querySelectorAll('.rank_desc ul li .desc_price');
-
-const cateTit = ['# 티셔츠&팬츠', '# 온라인단독', '# 타르가', '# 테니스', '# 런닝화'];
-
-const shirtsArray = ['베이직 리니어 반팔티', '3D 빅로고 반팔티', '컴포트핏 인터내셔널 로고 반팔티', '컴포트핏 인터내셔널 반팔 맨투맨', '컴포트핏 조거팬츠', '이지팬츠'];
-
-const shirtsImg = ['./img/Main_img/Ranking_img/T&pants/01.jpg', './img/Main_img/Ranking_img/T&pants/02.jpg', './img/Main_img/Ranking_img/T&pants/03.jpg', './img/Main_img/Ranking_img/T&pants/04.jpg', './img/Main_img/Ranking_img/T&pants/05.jpg', './img/Main_img/Ranking_img/T&pants/06.jpg']
-
-const shirtsPrice = ['39,000원', '32,000원', '38,000원', '29,000원', '24,000원', '18,000원'];
-
-const onlineArray = ['Fila athletics 아노락', 'Fila tennis 블럭 자켓', 'Fila tennis 블럭 하프넥 아노락', 'Sportslife 아치로고 맨투맨', 'Sportslife 아치로고 반팔 티셔츠', 'ball boy 반팔 티셔츠'];
-
-const onlineImg = ['./img/Main_img/Ranking_img/Online/01.jpg', './img/Main_img/Ranking_img/Online/02.jpg', './img/Main_img/Ranking_img/Online/03.jpg', './img/Main_img/Ranking_img/Online/04.jpg', './img/Main_img/Ranking_img/Online/05.jpg', './img/Main_img/Ranking_img/Online/06.jpg'];
-
-const onlinePrice = ['109,000원', '129,000원', '129,000원', '69,000원', '42,000원', '39,000원'];
-
-const targaArray = ['타르가 클래식', '타르가 OG 1988 BB', '타르가 OG 1988', '타르가 클럽 LT', '타르가 88/22', '타르가 클래식 808'];
-
-const targaImg = ['./img/Main_img/Ranking_img/Targa/01.jpg', './img/Main_img/Ranking_img/Targa/02.jpg', './img/Main_img/Ranking_img/Targa/03.jpg', './img/Main_img/Ranking_img/Targa/04.jpg', './img/Main_img/Ranking_img/Targa/05.jpg', './img/Main_img/Ranking_img/Targa/06.jpg'];
-
-const targaPrice = ['89,000원', '179,000원', '149,000원', '109,000원', '79,000원', '88,000원'];
-
-const tennisArray = ['테니스 소프트 볼캡', 'FILA 테니스 라켓 슬링백', 'WHITE LINE 라켓 슬링백', '테니스 타월', '테니스 탁텔 하드볼캡', '테니스 헤어밴드'];
-
-const tennisImg = ['./img/Main_img/Ranking_img/Tennis/01.jpg', './img/Main_img/Ranking_img/Tennis/02.jpg', './img/Main_img/Ranking_img/Tennis/03.jpg', './img/Main_img/Ranking_img/Tennis/04.jpg', './img/Main_img/Ranking_img/Tennis/05.jpg', './img/Main_img/Ranking_img/Tennis/06.jpg'];
-
-const tennisPrice = ['39,000원', '79,000원', '99,000원', '49,000원', '49,000원', '9,900원'];
-
-const runningArray = ['휠라 플로트 맥시', '휠라 NRE I3', '휠라 플로트 프라임', '휠라 플로트 엘리트', '휠라 RGB 플렉스 3.0', '휠라 NRE I3'];
-
-const runningImg = ['./img/Main_img/Ranking_img/Running/01.jpg', './img/Main_img/Ranking_img/Running/02.jpg', './img/Main_img/Ranking_img/Running/03.jpg', './img/Main_img/Ranking_img/Running/04.jpg', './img/Main_img/Ranking_img/Running/05.jpg', './img/Main_img/Ranking_img/Running/06.jpg'];
-
-const runningPrice = ['189,000원', '109,000원', '159,000원', '199,000원', '89,000원', '109,000원'];
-
-
-
-for (let i = 0; i < rankCategory.length; i++) {
-  if (i === 0) {
-    rankCategory[i].addEventListener('click', () => {
-      categoryTit.innerHTML = cateTit[i];
-      for (let j = 0; j < rankIndi.length; j++) {
-        rankIndi[j].innerHTML = shirtsArray[j];
-        rankImg[j].setAttribute('src', shirtsImg[j]);
-        rankDesc[j].innerHTML = shirtsArray[j];
-        rankDescPrice[j].innerHTML = shirtsPrice[j];
-      }
-    });
-  } else if (i === 1) {
-    rankCategory[i].addEventListener('click', () => {
-      categoryTit.innerHTML = cateTit[i];
-      for (let j = 0; j < rankIndi.length; j++) {
-        rankIndi[j].innerHTML = onlineArray[j];
-        rankImg[j].setAttribute('src', onlineImg[j]);
-        rankDesc[j].innerHTML = onlineArray[j];
-        rankDescPrice[j].innerHTML = onlinePrice[j];
-      }
-    });
-  } else if (i === 2) {
-    rankCategory[i].addEventListener('click', () => {
-      categoryTit.innerHTML = cateTit[i];
-      for (let j = 0; j < rankIndi.length; j++) {
-        rankIndi[j].innerHTML = targaArray[j];
-        rankImg[j].setAttribute('src', targaImg[j]);
-        rankDesc[j].innerHTML = targaArray[j];
-        rankDescPrice[j].innerHTML = targaPrice[j];
-      }
-    });
-  } else if (i === 3) {
-    rankCategory[i].addEventListener('click', () => {
-      categoryTit.innerHTML = cateTit[i];
-      for (let j = 0; j < rankIndi.length; j++) {
-        rankIndi[j].innerHTML = tennisArray[j];
-        rankImg[j].setAttribute('src', tennisImg[j]);
-        rankDesc[j].innerHTML = tennisArray[j];
-        rankDescPrice[j].innerHTML = tennisPrice[j];
-      }
-    });
-  } else if (i === 4) {
-    rankCategory[i].addEventListener('click', () => {
-      categoryTit.innerHTML = cateTit[i];
-      for (let j = 0; j < rankIndi.length; j++) {
-        rankIndi[j].innerHTML = runningArray[j];
-        rankImg[j].setAttribute('src', runningImg[j]);
-        rankDesc[j].innerHTML = runningArray[j];
-        rankDescPrice[j].innerHTML = runningPrice[j];
-      }
-    });
-  }
-};
 
 
 //탑,바텀버튼
@@ -237,9 +206,7 @@ popupClose.addEventListener('click', () => {
 });
 
 
-function func() {
 
-}
 //magazine 나타나기
 const magaEls = document.querySelectorAll('.magazine_box>div');
 
@@ -256,73 +223,24 @@ window.addEventListener('scroll', () => {
 })
 
 //sns
-const snsEls = document.querySelectorAll('.sns_list li');
+const snsEls = document.querySelectorAll('.sns_list .sa');
+const snsElsb = document.querySelectorAll('.sns_list .sb');
 window.addEventListener('scroll', () => {
   if (window.scrollY >= 5550) {
     snsEls.forEach((item, idx) => {
-      if (idx >= 0 && idx < 5) {
-        idx+=4
-        gsap.to(item, 0.5, {
-          delay: (idx- 1) * 0.5,
-          opacity: 1,
-          translateX: 0
-        })
-      } else if (idx >= 5 && idx < 10) {
-        idx += 5
-        gsap.to(item, 0.5, {
-          delay: (idx+ 1) * 0.5,
-          opacity: 1,
-          translateX: 0
-        })
-      }
+      gsap.to(item, 0.5, {
+        delay: idx * 0.5,
+        opacity: 1,
+        translateX: 0,
+      });
     })
-    /* gsap.to(snsEls[0], 0.5, {
-      delay: 2,
-      opacity: 1,
-      translateX: 0
-    })
-    gsap.to(snsEls[1], 0.5, {
-      delay: 1.5,
-      opacity: 1,
-      translateX: 0
-    })
-    gsap.to(snsEls[2], 0.5, {
-      delay: 1,
-      opacity: 1,
-      translateX: 0
-    })
-    gsap.to(snsEls[3], 0.5, {
-      delay: 0.5,
-      opacity: 1,
-      translateX: 0
-    })
-    gsap.to(snsEls[4], 0.5, {
-      opacity: 1,
-      translateX: 0
-    })
-    gsap.to(snsEls[5], 0.5, {
-      opacity: 1,
-      translateX: 0
-    })
-    gsap.to(snsEls[6], 0.5, {
-      delay: 0.5,
-      opacity: 1,
-      translateX: 0
-    })
-    gsap.to(snsEls[7], 0.5, {
-      delay: 1,
-      opacity: 1,
-      translateX: 0
-    })
-    gsap.to(snsEls[8], 0.5, {
-      delay: 1.5,
-      opacity: 1,
-      translateX: 0
-    })
-    gsap.to(snsEls[9], 0.5, {
-      delay: 2,
-      opacity: 1,
-      translateX: 0
-    }) */
+
+    snsElsb.forEach((item, idx) => {
+      gsap.to(item, 0.5, {
+        delay: idx * 0.5,
+        opacity: 1,
+        translateX: 0
+      });
+    });
   }
 })
