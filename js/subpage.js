@@ -203,7 +203,6 @@ function priobj(obj) {
     subProduct.appendChild(productList);
 
   }
-
 }
 priobj(subData);
 
@@ -247,10 +246,11 @@ pageBtn.forEach((item, idx) => {
   });
 });
 
-const product = document.querySelectorAll('.product_box');
-const prevBtn = document.querySelector('.prev');
+
 
 function displayData(idx) {
+  const product = document.querySelectorAll('.product_box');
+  const prevBtn = document.querySelector('.prev');
   let productArray = [...product];
   let start = idx * onePage;
   let end = start + onePage;

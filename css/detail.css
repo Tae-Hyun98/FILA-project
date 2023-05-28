@@ -1517,7 +1517,7 @@ input::-webkit-inner-spin-button {
   position: fixed;
   z-index: 5;
   right: 30px;
-  bottom: 40px;
+  bottom: 30px;
 }
 
 .arrow a {
