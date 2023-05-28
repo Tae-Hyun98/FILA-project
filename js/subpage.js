@@ -34,8 +34,8 @@ const price59000 = subData.filter((pr59) => pr59.price > 49000 && pr59.price <= 
 const price69000 = subData.filter((pr69) => pr69.price > 59000 && pr69.price <= 79000);
 const price79000 = subData.filter((pr79) => pr79.price > 79000);
 
-for (let a = 0; a < priceFilter.length; a++) {
-  priceFilter[a].addEventListener('click', () => {
+priceFilter.forEach((price) => {
+  price.addEventListener('click', () => {
     if (priceFilter[0].checked) {
       priobj(price39000);
     } else if (priceFilter[1].checked) {
@@ -49,8 +49,9 @@ for (let a = 0; a < priceFilter.length; a++) {
     } else {
       priobj(subData);
     }
-  });
-}
+  })
+})
+
 
 
 //filter color check
@@ -204,84 +205,7 @@ function priobj(obj) {
 priobj(subData);
 
 
-//가격필터
-/* const listBlack = subData.filter(function (data) {
-  return data.color === 'black';
-});
-console.log(listBlack)  */
-/* colorChk.addEventListener('click', () => {
-  if (filterSele.value === 'name') {
-    subData.filter(function (a, b) { //이름 오름차순
-      return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
-    });
-    productList.innerHTML = '';
-    bindData();
-  } else if (filterSele.value === 'desc') {
-    subData.sort(function (a, b) { //가격내림차순
-      return a.price - b.price;
-    });
-    productList.innerHTML = '';
-    bindData();
-  } else if (filterSele.value === 'asc') {
-    subData.sort(function (a, b) { //가격오름차순
-      return b.price - a.price;
-    });
-    productList.innerHTML = '';
-    bindData();
-  }
-}); */
 
-/* colorChk.forEach(chk => chk.addEventListener('click', () => { 
-for(let i=0;i<lists.length;i++){
-    if (lists[i].color === 'black') {
-      subBox[i].style.display = 'block'
-    } else if (lists[i].color != 'black') {
-      subBox[i].style.display = 'none'
-    }
-  }
-}));
- */
-
-/* for (let i = 0; i < colorChk.length; i++) {
-  colorChk[i].addEventListener('click', () => {
-    if (colorChk[i].checked && lists[i].color === 'black') {
-      productList[i].style.display = 'none';
-    } else if (!colorChk[i].checked) {
-      productList[i].style.display = 'flex'
-    }
-  })
-} */
-
-/* const input1 = document.getElementById('price01');
-
-input1.addEventListener('click', () => {
-  if (input1.checked) {
-    subData.filter(function (e) {
-      return e.price <= 39000;
-    });
-    /* let result = subData.filter(sub => sub.price <= 39000); 
-    productList.innerHTML = '';
-    bindData();
-  }
-
-}); */
-
-/* function priceFilter() {
-  function getPrice(value) {
-    return value.price <= 39000;
-  }
-  const newPrice=subData.filter(getPrice);
-} */
-/* colorLabel[1].addEventListener('click', () => {
-  subData.filter(function (emp) {
-    if (emp.color === 'black') {
-      return emp;
-    }
-    productList.innerHTML = '';
-    bindData();
-  });
-});
- */
 
 /* //초기상품리스트 
 function bindData() {
@@ -554,16 +478,16 @@ const topBtn = document.querySelector('.top');
 const bottomBtn = document.querySelector('.bottom');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 300 && window.scrollY < 3500) {
+  if (window.scrollY > 300 && window.scrollY < 2500) {
     gsap.to(bottomBtn, 0.1, {
       opacity: 1,
       visibility: 'visible'
-    });
-    gsap.to(topBtn, 0.1, {
-      opacity: 0,
-      visibility: 'hidden'
     })
-  } else if (window.scrollY >= 2000) {
+    gsap.to(topBtn, 0.1, {
+      opacity: 1,
+      visibility: 'visible'
+    })
+  } else if (window.scrollY >= 2500) {
     gsap.to(topBtn, 0.1, {
       opacity: 1,
       visibility: 'visible'
@@ -597,6 +521,7 @@ bottomBtn.addEventListener('click', () => {
 });
 
 
+//팝업
 const popup = document.querySelector('.popup');
 const closeBtn = document.getElementById('close_btn');
 
@@ -608,7 +533,6 @@ closeBtn.addEventListener('click', () => {
 
 
 //페이지네이션
-
 const dataLeng = subData.length;
 const currentPage = 1;
 const onePage = 20; //한페이지에뜰 상품
