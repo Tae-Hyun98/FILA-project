@@ -1051,9 +1051,9 @@ div.col_5 .product_box .detail p.product_name {
 
 
 /**********pagenation***********/
-.js_paging {}
 
 #pages {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
