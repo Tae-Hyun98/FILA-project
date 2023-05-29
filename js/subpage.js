@@ -83,8 +83,8 @@ const orange = subData.filter((Color) => Color.color === 'orange');
 const red = subData.filter((Color) => Color.color === 'red');
 const beige = subData.filter((Color) => Color.color === 'beige');
 
-for (let i = 0; i < colorChk.length; i++) {
-  colorChk[i].addEventListener('click', () => {
+colorChk.forEach((color) => {
+  color.addEventListener('click', () => {
     if (colorChk[0].checked) {
       priobj(white);
     } else if (colorChk[1].checked) {
@@ -109,7 +109,7 @@ for (let i = 0; i < colorChk.length; i++) {
       priobj(subData);
     }
   });
-}
+})
 
 //리스트 객체함수
 function priobj(obj) {
@@ -210,7 +210,7 @@ priobj(subData);
 const dataLeng = subData.length;
 const currentPage = 1;
 const onePage = 20; //한페이지에뜰 상품
-const pageCount = 5; //한화면에 보여질 페이지개수
+const pageCount = 3; //한화면에 보여질 페이지개수
 const totalPage = Math.ceil(dataLeng / onePage); //총페이지수
 const pageGroup = Math.ceil(currentPage / pageCount); //페이지네이션그룹
 
@@ -251,6 +251,7 @@ pageBtn.forEach((item, idx) => {
 function displayData(idx) {
   const product = document.querySelectorAll('.product_box');
   const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
   let productArray = [...product];
   let start = idx * onePage;
   let end = start + onePage;
@@ -269,10 +270,17 @@ function displayData(idx) {
     pb.classList.remove('active');
   }
   pageBtn[idx].classList.add('active');
+
   prevBtn.addEventListener('click', () => {
-    if (idx > 0)
-      displayData(idx - 1)
+    if (idx > 0) {
+      displayData(idx - 1);
+    }
   });
+  nextBtn.addEventListener('click', () => {
+    if (idx < 2) {
+      displayData(idx + 1);
+    }
+  })
 
 }
 displayData(0)
