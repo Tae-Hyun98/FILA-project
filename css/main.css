@@ -900,10 +900,29 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
-.time_sale .countdown_box p {
-  color: #fff;
+.time_sale .count {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.time_sale .count span {
+  padding: 0 15px;
+}
+
+.time_sale .count p {
+  text-align: center;
+  color: #000;
+  font-size: 50px;
   font-weight: 700;
 }
+
+/* .time_sale .countdown_box p {
+  color: #fff;
+  font-weight: 700;
+} */
 
 /***************NEW_ARRIVAL*************/
 .new_arrival {

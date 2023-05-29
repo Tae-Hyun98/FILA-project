@@ -46,7 +46,7 @@ li.forEach((item) => {
 const countDown = new Date("May 30, 2023 22:22:00").getTime();
 
 const x = setInterval(function () {
-
+  const timeP = document.querySelectorAll('.time p');
   let now = new Date().getTime();
 
   let timer = countDown - now;
@@ -56,10 +56,17 @@ const x = setInterval(function () {
   let minutes = Math.floor((timer % (1000 * 60 * 60)) / (1000 * 60));
   let seconds = Math.floor((timer % (1000 * 60)) / 1000);
 
-  document.getElementById("date").style.fontSize = '50px';
-  document.getElementById("date").innerHTML = days + " 일 " + hours + " :  " +
-    minutes + " : " + seconds + " ";
+  for (let i = 0; i < timeP.length; i++) {
+    timeP[0].innerHTML = `${('00'+days+' 일').slice(-3)}`
+    timeP[1].innerHTML = `${('00'+hours+' : ').slice(-5)}`
+    timeP[2].innerHTML = `${('00'+minutes+' : ').slice(-5)}`
+    timeP[3].innerHTML = `${('00'+seconds).slice(-2)}`
+  }
 
+  /*   document.getElementById("date").style.fontSize = '50px';
+    document.getElementById("date").innerHTML = days + " D " + hours + " h  " +
+      minutes + " m " + seconds + " ";
+   */
   if (timer < 0) {
     clearInterval(x);
     document.getElementById("date").innerHTML = "드디어 출시되는 FILA 에디션!";
