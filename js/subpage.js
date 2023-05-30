@@ -38,7 +38,7 @@ const price79000 = subData.filter((pr79) => pr79.price > 79000);
 priceFilter.forEach((price) => {
   price.addEventListener('click', () => {
     if (priceFilter[0].checked) {
-      priobj(price39000);
+      createPagination(price39000);
     } else if (priceFilter[1].checked) {
       priobj(price49000);
     } else if (priceFilter[2].checked) {
@@ -48,7 +48,7 @@ priceFilter.forEach((price) => {
     } else if (priceFilter[4].checked) {
       priobj(price79000);
     } else {
-      priobj(subData);
+      createPagination(subData);
     }
   })
 })
@@ -110,6 +110,7 @@ colorChk.forEach((color) => {
     }
   });
 })
+const pages = document.getElementById('pages');
 
 //리스트 객체함수
 function priobj(obj) {
@@ -201,12 +202,100 @@ function priobj(obj) {
     subDiv.appendChild(detailDiv);
     productList.appendChild(subDiv);
     subProduct.appendChild(productList);
-
+    subProduct.append(pages)
   }
 }
 priobj(subData);
+
+let currentPage = 1;
+const onePage = 20; //한페이지에뜰 상품
+const pageBtn = document.querySelectorAll('.pg');
+
+
+function createPagination(obj) {
+  const totalItem = obj.length;
+  if (totalItem <= onePage) {
+    priobj(obj);
+    return;
+  }
+
+  const startIndex = (currentPage - 1) * onePage;
+  const endIndex = startIndex + onePage;
+  const pageData = obj.slice(startIndex, endIndex);
+  const totalPage = Math.ceil(obj.length / onePage);
+  priobj(pageData);
+
+  // 이전 페이지 버튼을 추가합니다.
+  if (currentPage >= 1) {
+    pages.innerHTML += `<a class="prev">Previous</a>`;
+  }
+
+  // 페이지 번호 버튼을 추가합니다.
+  for (let i = 1; i <= Math.ceil(totalPage); i++) {
+    pages.innerHTML += `<a class="pg">${i}</a>`
+  }
+
+  // 다음 페이지 버튼을 추가합니다.
+  if (currentPage < Math.ceil(totalPage)) {
+    pages.innerHTML += `<a class="next">Next</a>`;
+  }
+
+
+  const gotoBtn = document.querySelector('.goto');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+
+
+
+  prevBtn.addEventListener('click', () => {
+    prevFunc();
+  })
+
+  nextBtn.addEventListener('click', () => {
+    nextFunc();
+  })
+
+  $(document)
+    .on("click", ".pg", (e) => {
+      const index = $(e.target).index();
+      currentPage = 0;
+      currentPage += index
+      console.log(currentPage)
+    });
+}
+
+
+/* function displayData(idx) {
+  for (let pb of pageBtn) {
+    pb.classList.remove('active');
+  }
+  pageBtn[idx].classList.add('active');
+} */
+
+function nowFunc() {
+  if (currentPage === page) {}
+}
+
+function prevFunc() {
+  if (currentPage > 1) {
+    currentPage--;
+    createPagination(subData)
+  }
+}
+
+function nextFunc() {
+  if (currentPage < Math.ceil(subData.length / onePage)) {
+    currentPage++;
+    createPagination(subData)
+  }
+}
+
+// 초기 페이지네이션을 생성합니다.
+createPagination(subData);
+
+
 //페이지네이션
-const dataLeng = subData.length;
+/* const dataLeng = subData.length;
 const currentPage = 1;
 const onePage = 20; //한페이지에뜰 상품
 const pageCount = 3; //한화면에 보여질 페이지개수
@@ -219,9 +308,6 @@ subProduct.append(pages)
 let last = pageGroup * pageCount; //마지막페이지번호
 let first = last - (pageCount - 1); //한페이지 그룹의 첫번째페이지 번호
 
-/* if (last > totalPage) {
-  last = totalPage;
-} */
 const next = last + 1;
 const prev = first - 1;
 
@@ -244,10 +330,10 @@ pageBtn.forEach((item, idx) => {
     displayData(idx);
   });
 });
+ */
 
 
-
-function displayData(idx) {
+/* function displayData(idx) {
   const product = document.querySelectorAll('.product_box');
   const prevBtn = document.querySelector('.prev');
   const nextBtn = document.querySelector('.next');
@@ -275,14 +361,10 @@ function displayData(idx) {
       displayData(idx - 1);
     }
   });
-  /*  nextBtn.addEventListener('click', () => {
-     if (idx < 2) {
-       displayData(idx + 1);
-     }
-   }) */
+
 
 }
-displayData(0)
+displayData(0) */
 
 
 
