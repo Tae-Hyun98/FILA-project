@@ -111,6 +111,8 @@ colorChk.forEach((color) => {
   });
 })
 
+
+
 const pages = document.getElementById('pages');
 
 
@@ -118,6 +120,9 @@ let currentPage = 1;
 const onePage = 20; //한페이지에뜰 상품
 
 const pageBtn = document.querySelectorAll('.pg');
+
+
+
 
 function createPagination(obj) {
   pages.innerHTML = ''
@@ -140,35 +145,39 @@ function createPagination(obj) {
 
   // 페이지 번호 버튼을 추가합니다.
   for (let i = 1; i <= Math.ceil(totalPage); i++) {
-    pages.innerHTML += `<a href="#!" class="pg">${i}</a>`
+      pages.innerHTML += `<a href="#!" class="pg">${i}</a>`
+      for (let j = 0; j < pageBtn.length; j++) {
+        pageBtn[j].addEventListener('click', () => {
+            pageBtn[j].classList.add('active')
+        })
+      }
   }
+  /* for (let j = 0; j < pageBtn; j++) {
+    pageBtn[j].addEventListener('click', () => {
+        pageBtn[j].classList.add('active')
+    })
+  } */
+
 
   // 다음 페이지 버튼을 추가합니다.
   if (currentPage < Math.ceil(totalPage)) {
     pages.innerHTML += `<div class="next_box"><a href="#!" class="next">Next</a></div>`;
   }
 
-
-  pageBtn.forEach((el) => {
-    el.addEventListener('click', (e) => {
-      const nodes = [...e.target.parentElement.children];
-      const index = nodes.indexOf(e.target);
-      console.log(index)
-    })
-  })
-  /*  pageBtn.forEach((item, idx) => {
-     if (idx >= 1 && idx <= Math.ceil(obj.length / onePage)) {
-       console.log(idx)
-       item.addEventListener('click', () => {
-         currentPage = idx;
-         createPagination(obj);
-       })
-
-     }
-   }) */
-
   const prevBtn = document.querySelector('.prev');
   const nextBtn = document.querySelector('.next');
+
+
+  /* pageBtn.forEach((item, inx) => {
+    item.addEventListener('click', () => {
+      if (currentPage === inx) {
+        currentPage = inx
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active')
+      }
+    })
+  }) */
 
   if (currentPage > 1) {
     prevBtn.addEventListener('click', () => {
@@ -179,7 +188,6 @@ function createPagination(obj) {
   }
 
   if (currentPage < Math.ceil(totalPage)) {
-
     nextBtn.addEventListener('click', () => {
       pages.innerHTML = ''
       currentPage++;
@@ -283,7 +291,7 @@ function priobj(obj) {
     subProduct.append(pages)
   }
 }
-// 초기 페이지네이션을 생성합니다.
+
 createPagination(subData);
 
 
