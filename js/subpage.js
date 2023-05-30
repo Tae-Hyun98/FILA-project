@@ -205,7 +205,6 @@ function priobj(obj) {
   }
 }
 priobj(subData);
-
 //페이지네이션
 const dataLeng = subData.length;
 const currentPage = 1;
@@ -216,7 +215,7 @@ const pageGroup = Math.ceil(currentPage / pageCount); //페이지네이션그룹
 
 const pages = document.getElementById('pages');
 const pageCont = Math.ceil(dataLeng / onePage);
-productList.append(pages)
+subProduct.append(pages)
 let last = pageGroup * pageCount; //마지막페이지번호
 let first = last - (pageCount - 1); //한페이지 그룹의 첫번째페이지 번호
 
@@ -276,11 +275,11 @@ function displayData(idx) {
       displayData(idx - 1);
     }
   });
-  nextBtn.addEventListener('click', () => {
-    if (idx < 2) {
-      displayData(idx + 1);
-    }
-  })
+  /*  nextBtn.addEventListener('click', () => {
+     if (idx < 2) {
+       displayData(idx + 1);
+     }
+   }) */
 
 }
 displayData(0)
