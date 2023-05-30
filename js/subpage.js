@@ -260,6 +260,7 @@ function createPagination(obj) {
       const index = $(e.target).index();
       currentPage = 0;
       currentPage += index
+      nowFunc();
       console.log(currentPage)
     });
 }
@@ -273,7 +274,9 @@ function createPagination(obj) {
 } */
 
 function nowFunc() {
-  if (currentPage === page) {}
+  if (currentPage === index) {
+    createPagination(subData);
+  }
 }
 
 function prevFunc() {
