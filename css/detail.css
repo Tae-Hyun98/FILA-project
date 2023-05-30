@@ -1537,3 +1537,18 @@ input::-webkit-inner-spin-button {
   background-color: #002053;
   color: #fff;
 }
+
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 25%;
+  background: #002053;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(33, 122, 244, .1);
+}

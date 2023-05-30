@@ -1576,8 +1576,8 @@ h1 {
 .quick {
   position: absolute;
   right: 0px;
-  width: 90px;
-  height: 265px;
+  width: 66px;
+  height: 242px;
   transition: .3s;
   z-index: 9999;
   overflow: hidden;
@@ -1587,18 +1587,19 @@ h1 {
   display: flex;
   align-items: center;
   position: absolute;
-  right: -150px;
+  right: -155px;
   top: 0;
   transition: .3s;
   background-color: #fff;
   border: 1px solid #777;
-  padding: 10px 0;
+  border-right: 0;
+  padding: 5px 0;
   z-index: 9998;
   overflow: hidden;
 }
 
 .quick:hover {
-  width: 240px;
+  width: 225px;
 }
 
 .quick:hover .quick_box {
@@ -1608,7 +1609,7 @@ h1 {
 .quick .quick_box .quick_menu a {
   width: 150px;
   display: block;
-  line-height: 60px;
+  line-height: 55px;
   color: #000;
   font-weight: 700;
   font-size: 20px;
@@ -1621,13 +1622,13 @@ h1 {
 }
 
 .quick .quick_nav {
-  padding: 0 15px;
+  padding: 0 10px;
 }
 
 .quick .quick_nav li a.bg {
   display: block;
-  width: 55px;
-  line-height: 60px;
+  width: 50px;
+  line-height: 55px;
   font-size: 0;
   background-repeat: no-repeat;
   background-size: contain;
@@ -1711,4 +1712,19 @@ h1 {
 
 .popup_box p {
   font-size: 20px;
+}
+
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 25%;
+  background: #002053;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(33, 122, 244, .1);
 }

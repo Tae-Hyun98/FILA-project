@@ -1080,3 +1080,21 @@ div.col_5 .product_box .detail p.product_name {
 #pages a:last-child {
   margin-right: 0;
 }
+
+
+body::-webkit-scrollbar {
+  width: 12px;
+  /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 25%;
+  /* 스크롤바의 길이 */
+  background: #002053;
+  /* 스크롤바의 색상 */
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
+}
