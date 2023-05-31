@@ -10,23 +10,23 @@ filterSele.addEventListener('change', () => {
   if (filterSele.value === 'name') {
     const name = subData.sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0); //이름 오름차순
     currentPage = 0;
-    createPagination(name);
+    paginationFunc(name);
   } else if (filterSele.value === 'desc') {
     const desc = subData.sort((a, b) => a.price - b.price); //가격내림차순
     currentPage = 0;
-    createPagination(desc);
+    paginationFunc(desc);
   } else if (filterSele.value === 'asc') {
     const asc = subData.sort((a, b) => b.price - a.price); //가격오름차순
     currentPage = 0;
-    createPagination(asc);
+    paginationFunc(asc);
   } else if (filterSele.value === 'new') {
     const newProduct = subData.sort((a, b) => a.id > b.id ? -1 : a.id < b.id ? 1 : 0); //신상품
     currentPage = 0;
-    createPagination(newProduct);
+    paginationFunc(newProduct);
   } else if (filterSele.value === 'review') {
     const review = subData.sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0); //리뷰순정렬
     currentPage = 0;
-    createPagination(review);
+    paginationFunc(review);
   }
 });
 
@@ -44,22 +44,22 @@ priceFilter.forEach((price) => {
   price.addEventListener('click', () => {
     if (priceFilter[0].checked) {
       currentPage = 0;
-      createPagination(price39000);
+      paginationFunc(price39000);
     } else if (priceFilter[1].checked) {
       currentPage = 0;
-      createPagination(price49000);
+      paginationFunc(price49000);
     } else if (priceFilter[2].checked) {
       currentPage = 0;
-      createPagination(price59000);
+      paginationFunc(price59000);
     } else if (priceFilter[3].checked) {
       currentPage = 0;
-      createPagination(price69000);
+      paginationFunc(price69000);
     } else if (priceFilter[4].checked) {
       currentPage = 0;
-      createPagination(price79000);
+      paginationFunc(price79000);
     } else {
       currentPage = 0;
-      createPagination(subData);
+      paginationFunc(subData);
     }
   })
 })
@@ -98,37 +98,37 @@ colorChk.forEach((color) => {
   color.addEventListener('click', () => {
     if (colorChk[0].checked) {
       currentPage = 0;
-      createPagination(white)
+      paginationFunc(white)
     } else if (colorChk[1].checked) {
       currentPage = 0;
-      createPagination(black);
+      paginationFunc(black);
     } else if (colorChk[2].checked) {
       currentPage = 0;
-      createPagination(gray);
+      paginationFunc(gray);
     } else if (colorChk[3].checked) {
       currentPage = 0;
-      createPagination(green);
+      paginationFunc(green);
     } else if (colorChk[4].checked) {
       currentPage = 0;
-      createPagination(blue);
+      paginationFunc(blue);
     } else if (colorChk[5].checked) {
       currentPage = 0;
-      createPagination(mix);
+      paginationFunc(mix);
     } else if (colorChk[6].checked) {
       currentPage = 0;
-      createPagination(navy);
+      paginationFunc(navy);
     } else if (colorChk[7].checked) {
       currentPage = 0;
-      createPagination(orange);
+      paginationFunc(orange);
     } else if (colorChk[8].checked) {
       currentPage = 0;
-      createPagination(red);
+      paginationFunc(red);
     } else if (colorChk[9].checked) {
       currentPage = 0;
-      createPagination(beige);
+      paginationFunc(beige);
     } else {
       currentPage = 0;
-      createPagination(subData);
+      paginationFunc(subData);
     }
   });
 })
@@ -231,8 +231,8 @@ const pages = document.getElementById('pages');
 let currentPage = 0;
 const onePage = 20; //한페이지에뜰 상품
 
-
-function createPagination(obj) {
+//페이지네이션 생성함수
+function paginationFunc(obj) {
   const totalItem = obj.length;
   if (totalItem <= onePage) {
     priobj(obj);
@@ -271,7 +271,7 @@ function createPagination(obj) {
       }
       if (currentPage !== idx) {
         currentPage = idx
-        createPagination(obj)
+        paginationFunc(obj)
       }
       console.log(idx)
       console.log(currentPage)
@@ -285,7 +285,7 @@ function createPagination(obj) {
     prevBtn.addEventListener('click', () => {
       pages.innerHTML = ''
       currentPage--;
-      createPagination(obj)
+      paginationFunc(obj)
     })
   }
 
@@ -293,26 +293,16 @@ function createPagination(obj) {
     nextBtn.addEventListener('click', () => {
       pages.innerHTML = ''
       currentPage++;
-      createPagination(obj)
+      paginationFunc(obj)
     })
   }
 
 
 }
 
+paginationFunc(subData);
 
-createPagination(subData);
 
-/* const boxs = document.querySelectorAll("#pages a");
-
-  boxs.forEach((el, index) => {
-    el.onclick = () => {
-      if (currentPage === index) {
-        pageBtn[index].classList.add('active')
-        console.log(index)
-      }
-    }
-  }); */
 
 
 //페이지네이션
