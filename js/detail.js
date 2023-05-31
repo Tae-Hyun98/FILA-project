@@ -172,11 +172,14 @@
     stars.map((star) => {
       star.addEventListener('click', () => {
         let i = stars.indexOf(star);
-
         if (star.className === starClassInactive) {
-          for (i; i >= 0; --i) stars[i].className = starClassActive;
+          for (i; i >= 0; i--) {
+            stars[i].className = starClassActive;
+          }
         } else {
-          for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
+          for (i; i < starsLength; i++) {
+            stars[i].className = starClassInactive;
+          }
         }
       });
     });
@@ -198,18 +201,18 @@
 
   function reviewAdd() {
     if (inputId.value != '' && inputTxt.value != '') {
-      let Li = document.createElement('li');
-      let Pno = document.createElement('p');
-      let Pnum = document.createTextNode(count);
-      let Pstar = document.createElement('p');
-      let Ptext = document.createElement('p');
-      let Pid = document.createElement('p');
-      let Ptoday = document.createElement('p');
-      let Today = document.createTextNode(dayFormat);
-      let Pdel = document.createElement('button');
-      let del = document.createTextNode('X');
-      let userId = document.createTextNode(inputId.value);
-      let userTxt = document.createTextNode(inputTxt.value);
+      const Li = document.createElement('li');
+      const Pno = document.createElement('p');
+      const Pnum = document.createTextNode(count);
+      const Pstar = document.createElement('p');
+      const Ptext = document.createElement('p');
+      const Pid = document.createElement('p');
+      const Ptoday = document.createElement('p');
+      const Today = document.createTextNode(dayFormat);
+      const Pdel = document.createElement('button');
+      const del = document.createTextNode('X');
+      const userId = document.createTextNode(inputId.value);
+      const userTxt = document.createTextNode(inputTxt.value);
 
 
       Li.appendChild(Pno);
@@ -243,8 +246,8 @@
           }
         });
       }
-    } 
-    else {
+      RatingStar();
+    } else {
       alert('값을 입력하세요');
     }
   }
@@ -278,19 +281,19 @@
   function inquiryAdd() {
     if (inqOpt.value != '' && inqId.value != '' && inqTit.value != '' && inqContext.value != '') {
       const optext = inqOpt.options[inqOpt.selectedIndex].text; //옵션값 text만
-      let Li = document.createElement('li');
-      let span = document.createElement('span');
-      let count = document.createTextNode(countInq);
-      let span1 = document.createElement('span');
-      let span2 = document.createElement('span');
-      let span3 = document.createElement('span');
-      let span4 = document.createElement('span');
-      let span5 = document.createElement('span');
-      let answer = document.createTextNode('답변중');
-      let Today = document.createTextNode(dayFormat);
-      let option = document.createTextNode(optext);
-      let userId = document.createTextNode(inqId.value);
-      let inqTitle = document.createTextNode(inqTit.value);
+      const Li = document.createElement('li');
+      const span = document.createElement('span');
+      const count = document.createTextNode(countInq);
+      const span1 = document.createElement('span');
+      const span2 = document.createElement('span');
+      const span3 = document.createElement('span');
+      const span4 = document.createElement('span');
+      const span5 = document.createElement('span');
+      const answer = document.createTextNode('답변중');
+      const Today = document.createTextNode(dayFormat);
+      const option = document.createTextNode(optext);
+      const userId = document.createTextNode(inqId.value);
+      const inqTitle = document.createTextNode(inqTit.value);
 
 
       Li.appendChild(span);
