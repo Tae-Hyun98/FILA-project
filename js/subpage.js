@@ -9,19 +9,24 @@ const filterSele = document.getElementById('order');
 filterSele.addEventListener('change', () => {
   if (filterSele.value === 'name') {
     const name = subData.sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0); //이름 오름차순
-    priobj(name);
+    currentPage = 0;
+    createPagination(name);
   } else if (filterSele.value === 'desc') {
     const desc = subData.sort((a, b) => a.price - b.price); //가격내림차순
-    priobj(desc);
+    currentPage = 0;
+    createPagination(desc);
   } else if (filterSele.value === 'asc') {
     const asc = subData.sort((a, b) => b.price - a.price); //가격오름차순
-    priobj(asc);
+    currentPage = 0;
+    createPagination(asc);
   } else if (filterSele.value === 'new') {
     const newProduct = subData.sort((a, b) => a.id > b.id ? -1 : a.id < b.id ? 1 : 0); //신상품
-    priobj(newProduct);
+    currentPage = 0;
+    createPagination(newProduct);
   } else if (filterSele.value === 'review') {
     const review = subData.sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0); //리뷰순정렬
-    priobj(review);
+    currentPage = 0;
+    createPagination(review);
   }
 });
 
@@ -38,16 +43,22 @@ const price79000 = subData.filter((pr79) => pr79.price > 79000);
 priceFilter.forEach((price) => {
   price.addEventListener('click', () => {
     if (priceFilter[0].checked) {
+      currentPage = 0;
       createPagination(price39000);
     } else if (priceFilter[1].checked) {
-      priobj(price49000);
+      currentPage = 0;
+      createPagination(price49000);
     } else if (priceFilter[2].checked) {
-      priobj(price59000);
+      currentPage = 0;
+      createPagination(price59000);
     } else if (priceFilter[3].checked) {
-      priobj(price69000);
+      currentPage = 0;
+      createPagination(price69000);
     } else if (priceFilter[4].checked) {
-      priobj(price79000);
+      currentPage = 0;
+      createPagination(price79000);
     } else {
+      currentPage = 0;
       createPagination(subData);
     }
   })
@@ -86,31 +97,41 @@ const beige = subData.filter((Color) => Color.color === 'beige');
 colorChk.forEach((color) => {
   color.addEventListener('click', () => {
     if (colorChk[0].checked) {
+      currentPage = 0;
       createPagination(white)
     } else if (colorChk[1].checked) {
-      priobj(black);
+      currentPage = 0;
+      createPagination(black);
     } else if (colorChk[2].checked) {
-      priobj(gray);
+      currentPage = 0;
+      createPagination(gray);
     } else if (colorChk[3].checked) {
-      priobj(green);
+      currentPage = 0;
+      createPagination(green);
     } else if (colorChk[4].checked) {
-      priobj(blue);
+      currentPage = 0;
+      createPagination(blue);
     } else if (colorChk[5].checked) {
-      priobj(mix);
+      currentPage = 0;
+      createPagination(mix);
     } else if (colorChk[6].checked) {
-      priobj(navy);
+      currentPage = 0;
+      createPagination(navy);
     } else if (colorChk[7].checked) {
-      priobj(orange);
+      currentPage = 0;
+      createPagination(orange);
     } else if (colorChk[8].checked) {
-      priobj(red);
+      currentPage = 0;
+      createPagination(red);
     } else if (colorChk[9].checked) {
-      priobj(beige);
+      currentPage = 0;
+      createPagination(beige);
     } else {
-      priobj(subData);
+      currentPage = 0;
+      createPagination(subData);
     }
   });
 })
-
 
 //리스트 객체함수
 function priobj(obj) {
@@ -207,17 +228,11 @@ function priobj(obj) {
 }
 
 const pages = document.getElementById('pages');
-
-
 let currentPage = 0;
 const onePage = 20; //한페이지에뜰 상품
 
 
-
-
-
 function createPagination(obj) {
-  pages.innerHTML = ''
   const totalItem = obj.length;
   if (totalItem <= onePage) {
     priobj(obj);
@@ -231,16 +246,16 @@ function createPagination(obj) {
 
   let pagination = '';
 
-  if (currentPage >= 0) {
-    pagination += `<div class="prev_box"><a href="#!" class="prev">Previous</a></div>`;
+  if (currentPage > 0) {
+    pagination += `<a href="#!" class="prev"><</a>`;
   }
 
-  for (let i = 1; i <= Math.ceil(totalPage); i++) {
+  for (let i = 1; i <= totalPage; i++) {
     pagination += `<a href="#!" class="pg">${i}</a>`
   }
 
-  if (currentPage < Math.ceil(totalPage)) {
-    pagination += `<div class="next_box"><a href="#!" class="next">Next</a></div>`;
+  if (currentPage < totalPage - 1) {
+    pagination += `<a href="#!" class="next">></a>`;
   }
 
   pages.innerHTML = pagination;
@@ -261,18 +276,10 @@ function createPagination(obj) {
       console.log(idx)
       console.log(currentPage)
     })
+    if (currentPage === idx) {
+      pageBtn[idx].classList.add('active')
+    }
   })
-  /* pageBtn.forEach((item, inx) => {
-    item.addEventListener('click', () => {
-      if (currentPage === inx) {
-        currentPage = inx
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active')
-      }
-    })
-  }) */
-
 
   if (currentPage > 0) {
     prevBtn.addEventListener('click', () => {
@@ -282,7 +289,7 @@ function createPagination(obj) {
     })
   }
 
-  if (currentPage < Math.ceil(totalPage)) {
+  if (currentPage < totalPage - 1) {
     nextBtn.addEventListener('click', () => {
       pages.innerHTML = ''
       currentPage++;
@@ -293,18 +300,6 @@ function createPagination(obj) {
 
 }
 
-function aa() {
-  pages.onclick = (e) => {
-    const nodes = [...e.target.parentElement.children];
-
-    const index = nodes.indexOf(e.target);
-    if (currentPage !== index) {
-      currentPage = index
-      pageBtn[index].classList.add('active')
-    }
-    console.log(index);
-  }
-}
 
 createPagination(subData);
 
