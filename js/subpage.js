@@ -112,92 +112,6 @@ colorChk.forEach((color) => {
 })
 
 
-
-const pages = document.getElementById('pages');
-
-
-let currentPage = 1;
-const onePage = 20; //한페이지에뜰 상품
-
-const pageBtn = document.querySelectorAll('.pg');
-
-
-
-
-function createPagination(obj) {
-  pages.innerHTML = ''
-  const totalItem = obj.length;
-  if (totalItem <= onePage) {
-    priobj(obj);
-  }
-
-  const startIndex = (currentPage - 1) * onePage;
-  const endIndex = startIndex + onePage;
-  const pageData = obj.slice(startIndex, endIndex);
-  const totalPage = Math.ceil(obj.length / onePage);
-  priobj(pageData);
-
-
-  // 이전 페이지 버튼을 추가합니다.
-  if (currentPage > 1) {
-    pages.innerHTML += `<div class="prev_box"><a href="#!" class="prev">Previous</a></div>`;
-  }
-
-  // 페이지 번호 버튼을 추가합니다.
-  for (let i = 1; i <= Math.ceil(totalPage); i++) {
-      pages.innerHTML += `<a href="#!" class="pg">${i}</a>`
-      for (let j = 0; j < pageBtn.length; j++) {
-        pageBtn[j].addEventListener('click', () => {
-            pageBtn[j].classList.add('active')
-        })
-      }
-  }
-  /* for (let j = 0; j < pageBtn; j++) {
-    pageBtn[j].addEventListener('click', () => {
-        pageBtn[j].classList.add('active')
-    })
-  } */
-
-
-  // 다음 페이지 버튼을 추가합니다.
-  if (currentPage < Math.ceil(totalPage)) {
-    pages.innerHTML += `<div class="next_box"><a href="#!" class="next">Next</a></div>`;
-  }
-
-  const prevBtn = document.querySelector('.prev');
-  const nextBtn = document.querySelector('.next');
-
-
-  /* pageBtn.forEach((item, inx) => {
-    item.addEventListener('click', () => {
-      if (currentPage === inx) {
-        currentPage = inx
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active')
-      }
-    })
-  }) */
-
-  if (currentPage > 1) {
-    prevBtn.addEventListener('click', () => {
-      pages.innerHTML = ''
-      currentPage--;
-      createPagination(obj)
-    })
-  }
-
-  if (currentPage < Math.ceil(totalPage)) {
-    nextBtn.addEventListener('click', () => {
-      pages.innerHTML = ''
-      currentPage++;
-      createPagination(obj)
-    })
-  }
-
-}
-
-
 //리스트 객체함수
 function priobj(obj) {
   productList.innerHTML = '';
@@ -292,7 +206,118 @@ function priobj(obj) {
   }
 }
 
+const pages = document.getElementById('pages');
+
+
+let currentPage = 0;
+const onePage = 20; //한페이지에뜰 상품
+
+
+
+
+
+function createPagination(obj) {
+  pages.innerHTML = ''
+  const totalItem = obj.length;
+  if (totalItem <= onePage) {
+    priobj(obj);
+  }
+
+  const startIndex = currentPage * onePage;
+  const endIndex = startIndex + onePage;
+  const pageData = obj.slice(startIndex, endIndex);
+  const totalPage = Math.ceil(obj.length / onePage);
+  priobj(pageData);
+
+  let pagination = '';
+
+  if (currentPage >= 0) {
+    pagination += `<div class="prev_box"><a href="#!" class="prev">Previous</a></div>`;
+  }
+
+  for (let i = 1; i <= Math.ceil(totalPage); i++) {
+    pagination += `<a href="#!" class="pg">${i}</a>`
+  }
+
+  if (currentPage < Math.ceil(totalPage)) {
+    pagination += `<div class="next_box"><a href="#!" class="next">Next</a></div>`;
+  }
+
+  pages.innerHTML = pagination;
+  const pageBtn = document.querySelectorAll('.pg');
+
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+
+  pageBtn.forEach((item, idx) => {
+    item.addEventListener('click', () => {
+      for (let pp of pageBtn) {
+        pp.classList.remove('active')
+      }
+      if (currentPage !== idx) {
+        currentPage = idx
+        createPagination(obj)
+      }
+      console.log(idx)
+      console.log(currentPage)
+    })
+  })
+  /* pageBtn.forEach((item, inx) => {
+    item.addEventListener('click', () => {
+      if (currentPage === inx) {
+        currentPage = inx
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active')
+      }
+    })
+  }) */
+
+
+  if (currentPage > 0) {
+    prevBtn.addEventListener('click', () => {
+      pages.innerHTML = ''
+      currentPage--;
+      createPagination(obj)
+    })
+  }
+
+  if (currentPage < Math.ceil(totalPage)) {
+    nextBtn.addEventListener('click', () => {
+      pages.innerHTML = ''
+      currentPage++;
+      createPagination(obj)
+    })
+  }
+
+
+}
+
+function aa() {
+  pages.onclick = (e) => {
+    const nodes = [...e.target.parentElement.children];
+
+    const index = nodes.indexOf(e.target);
+    if (currentPage !== index) {
+      currentPage = index
+      pageBtn[index].classList.add('active')
+    }
+    console.log(index);
+  }
+}
+
 createPagination(subData);
+
+/* const boxs = document.querySelectorAll("#pages a");
+
+  boxs.forEach((el, index) => {
+    el.onclick = () => {
+      if (currentPage === index) {
+        pageBtn[index].classList.add('active')
+        console.log(index)
+      }
+    }
+  }); */
 
 
 //페이지네이션
