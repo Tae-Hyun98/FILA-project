@@ -227,6 +227,10 @@ function priobj(obj) {
   }
 }
 
+
+
+
+
 const pages = document.getElementById('pages');
 let currentPage = 0;
 const onePage = 20; //한페이지에뜰 상품
@@ -277,7 +281,7 @@ function paginationFunc(obj) {
       console.log(currentPage)
     })
     if (currentPage === idx) {
-      pageBtn[idx].classList.add('active')
+      pageBtn[idx].classList.add('active');
     }
   })
 
