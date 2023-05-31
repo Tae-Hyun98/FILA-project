@@ -30,7 +30,7 @@ filterSele.addEventListener('change', () => {
   }
 });
 
-
+//스포츠별
 
 //가격정렬
 const priceFilter = document.querySelectorAll('.price');

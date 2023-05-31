@@ -220,7 +220,56 @@ const subData = [
     color: 'blue'
   },
 
+  {
+    id: 23,
+    category: "공용",
+    name: "노카라 퀄팅 자켓",
+    price: 89000,
+    src: "./img/Sub_img/25.jpg",
+    review: 10,
+    color: 'green'
+  },
 
+  {
+    id: 24,
+    category: "공용 신상품 라이프스타일",
+    name: "<온라인 단독>컬러블럭킹 아노락",
+    price: 109000,
+    src: "./img/Sub_img/28.jpg",
+    review: 4,
+    color: 'mix'
+  },
+
+
+  {
+    id: 25,
+    category: "공용 테니스",
+    name: "<온라인 단독>Fila tennis 하프팬츠",
+    price: 59000,
+    src: "./img/Sub_img/29.jpg",
+    review: 14,
+    color: 'green'
+  },
+
+  {
+    id: 26,
+    category: "남성 테니스",
+    name: "글로벌 패턴 반바지",
+    price: 65000,
+    src: "./img/Sub_img/44.jpg",
+    review: 10,
+    color: 'blue'
+  },
+
+  {
+    id: 27,
+    category: "공용 라이프스타일",
+    name: "헤리티지 오버핏 케이블 가디건",
+    price: 139000,
+    src: "./img/Sub_img/40.jpg",
+    review: 12,
+    color: 'navy'
+  },
 ]
 
 export default subData;

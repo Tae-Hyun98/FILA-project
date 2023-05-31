@@ -518,7 +518,7 @@ h1 {
   height: 100vh;
 }
 
-.swiper .swiper-wrapper .swiper-slide-active {
+.myswiper .swiper-wrapper .swiper-slide-active {
   width: 100%;
 }
 
