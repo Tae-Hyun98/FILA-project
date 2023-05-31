@@ -193,6 +193,7 @@
   const inputTxt = document.getElementById('input_txt');
   const reviewList = document.querySelector('.review_list');
   const starBtn = document.querySelector('.rating');
+  const raingI = document.querySelectorAll('.rating i');
   const today = new Date();
   const dayFormat = today.getFullYear() + '.' + (today.getMonth() + 1) + '.' + today.getDate();
   let count = 1;
@@ -246,10 +247,12 @@
           }
         });
       }
-      RatingStar();
     } else {
       alert('값을 입력하세요');
     }
+    raingI.forEach((item) => {
+      item.setAttribute('class', 'far fa-star rating_star');
+    })
   }
 
 
