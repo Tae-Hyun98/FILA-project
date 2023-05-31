@@ -43,7 +43,7 @@ li.forEach((item) => {
 });
 
 //카운트다운
-const countDown = new Date("May 30, 2023 22:22:00").getTime();
+const countDown = new Date("Jun 30, 2023 22:22:00").getTime();
 
 const x = setInterval(function () {
   const timeP = document.querySelectorAll('.time p');
@@ -57,7 +57,7 @@ const x = setInterval(function () {
   let seconds = Math.floor((timer % (1000 * 60)) / 1000);
 
   for (let i = 0; i < timeP.length; i++) {
-    timeP[0].innerHTML = `${('00'+days+' 일').slice(-3)}`
+    timeP[0].innerHTML = `${('00'+days+' 일').slice(-4)}`
     timeP[1].innerHTML = `${('00'+hours+' : ').slice(-5)}`
     timeP[2].innerHTML = `${('00'+minutes+' : ').slice(-5)}`
     timeP[3].innerHTML = `${('00'+seconds).slice(-2)}`
@@ -69,7 +69,7 @@ const x = setInterval(function () {
    */
   if (timer < 0) {
     clearInterval(x);
-    document.getElementById("date").innerHTML = "드디어 출시되는 FILA 에디션!";
+    document.querySelector(".count").innerHTML = "드디어 출시되는 FILA 에디션!";
   }
 }, 1000);
 

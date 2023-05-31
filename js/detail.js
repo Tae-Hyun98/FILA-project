@@ -232,7 +232,6 @@
       inputId.value = '';
       inputTxt.value = '';
       count++;
-
       //별점출력
       Pstar.innerHTML = starBtn.innerHTML;
 
@@ -244,7 +243,8 @@
           }
         });
       }
-    } else {
+    } 
+    else {
       alert('값을 입력하세요');
     }
   }

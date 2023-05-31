@@ -903,7 +903,9 @@ h1 {
 .time_sale .count {
   display: flex;
   justify-content: center;
-  width: 500px;
+  width: 600px;
+  line-height: 70px;
+  font-size: 45px;
   background-color: #fff;
   margin: 0 auto;
 }
