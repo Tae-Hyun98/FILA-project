@@ -19,7 +19,6 @@
   <script src="./js/import-jquery.js"></script>
   <script type="module" src="./js/main.js" defer></script>
   <script src="./js/mainswiper.js" defer></script>
-  <script src="./js/comon.js" defer></script>
 
   <!-- gsap -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
@@ -28,6 +27,7 @@
   <script>
     //퀵메뉴
     $(function () {
+
       $('.quick').css('top', $(window).height() / 2 - $('.quick').height() / 2);
       $(window).scroll(function () {
         let point = $(this).scrollTop() + ($(window).height() / 2 - $('.quick').height() / 2);
@@ -35,6 +35,9 @@
           top: point
         }, 200);
       });
+      $("#footer").load("footer.html");
+
+
     });
   </script>
 </head>
@@ -1210,9 +1213,9 @@
     </section>
 
 
-    <!-- footer -->
+
     <footer class="footer">
-      <div class="footer_nav">
+      <!-- <div class="footer_nav">
         <ul class="footer_top">
           <li>
             <a href="#!">
@@ -1223,7 +1226,7 @@
             <p>FILA IR</p>
           </li>
         </ul>
-
+    
         <ul>
           <li class="f_nav_tit">
             <a href="#!">WOMEN</a>
@@ -1236,7 +1239,7 @@
           <li><a href="#!">베스트</a></li>
           <li><a href="#!">세일</a></li>
         </ul>
-
+    
         <ul>
           <li class="f_nav_tit">
             <a href="#!">MEN</a>
@@ -1249,7 +1252,7 @@
           <li><a href="#!">베스트</a></li>
           <li><a href="#!">세일</a></li>
         </ul>
-
+    
         <ul>
           <li class="f_nav_tit">
             <a href="#!">KIDS</a>
@@ -1261,7 +1264,7 @@
           <li><a href="#!">베스트</a></li>
           <li><a href="#!">세일</a></li>
         </ul>
-
+    
         <ul>
           <li class="f_nav_tit">
             <a href="#!">BRAND</a>
@@ -1272,9 +1275,9 @@
           <li><a href="#!">Athelets</a></li>
           <li><a href="#!">Tennis Stories</a></li>
         </ul>
-
+    
       </div>
-
+    
       <div class="footer_list">
         <ul>
           <li><a href="#!">매장안내</a></li>
@@ -1296,7 +1299,7 @@
           </li>
         </ul>
       </div>
-
+    
       <div class="footer_bottom">
         <div class="f_bom_left">
           <p>
@@ -1311,14 +1314,14 @@
             콘텐츠산업진흥법에 의한 콘텐츠보호안내
           </p>
         </div>
-
+    
         <div class="f_bom_right">
           <p><a href="#!">CS CENTER</a></p>
           <p class="bold">1577-3472</p>
           <p class="bold">filaonline@fila.com</p>
           <p>평일 월 - 금 : 09시 - 18시 (공휴일제외)</p>
         </div>
-
+    
         <div class="f_sns">
           <ul>
             <li><a href="#!" class="insta">insta</a></li>
@@ -1327,7 +1330,7 @@
             <li><a href="#!" class="kakao">kakao</a></li>
           </ul>
         </div>
-      </div>
+      </div> -->
     </footer>
   </div>
 
@@ -1382,6 +1385,9 @@
     </div>
   </div>
 
+  
+  <script src="./js/comon.js" defer></script>
+  
 </body>
 
 </html>

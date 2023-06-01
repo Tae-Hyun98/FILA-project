@@ -869,7 +869,7 @@ h1 {
 .time_sale .edition {
   position: relative;
   overflow: hidden;
-  height: 800px;
+  height: 850px;
   background-color: #101010;
   z-index: -2;
 }
@@ -877,7 +877,7 @@ h1 {
 .time_sale .edition .edition_video {
   position: absolute;
   width: 100%;
-  top: -10px;
+  top: 40px;
   z-index: -1;
 }
 
@@ -894,7 +894,7 @@ h1 {
 }
 
 .time_sale .countdown_box h1 {
-  font-size: 55px;
+  font-size: 60px;
   background: linear-gradient(to right, #03001e, #7303c0, #ec38bc, #fdeff9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -905,7 +905,6 @@ h1 {
   justify-content: center;
   width: 600px;
   line-height: 70px;
-  font-size: 45px;
   background-color: #fff;
   margin: 0 auto;
 }
@@ -917,14 +916,11 @@ h1 {
 .time_sale .count p {
   text-align: center;
   color: #000;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 700;
 }
 
-/* .time_sale .countdown_box p {
-  color: #fff;
-  font-weight: 700;
-} */
+
 
 /***************NEW_ARRIVAL*************/
 .new_arrival {
