@@ -300,6 +300,146 @@ const subData = [
     review: 0,
     color: 'white'
   },
+
+  {
+    id: 31,
+    category: "남성 공용",
+    name: "오버핏 코쿤 볼 패딩",
+    price: 139000,
+    src: "./img/Sub_img/18.jpg",
+    review: 66,
+    color: 'black'
+  },
+
+  {
+    id: 32,
+    category: "남성 공용",
+    name: "오버핏 코쿤 볼 패딩",
+    price: 139000,
+    src: "./img/Sub_img/19.jpg",
+    review: 56,
+    color: 'white'
+  },
+
+  {
+    id: 33,
+    category: "공용 신상품",
+    name: "FILA ITALIA 반팔티셔츠",
+    price: 39000,
+    src: "./img/Sub_img/17.jpg",
+    review: 100,
+    color: 'blue'
+  },
+
+  {
+    id: 34,
+    category: "남성 신상품",
+    name: "FILA ITALIA 반팔티셔츠",
+    price: 32000,
+    src: "./img/Sub_img/21.jpg",
+    review: 2,
+    color: 'orange'
+  },
+
+  {
+    id: 35,
+    category: "공용 신상품 라이프스타일",
+    name: "핫써머 씨어서커 아노락 바람막이",
+    price: 55000,
+    src: "./img/Sub_img/22.jpg",
+    review: 0,
+    color: 'blue'
+  },
+
+  {
+    id: 36,
+    category: "공용 신상품",
+    name: "노카라 퀄팅 자켓",
+    price: 89000,
+    src: "./img/Sub_img/25.jpg",
+    review: 10,
+    color: 'green'
+  },
+
+  {
+    id: 37,
+    category: "공용 컴포트핏 러닝",
+    name: "FILATECH 후드 경량자켓",
+    price: 109000,
+    src: "./img/Sub_img/04.jpg",
+    review: 1,
+    color: 'black'
+  },
+
+  {
+    id: 38,
+    category: "공용",
+    name: "FILA ITALIA 반팔티셔츠",
+    price: 32000,
+    src: "./img/Sub_img/05.jpg",
+    review: 20,
+    color: 'white'
+  },
+
+  {
+    id: 39,
+    category: "공용",
+    name: "FILA ITALIA 반팔티셔츠",
+    price: 25000,
+    src: "./img/Sub_img/06.jpg",
+    review: 4,
+    color: 'black'
+  },
+
+  {
+    id: 40,
+    category: "공용",
+    name: "오버핏 코쿤 볼 패딩",
+    price: 139000,
+    src: "./img/Sub_img/07.jpg",
+    review: 50,
+    color: 'beige'
+  },
+
+  {
+    id: 41,
+    category: "공용",
+    name: "스몰로고 맨투맨",
+    price: 49000,
+    src: "./img/Sub_img/08.jpg",
+    review: 3,
+    color: 'black'
+  },
+
+  {
+    id: 42,
+    category: "공용",
+    name: "헤리티지 로고 후드",
+    price: 69000,
+    src: "./img/Sub_img/09.jpg",
+    review: 49,
+    color: 'gray'
+  },
+
+  {
+    id: 43,
+    category: "공용 레귤러핏 러닝",
+    name: "FILA SPORTS 후디",
+    price: 69000,
+    src: "./img/Sub_img/10.jpg",
+    review: 42,
+    color: 'gray'
+  },
+
+  {
+    id: 44,
+    category: "공용",
+    name: "FILATECH 아노락 하프 집업",
+    price: 99000,
+    src: "./img/Sub_img/11.jpg",
+    review: 46,
+    color: 'beige'
+  },
 ]
 
 export default subData;
