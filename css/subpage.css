@@ -1073,13 +1073,18 @@ div.col_5 .product_box .detail p.product_name {
   color: #fff;
 }
 
+#pages .disable:hover {
+  background-color: #fff;
+  color: #ccc;
+}
+
 #pages a.active {
   background-color: #002053;
   color: #fff;
 }
 
 #pages a.disable {
-  cursor: default;
+  cursor: no-drop;
   color: #ccc;
 }
 
