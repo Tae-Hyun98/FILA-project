@@ -257,7 +257,7 @@ function priobj(obj) {
     subImgBox.setAttribute('class', 'product_img');
 
     const imgLink = document.createElement('a');
-    imgLink.setAttribute('href', '../detail.html');
+    imgLink.setAttribute('href', './detail.html');
     subImgBox.appendChild(imgLink);
 
     const subImg = document.createElement('img');
@@ -268,7 +268,7 @@ function priobj(obj) {
     detailDiv.setAttribute('class', 'detail');
 
     const detailLink = document.createElement('a');
-    detailLink.setAttribute('href', '../detail.html');
+    detailLink.setAttribute('href', './detail.html');
     detailDiv.appendChild(detailLink);
 
     //상품박스 호버했을때
