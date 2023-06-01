@@ -171,8 +171,7 @@ familySite.addEventListener('change', (e) => {
   let openNewWindow = window.open('about:blank');
 
   openNewWindow.location.href = options[optionIndex].value;
-});
- */
+}); */
 
 //탑,바텀버튼
 var topBtn = document.querySelector('.top');
@@ -215,6 +214,12 @@ var popupClose = document.getElementById('popup_close');
 popupClose.addEventListener('click', function () {
   popup.style.display = 'none';
 });
+
+/* const footer = document.querySelector('.footer');
+
+fetch('./footer.html')
+.then(res => res.text())
+.then(data => footer.innerHTML = data); */
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -240,7 +245,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64449" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63428" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
