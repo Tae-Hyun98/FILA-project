@@ -20,9 +20,9 @@ filterSele.addEventListener('change', () => {
     currentPage = 0;
     paginationFunc(asc);
   } else if (filterSele.value === 'new') {
-    const newProduct = subData.sort((a, b) => a.id > b.id ? -1 : a.id < b.id ? 1 : 0); //신상품
+    const newProduct = subData.sort((a, b) => a.id > b.id ? -1 : a.id < b.id ? 1 : 0); //기본순
     currentPage = 0;
-    paginationFunc(newProduct);
+    paginationFunc(subData);
   } else if (filterSele.value === 'review') {
     const review = subData.sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0); //리뷰순정렬
     currentPage = 0;
@@ -138,7 +138,6 @@ let currentPage = 0;
 
 //페이지네이션 생성함수
 function paginationFunc(obj) {
-  subData.reverse();
   const onePage = 20; //한페이지에뜰 상품
 
   const totalItem = obj.length;
@@ -336,6 +335,7 @@ function priobj(obj) {
     subProduct.append(pages)
   }
 }
+subData.reverse();
 
 paginationFunc(subData);
 
