@@ -254,15 +254,15 @@ var subData = [{
   color: 'mix'
 }, {
   id: 17,
-  category: "공용 신상품",
-  name: "FILA ITALIA 반팔티셔츠",
-  price: 39000,
-  src: "./img/Sub_img/17.jpg",
-  review: 100,
-  color: 'blue'
+  category: "공용 라이프스타일",
+  name: "FILA CLASSIC 기모맨투맨",
+  price: 69000,
+  src: "./img/Sub_img/39.jpg",
+  review: 120,
+  color: 'black'
 }, {
   id: 18,
-  category: "남성 공용 신상품",
+  category: "남성 공용",
   name: "오버핏 코쿤 볼 패딩",
   price: 139000,
   src: "./img/Sub_img/18.jpg",
@@ -270,7 +270,7 @@ var subData = [{
   color: 'black'
 }, {
   id: 19,
-  category: "남성 공용 신상품",
+  category: "남성 공용",
   name: "오버핏 코쿤 볼 패딩",
   price: 139000,
   src: "./img/Sub_img/19.jpg",
@@ -279,11 +279,11 @@ var subData = [{
 }, {
   id: 20,
   category: "공용 신상품",
-  name: "<온라인 단독>헤리티지 세리프 루즈핏 반팔티",
-  price: 38000,
-  src: "./img/Sub_img/20.jpg",
-  review: 17,
-  color: 'navy'
+  name: "FILA ITALIA 반팔티셔츠",
+  price: 39000,
+  src: "./img/Sub_img/17.jpg",
+  review: 100,
+  color: 'blue'
 }, {
   id: 21,
   category: "남성 신상품",
@@ -302,7 +302,7 @@ var subData = [{
   color: 'blue'
 }, {
   id: 23,
-  category: "공용",
+  category: "공용 신상품",
   name: "노카라 퀄팅 자켓",
   price: 89000,
   src: "./img/Sub_img/25.jpg",
@@ -318,7 +318,7 @@ var subData = [{
   color: 'mix'
 }, {
   id: 25,
-  category: "공용 테니스",
+  category: "공용 신상품 테니스",
   name: "<온라인 단독>Fila tennis 하프팬츠",
   price: 59000,
   src: "./img/Sub_img/29.jpg",
@@ -326,7 +326,7 @@ var subData = [{
   color: 'green'
 }, {
   id: 26,
-  category: "남성 테니스",
+  category: "남성 신상품 테니스",
   name: "글로벌 패턴 반바지",
   price: 65000,
   src: "./img/Sub_img/44.jpg",
@@ -334,12 +334,244 @@ var subData = [{
   color: 'blue'
 }, {
   id: 27,
-  category: "공용 라이프스타일",
+  category: "공용 신상품",
+  name: "<온라인 단독>헤리티지 세리프 루즈핏 반팔티",
+  price: 38000,
+  src: "./img/Sub_img/20.jpg",
+  review: 17,
+  color: 'navy'
+}, {
+  id: 28,
+  category: "공용 라이프스타일 신상품",
   name: "헤리티지 오버핏 케이블 가디건",
   price: 139000,
   src: "./img/Sub_img/40.jpg",
   review: 12,
   color: 'navy'
+}, {
+  id: 29,
+  category: "공용 신상품",
+  name: "오버핏 인터내셔널 바람막이",
+  price: 149000,
+  src: "./img/Sub_img/42.jpg",
+  review: 1,
+  color: 'white'
+}, {
+  id: 30,
+  category: "남성 테니스 신상품",
+  name: "글로벌 라인 반팔티",
+  price: 65000,
+  src: "./img/Sub_img/45.jpg",
+  review: 0,
+  color: 'white'
+}, {
+  id: 31,
+  category: "남성 공용",
+  name: "오버핏 코쿤 볼 패딩",
+  price: 139000,
+  src: "./img/Sub_img/18.jpg",
+  review: 66,
+  color: 'black'
+}, {
+  id: 32,
+  category: "남성 공용",
+  name: "오버핏 코쿤 볼 패딩",
+  price: 139000,
+  src: "./img/Sub_img/19.jpg",
+  review: 56,
+  color: 'white'
+}, {
+  id: 33,
+  category: "공용 신상품",
+  name: "FILA ITALIA 반팔티셔츠",
+  price: 39000,
+  src: "./img/Sub_img/17.jpg",
+  review: 100,
+  color: 'blue'
+}, {
+  id: 34,
+  category: "남성 신상품",
+  name: "FILA ITALIA 반팔티셔츠",
+  price: 32000,
+  src: "./img/Sub_img/21.jpg",
+  review: 2,
+  color: 'orange'
+}, {
+  id: 35,
+  category: "공용 신상품 라이프스타일",
+  name: "핫써머 씨어서커 아노락 바람막이",
+  price: 55000,
+  src: "./img/Sub_img/22.jpg",
+  review: 0,
+  color: 'blue'
+}, {
+  id: 36,
+  category: "공용 신상품",
+  name: "노카라 퀄팅 자켓",
+  price: 89000,
+  src: "./img/Sub_img/25.jpg",
+  review: 10,
+  color: 'green'
+}, {
+  id: 37,
+  category: "공용 컴포트핏 러닝",
+  name: "FILATECH 후드 경량자켓",
+  price: 109000,
+  src: "./img/Sub_img/04.jpg",
+  review: 1,
+  color: 'black'
+}, {
+  id: 38,
+  category: "공용",
+  name: "FILA ITALIA 반팔티셔츠",
+  price: 32000,
+  src: "./img/Sub_img/05.jpg",
+  review: 20,
+  color: 'white'
+}, {
+  id: 39,
+  category: "공용",
+  name: "FILA ITALIA 반팔티셔츠",
+  price: 25000,
+  src: "./img/Sub_img/06.jpg",
+  review: 4,
+  color: 'black'
+}, {
+  id: 40,
+  category: "공용",
+  name: "오버핏 코쿤 볼 패딩",
+  price: 139000,
+  src: "./img/Sub_img/07.jpg",
+  review: 50,
+  color: 'beige'
+}, {
+  id: 41,
+  category: "공용",
+  name: "스몰로고 맨투맨",
+  price: 49000,
+  src: "./img/Sub_img/08.jpg",
+  review: 3,
+  color: 'black'
+}, {
+  id: 42,
+  category: "공용",
+  name: "헤리티지 로고 후드",
+  price: 69000,
+  src: "./img/Sub_img/09.jpg",
+  review: 49,
+  color: 'gray'
+}, {
+  id: 43,
+  category: "공용 레귤러핏 러닝",
+  name: "FILA SPORTS 후디",
+  price: 69000,
+  src: "./img/Sub_img/10.jpg",
+  review: 42,
+  color: 'gray'
+}, {
+  id: 44,
+  category: "공용",
+  name: "FILATECH 아노락 하프 집업",
+  price: 99000,
+  src: "./img/Sub_img/11.jpg",
+  review: 46,
+  color: 'beige'
+}, {
+  id: 45,
+  category: "남성 레귤러핏 테니스",
+  name: "테니스 퍼포먼스 헨리넥 반팔티셔츠",
+  price: 59000,
+  src: "./img/Sub_img/53.jpg",
+  review: 0,
+  color: 'white'
+}, {
+  id: 46,
+  category: "남녀공용 테니스",
+  name: "Fila tennis 레터링 반팔티셔츠",
+  price: 35000,
+  src: "./img/Sub_img/54.jpg",
+  review: 0,
+  color: 'navy'
+}, {
+  id: 47,
+  category: "남녀공용 라이프스타일",
+  name: "Sportslife 져지 하프팬츠",
+  price: 62000,
+  src: "./img/Sub_img/55.jpg",
+  review: 2,
+  color: 'gray'
+}, {
+  id: 48,
+  category: "남녀공용 라이프스타일",
+  name: "Sportslife 하프팬츠",
+  price: 59000,
+  src: "./img/Sub_img/56.jpg",
+  review: 2,
+  color: 'navy'
+}, {
+  id: 49,
+  category: "남녀공용 테니스 신상품",
+  name: "테니스 라이프 반바지",
+  price: 69000,
+  src: "./img/Sub_img/57.jpg",
+  review: 0,
+  color: 'navy'
+}, {
+  id: 50,
+  category: "남녀공용 컴포트핏 신상품",
+  name: "인터내셔널 반팔 카라티",
+  price: 69000,
+  src: "./img/Sub_img/58.jpg",
+  review: 0,
+  color: 'blue'
+}, {
+  id: 51,
+  category: "남녀공용 컴포트핏 신상품",
+  name: "인터내셔널 그래픽 반팔티",
+  price: 49000,
+  src: "./img/Sub_img/59.jpg",
+  review: 0,
+  color: 'white'
+}, {
+  id: 52,
+  category: "남녀공용 레귤러핏 신상품",
+  name: "페스타 그래픽 티셔츠",
+  price: 49000,
+  src: "./img/Sub_img/60.jpg",
+  review: 1,
+  color: 'orange'
+}, {
+  id: 53,
+  category: "남성 컴포트핏 신상품",
+  name: "핫써머 모노그램 나시티",
+  price: 49000,
+  src: "./img/Sub_img/61.jpg",
+  review: 1,
+  color: 'mix'
+}, {
+  id: 54,
+  category: "남성 레귤러핏 트레이닝",
+  name: "퍼포먼스 PQ스판 반팔티셔츠",
+  price: 59000,
+  src: "./img/Sub_img/62.jpg",
+  review: 0,
+  color: 'red'
+}, {
+  id: 55,
+  category: "남녀공용 컴포트핏 테니스",
+  name: "테니스 라이프 카라티셔츠",
+  price: 89000,
+  src: "./img/Sub_img/63.jpg",
+  review: 1,
+  color: 'green'
+}, {
+  id: 56,
+  category: "남성 레귤러핏 테니스 신상품",
+  name: "테니스 퍼포먼스 스트레치 반바지",
+  price: 59000,
+  src: "./img/Sub_img/64.jpg",
+  review: 0,
+  color: 'green'
 }];
 var _default = subData;
 exports.default = _default;
@@ -518,11 +750,114 @@ colorChk.forEach(function (color) {
     }
   });
 });
+var pages = document.getElementById('pages');
+var currentPage = 0;
+
+//페이지네이션 생성함수
+function paginationFunc(obj) {
+  _sub_data.default.reverse();
+  var onePage = 20; //한페이지에뜰 상품
+
+  var totalItem = obj.length;
+  if (totalItem <= onePage) {
+    priobj(obj);
+  }
+  var startIndex = currentPage * onePage;
+  var endIndex = startIndex + onePage;
+  var pageData = obj.slice(startIndex, endIndex);
+  var totalPage = Math.ceil(obj.length / onePage);
+  priobj(pageData);
+
+  //페이지네이션 이전,다음 숫자버튼생성
+  var pagination = '';
+  if (currentPage >= 0) {
+    pagination += "<a href=\"#!\" class=\"first_prev\"><<</a>";
+  }
+  if (currentPage >= 0) {
+    pagination += "<a href=\"#!\" class=\"prev\"><</a>";
+  }
+  for (var _i = 1; _i <= totalPage; _i++) {
+    pagination += "<a href=\"#!\" class=\"pg\">".concat(_i, "</a>");
+  }
+  if (currentPage <= totalPage - 1) {
+    pagination += "<a href=\"#!\" class=\"next\">></a>";
+  }
+  if (currentPage <= totalPage - 1) {
+    pagination += "<a href=\"#!\" class=\"last_next\">>></a>";
+  }
+  pages.innerHTML = pagination;
+  var pageBtn = document.querySelectorAll('.pg');
+  var firstBtn = document.querySelector('.first_prev');
+  var lastBtn = document.querySelector('.last_next');
+  var prevBtn = document.querySelector('.prev');
+  var nextBtn = document.querySelector('.next');
+
+  //페이지네이션에 버튼클릭시 이동과 active부여
+  pageBtn.forEach(function (item, idx) {
+    item.addEventListener('click', function () {
+      var _iterator = _createForOfIteratorHelper(pageBtn),
+        _step;
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var pp = _step.value;
+          pp.classList.remove('active');
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+      if (currentPage !== idx) {
+        currentPage = idx;
+        paginationFunc(obj);
+      }
+      console.log(idx);
+      console.log(currentPage);
+    });
+    if (currentPage === idx) {
+      pageBtn[idx].classList.add('active');
+    }
+  });
+
+  //이전버튼, 처음으로버튼
+  if (currentPage > 0) {
+    prevBtn.addEventListener('click', function () {
+      currentPage--;
+      paginationFunc(obj);
+    });
+    firstBtn.addEventListener('click', function () {
+      currentPage = 0;
+      paginationFunc(obj);
+    });
+    prevBtn.classList.remove('disable');
+    firstBtn.classList.remove('disable');
+  } else {
+    prevBtn.classList.add('disable');
+    firstBtn.classList.add('disable');
+  }
+
+  //다음버튼, 마지막으로버튼
+  if (currentPage < totalPage - 1) {
+    nextBtn.addEventListener('click', function () {
+      currentPage++;
+      paginationFunc(obj);
+    });
+    lastBtn.addEventListener('click', function () {
+      currentPage = totalPage - 1;
+      paginationFunc(obj);
+    });
+    nextBtn.classList.remove('disable');
+    lastBtn.classList.remove('disable');
+  } else {
+    nextBtn.classList.add('disable');
+    lastBtn.classList.add('disable');
+  }
+}
 
 //리스트 객체함수
 function priobj(obj) {
   productList.innerHTML = '';
-  for (var _i = 0; _i < obj.length; _i++) {
+  for (var _i2 = 0; _i2 < obj.length; _i2++) {
     //서브 상품박스
     var subDiv = document.createElement('div');
     subDiv.setAttribute('class', 'product_box');
@@ -532,7 +867,7 @@ function priobj(obj) {
     imgLink.setAttribute('href', '../detail.html');
     subImgBox.appendChild(imgLink);
     var subImg = document.createElement('img');
-    subImg.setAttribute('src', obj[_i].src);
+    subImg.setAttribute('src', obj[_i2].src);
     imgLink.appendChild(subImg);
     var detailDiv = document.createElement('div');
     detailDiv.setAttribute('class', 'detail');
@@ -563,26 +898,26 @@ function priobj(obj) {
     var cateGory = document.createElement('p');
     cateGory.setAttribute('class', 'category');
     detailLink.appendChild(cateGory);
-    var cateGoryText = document.createTextNode(obj[_i].category);
+    var cateGoryText = document.createTextNode(obj[_i2].category);
     cateGory.appendChild(cateGoryText);
 
     //상품이름
     var productName = document.createElement('p');
     productName.setAttribute('class', 'product_name');
     detailLink.appendChild(productName);
-    var nameText = document.createTextNode(obj[_i].name);
+    var nameText = document.createTextNode(obj[_i2].name);
     productName.appendChild(nameText);
 
     //상품가격
     var productPrice = document.createElement('p');
     productPrice.setAttribute('class', 'product_price');
     detailLink.appendChild(productPrice);
-    var namePrice = document.createTextNode(obj[_i].price.toLocaleString('ko-KR') + '원');
+    var namePrice = document.createTextNode(obj[_i2].price.toLocaleString('ko-KR') + '원');
     productPrice.appendChild(namePrice);
 
     //리뷰수
     var reviSpan = document.createElement('span');
-    var reviCount = document.createTextNode('★(' + obj[_i].review + ')');
+    var reviCount = document.createTextNode('★(' + obj[_i2].review + ')');
     productPrice.appendChild(reviSpan);
     reviSpan.appendChild(reviCount);
 
@@ -600,75 +935,6 @@ function priobj(obj) {
     productList.appendChild(subDiv);
     subProduct.appendChild(productList);
     subProduct.append(pages);
-  }
-}
-var pages = document.getElementById('pages');
-var currentPage = 0;
-var onePage = 20; //한페이지에뜰 상품
-
-//페이지네이션 생성함수
-function paginationFunc(obj) {
-  var totalItem = obj.length;
-  if (totalItem <= onePage) {
-    priobj(obj);
-  }
-  var startIndex = currentPage * onePage;
-  var endIndex = startIndex + onePage;
-  var pageData = obj.slice(startIndex, endIndex);
-  var totalPage = Math.ceil(obj.length / onePage);
-  priobj(pageData);
-  var pagination = '';
-  if (currentPage > 0) {
-    pagination += "<a href=\"#!\" class=\"prev\"><</a>";
-  }
-  for (var _i2 = 1; _i2 <= totalPage; _i2++) {
-    pagination += "<a href=\"#!\" class=\"pg\">".concat(_i2, "</a>");
-  }
-  if (currentPage < totalPage - 1) {
-    pagination += "<a href=\"#!\" class=\"next\">></a>";
-  }
-  pages.innerHTML = pagination;
-  var pageBtn = document.querySelectorAll('.pg');
-  var prevBtn = document.querySelector('.prev');
-  var nextBtn = document.querySelector('.next');
-  pageBtn.forEach(function (item, idx) {
-    item.addEventListener('click', function () {
-      var _iterator = _createForOfIteratorHelper(pageBtn),
-        _step;
-      try {
-        for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var pp = _step.value;
-          pp.classList.remove('active');
-        }
-      } catch (err) {
-        _iterator.e(err);
-      } finally {
-        _iterator.f();
-      }
-      if (currentPage !== idx) {
-        currentPage = idx;
-        paginationFunc(obj);
-      }
-      console.log(idx);
-      console.log(currentPage);
-    });
-    if (currentPage === idx) {
-      pageBtn[idx].classList.add('active');
-    }
-  });
-  if (currentPage > 0) {
-    prevBtn.addEventListener('click', function () {
-      pages.innerHTML = '';
-      currentPage--;
-      paginationFunc(obj);
-    });
-  }
-  if (currentPage < totalPage - 1) {
-    nextBtn.addEventListener('click', function () {
-      pages.innerHTML = '';
-      currentPage++;
-      paginationFunc(obj);
-    });
   }
 }
 paginationFunc(_sub_data.default);
@@ -980,7 +1246,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51103" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54820" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

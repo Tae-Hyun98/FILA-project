@@ -494,7 +494,7 @@ img {
 
 /**********filter*********/
 .list_container {
-  padding: 0 50px;
+  padding: 0 80px;
 }
 
 .filter_wrap {
@@ -736,6 +736,7 @@ div.col_5 .product_list .product_box:nth-child(5n) {
 div.col_4 .product_list .product_box {
   width: calc(25% - 15px);
   margin-right: 20px;
+  margin-bottom: 50px;
 }
 
 div.col_5 .product_list .product_box {
@@ -1077,8 +1078,20 @@ div.col_5 .product_box .detail p.product_name {
   color: #fff;
 }
 
+#pages a.disable {
+  cursor: default;
+  color: #ccc;
+}
+
 #pages a:last-child {
   margin-right: 0;
+}
+
+#pages .first_prev,
+#pages .prev,
+#pages .next,
+#pages .last_next {
+  font-weight: 700;
 }
 
 
@@ -1096,7 +1109,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 body::-webkit-scrollbar-track {
-  background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
+  background: rgba(33, 122, 244, .1);
+  /*스크롤바 뒷 배경 색상*/
 }
 
 /*# sourceMappingURL=/subpage.20c89f74.css.map */
