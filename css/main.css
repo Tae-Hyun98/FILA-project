@@ -869,7 +869,7 @@ h1 {
 .time_sale .edition {
   position: relative;
   overflow: hidden;
-  height: 850px;
+  height: 870px;
   background-color: #101010;
   z-index: -2;
 }
@@ -883,7 +883,7 @@ h1 {
 
 .time_sale .edition .edition_video video {
   width: 100%;
-  height: 960px;
+  height: 920px;
   outline: 0;
   border: 0;
 }
@@ -891,10 +891,11 @@ h1 {
 .time_sale .countdown_box {
   width: 100%;
   text-align: center;
+  padding-top: 10px;
 }
 
 .time_sale .countdown_box h1 {
-  font-size: 60px;
+  font-size: 65px;
   background: linear-gradient(to right, #03001e, #7303c0, #ec38bc, #fdeff9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
