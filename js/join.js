@@ -55,6 +55,8 @@ function checkId() {
     idRule.style.display = 'none';
   }
 }
+
+
 //비밀번호 유효성검사
 function checkPw() {
   const userValuePw = userPw.value;
@@ -71,6 +73,7 @@ function checkPw() {
   }
 }
 
+
 //비밀번호 확인
 function checkEqul() {
   if (userPw.value === equlChk.value) {
@@ -83,6 +86,7 @@ function checkEqul() {
   }
 }
 
+
 //이름
 function checkName() {
   const nameValue = userName.value;
@@ -94,6 +98,7 @@ function checkName() {
     nameSpan.style.color = 'blue';
   }
 }
+
 
 //주민등록번호
 function checkIdcard() {
@@ -125,6 +130,7 @@ function checkGender() {
   }
 }
 
+
 //휴대전화
 function checkPhone() {
   const phoneValue = userPhone.value;
@@ -137,6 +143,7 @@ function checkPhone() {
     userPhone2.focus();
   }
 }
+
 
 //약관동의
 const allTerms = document.getElementById('all_terms');
@@ -177,6 +184,7 @@ function termCheck() {
 }
 
 
+
 //가입버튼누를시 값체크
 const joinBtn = document.getElementById('join_btn');
 
@@ -201,6 +209,7 @@ function btnClick() {
     alert('가입완료');
   }
 }
+
 
 //전문보기 클릭
 const seeBtn1 = document.querySelector('.see_1');
@@ -227,10 +236,10 @@ seeBtn4.addEventListener('click', () => {
   agreeBox[3].style.display = 'block';
 });
 
-for (let i = 0; i < closeBtn.length; i++) {
-  closeBtn[i].addEventListener('click', () => {
-    if (closeBtn[i]) {
-      agreeBox[i].style.display = 'none';
+closeBtn.forEach((btn, idx) => {
+  btn.addEventListener('click', () => {
+    if (btn) {
+      agreeBox[idx].style.display = 'none';
     }
   });
-}
+})

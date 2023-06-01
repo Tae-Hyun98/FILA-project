@@ -1,50 +1,3 @@
-  //스크롤시 헤더
-  const scr = document.querySelector('.scroll');
-  window.addEventListener("wheel", (e) => {
-    const scrollUp = e.deltaY <= 0;
-    const scrollDown = e.deltaY > 0;
-
-    if (scrollDown && scrollY >= 100) {
-      scr.classList.add('scr_down');
-      scr.classList.remove('scr_up');
-    } else if (scrollUp && scrollY === 0) {
-      scr.classList.remove('scr_up');
-      scr.classList.remove('scr_down');
-    } else if (scrollUp && scrollY !== 0) {
-      scr.classList.add('scr_up');
-      scr.classList.remove('scr_down');
-    }
-  });
-
-  window.addEventListener("scroll", () => {
-    if (scrollY === 0) {
-      scr.classList.remove('scr_up');
-      scr.classList.remove('scr_down');
-    }
-  });
-
-  //lnb마우스호버시
-  const li = document.querySelectorAll('.header .lnb>ul>li');
-  li.forEach((lis) => {
-    lis.addEventListener('mouseover', () => {
-      scr.classList.add('bg_on')
-    });
-    lis.addEventListener('mouseout', () => {
-      scr.classList.remove('bg_on');
-    });
-  })
-
-
-  //검색버튼 클릭시 검색창
-  const searchOpen = document.getElementById('search').addEventListener('click', () => {
-    scr.classList.add('search_on');
-  });
-
-  const searchClose = document.getElementById('close').addEventListener('click', () => {
-    scr.classList.remove('search_on');
-  });;
-
-
 
   //디테일컷 스와이퍼
   const image = ['detail_01.jpg', 'detail_02.jpg', 'detail_03.jpg', 'detail_04.jpg', 'detail_05.jpg', 'detail_06.jpg', 'detail_07.jpg', 'detail_08.jpg']
@@ -276,9 +229,7 @@
 
   let countInq = 2;
   wriBtn.addEventListener('click', inquiryAdd);
-  /*  wriBtn.addEventListener('click', () => {
-       inqPopup.style.display = 'none';
-   }) */
+
 
 
   function inquiryAdd() {
@@ -326,53 +277,3 @@
       inqPopup.style.display = 'block'
     }
   }
-
-
-
-  //탑,바텀버튼
-  const topBtn = document.querySelector('.top');
-  const bottomBtn = document.querySelector('.bottom');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 400 && window.scrollY < 2500) {
-      gsap.to(topBtn, 0.1, {
-        opacity: 1,
-        visibility: 'visible'
-      });
-      gsap.to(bottomBtn, 0.1, {
-        opacity: 1,
-        visibility: 'visible'
-      });
-
-    } else if (window.scrollY >= 2500) {
-      gsap.to(topBtn, 0.1, {
-        opacity: 1,
-        visibility: 'visible'
-      });
-      gsap.to(bottomBtn, 0.1, {
-        opacity: 0,
-        visibility: 'hidden'
-      });
-    } else {
-      gsap.to(topBtn, 0.1, {
-        opacity: 0,
-        visibility: 'hidden'
-      });
-      gsap.to(bottomBtn, 0.1, {
-        opacity: 0,
-        visibility: 'hidden'
-      });
-    }
-  });
-
-  topBtn.addEventListener('click', () => {
-    gsap.to(window, 0.5, {
-      scrollTo: 0
-    });
-  });
-
-  bottomBtn.addEventListener('click', () => {
-    gsap.to(window, 0.5, {
-      scrollTo: 7000
-    });
-  });

@@ -29,16 +29,10 @@ img {
   color: #000;
 }
 
-/*************scroll header**************/
-.scroll.scr_up.search_on .header {
-  transform: translateY(0%);
-  opacity: 1;
-  visibility: visible;
-}
-
 .scroll.bg_on .header .blur {
   display: block;
 }
+
 
 /***************header********************/
 .header {
