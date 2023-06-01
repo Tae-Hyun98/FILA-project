@@ -451,8 +451,8 @@ for (let i = 0; i < genderChk.length; i++) {
 }
 
 
-const footer = document.querySelector('.footer');
+/* const footer = document.querySelector('.footer');
 
 fetch('./footer.html')
   .then(res => res.text())
-  .then(data => footer.innerHTML = data);
+  .then(data => footer.innerHTML = data); */
