@@ -124,49 +124,6 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
-//스크롤시 헤더
-var scr = document.querySelector('.scroll');
-window.addEventListener("wheel", function (e) {
-  var scrollUp = e.deltaY <= 0;
-  var scrollDown = e.deltaY > 0;
-  if (scrollDown && scrollY >= 100) {
-    scr.classList.add('scr_down');
-    scr.classList.remove('scr_up');
-  } else if (scrollUp && scrollY === 0) {
-    scr.classList.remove('scr_up');
-    scr.classList.remove('scr_down');
-  } else if (scrollUp && scrollY !== 0) {
-    scr.classList.add('scr_up');
-    scr.classList.remove('scr_down');
-  }
-});
-window.addEventListener("scroll", function () {
-  if (scrollY === 0) {
-    scr.classList.remove('scr_up');
-    scr.classList.remove('scr_down');
-  }
-});
-
-//lnb마우스호버시
-var li = document.querySelectorAll('.header .lnb>ul>li');
-li.forEach(function (lis) {
-  lis.addEventListener('mouseover', function () {
-    scr.classList.add('bg_on');
-  });
-  lis.addEventListener('mouseout', function () {
-    scr.classList.remove('bg_on');
-  });
-});
-
-//검색버튼 클릭시 검색창
-var searchOpen = document.getElementById('search').addEventListener('click', function () {
-  scr.classList.add('search_on');
-});
-var searchClose = document.getElementById('close').addEventListener('click', function () {
-  scr.classList.remove('search_on');
-});
-;
-
 //디테일컷 스와이퍼
 var image = ['detail_01.jpg', 'detail_02.jpg', 'detail_03.jpg', 'detail_04.jpg', 'detail_05.jpg', 'detail_06.jpg', 'detail_07.jpg', 'detail_08.jpg'];
 var swiper = new Swiper(".detail_swiper", {
@@ -373,10 +330,6 @@ var inqContext = document.querySelector('.inq_context textarea');
 var inqList = document.querySelector('.inq_list');
 var countInq = 2;
 wriBtn.addEventListener('click', inquiryAdd);
-/*  wriBtn.addEventListener('click', () => {
-     inqPopup.style.display = 'none';
- }) */
-
 function inquiryAdd() {
   if (inqOpt.value != '' && inqId.value != '' && inqTit.value != '' && inqContext.value != '') {
     var optext = inqOpt.options[inqOpt.selectedIndex].text; //옵션값 text만
@@ -417,50 +370,6 @@ function inquiryAdd() {
     inqPopup.style.display = 'block';
   }
 }
-
-//탑,바텀버튼
-var topBtn = document.querySelector('.top');
-var bottomBtn = document.querySelector('.bottom');
-window.addEventListener('scroll', function () {
-  if (window.scrollY > 400 && window.scrollY < 2500) {
-    gsap.to(topBtn, 0.1, {
-      opacity: 1,
-      visibility: 'visible'
-    });
-    gsap.to(bottomBtn, 0.1, {
-      opacity: 1,
-      visibility: 'visible'
-    });
-  } else if (window.scrollY >= 2500) {
-    gsap.to(topBtn, 0.1, {
-      opacity: 1,
-      visibility: 'visible'
-    });
-    gsap.to(bottomBtn, 0.1, {
-      opacity: 0,
-      visibility: 'hidden'
-    });
-  } else {
-    gsap.to(topBtn, 0.1, {
-      opacity: 0,
-      visibility: 'hidden'
-    });
-    gsap.to(bottomBtn, 0.1, {
-      opacity: 0,
-      visibility: 'hidden'
-    });
-  }
-});
-topBtn.addEventListener('click', function () {
-  gsap.to(window, 0.5, {
-    scrollTo: 0
-  });
-});
-bottomBtn.addEventListener('click', function () {
-  gsap.to(window, 0.5, {
-    scrollTo: 7000
-  });
-});
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -486,7 +395,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54820" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64449" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

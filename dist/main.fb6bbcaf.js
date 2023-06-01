@@ -260,40 +260,6 @@ exports.runningData = runningData;
 "use strict";
 
 var _rank_data = require("./rank_data.js");
-//스크롤시 헤더
-var scr = document.querySelector('.scroll');
-window.addEventListener("wheel", function (e) {
-  var scrollUp = e.deltaY <= 0;
-  var scrollDown = e.deltaY > 0;
-  if (scrollDown && scrollY >= 100) {
-    scr.classList.add('scr_down');
-    scr.classList.remove('scr_up');
-  } else if (scrollUp && scrollY === 0) {
-    scr.classList.remove('scr_up');
-    scr.classList.remove('scr_down');
-  } else if (scrollUp && scrollY !== 0) {
-    scr.classList.add('scr_up');
-    scr.classList.remove('scr_down');
-  }
-});
-window.addEventListener("scroll", function () {
-  if (scrollY === 0) {
-    scr.classList.remove('scr_up');
-    scr.classList.remove('scr_down');
-  }
-});
-
-//lnb마우스호버시
-var li = document.querySelectorAll('.header .lnb>ul>li');
-li.forEach(function (item) {
-  item.addEventListener("mouseover", function () {
-    scr.classList.add('bg_on');
-  });
-  item.addEventListener("mouseout", function () {
-    scr.classList.remove('bg_on');
-  });
-});
-
 //카운트다운
 var countDown = new Date("Jun 30, 2023 22:22:00").getTime();
 var x = setInterval(function () {
@@ -310,26 +276,11 @@ var x = setInterval(function () {
     timeP[2].innerHTML = "".concat(('00' + minutes + ' : ').slice(-5));
     timeP[3].innerHTML = "".concat(('00' + seconds).slice(-2));
   }
-
-  /*   document.getElementById("date").style.fontSize = '50px';
-    document.getElementById("date").innerHTML = days + " D " + hours + " h  " +
-      minutes + " m " + seconds + " ";
-   */
   if (timer < 0) {
     clearInterval(x);
     document.querySelector(".count").innerHTML = "드디어 출시되는 FILA 에디션!";
   }
 }, 1000);
-
-//검색버튼 클릭시 검색창
-var searchOpen = document.getElementById('search');
-var searchClose = document.getElementById('close');
-searchOpen.addEventListener('click', function () {
-  scr.classList.add('search_on');
-});
-searchClose.addEventListener('click', function () {
-  scr.classList.remove('search_on');
-});
 
 //카테고리클릭시 들어가는거
 var rankCategory = document.querySelectorAll('.rank_category ul li a');
@@ -378,66 +329,6 @@ rankCategory.forEach(function (item, idx) {
       });
     }
   });
-});
-
-//footer family
-var familySite = document.getElementById('family_site');
-familySite.addEventListener('change', function (e) {
-  var options = e.currentTarget.options;
-  var optionIndex = options.selectedIndex;
-  var openNewWindow = window.open('about:blank');
-  openNewWindow.location.href = options[optionIndex].value;
-});
-
-//탑,바텀버튼
-var topBtn = document.querySelector('.top');
-var bottomBtn = document.querySelector('.bottom');
-window.addEventListener('scroll', function () {
-  if (window.scrollY > 400 && window.scrollY < 6500) {
-    gsap.to(topBtn, 0.1, {
-      opacity: 1,
-      visibility: 'visible'
-    });
-    gsap.to(bottomBtn, 0.1, {
-      opacity: 1,
-      visibility: 'visible'
-    });
-  } else if (window.scrollY >= 6500) {
-    gsap.to(topBtn, 0.1, {
-      opacity: 1,
-      visibility: 'visible'
-    });
-    gsap.to(bottomBtn, 0.1, {
-      opacity: 0,
-      visibility: 'hidden'
-    });
-  } else {
-    gsap.to(topBtn, 0.1, {
-      opacity: 0,
-      visibility: 'hidden'
-    });
-    gsap.to(bottomBtn, 0.1, {
-      opacity: 0,
-      visibility: 'hidden'
-    });
-  }
-});
-topBtn.addEventListener('click', function () {
-  gsap.to(window, 0.5, {
-    scrollTo: 0
-  });
-});
-bottomBtn.addEventListener('click', function () {
-  gsap.to(window, 0.5, {
-    scrollTo: 7000
-  });
-});
-
-//팝업닫기
-var popup = document.querySelector('.popup');
-var popupClose = document.getElementById('popup_close');
-popupClose.addEventListener('click', function () {
-  popup.style.display = 'none';
 });
 
 //magazine 나타나기
@@ -500,7 +391,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54820" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64449" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

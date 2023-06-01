@@ -23,17 +23,16 @@ img {
   display: block;
 }
 
-/* .container {
-  width: 1610px;
-  margin: 0 auto;
-} */
-
 .down_tit {
   font-size: 20px;
   font-weight: 700;
   color: #000;
 }
 
+.header {
+  width: 768px;
+  margin: 0 auto;
+}
 
 .header a {
   font-size: 0;
@@ -41,7 +40,6 @@ img {
   width: 160px;
   height: 90px;
   background: url(/blue_fila.50f9621c.png) no-repeat center center;
-  margin-left: 30px;
 }
 
 /**********join section************/

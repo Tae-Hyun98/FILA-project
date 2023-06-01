@@ -622,8 +622,6 @@ filterSele.addEventListener('change', function () {
   }
 });
 
-//스포츠별
-
 //가격정렬
 var priceFilter = document.querySelectorAll('.price');
 var price39000 = _sub_data.default.filter(function (pr39) {
@@ -811,8 +809,6 @@ function paginationFunc(obj) {
         currentPage = idx;
         paginationFunc(obj);
       }
-      console.log(idx);
-      console.log(currentPage);
     });
     if (currentPage === idx) {
       pageBtn[idx].classList.add('active');
@@ -864,7 +860,7 @@ function priobj(obj) {
     var subImgBox = document.createElement('div');
     subImgBox.setAttribute('class', 'product_img');
     var imgLink = document.createElement('a');
-    imgLink.setAttribute('href', '../detail.html');
+    imgLink.setAttribute('href', './detail.html');
     subImgBox.appendChild(imgLink);
     var subImg = document.createElement('img');
     subImg.setAttribute('src', obj[_i2].src);
@@ -872,7 +868,7 @@ function priobj(obj) {
     var detailDiv = document.createElement('div');
     detailDiv.setAttribute('class', 'detail');
     var detailLink = document.createElement('a');
-    detailLink.setAttribute('href', '../detail.html');
+    detailLink.setAttribute('href', './detail.html');
     detailDiv.appendChild(detailLink);
 
     //상품박스 호버했을때
@@ -939,77 +935,6 @@ function priobj(obj) {
 }
 paginationFunc(_sub_data.default);
 
-//페이지네이션
-/* const dataLeng = subData.length;
-const currentPage = 1;
-const onePage = 20; //한페이지에뜰 상품
-const pageCount = 3; //한화면에 보여질 페이지개수
-const totalPage = Math.ceil(dataLeng / onePage); //총페이지수
-const pageGroup = Math.ceil(currentPage / pageCount); //페이지네이션그룹
-
-const pages = document.getElementById('pages');
-const pageCont = Math.ceil(dataLeng / onePage);
-subProduct.append(pages)
-let last = pageGroup * pageCount; //마지막페이지번호
-let first = last - (pageCount - 1); //한페이지 그룹의 첫번째페이지 번호
-
-const next = last + 1;
-const prev = first - 1;
-
-if (prev >= 0) {
-  pages.innerHTML += `<a href='#!' class='prev'><</a>`
-}
-
-for (let i = 1; i <= pageCont; i++) {
-  pages.innerHTML += `<a href='#!' class='pg'>${i}</a>`;
-}
-
-if (last <= totalPage) {
-  pages.innerHTML += `<a href='#!' class='next'>></a>`
-}
-
-//page버튼에 idx값 반환
-const pageBtn = document.querySelectorAll('.pg');
-pageBtn.forEach((item, idx) => {
-  item.addEventListener('click', () => {
-    displayData(idx);
-  });
-});
- */
-
-/* function displayData(idx) {
-  const product = document.querySelectorAll('.product_box');
-  const prevBtn = document.querySelector('.prev');
-  const nextBtn = document.querySelector('.next');
-  let productArray = [...product];
-  let start = idx * onePage;
-  let end = start + onePage;
-
-  for (let sd of productArray) {
-    sd.style.display = 'none';
-  }
-
-  let subSlice = productArray.slice(start, end);
-
-  for (let ss of subSlice) {
-    ss.style.display = '';
-  }
-
-  for (let pb of pageBtn) {
-    pb.classList.remove('active');
-  }
-  pageBtn[idx].classList.add('active');
-
-  prevBtn.addEventListener('click', () => {
-    if (idx > 0) {
-      displayData(idx - 1);
-    }
-  });
-
-
-}
-displayData(0) */
-
 //상품4개, 5개보기버튼
 var listCol = document.querySelector('.list_wrap');
 var col4Btn = document.querySelector('.col4_btn');
@@ -1023,49 +948,9 @@ col5Btn.addEventListener('click', function () {
   listCol.classList.remove('col_4');
 });
 
-//스크롤시 헤더
-var scr = document.querySelector('.scroll');
-window.addEventListener("wheel", function (e) {
-  var scrollUp = e.deltaY <= 0;
-  var scrollDown = e.deltaY > 0;
-  if (scrollDown && scrollY >= 100) {
-    scr.classList.add('scr_down');
-    scr.classList.remove('scr_up');
-  } else if (scrollUp && scrollY === 0) {
-    scr.classList.remove('scr_up');
-    scr.classList.remove('scr_down');
-  } else if (scrollUp && scrollY !== 0) {
-    scr.classList.add('scr_up');
-    scr.classList.remove('scr_down');
-  }
-});
-window.addEventListener("scroll", function () {
-  if (scrollY === 0) {
-    scr.classList.remove('scr_up');
-    scr.classList.remove('scr_down');
-  }
-});
-
-//lnb마우스호버시
-var li = document.querySelectorAll('.header .lnb>ul>li');
-li.forEach(function (lis) {
-  lis.addEventListener('mouseover', function () {
-    scr.classList.add('bg_on');
-  });
-  lis.addEventListener('mouseout', function () {
-    scr.classList.remove('bg_on');
-  });
-});
-
-//검색버튼 클릭시 검색창
-var searchOpen = document.getElementById('search');
-var searchClose = document.getElementById('close');
-searchOpen.addEventListener('click', function () {
-  scr.classList.add('search_on');
-});
-searchClose.addEventListener('click', function () {
-  scr.classList.remove('search_on');
-});
+//상품개수표시
+var totalProduct = document.getElementById('total');
+totalProduct.innerHTML = _sub_data.default.length;
 
 //필터클릭시 아래로 필터다운
 var filterBtn = document.querySelector('.filter_btn a');
@@ -1157,70 +1042,6 @@ var _loop5 = function _loop5(_i6) {
 for (var _i6 = 0; _i6 < genderChk.length; _i6++) {
   _loop5(_i6);
 }
-
-//footer family
-var familySite = document.getElementById('family_site');
-familySite.addEventListener('change', function (e) {
-  var options = e.currentTarget.options;
-  var optionIndex = options.selectedIndex;
-  var openNewWindow = window.open('about:blank');
-  openNewWindow.location.href = options[optionIndex].value;
-});
-
-//상품개수표시
-var totalProduct = document.getElementById('total');
-totalProduct.innerHTML = _sub_data.default.length;
-
-//탑,바텀버튼
-var topBtn = document.querySelector('.top');
-var bottomBtn = document.querySelector('.bottom');
-window.addEventListener('scroll', function () {
-  if (window.scrollY > 300 && window.scrollY < 2500) {
-    gsap.to(bottomBtn, 0.1, {
-      opacity: 1,
-      visibility: 'visible'
-    });
-    gsap.to(topBtn, 0.1, {
-      opacity: 1,
-      visibility: 'visible'
-    });
-  } else if (window.scrollY >= 2500) {
-    gsap.to(topBtn, 0.1, {
-      opacity: 1,
-      visibility: 'visible'
-    });
-    gsap.to(bottomBtn, 0.1, {
-      opacity: 0,
-      visibility: 'hidden'
-    });
-  } else {
-    gsap.to(topBtn, 0.1, {
-      opacity: 0,
-      visibility: 'hidden'
-    });
-    gsap.to(bottomBtn, 0.1, {
-      opacity: 0,
-      visibility: 'hidden'
-    });
-  }
-});
-topBtn.addEventListener('click', function () {
-  gsap.to(window, 0.5, {
-    scrollTo: 0
-  });
-});
-bottomBtn.addEventListener('click', function () {
-  gsap.to(window, 0.5, {
-    scrollTo: 7000
-  });
-});
-
-//팝업
-var popup = document.querySelector('.popup');
-var closeBtn = document.getElementById('close_btn');
-closeBtn.addEventListener('click', function () {
-  popup.style.display = 'none';
-});
 },{"./sub_data.js":"js/sub_data.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -1246,7 +1067,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54820" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64449" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
