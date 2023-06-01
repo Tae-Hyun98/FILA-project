@@ -59,8 +59,8 @@ familySite.addEventListener('change', (e) => {
   let openNewWindow = window.open('about:blank');
 
   openNewWindow.location.href = options[optionIndex].value;
-});
- */
+}); */
+
 
 
 //탑,바텀버튼
@@ -113,3 +113,9 @@ popupClose.addEventListener('click', () => {
 });
 
 
+
+/* const footer = document.querySelector('.footer');
+
+fetch('./footer.html')
+.then(res => res.text())
+.then(data => footer.innerHTML = data); */
