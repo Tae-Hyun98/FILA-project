@@ -133,6 +133,104 @@ colorChk.forEach((color) => {
   });
 })
 
+
+const pages = document.getElementById('pages');
+let currentPage = 0;
+
+//페이지네이션 생성함수
+function paginationFunc(obj) {
+  const onePage = 20; //한페이지에뜰 상품
+
+  const totalItem = obj.length;
+  if (totalItem <= onePage) {
+    priobj(obj);
+  }
+
+  const startIndex = currentPage * onePage;
+  const endIndex = startIndex + onePage;
+  const pageData = obj.slice(startIndex, endIndex);
+  const totalPage = Math.ceil(obj.length / onePage);
+  priobj(pageData);
+
+  //페이지네이션 이전,다음 숫자버튼생성
+  let pagination = '';
+
+  if (currentPage > 0) {
+    pagination += `<a href="#!" class="first_prev"><<</a>`;
+  }
+
+  if (currentPage > 0) {
+    pagination += `<a href="#!" class="prev"><</a>`;
+  }
+
+  for (let i = 1; i <= totalPage; i++) {
+    pagination += `<a href="#!" class="pg">${i}</a>`
+  }
+
+  if (currentPage < totalPage - 1) {
+    pagination += `<a href="#!" class="next">></a>`;
+  }
+
+  if (currentPage < totalPage - 1) {
+    pagination += `<a href="#!" class="last_next">>></a>`;
+  }
+
+  pages.innerHTML = pagination;
+
+  const pageBtn = document.querySelectorAll('.pg');
+  const firstBtn = document.querySelector('.first_prev');
+  const lastBtn = document.querySelector('.last_next');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+
+  //페이지네이션에 버튼클릭시 이동과 active부여
+  pageBtn.forEach((item, idx) => {
+    item.addEventListener('click', () => {
+      for (let pp of pageBtn) {
+        pp.classList.remove('active')
+      }
+      if (currentPage !== idx) {
+        currentPage = idx
+        paginationFunc(obj)
+      }
+      console.log(idx)
+      console.log(currentPage)
+    })
+    if (currentPage === idx) {
+      pageBtn[idx].classList.add('active');
+    }
+  })
+
+  //이전버튼, 처음으로버튼
+  if (currentPage > 0) {
+    prevBtn.addEventListener('click', () => {
+      currentPage--;
+      paginationFunc(obj)
+    });
+
+    firstBtn.addEventListener('click', () => {
+      currentPage = 0;
+      paginationFunc(obj);
+    });
+
+  }
+
+  //다음버튼, 마지막으로버튼
+  if (currentPage < totalPage - 1) {
+    nextBtn.addEventListener('click', () => {
+      currentPage++;
+      paginationFunc(obj)
+    })
+
+    lastBtn.addEventListener('click', () => {
+      currentPage = totalPage - 1;
+      paginationFunc(obj);
+    });
+  }
+
+}
+
+
 //리스트 객체함수
 function priobj(obj) {
   productList.innerHTML = '';
@@ -225,83 +323,6 @@ function priobj(obj) {
     subProduct.appendChild(productList);
     subProduct.append(pages)
   }
-}
-
-
-
-
-
-const pages = document.getElementById('pages');
-let currentPage = 0;
-const onePage = 20; //한페이지에뜰 상품
-
-//페이지네이션 생성함수
-function paginationFunc(obj) {
-  const totalItem = obj.length;
-  if (totalItem <= onePage) {
-    priobj(obj);
-  }
-
-  const startIndex = currentPage * onePage;
-  const endIndex = startIndex + onePage;
-  const pageData = obj.slice(startIndex, endIndex);
-  const totalPage = Math.ceil(obj.length / onePage);
-  priobj(pageData);
-
-  let pagination = '';
-
-  if (currentPage > 0) {
-    pagination += `<a href="#!" class="prev"><</a>`;
-  }
-
-  for (let i = 1; i <= totalPage; i++) {
-    pagination += `<a href="#!" class="pg">${i}</a>`
-  }
-
-  if (currentPage < totalPage - 1) {
-    pagination += `<a href="#!" class="next">></a>`;
-  }
-
-  pages.innerHTML = pagination;
-  const pageBtn = document.querySelectorAll('.pg');
-
-  const prevBtn = document.querySelector('.prev');
-  const nextBtn = document.querySelector('.next');
-
-  pageBtn.forEach((item, idx) => {
-    item.addEventListener('click', () => {
-      for (let pp of pageBtn) {
-        pp.classList.remove('active')
-      }
-      if (currentPage !== idx) {
-        currentPage = idx
-        paginationFunc(obj)
-      }
-      console.log(idx)
-      console.log(currentPage)
-    })
-    if (currentPage === idx) {
-      pageBtn[idx].classList.add('active');
-    }
-  })
-
-  if (currentPage > 0) {
-    prevBtn.addEventListener('click', () => {
-      pages.innerHTML = ''
-      currentPage--;
-      paginationFunc(obj)
-    })
-  }
-
-  if (currentPage < totalPage - 1) {
-    nextBtn.addEventListener('click', () => {
-      pages.innerHTML = ''
-      currentPage++;
-      paginationFunc(obj)
-    })
-  }
-
-
 }
 
 paginationFunc(subData);
