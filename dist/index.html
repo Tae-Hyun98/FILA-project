@@ -15,7 +15,7 @@
   <script src="/jquery.scrollTo.min.119b2d33.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="/import-jquery.89547f03.js"></script>
-  <script src="/main.fb6bbcaf.js" defer=""></script>
+  <script type="module" src="/main.fb6bbcaf.js" defer=""></script>
   <script src="/mainswiper.d9d5165e.js" defer=""></script>
 
   <!-- gsap -->
@@ -496,7 +496,7 @@ $(function () {
           </div>
         </div>
 
-        <div class="rankSwiper">
+        <div class="swiper rankSwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="rank_img">
@@ -659,6 +659,20 @@ $(function () {
         </div>
         <div class="countdown_box">
           <h1>FILA NEW EDITION</h1>
+          <div class="count">
+            <span class="time">
+              <p class="day"></p>
+            </span>
+            <span class="time">
+              <p class="hour"></p>
+            </span>
+            <span class="time">
+              <p class="min"></p>
+            </span>
+            <span class="time">
+              <p class="sec"></p>
+            </span>
+          </div>
           <p id="date"></p>
         </div>
       </div>
@@ -677,7 +691,7 @@ $(function () {
       </div>
 
       <div class="newSwiper_box">
-        <div class="newSwiper">
+        <div class="swiper newSwiper">
           <div class="swiper-wrapper">
             <!-- Slides -->
             <div class="swiper-slide">
@@ -1032,7 +1046,7 @@ $(function () {
         <h1>SNS</h1>
         <div class="sns_box">
           <ul class="sns_list">
-            <li>
+            <li class="sa">
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/01.640d710e.jpg);">
                 <div class="sns_hover">
@@ -1047,7 +1061,7 @@ $(function () {
 
             </li>
 
-            <li>
+            <li class="sa">
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/02.b92d687e.jpg);">
                 <div class="sns_hover">
@@ -1061,7 +1075,7 @@ $(function () {
               </a>
             </li>
 
-            <li>
+            <li class="sa">
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/03.f02b0eaf.jpg);">
                 <div class="sns_hover">
@@ -1075,7 +1089,7 @@ $(function () {
               </a>
             </li>
 
-            <li>
+            <li class="sa">
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/04.4f7dd0e2.jpg);">
                 <div class="sns_hover">
@@ -1089,7 +1103,7 @@ $(function () {
               </a>
             </li>
 
-            <li>
+            <li class="sa">
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/05.36b2130b.jpg);">
                 <div class="sns_hover">
@@ -1103,7 +1117,7 @@ $(function () {
               </a>
             </li>
 
-            <li>
+            <li class="sb">
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/06.9c49d177.jpg);">
                 <div class="sns_hover">
@@ -1117,7 +1131,7 @@ $(function () {
               </a>
             </li>
 
-            <li>
+            <li class="sb">
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/07.b5a468f5.jpg);">
                 <div class="sns_hover">
@@ -1132,7 +1146,7 @@ $(function () {
               </a>
             </li>
 
-            <li>
+            <li class="sb">
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/08.466bc2ab.jpg);">
                 <div class="sns_hover">
@@ -1146,7 +1160,7 @@ $(function () {
               </a>
             </li>
 
-            <li>
+            <li class="sb">
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/09.9a937367.jpg);">
                 <div class="sns_hover">
@@ -1159,11 +1173,10 @@ $(function () {
                     <p>#화이트라인 팝업스토어</p>
                   </div>
                 </div>
-
               </a>
             </li>
 
-            <li>
+            <li class="sb">
               <a href="#!">
                 <img src="/base.32aace55.png" alt="sns" style="background-image:url(/10.5df629fb.jpg);">
                 <div class="sns_hover">

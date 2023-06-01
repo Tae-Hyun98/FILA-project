@@ -300,6 +300,46 @@ var subData = [{
   src: "./img/Sub_img/22.jpg",
   review: 0,
   color: 'blue'
+}, {
+  id: 23,
+  category: "공용",
+  name: "노카라 퀄팅 자켓",
+  price: 89000,
+  src: "./img/Sub_img/25.jpg",
+  review: 10,
+  color: 'green'
+}, {
+  id: 24,
+  category: "공용 신상품 라이프스타일",
+  name: "<온라인 단독>컬러블럭킹 아노락",
+  price: 109000,
+  src: "./img/Sub_img/28.jpg",
+  review: 4,
+  color: 'mix'
+}, {
+  id: 25,
+  category: "공용 테니스",
+  name: "<온라인 단독>Fila tennis 하프팬츠",
+  price: 59000,
+  src: "./img/Sub_img/29.jpg",
+  review: 14,
+  color: 'green'
+}, {
+  id: 26,
+  category: "남성 테니스",
+  name: "글로벌 패턴 반바지",
+  price: 65000,
+  src: "./img/Sub_img/44.jpg",
+  review: 10,
+  color: 'blue'
+}, {
+  id: 27,
+  category: "공용 라이프스타일",
+  name: "헤리티지 오버핏 케이블 가디건",
+  price: 139000,
+  src: "./img/Sub_img/40.jpg",
+  review: 12,
+  color: 'navy'
 }];
 var _default = subData;
 exports.default = _default;
@@ -308,6 +348,9 @@ exports.default = _default;
 
 var _sub_data = _interopRequireDefault(require("./sub_data.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 var subProduct = document.querySelector('.list_wrap');
 var productList = document.querySelector('.product_list');
 
@@ -318,29 +361,36 @@ filterSele.addEventListener('change', function () {
     var name = _sub_data.default.sort(function (a, b) {
       return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
     }); //이름 오름차순
-    priobj(name);
+    currentPage = 0;
+    paginationFunc(name);
   } else if (filterSele.value === 'desc') {
     var desc = _sub_data.default.sort(function (a, b) {
       return a.price - b.price;
     }); //가격내림차순
-    priobj(desc);
+    currentPage = 0;
+    paginationFunc(desc);
   } else if (filterSele.value === 'asc') {
     var asc = _sub_data.default.sort(function (a, b) {
       return b.price - a.price;
     }); //가격오름차순
-    priobj(asc);
+    currentPage = 0;
+    paginationFunc(asc);
   } else if (filterSele.value === 'new') {
     var newProduct = _sub_data.default.sort(function (a, b) {
       return a.id > b.id ? -1 : a.id < b.id ? 1 : 0;
     }); //신상품
-    priobj(newProduct);
+    currentPage = 0;
+    paginationFunc(newProduct);
   } else if (filterSele.value === 'review') {
     var review = _sub_data.default.sort(function (a, b) {
       return a.review > b.review ? -1 : a.review < b.review ? 1 : 0;
     }); //리뷰순정렬
-    priobj(review);
+    currentPage = 0;
+    paginationFunc(review);
   }
 });
+
+//스포츠별
 
 //가격정렬
 var priceFilter = document.querySelectorAll('.price');
@@ -359,23 +409,29 @@ var price69000 = _sub_data.default.filter(function (pr69) {
 var price79000 = _sub_data.default.filter(function (pr79) {
   return pr79.price > 79000;
 });
-for (var a = 0; a < priceFilter.length; a++) {
-  priceFilter[a].addEventListener('click', function () {
+priceFilter.forEach(function (price) {
+  price.addEventListener('click', function () {
     if (priceFilter[0].checked) {
-      priobj(price39000);
+      currentPage = 0;
+      paginationFunc(price39000);
     } else if (priceFilter[1].checked) {
-      priobj(price49000);
+      currentPage = 0;
+      paginationFunc(price49000);
     } else if (priceFilter[2].checked) {
-      priobj(price59000);
+      currentPage = 0;
+      paginationFunc(price59000);
     } else if (priceFilter[3].checked) {
-      priobj(price69000);
+      currentPage = 0;
+      paginationFunc(price69000);
     } else if (priceFilter[4].checked) {
-      priobj(price79000);
+      currentPage = 0;
+      paginationFunc(price79000);
     } else {
-      priobj(_sub_data.default);
+      currentPage = 0;
+      paginationFunc(_sub_data.default);
     }
   });
-}
+});
 
 //filter color check
 var colorChk = document.querySelectorAll('.color');
@@ -424,38 +480,49 @@ var red = _sub_data.default.filter(function (Color) {
 var beige = _sub_data.default.filter(function (Color) {
   return Color.color === 'beige';
 });
-for (var _i = 0; _i < colorChk.length; _i++) {
-  colorChk[_i].addEventListener('click', function () {
+colorChk.forEach(function (color) {
+  color.addEventListener('click', function () {
     if (colorChk[0].checked) {
-      priobj(white);
+      currentPage = 0;
+      paginationFunc(white);
     } else if (colorChk[1].checked) {
-      priobj(black);
+      currentPage = 0;
+      paginationFunc(black);
     } else if (colorChk[2].checked) {
-      priobj(gray);
+      currentPage = 0;
+      paginationFunc(gray);
     } else if (colorChk[3].checked) {
-      priobj(green);
+      currentPage = 0;
+      paginationFunc(green);
     } else if (colorChk[4].checked) {
-      priobj(blue);
+      currentPage = 0;
+      paginationFunc(blue);
     } else if (colorChk[5].checked) {
-      priobj(mix);
+      currentPage = 0;
+      paginationFunc(mix);
     } else if (colorChk[6].checked) {
-      priobj(navy);
+      currentPage = 0;
+      paginationFunc(navy);
     } else if (colorChk[7].checked) {
-      priobj(orange);
+      currentPage = 0;
+      paginationFunc(orange);
     } else if (colorChk[8].checked) {
-      priobj(red);
+      currentPage = 0;
+      paginationFunc(red);
     } else if (colorChk[9].checked) {
-      priobj(beige);
+      currentPage = 0;
+      paginationFunc(beige);
     } else {
-      priobj(_sub_data.default);
+      currentPage = 0;
+      paginationFunc(_sub_data.default);
     }
   });
-}
+});
 
 //리스트 객체함수
 function priobj(obj) {
   productList.innerHTML = '';
-  for (var _i2 = 0; _i2 < obj.length; _i2++) {
+  for (var _i = 0; _i < obj.length; _i++) {
     //서브 상품박스
     var subDiv = document.createElement('div');
     subDiv.setAttribute('class', 'product_box');
@@ -465,7 +532,7 @@ function priobj(obj) {
     imgLink.setAttribute('href', '../detail.html');
     subImgBox.appendChild(imgLink);
     var subImg = document.createElement('img');
-    subImg.setAttribute('src', obj[_i2].src);
+    subImg.setAttribute('src', obj[_i].src);
     imgLink.appendChild(subImg);
     var detailDiv = document.createElement('div');
     detailDiv.setAttribute('class', 'detail');
@@ -496,26 +563,26 @@ function priobj(obj) {
     var cateGory = document.createElement('p');
     cateGory.setAttribute('class', 'category');
     detailLink.appendChild(cateGory);
-    var cateGoryText = document.createTextNode(obj[_i2].category);
+    var cateGoryText = document.createTextNode(obj[_i].category);
     cateGory.appendChild(cateGoryText);
 
     //상품이름
     var productName = document.createElement('p');
     productName.setAttribute('class', 'product_name');
     detailLink.appendChild(productName);
-    var nameText = document.createTextNode(obj[_i2].name);
+    var nameText = document.createTextNode(obj[_i].name);
     productName.appendChild(nameText);
 
     //상품가격
     var productPrice = document.createElement('p');
     productPrice.setAttribute('class', 'product_price');
     detailLink.appendChild(productPrice);
-    var namePrice = document.createTextNode(obj[_i2].price.toLocaleString('ko-KR') + '원');
+    var namePrice = document.createTextNode(obj[_i].price.toLocaleString('ko-KR') + '원');
     productPrice.appendChild(namePrice);
 
     //리뷰수
     var reviSpan = document.createElement('span');
-    var reviCount = document.createTextNode('★(' + obj[_i2].review + ')');
+    var reviCount = document.createTextNode('★(' + obj[_i].review + ')');
     productPrice.appendChild(reviSpan);
     reviSpan.appendChild(reviCount);
 
@@ -532,182 +599,150 @@ function priobj(obj) {
     subDiv.appendChild(detailDiv);
     productList.appendChild(subDiv);
     subProduct.appendChild(productList);
+    subProduct.append(pages);
   }
 }
-priobj(_sub_data.default);
+var pages = document.getElementById('pages');
+var currentPage = 0;
+var onePage = 20; //한페이지에뜰 상품
 
-//가격필터
-/* const listBlack = subData.filter(function (data) {
-  return data.color === 'black';
-});
-console.log(listBlack)  */
-/* colorChk.addEventListener('click', () => {
-  if (filterSele.value === 'name') {
-    subData.filter(function (a, b) { //이름 오름차순
-      return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
-    });
-    productList.innerHTML = '';
-    bindData();
-  } else if (filterSele.value === 'desc') {
-    subData.sort(function (a, b) { //가격내림차순
-      return a.price - b.price;
-    });
-    productList.innerHTML = '';
-    bindData();
-  } else if (filterSele.value === 'asc') {
-    subData.sort(function (a, b) { //가격오름차순
-      return b.price - a.price;
-    });
-    productList.innerHTML = '';
-    bindData();
+//페이지네이션 생성함수
+function paginationFunc(obj) {
+  var totalItem = obj.length;
+  if (totalItem <= onePage) {
+    priobj(obj);
   }
-}); */
-
-/* colorChk.forEach(chk => chk.addEventListener('click', () => { 
-for(let i=0;i<lists.length;i++){
-    if (lists[i].color === 'black') {
-      subBox[i].style.display = 'block'
-    } else if (lists[i].color != 'black') {
-      subBox[i].style.display = 'none'
+  var startIndex = currentPage * onePage;
+  var endIndex = startIndex + onePage;
+  var pageData = obj.slice(startIndex, endIndex);
+  var totalPage = Math.ceil(obj.length / onePage);
+  priobj(pageData);
+  var pagination = '';
+  if (currentPage > 0) {
+    pagination += "<a href=\"#!\" class=\"prev\"><</a>";
+  }
+  for (var _i2 = 1; _i2 <= totalPage; _i2++) {
+    pagination += "<a href=\"#!\" class=\"pg\">".concat(_i2, "</a>");
+  }
+  if (currentPage < totalPage - 1) {
+    pagination += "<a href=\"#!\" class=\"next\">></a>";
+  }
+  pages.innerHTML = pagination;
+  var pageBtn = document.querySelectorAll('.pg');
+  var prevBtn = document.querySelector('.prev');
+  var nextBtn = document.querySelector('.next');
+  pageBtn.forEach(function (item, idx) {
+    item.addEventListener('click', function () {
+      var _iterator = _createForOfIteratorHelper(pageBtn),
+        _step;
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var pp = _step.value;
+          pp.classList.remove('active');
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+      if (currentPage !== idx) {
+        currentPage = idx;
+        paginationFunc(obj);
+      }
+      console.log(idx);
+      console.log(currentPage);
+    });
+    if (currentPage === idx) {
+      pageBtn[idx].classList.add('active');
     }
-  }
-}));
- */
-
-/* for (let i = 0; i < colorChk.length; i++) {
-  colorChk[i].addEventListener('click', () => {
-    if (colorChk[i].checked && lists[i].color === 'black') {
-      productList[i].style.display = 'none';
-    } else if (!colorChk[i].checked) {
-      productList[i].style.display = 'flex'
-    }
-  })
-} */
-
-/* const input1 = document.getElementById('price01');
-
-input1.addEventListener('click', () => {
-  if (input1.checked) {
-    subData.filter(function (e) {
-      return e.price <= 39000;
+  });
+  if (currentPage > 0) {
+    prevBtn.addEventListener('click', function () {
+      pages.innerHTML = '';
+      currentPage--;
+      paginationFunc(obj);
     });
-    /* let result = subData.filter(sub => sub.price <= 39000); 
-    productList.innerHTML = '';
-    bindData();
   }
-
-}); */
-
-/* function priceFilter() {
-  function getPrice(value) {
-    return value.price <= 39000;
+  if (currentPage < totalPage - 1) {
+    nextBtn.addEventListener('click', function () {
+      pages.innerHTML = '';
+      currentPage++;
+      paginationFunc(obj);
+    });
   }
-  const newPrice=subData.filter(getPrice);
-} */
-/* colorLabel[1].addEventListener('click', () => {
-  subData.filter(function (emp) {
-    if (emp.color === 'black') {
-      return emp;
-    }
-    productList.innerHTML = '';
-    bindData();
+}
+paginationFunc(_sub_data.default);
+
+//페이지네이션
+/* const dataLeng = subData.length;
+const currentPage = 1;
+const onePage = 20; //한페이지에뜰 상품
+const pageCount = 3; //한화면에 보여질 페이지개수
+const totalPage = Math.ceil(dataLeng / onePage); //총페이지수
+const pageGroup = Math.ceil(currentPage / pageCount); //페이지네이션그룹
+
+const pages = document.getElementById('pages');
+const pageCont = Math.ceil(dataLeng / onePage);
+subProduct.append(pages)
+let last = pageGroup * pageCount; //마지막페이지번호
+let first = last - (pageCount - 1); //한페이지 그룹의 첫번째페이지 번호
+
+const next = last + 1;
+const prev = first - 1;
+
+if (prev >= 0) {
+  pages.innerHTML += `<a href='#!' class='prev'><</a>`
+}
+
+for (let i = 1; i <= pageCont; i++) {
+  pages.innerHTML += `<a href='#!' class='pg'>${i}</a>`;
+}
+
+if (last <= totalPage) {
+  pages.innerHTML += `<a href='#!' class='next'>></a>`
+}
+
+//page버튼에 idx값 반환
+const pageBtn = document.querySelectorAll('.pg');
+pageBtn.forEach((item, idx) => {
+  item.addEventListener('click', () => {
+    displayData(idx);
   });
 });
  */
 
-/* //초기상품리스트 
-function bindData() {
-  for (let i = 0; i < subData.length; i++) {
-    //서브 상품박스
-    const subDiv = document.createElement('div');
-    subDiv.setAttribute('class', 'product_box');
+/* function displayData(idx) {
+  const product = document.querySelectorAll('.product_box');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+  let productArray = [...product];
+  let start = idx * onePage;
+  let end = start + onePage;
 
-    const subImgBox = document.createElement('div');
-    subImgBox.setAttribute('class', 'product_img');
-
-    const imgLink = document.createElement('a');
-    imgLink.setAttribute('href', "#!");
-    subImgBox.appendChild(imgLink);
-
-    const subImg = document.createElement('img');
-    subImg.setAttribute('src', subData[i].src);
-    imgLink.appendChild(subImg);
-
-    const detailDiv = document.createElement('div');
-    detailDiv.setAttribute('class', 'detail');
-
-    const detailLink = document.createElement('a');
-    detailLink.setAttribute('href', '#!');
-    detailDiv.appendChild(detailLink);
-
-    //상품박스 호버했을때
-    const hoverDiv = document.createElement('div');
-    hoverDiv.setAttribute('class', 'hover_box');
-    subImgBox.appendChild(hoverDiv);
-
-    const cartDiv = document.createElement('div');
-    hoverDiv.appendChild(cartDiv);
-    const cartSpan = document.createElement('span');
-    cartSpan.setAttribute('class', 'material-icons-outlined');
-    const cartText = document.createTextNode('shopping_cart');
-    cartDiv.appendChild(cartSpan);
-    cartSpan.appendChild(cartText);
-
-    const likeDiv = document.createElement('div');
-    hoverDiv.appendChild(likeDiv);
-    const likeSpan = document.createElement('span');
-    likeSpan.setAttribute('class', 'material-icons-outlined');
-    const likeText = document.createTextNode('favorite');
-    likeDiv.appendChild(likeSpan);
-    likeSpan.appendChild(likeText);
-
-    //카테고리
-    const cateGory = document.createElement('p');
-    cateGory.setAttribute('class', 'category');
-    detailLink.appendChild(cateGory);
-    const cateGoryText = document.createTextNode(subData[i].category);
-    cateGory.appendChild(cateGoryText);
-
-    //상품이름
-    const productName = document.createElement('p');
-    productName.setAttribute('class', 'product_name');
-    detailLink.appendChild(productName);
-    const nameText = document.createTextNode(subData[i].name);
-    productName.appendChild(nameText);
-
-    //상품가격
-    const productPrice = document.createElement('p');
-    productPrice.setAttribute('class', 'product_price');
-    detailLink.appendChild(productPrice);
-    const namePrice = document.createTextNode(subData[i].price.toLocaleString('ko-KR') + '원');
-    productPrice.appendChild(namePrice);
-
-    //리뷰수
-    const reviSpan = document.createElement('span');
-    const reviCount = document.createTextNode('★(' + subData[i].review + ')');
-    productPrice.appendChild(reviSpan);
-    reviSpan.appendChild(reviCount);
-
-    //BUY버튼
-    const buyDiv = document.createElement('div');
-    buyDiv.setAttribute('class', 'buy_btn');
-    detailDiv.appendChild(buyDiv);
-
-    const buyA = document.createElement('a');
-    buyA.setAttribute('href', '#!');
-    buyDiv.appendChild(buyA);
-
-    const buyText = document.createTextNode('BUY');
-    buyA.appendChild(buyText);
-
-    subDiv.appendChild(subImgBox);
-    subDiv.appendChild(detailDiv);
-    productList.appendChild(subDiv);
-    subProduct.appendChild(productList);
+  for (let sd of productArray) {
+    sd.style.display = 'none';
   }
 
+  let subSlice = productArray.slice(start, end);
+
+  for (let ss of subSlice) {
+    ss.style.display = '';
+  }
+
+  for (let pb of pageBtn) {
+    pb.classList.remove('active');
+  }
+  pageBtn[idx].classList.add('active');
+
+  prevBtn.addEventListener('click', () => {
+    if (idx > 0) {
+      displayData(idx - 1);
+    }
+  });
+
+
 }
-bindData(); */
+displayData(0) */
 
 //상품4개, 5개보기버튼
 var listCol = document.querySelector('.list_wrap');
@@ -747,14 +782,14 @@ window.addEventListener("scroll", function () {
 
 //lnb마우스호버시
 var li = document.querySelectorAll('.header .lnb>ul>li');
-for (var _i3 = 0; _i3 < li.length; _i3++) {
-  li[_i3].addEventListener("mouseover", function (e) {
+li.forEach(function (lis) {
+  lis.addEventListener('mouseover', function () {
     scr.classList.add('bg_on');
   });
-  li[_i3].addEventListener("mouseout", function (e) {
+  lis.addEventListener('mouseout', function () {
     scr.classList.remove('bg_on');
   });
-}
+});
 
 //검색버튼 클릭시 검색창
 var searchOpen = document.getElementById('search');
@@ -788,73 +823,73 @@ filterBtn.addEventListener('click', function () {
 //filter check
 var sportChk = document.querySelectorAll('.sport');
 var sportLabel = document.querySelectorAll('.sport_filter label');
-var _loop2 = function _loop2(_i4) {
-  sportChk[_i4].addEventListener('click', function () {
-    if (sportChk[_i4].checked) {
-      sportLabel[_i4].style.color = '#000';
-      sportLabel[_i4].style.fontWeight = '700';
+var _loop2 = function _loop2(_i3) {
+  sportChk[_i3].addEventListener('click', function () {
+    if (sportChk[_i3].checked) {
+      sportLabel[_i3].style.color = '#000';
+      sportLabel[_i3].style.fontWeight = '700';
     } else {
-      sportLabel[_i4].style.color = '#777';
-      sportLabel[_i4].style.fontWeight = '400';
+      sportLabel[_i3].style.color = '#777';
+      sportLabel[_i3].style.fontWeight = '400';
     }
   });
 };
-for (var _i4 = 0; _i4 < sportChk.length; _i4++) {
-  _loop2(_i4);
+for (var _i3 = 0; _i3 < sportChk.length; _i3++) {
+  _loop2(_i3);
 }
 
 //filter size check
 var sizeChk = document.querySelectorAll('.size');
 var sizeLabel = document.querySelectorAll('.size_filter label');
-var _loop3 = function _loop3(_i5) {
-  sizeChk[_i5].addEventListener('click', function () {
-    if (sizeChk[_i5].checked) {
-      sizeLabel[_i5].style.color = '#fff';
-      sizeLabel[_i5].style.backgroundColor = '#002053';
+var _loop3 = function _loop3(_i4) {
+  sizeChk[_i4].addEventListener('click', function () {
+    if (sizeChk[_i4].checked) {
+      sizeLabel[_i4].style.color = '#fff';
+      sizeLabel[_i4].style.backgroundColor = '#002053';
     } else {
-      sizeLabel[_i5].style.color = '#000';
-      sizeLabel[_i5].style.backgroundColor = '#fff';
+      sizeLabel[_i4].style.color = '#000';
+      sizeLabel[_i4].style.backgroundColor = '#fff';
     }
   });
 };
-for (var _i5 = 0; _i5 < sizeChk.length; _i5++) {
-  _loop3(_i5);
+for (var _i4 = 0; _i4 < sizeChk.length; _i4++) {
+  _loop3(_i4);
 }
 
 //filter price check
 var priceChk = document.querySelectorAll('.price');
 var priceLabel = document.querySelectorAll('.price_filter label');
-var _loop4 = function _loop4(_i6) {
-  priceChk[_i6].addEventListener('click', function () {
-    if (priceChk[_i6].checked) {
-      priceLabel[_i6].style.color = '#000';
-      priceLabel[_i6].style.fontWeight = '700';
+var _loop4 = function _loop4(_i5) {
+  priceChk[_i5].addEventListener('click', function () {
+    if (priceChk[_i5].checked) {
+      priceLabel[_i5].style.color = '#000';
+      priceLabel[_i5].style.fontWeight = '700';
     } else {
-      priceLabel[_i6].style.color = '#777';
-      priceLabel[_i6].style.fontWeight = '400';
+      priceLabel[_i5].style.color = '#777';
+      priceLabel[_i5].style.fontWeight = '400';
     }
   });
 };
-for (var _i6 = 0; _i6 < priceChk.length; _i6++) {
-  _loop4(_i6);
+for (var _i5 = 0; _i5 < priceChk.length; _i5++) {
+  _loop4(_i5);
 }
 
 //filter gender check
 var genderChk = document.querySelectorAll('.gender');
 var genderLabel = document.querySelectorAll('.gender_filter label');
-var _loop5 = function _loop5(_i7) {
-  genderChk[_i7].addEventListener('click', function () {
-    if (genderChk[_i7].checked) {
-      genderLabel[_i7].style.color = '#000';
-      genderLabel[_i7].style.fontWeight = '700';
+var _loop5 = function _loop5(_i6) {
+  genderChk[_i6].addEventListener('click', function () {
+    if (genderChk[_i6].checked) {
+      genderLabel[_i6].style.color = '#000';
+      genderLabel[_i6].style.fontWeight = '700';
     } else {
-      genderLabel[_i7].style.color = '#777';
-      genderLabel[_i7].style.fontWeight = '400';
+      genderLabel[_i6].style.color = '#777';
+      genderLabel[_i6].style.fontWeight = '400';
     }
   });
 };
-for (var _i7 = 0; _i7 < genderChk.length; _i7++) {
-  _loop5(_i7);
+for (var _i6 = 0; _i6 < genderChk.length; _i6++) {
+  _loop5(_i6);
 }
 
 //footer family
@@ -874,16 +909,16 @@ totalProduct.innerHTML = _sub_data.default.length;
 var topBtn = document.querySelector('.top');
 var bottomBtn = document.querySelector('.bottom');
 window.addEventListener('scroll', function () {
-  if (window.scrollY > 300 && window.scrollY < 3500) {
+  if (window.scrollY > 300 && window.scrollY < 2500) {
     gsap.to(bottomBtn, 0.1, {
       opacity: 1,
       visibility: 'visible'
     });
     gsap.to(topBtn, 0.1, {
-      opacity: 0,
-      visibility: 'hidden'
+      opacity: 1,
+      visibility: 'visible'
     });
-  } else if (window.scrollY >= 2000) {
+  } else if (window.scrollY >= 2500) {
     gsap.to(topBtn, 0.1, {
       opacity: 1,
       visibility: 'visible'
@@ -913,6 +948,8 @@ bottomBtn.addEventListener('click', function () {
     scrollTo: 7000
   });
 });
+
+//팝업
 var popup = document.querySelector('.popup');
 var closeBtn = document.getElementById('close_btn');
 closeBtn.addEventListener('click', function () {
@@ -943,7 +980,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53849" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51103" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

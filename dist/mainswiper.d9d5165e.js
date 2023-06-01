@@ -154,6 +154,7 @@ swiper.controller.control = pagingSwiper;
 var rankSwiper = new Swiper(".rankSwiper", {
   loop: true,
   loopAdditionalSlides: 1,
+  loopedSlides: 2,
   centeredSlides: true,
   slidesPerView: 3,
   observer: true,
@@ -204,15 +205,16 @@ $('.rank_order .rank_bottom ul li').click(function (e) {
 var newSwiper = new Swiper(".newSwiper", {
   loop: true,
   loopAdditionalSlides: 1,
+  loopedSlides: 2,
   centeredSlides: true,
-  slidesPerView: 3,
-  spaceBetween: 50,
-  /*  autoplay: {
-     delay: 3000,
-     disableOnInteraction: false,
-   },
-  */
-
+  slidesPerView: 'auto',
+  observer: true,
+  speed: 700,
+  observeParents: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false
+  },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
@@ -243,7 +245,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53849" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51103" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

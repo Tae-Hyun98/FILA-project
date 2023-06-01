@@ -149,14 +149,14 @@ window.addEventListener("scroll", function () {
 
 //lnb마우스호버시
 var li = document.querySelectorAll('.header .lnb>ul>li');
-for (var i = 0; i < li.length; i++) {
-  li[i].addEventListener("mouseover", function (e) {
+li.forEach(function (lis) {
+  lis.addEventListener('mouseover', function () {
     scr.classList.add('bg_on');
   });
-  li[i].addEventListener("mouseout", function (e) {
+  lis.addEventListener('mouseout', function () {
     scr.classList.remove('bg_on');
   });
-}
+});
 
 //검색버튼 클릭시 검색창
 var searchOpen = document.getElementById('search').addEventListener('click', function () {
@@ -241,8 +241,8 @@ var qtyChan = qtyNum.addEventListener('change', function () {
 var tabList = document.querySelectorAll('.sheet_menu .list li');
 var infoContents = document.querySelectorAll('.sheet_menu .content ul');
 var activeContent = '';
-for (var _i = 0; _i < tabList.length; _i++) {
-  tabList[_i].querySelector('.tab_tit').addEventListener('click', function (e) {
+for (var i = 0; i < tabList.length; i++) {
+  tabList[i].querySelector('.tab_tit').addEventListener('click', function (e) {
     e.preventDefault();
     for (var j = 0; j < tabList.length; j++) {
       tabList[j].classList.remove('on');
@@ -258,8 +258,8 @@ for (var _i = 0; _i < tabList.length; _i++) {
 var sheetList = document.querySelectorAll('.tab_menu>ul>li');
 var tabContents = document.querySelectorAll('.tab_menu .tab_cont .tab');
 var activeContents = '';
-for (var _i2 = 0; _i2 < sheetList.length; _i2++) {
-  sheetList[_i2].querySelector('.sheet_tit').addEventListener('click', function (e) {
+for (var _i = 0; _i < sheetList.length; _i++) {
+  sheetList[_i].querySelector('.sheet_tit').addEventListener('click', function (e) {
     e.preventDefault();
     for (var j = 0; j < sheetList.length; j++) {
       sheetList[j].classList.remove('on');
@@ -281,9 +281,13 @@ function RatingStar(stars) {
     star.addEventListener('click', function () {
       var i = stars.indexOf(star);
       if (star.className === starClassInactive) {
-        for (i; i >= 0; --i) stars[i].className = starClassActive;
+        for (i; i >= 0; i--) {
+          stars[i].className = starClassActive;
+        }
       } else {
-        for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
+        for (i; i < starsLength; i++) {
+          stars[i].className = starClassInactive;
+        }
       }
     });
   });
@@ -296,6 +300,7 @@ var inputId = document.getElementById('input_id');
 var inputTxt = document.getElementById('input_txt');
 var reviewList = document.querySelector('.review_list');
 var starBtn = document.querySelector('.rating');
+var raingI = document.querySelectorAll('.rating i');
 var today = new Date();
 var dayFormat = today.getFullYear() + '.' + (today.getMonth() + 1) + '.' + today.getDate();
 var count = 1;
@@ -331,23 +336,25 @@ function reviewAdd() {
     inputId.value = '';
     inputTxt.value = '';
     count++;
-
     //별점출력
     Pstar.innerHTML = starBtn.innerHTML;
     var delBtn = document.querySelectorAll('.delete');
-    var _loop = function _loop(_i3) {
-      delBtn[_i3].addEventListener('click', function () {
-        if (delBtn[_i3].parentNode.parentNode) {
+    var _loop = function _loop(_i2) {
+      delBtn[_i2].addEventListener('click', function () {
+        if (delBtn[_i2].parentNode.parentNode) {
           this.parentNode.parentNode.removeChild(this.parentNode);
         }
       });
     };
-    for (var _i3 = 0; _i3 < delBtn.length; _i3++) {
-      _loop(_i3);
+    for (var _i2 = 0; _i2 < delBtn.length; _i2++) {
+      _loop(_i2);
     }
   } else {
     alert('값을 입력하세요');
   }
+  raingI.forEach(function (item) {
+    item.setAttribute('class', 'far fa-star rating_star');
+  });
 }
 
 //문의하기
@@ -366,16 +373,13 @@ var inqContext = document.querySelector('.inq_context textarea');
 var inqList = document.querySelector('.inq_list');
 var countInq = 2;
 wriBtn.addEventListener('click', inquiryAdd);
-wriBtn.addEventListener('click', function () {
-  inqPopup.style.display = 'none';
-});
+/*  wriBtn.addEventListener('click', () => {
+     inqPopup.style.display = 'none';
+ }) */
 
-/*   let Options = inqOpt.options[inqOpt.selectedIndex].innerText; */
-
-/*   selectOpt = selectOpt.options[selectOpt.selectedIndex].value; */
-var Options = inqOpt.options[inqOpt.selectedIndex].value.innerText;
 function inquiryAdd() {
   if (inqOpt.value != '' && inqId.value != '' && inqTit.value != '' && inqContext.value != '') {
+    var optext = inqOpt.options[inqOpt.selectedIndex].text; //옵션값 text만
     var Li = document.createElement('li');
     var span = document.createElement('span');
     var _count = document.createTextNode(countInq);
@@ -386,11 +390,9 @@ function inquiryAdd() {
     var span5 = document.createElement('span');
     var answer = document.createTextNode('답변중');
     var Today = document.createTextNode(dayFormat);
-    var option = document.createTextNode(Options);
+    var option = document.createTextNode(optext);
     var userId = document.createTextNode(inqId.value);
     var inqTitle = document.createTextNode(inqTit.value);
-    //let userTxt = document.createTextNode(inqContext.value);
-
     Li.appendChild(span);
     Li.appendChild(span1);
     Li.appendChild(span2);
@@ -409,6 +411,10 @@ function inquiryAdd() {
     inqOpt.value = '';
     inqTit.value = '';
     countInq++;
+    inqPopup.style.display = 'none';
+  } else {
+    alert('입력되지 않은 칸이 있습니다.');
+    inqPopup.style.display = 'block';
   }
 }
 
@@ -480,7 +486,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53849" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51103" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

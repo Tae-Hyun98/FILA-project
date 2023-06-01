@@ -153,6 +153,17 @@ exports.default = _default;
 
 var _login_data = _interopRequireDefault(require("./login_data.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+//lnb마우스호버시
+var li = document.querySelectorAll('.header .lnb>ul>li');
+li.forEach(function (lis) {
+  lis.addEventListener('mouseover', function () {
+    scr.classList.add('bg_on');
+  });
+  lis.addEventListener('mouseout', function () {
+    scr.classList.remove('bg_on');
+  });
+});
+
 //검색버튼 클릭시 검색창
 var scr = document.querySelector('body');
 var searchOpen = document.getElementById('search');
@@ -187,10 +198,13 @@ loninBtn.addEventListener('click', function () {
     if (loginId.value !== '' && loginPw.value !== '' || loginId.value === _login_data.default[i].userid || loginPw.value === _login_data.default[i].password) {
       if (loginId.value === _login_data.default[i].userid && loginPw.value === _login_data.default[i].password) {
         alert('로그인성공');
+        return true;
       } else if (loginId.value !== _login_data.default[i].userid && loginPw.value === _login_data.default[i].password) {
         alert('아이디가 틀렸습니다.');
+        return false;
       } else if (loginId.value === _login_data.default[i].userid && loginPw.value !== _login_data.default[i].password) {
         alert('비밀번호가 틀렸습니다.');
+        return false;
       }
     }
   }
@@ -227,7 +241,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53849" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51103" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
