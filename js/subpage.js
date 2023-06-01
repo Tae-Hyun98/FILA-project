@@ -156,11 +156,11 @@ function paginationFunc(obj) {
   //페이지네이션 이전,다음 숫자버튼생성
   let pagination = '';
 
-  if (currentPage > 0) {
+  if (currentPage >= 0) {
     pagination += `<a href="#!" class="first_prev"><<</a>`;
   }
 
-  if (currentPage > 0) {
+  if (currentPage >= 0) {
     pagination += `<a href="#!" class="prev"><</a>`;
   }
 
@@ -168,11 +168,11 @@ function paginationFunc(obj) {
     pagination += `<a href="#!" class="pg">${i}</a>`
   }
 
-  if (currentPage < totalPage - 1) {
+  if (currentPage <= totalPage - 1) {
     pagination += `<a href="#!" class="next">></a>`;
   }
 
-  if (currentPage < totalPage - 1) {
+  if (currentPage <= totalPage - 1) {
     pagination += `<a href="#!" class="last_next">>></a>`;
   }
 
@@ -202,6 +202,7 @@ function paginationFunc(obj) {
     }
   })
 
+
   //이전버튼, 처음으로버튼
   if (currentPage > 0) {
     prevBtn.addEventListener('click', () => {
@@ -214,7 +215,13 @@ function paginationFunc(obj) {
       paginationFunc(obj);
     });
 
+    prevBtn.classList.remove('disable');
+    firstBtn.classList.remove('disable');
+  } else {
+    prevBtn.classList.add('disable');
+    firstBtn.classList.add('disable');
   }
+
 
   //다음버튼, 마지막으로버튼
   if (currentPage < totalPage - 1) {
@@ -227,6 +234,12 @@ function paginationFunc(obj) {
       currentPage = totalPage - 1;
       paginationFunc(obj);
     });
+
+    nextBtn.classList.remove('disable');
+    lastBtn.classList.remove('disable');
+  } else {
+    nextBtn.classList.add('disable');
+    lastBtn.classList.add('disable');
   }
 
 }

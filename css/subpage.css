@@ -1078,8 +1078,20 @@ div.col_5 .product_box .detail p.product_name {
   color: #fff;
 }
 
+#pages a.disable {
+  cursor: default;
+  color: #ccc;
+}
+
 #pages a:last-child {
   margin-right: 0;
+}
+
+#pages .first_prev,
+#pages .prev,
+#pages .next,
+#pages .last_next {
+  font-weight: 700;
 }
 
 
