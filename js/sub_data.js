@@ -440,6 +440,127 @@ const subData = [
     review: 46,
     color: 'beige'
   },
+
+  {
+    id: 45,
+    category: "남성 레귤러핏 테니스",
+    name: "테니스 퍼포먼스 헨리넥 반팔티셔츠",
+    price: 59000,
+    src: "./img/Sub_img/53.jpg",
+    review: 0,
+    color: 'white'
+  },
+
+  {
+    id: 46,
+    category: "남녀공용 테니스",
+    name: "Fila tennis 레터링 반팔티셔츠",
+    price: 35000,
+    src: "./img/Sub_img/54.jpg",
+    review: 0,
+    color: 'navy'
+  },
+
+  {
+    id: 47,
+    category: "남녀공용 라이프스타일",
+    name: "Sportslife 져지 하프팬츠",
+    price: 62000,
+    src: "./img/Sub_img/55.jpg",
+    review: 2,
+    color: 'gray'
+  },
+
+  {
+    id: 48,
+    category: "남녀공용 라이프스타일",
+    name: "Sportslife 하프팬츠",
+    price: 59000,
+    src: "./img/Sub_img/56.jpg",
+    review: 2,
+    color: 'navy'
+  },
+
+  {
+    id: 49,
+    category: "남녀공용 테니스 신상품",
+    name: "테니스 라이프 반바지",
+    price: 69000,
+    src: "./img/Sub_img/57.jpg",
+    review: 0,
+    color: 'navy'
+  },
+
+  {
+    id: 50,
+    category: "남녀공용 컴포트핏 신상품",
+    name: "인터내셔널 반팔 카라티",
+    price: 69000,
+    src: "./img/Sub_img/58.jpg",
+    review: 0,
+    color: 'blue'
+  },
+
+  {
+    id: 51,
+    category: "남녀공용 컴포트핏 신상품",
+    name: "인터내셔널 그래픽 반팔티",
+    price: 49000,
+    src: "./img/Sub_img/59.jpg",
+    review: 0,
+    color: 'white'
+  },
+
+  {
+    id: 52,
+    category: "남녀공용 레귤러핏 신상품",
+    name: "페스타 그래픽 티셔츠",
+    price: 49000,
+    src: "./img/Sub_img/60.jpg",
+    review: 1,
+    color: 'orange'
+  },
+
+  {
+    id: 53,
+    category: "남성 컴포트핏 신상품",
+    name: "핫써머 모노그램 나시티",
+    price: 49000,
+    src: "./img/Sub_img/61.jpg",
+    review: 1,
+    color: 'mix'
+  },
+
+  {
+    id: 54,
+    category: "남성 레귤러핏 트레이닝",
+    name: "퍼포먼스 PQ스판 반팔티셔츠",
+    price: 59000,
+    src: "./img/Sub_img/62.jpg",
+    review: 0,
+    color: 'red'
+  },
+
+  {
+    id: 55,
+    category: "남녀공용 컴포트핏 테니스",
+    name: "테니스 라이프 카라티셔츠",
+    price: 89000,
+    src: "./img/Sub_img/63.jpg",
+    review: 1,
+    color: 'green'
+  },
+
+  {
+    id: 56,
+    category: "남성 레귤러핏 테니스 신상품",
+    name: "테니스 퍼포먼스 스트레치 반바지",
+    price: 59000,
+    src: "./img/Sub_img/64.jpg",
+    review: 0,
+    color: 'green'
+  },
+
 ]
 
 export default subData;
