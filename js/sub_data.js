@@ -162,17 +162,17 @@ const subData = [
 
   {
     id: 17,
-    category: "공용 신상품",
-    name: "FILA ITALIA 반팔티셔츠",
-    price: 39000,
-    src: "./img/Sub_img/17.jpg",
-    review: 100,
-    color: 'blue'
+    category: "공용 라이프스타일",
+    name: "FILA CLASSIC 기모맨투맨",
+    price: 69000,
+    src: "./img/Sub_img/39.jpg",
+    review: 120,
+    color: 'black'
   },
 
   {
     id: 18,
-    category: "남성 공용 신상품",
+    category: "남성 공용",
     name: "오버핏 코쿤 볼 패딩",
     price: 139000,
     src: "./img/Sub_img/18.jpg",
@@ -182,7 +182,7 @@ const subData = [
 
   {
     id: 19,
-    category: "남성 공용 신상품",
+    category: "남성 공용",
     name: "오버핏 코쿤 볼 패딩",
     price: 139000,
     src: "./img/Sub_img/19.jpg",
@@ -193,11 +193,11 @@ const subData = [
   {
     id: 20,
     category: "공용 신상품",
-    name: "<온라인 단독>헤리티지 세리프 루즈핏 반팔티",
-    price: 38000,
-    src: "./img/Sub_img/20.jpg",
-    review: 17,
-    color: 'navy'
+    name: "FILA ITALIA 반팔티셔츠",
+    price: 39000,
+    src: "./img/Sub_img/17.jpg",
+    review: 100,
+    color: 'blue'
   },
 
   {
@@ -222,7 +222,7 @@ const subData = [
 
   {
     id: 23,
-    category: "공용",
+    category: "공용 신상품",
     name: "노카라 퀄팅 자켓",
     price: 89000,
     src: "./img/Sub_img/25.jpg",
@@ -243,7 +243,7 @@ const subData = [
 
   {
     id: 25,
-    category: "공용 테니스",
+    category: "공용 신상품 테니스",
     name: "<온라인 단독>Fila tennis 하프팬츠",
     price: 59000,
     src: "./img/Sub_img/29.jpg",
@@ -253,7 +253,7 @@ const subData = [
 
   {
     id: 26,
-    category: "남성 테니스",
+    category: "남성 신상품 테니스",
     name: "글로벌 패턴 반바지",
     price: 65000,
     src: "./img/Sub_img/44.jpg",
@@ -263,12 +263,42 @@ const subData = [
 
   {
     id: 27,
-    category: "공용 라이프스타일",
+    category: "공용 신상품",
+    name: "<온라인 단독>헤리티지 세리프 루즈핏 반팔티",
+    price: 38000,
+    src: "./img/Sub_img/20.jpg",
+    review: 17,
+    color: 'navy'
+  },
+
+  {
+    id: 28,
+    category: "공용 라이프스타일 신상품",
     name: "헤리티지 오버핏 케이블 가디건",
     price: 139000,
     src: "./img/Sub_img/40.jpg",
     review: 12,
     color: 'navy'
+  },
+
+  {
+    id: 29,
+    category: "공용 신상품",
+    name: "오버핏 인터내셔널 바람막이",
+    price: 149000,
+    src: "./img/Sub_img/42.jpg",
+    review: 1,
+    color: 'white'
+  },
+
+  {
+    id: 30,
+    category: "남성 테니스 신상품",
+    name: "글로벌 라인 반팔티",
+    price: 65000,
+    src: "./img/Sub_img/45.jpg",
+    review: 0,
+    color: 'white'
   },
 ]
 

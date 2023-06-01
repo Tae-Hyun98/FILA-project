@@ -139,6 +139,7 @@ let currentPage = 0;
 
 //페이지네이션 생성함수
 function paginationFunc(obj) {
+  subData.reverse();
   const onePage = 20; //한페이지에뜰 상품
 
   const totalItem = obj.length;
