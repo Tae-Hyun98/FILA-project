@@ -869,7 +869,7 @@ h1 {
 .time_sale .edition {
   position: relative;
   overflow: hidden;
-  height: 800px;
+  height: 870px;
   background-color: #101010;
   z-index: -2;
 }
@@ -877,13 +877,13 @@ h1 {
 .time_sale .edition .edition_video {
   position: absolute;
   width: 100%;
-  top: -10px;
+  top: 40px;
   z-index: -1;
 }
 
 .time_sale .edition .edition_video video {
   width: 100%;
-  height: 960px;
+  height: 920px;
   outline: 0;
   border: 0;
 }
@@ -891,10 +891,11 @@ h1 {
 .time_sale .countdown_box {
   width: 100%;
   text-align: center;
+  padding-top: 10px;
 }
 
 .time_sale .countdown_box h1 {
-  font-size: 55px;
+  font-size: 65px;
   background: linear-gradient(to right, #03001e, #7303c0, #ec38bc, #fdeff9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -905,7 +906,6 @@ h1 {
   justify-content: center;
   width: 600px;
   line-height: 70px;
-  font-size: 45px;
   background-color: #fff;
   margin: 0 auto;
 }
@@ -917,14 +917,11 @@ h1 {
 .time_sale .count p {
   text-align: center;
   color: #000;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 700;
 }
 
-/* .time_sale .countdown_box p {
-  color: #fff;
-  font-weight: 700;
-} */
+
 
 /***************NEW_ARRIVAL*************/
 .new_arrival {
@@ -1098,7 +1095,7 @@ h1 {
   justify-content: space-between;
   overflow: hidden;
   margin-top: 30px;
-  padding: 0 50px;
+  padding: 0 100px;
 }
 
 .magazine .magazine_box>div {
@@ -1194,7 +1191,7 @@ h1 {
 .recommand .recommand_box {
   display: flex;
   margin-top: 30px;
-  padding: 0 50px;
+  padding: 0 100px;
 }
 
 .recommand .recommand_box .rec_img {
@@ -1312,7 +1309,7 @@ h1 {
 
 .sns .sns_box .sns_list {
   width: 100%;
-  padding: 0 50px;
+  padding: 0 100px;
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
@@ -1656,7 +1653,7 @@ h1 {
 .arrow {
   position: fixed;
   z-index: 5;
-  right: 30px;
+  right: 5px;
   bottom: 30px;
 }
 

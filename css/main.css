@@ -1095,7 +1095,7 @@ h1 {
   justify-content: space-between;
   overflow: hidden;
   margin-top: 30px;
-  padding: 0 50px;
+  padding: 0 100px;
 }
 
 .magazine .magazine_box>div {
@@ -1191,7 +1191,7 @@ h1 {
 .recommand .recommand_box {
   display: flex;
   margin-top: 30px;
-  padding: 0 50px;
+  padding: 0 100px;
 }
 
 .recommand .recommand_box .rec_img {
@@ -1309,7 +1309,7 @@ h1 {
 
 .sns .sns_box .sns_list {
   width: 100%;
-  padding: 0 50px;
+  padding: 0 100px;
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
@@ -1653,7 +1653,7 @@ h1 {
 .arrow {
   position: fixed;
   z-index: 5;
-  right: 20px;
+  right: 5px;
   bottom: 30px;
 }
 
