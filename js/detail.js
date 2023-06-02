@@ -30,11 +30,11 @@
   //실측사이즈 클릭시팝업
   const sizeBtn = document.getElementById('size_btn');
   const sizePopup = document.querySelector('.size_wrap');
-  const popupClose = document.querySelector('.close');
+  const popupClose1 = document.querySelector('.close');
 
   sizeBtn.addEventListener('click', () => {
     sizePopup.style.display = 'block';
-    popupClose.addEventListener('click', () => {
+    popupClose1.addEventListener('click', () => {
       sizePopup.style.display = 'none';
     });
   });

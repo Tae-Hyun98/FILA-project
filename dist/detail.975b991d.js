@@ -154,10 +154,10 @@ var swiperColor = new Swiper(".color_swiper", {
 //실측사이즈 클릭시팝업
 var sizeBtn = document.getElementById('size_btn');
 var sizePopup = document.querySelector('.size_wrap');
-var popupClose = document.querySelector('.close');
+var popupClose1 = document.querySelector('.close');
 sizeBtn.addEventListener('click', function () {
   sizePopup.style.display = 'block';
-  popupClose.addEventListener('click', function () {
+  popupClose1.addEventListener('click', function () {
     sizePopup.style.display = 'none';
   });
 });
@@ -395,7 +395,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63428" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58002" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

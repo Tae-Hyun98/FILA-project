@@ -20,6 +20,8 @@
   <script type="module" src="./js/main.js" defer></script>
   <script src="./js/mainswiper.js" defer></script>
   <script src="./js/comon.js" defer></script>
+  <script src="./js/load.js" defer></script>
+
 
   <!-- gsap -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
@@ -27,7 +29,6 @@
   <script>
     //퀵메뉴
     $(function () {
-
       $('.quick').css('top', $(window).height() / 2 - $('.quick').height() / 2);
       $(window).scroll(function () {
         let point = $(this).scrollTop() + ($(window).height() / 2 - $('.quick').height() / 2);
@@ -904,10 +905,6 @@
       <p>로그인페이지: 퀵메뉴에 아무버튼</p>
     </div>
   </div>
-
-
-  <!-- 헤더/푸터 로드 -->
-  <script src="./js/load.js"></script>
 
 </body>
 

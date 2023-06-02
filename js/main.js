@@ -8,7 +8,6 @@ import {
 } from "./rank_data.js";
 
 
-
 //카운트다운
 const countDown = new Date("Jun 30, 2023 22:22:00").getTime();
 
@@ -127,4 +126,3 @@ window.addEventListener('scroll', () => {
     });
   }
 });
-

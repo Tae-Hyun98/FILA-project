@@ -164,7 +164,6 @@ function checkId() {
     idRule.style.display = 'none';
   }
 }
-
 //비밀번호 유효성검사
 function checkPw() {
   var userValuePw = userPw.value;
@@ -323,13 +322,16 @@ seeBtn3.addEventListener('click', function () {
 seeBtn4.addEventListener('click', function () {
   agreeBox[3].style.display = 'block';
 });
-closeBtn.forEach(function (btn, idx) {
-  btn.addEventListener('click', function () {
-    if (btn) {
-      agreeBox[idx].style.display = 'none';
+var _loop = function _loop(i) {
+  closeBtn[i].addEventListener('click', function () {
+    if (closeBtn[i]) {
+      agreeBox[i].style.display = 'none';
     }
   });
-});
+};
+for (var i = 0; i < closeBtn.length; i++) {
+  _loop(i);
+}
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -355,7 +357,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63428" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58002" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

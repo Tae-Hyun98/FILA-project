@@ -1,4 +1,4 @@
-//스크롤시 헤더
+/* //스크롤시 헤더
 const scr = document.querySelector('.scroll');
 window.addEventListener("wheel", (e) => {
   const scrollUp = e.deltaY <= 0;
@@ -34,10 +34,10 @@ li.forEach((item) => {
     scr.classList.remove('bg_on');
   });
 });
+ */
 
 
-
-//검색버튼 클릭시 검색창
+/* //검색버튼 클릭시 검색창
 const searchOpen = document.getElementById('search');
 const searchClose = document.getElementById('close');
 
@@ -46,11 +46,11 @@ searchOpen.addEventListener('click', () => {
 });
 searchClose.addEventListener('click', () => {
   scr.classList.remove('search_on');
-});
+}); */
 
 
 
-//푸터 패밀리사이트
+/* //푸터 패밀리사이트
 const familySite = document.getElementById('family_site');
 
 familySite.addEventListener('change', (e) => {
@@ -59,7 +59,7 @@ familySite.addEventListener('change', (e) => {
   let openNewWindow = window.open('about:blank');
 
   openNewWindow.location.href = options[optionIndex].value;
-});
+}); */
 
 
 
@@ -111,11 +111,3 @@ const popupClose = document.getElementById('popup_close');
 popupClose.addEventListener('click', () => {
   popup.style.display = 'none';
 });
-
-
-
-/* const footer = document.querySelector('.footer');
-
-fetch('./footer.html')
-.then(res => res.text())
-.then(data => footer.innerHTML = data); */

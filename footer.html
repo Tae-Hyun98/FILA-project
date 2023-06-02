@@ -115,3 +115,16 @@
     </ul>
   </div>
 </div>
+
+<script>
+  //푸터 패밀리사이트
+  const familySite = document.getElementById('family_site');
+
+  familySite.addEventListener('change', (e) => {
+    let options = e.currentTarget.options;
+    let optionIndex = options.selectedIndex;
+    let openNewWindow = window.open('about:blank');
+
+    openNewWindow.location.href = options[optionIndex].value;
+  });
+</script>

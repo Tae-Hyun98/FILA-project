@@ -153,6 +153,28 @@ exports.default = _default;
 
 var _login_data = _interopRequireDefault(require("./login_data.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+//lnb마우스호버시
+var li = document.querySelectorAll('.header .lnb>ul>li');
+li.forEach(function (lis) {
+  lis.addEventListener('mouseover', function () {
+    scr.classList.add('bg_on');
+  });
+  lis.addEventListener('mouseout', function () {
+    scr.classList.remove('bg_on');
+  });
+});
+
+//검색버튼 클릭시 검색창
+var scr = document.querySelector('body');
+var searchOpen = document.getElementById('search');
+var searchClose = document.getElementById('close');
+searchOpen.addEventListener('click', function () {
+  scr.classList.add('search_on');
+});
+searchClose.addEventListener('click', function () {
+  scr.classList.remove('search_on');
+});
+
 //눈표시누르면 input type -> text 끄면 input type -> password
 var loginId = document.getElementById('login_id');
 var loginPw = document.getElementById('login_pw');
@@ -219,7 +241,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63428" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58002" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
