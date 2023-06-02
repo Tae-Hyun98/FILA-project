@@ -51,7 +51,7 @@ searchClose.addEventListener('click', () => {
 
 
 //푸터 패밀리사이트
-/* const familySite = document.getElementById('family_site');
+const familySite = document.getElementById('family_site');
 
 familySite.addEventListener('change', (e) => {
   let options = e.currentTarget.options;
@@ -59,7 +59,7 @@ familySite.addEventListener('change', (e) => {
   let openNewWindow = window.open('about:blank');
 
   openNewWindow.location.href = options[optionIndex].value;
-}); */
+});
 
 
 
