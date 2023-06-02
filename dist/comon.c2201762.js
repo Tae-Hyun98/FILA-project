@@ -118,11 +118,11 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/comon.js":[function(require,module,exports) {
-//스크롤시 헤더
-var scr = document.querySelector('.scroll');
-window.addEventListener("wheel", function (e) {
-  var scrollUp = e.deltaY <= 0;
-  var scrollDown = e.deltaY > 0;
+/* //스크롤시 헤더
+const scr = document.querySelector('.scroll');
+window.addEventListener("wheel", (e) => {
+  const scrollUp = e.deltaY <= 0;
+  const scrollDown = e.deltaY > 0;
   if (scrollDown && scrollY >= 100) {
     scr.classList.add('scr_down');
     scr.classList.remove('scr_up');
@@ -134,42 +134,49 @@ window.addEventListener("wheel", function (e) {
     scr.classList.remove('scr_down');
   }
 });
-window.addEventListener("scroll", function () {
+
+window.addEventListener("scroll", () => {
   if (scrollY === 0) {
     scr.classList.remove('scr_up');
     scr.classList.remove('scr_down');
   }
 });
 
+
+
 //lnb마우스호버시
-var li = document.querySelectorAll('.header .lnb>ul>li');
-li.forEach(function (item) {
-  item.addEventListener("mouseover", function () {
+const li = document.querySelectorAll('.header .lnb>ul>li');
+li.forEach((item) => {
+  item.addEventListener("mouseover", () => {
     scr.classList.add('bg_on');
   });
-  item.addEventListener("mouseout", function () {
+  item.addEventListener("mouseout", () => {
     scr.classList.remove('bg_on');
   });
 });
+ */
 
-//검색버튼 클릭시 검색창
-var searchOpen = document.getElementById('search');
-var searchClose = document.getElementById('close');
-searchOpen.addEventListener('click', function () {
+/* //검색버튼 클릭시 검색창
+const searchOpen = document.getElementById('search');
+const searchClose = document.getElementById('close');
+
+searchOpen.addEventListener('click', () => {
   scr.classList.add('search_on');
 });
-searchClose.addEventListener('click', function () {
+searchClose.addEventListener('click', () => {
   scr.classList.remove('search_on');
-});
+}); */
 
-//푸터 패밀리사이트
-var familySite = document.getElementById('family_site');
-familySite.addEventListener('change', function (e) {
-  var options = e.currentTarget.options;
-  var optionIndex = options.selectedIndex;
-  var openNewWindow = window.open('about:blank');
+/* //푸터 패밀리사이트
+const familySite = document.getElementById('family_site');
+
+familySite.addEventListener('change', (e) => {
+  let options = e.currentTarget.options;
+  let optionIndex = options.selectedIndex;
+  let openNewWindow = window.open('about:blank');
+
   openNewWindow.location.href = options[optionIndex].value;
-});
+}); */
 
 //탑,바텀버튼
 var topBtn = document.querySelector('.top');
@@ -237,7 +244,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58002" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61315" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
