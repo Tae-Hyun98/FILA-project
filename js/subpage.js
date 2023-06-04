@@ -112,24 +112,19 @@ const filterSele = document.getElementById('order');
 filterSele.addEventListener('change', () => {
   if (filterSele.value === 'name') {
     const name = subData.sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0); //이름 오름차순
-    currentPage = 0;
-    paginationFunc(name);
+    filter(name)
   } else if (filterSele.value === 'desc') {
     const desc = subData.sort((a, b) => a.price - b.price); //가격내림차순
-    currentPage = 0;
-    paginationFunc(desc);
+    filter(desc)
   } else if (filterSele.value === 'asc') {
     const asc = subData.sort((a, b) => b.price - a.price); //가격오름차순
-    currentPage = 0;
-    paginationFunc(asc);
+    filter(asc)
   } else if (filterSele.value === 'new') {
     const newProduct = subData.sort((a, b) => a.id > b.id ? -1 : a.id < b.id ? 1 : 0); //기본순
-    currentPage = 0;
-    paginationFunc(subData);
+    filter(subData)
   } else if (filterSele.value === 'review') {
     const review = subData.sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0); //리뷰순정렬
-    currentPage = 0;
-    paginationFunc(review);
+    filter(review);
   }
 });
 
@@ -144,26 +139,25 @@ const price79000 = subData.filter((pr79) => pr79.price > 79000);
 
 priceFilter.forEach((price, idx) => {
   price.addEventListener('click', () => {
-
     if (price.checked) {
       switch (idx) {
         case 0:
-          priceFilter1(price39000);
+          filter(price39000);
           break;
         case 1:
-          priceFilter1(price49000)
+          filter(price49000)
           break;
         case 2:
-          priceFilter1(price59000)
+          filter(price59000)
           break;
         case 3:
-          priceFilter1(price69000)
+          filter(price69000)
           break;
         case 4:
-          priceFilter1(price79000)
+          filter(price79000)
           break;
         default:
-          priceFilter1(subData);
+          filter(subData);
           break;
       }
     }
@@ -181,14 +175,14 @@ priceFilter.forEach((price, idx) => {
           paginationFunc(price79000);
         }*/
     else {
-      priceFilter1(subData);
+      filter(subData);
     }
   })
 })
 
-function priceFilter1(price1) {
+function filter(value) {
   currentPage = 0;
-  paginationFunc(price1);
+  paginationFunc(value);
 }
 
 
