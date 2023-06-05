@@ -1,4 +1,7 @@
-import subData from "./sub_data.js";
+import {
+  color,
+  subData
+} from "./sub_data.js";
 
 
 //상품4개, 5개보기버튼
@@ -41,19 +44,65 @@ filterBtn.addEventListener('click', () => {
   }
 });
 
+
+
+const allLi = document.querySelectorAll('.all_filter ul li');
+
+allLi.forEach((value, idx) => {
+  value.addEventListener('click', () => {
+    for (let el of allLi) {
+      el.classList.remove('on');
+    }
+    allLi[idx].classList.add('on');
+  })
+})
+
+/* const colorbox = document.querySelectorAll('.color');
+colorbox.forEach((item, idx) => {
+  item.setAttribute('value', color[idx])
+  item.addEventListener('click', (e) => {
+    if (colorbox[idx].checked) {
+
+      e.preventDefault();
+      let aa = e.currentTarget.value;
+
+      const ab = subData.filter((ac) => ac.color === aa)
+      console.log(ab)
+    }
+
+  })
+}) */
+
+
 //filter color check
 const colorChk = document.querySelectorAll('.color');
 const colorLabel = document.querySelectorAll('.color_filter label');
+const arr = [];
 
-for (let i = 0; i < colorChk.length; i++) {
-  colorChk[i].addEventListener('click', () => {
-    if (colorChk[i].checked) {
-      colorLabel[i].classList.add('on');
+colorChk.forEach((item, idx) => {
+  item.setAttribute('value', color[idx])
+  item.addEventListener('change', (e) => {
+    e.preventDefault();
+    let ad = e.currentTarget.value;
+    let ab = subData.filter((ac) => ac.color === ad)
+    if (colorChk[idx].checked) {
+
+      const array = arr.push(ab);
+      let index = arr.indexOf(ab);
+      console.log(index)
+      const obja = {
+        ...arr
+      }
+      // filter(obja)
+      console.log(obja)
+      colorLabel[idx].classList.add('on');
     } else {
-      colorLabel[i].classList.remove('on');
+      colorLabel[idx].classList.remove('on');
+      arr.pop(ab);
+      console.log(arr)
     }
   });
-}
+})
 
 //filter check
 const sportChk = document.querySelectorAll('.sport');
@@ -112,16 +161,16 @@ const filterSele = document.getElementById('order');
 filterSele.addEventListener('change', () => {
   if (filterSele.value === 'name') {
     const name = subData.sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0); //이름 오름차순
-    filter(name)
+    filter(name);
   } else if (filterSele.value === 'desc') {
     const desc = subData.sort((a, b) => a.price - b.price); //가격내림차순
-    filter(desc)
+    filter(desc);
   } else if (filterSele.value === 'asc') {
     const asc = subData.sort((a, b) => b.price - a.price); //가격오름차순
-    filter(asc)
+    filter(asc);
   } else if (filterSele.value === 'new') {
-    const newProduct = subData.sort((a, b) => a.id > b.id ? -1 : a.id < b.id ? 1 : 0); //기본순
-    filter(subData)
+    const basic = subData.sort((a, b) => b.id - a.id);
+    filter(basic);
   } else if (filterSele.value === 'review') {
     const review = subData.sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0); //리뷰순정렬
     filter(review);
@@ -187,56 +236,60 @@ function filter(value) {
 
 
 
-//컬러필터
-const white = subData.filter((Color) => Color.color === 'white');
-const black = subData.filter((Color) => Color.color === 'black');
-const gray = subData.filter((Color) => Color.color === 'gray');
-const green = subData.filter((Color) => Color.color === 'green');
-const blue = subData.filter((Color) => Color.color === 'blue');
-const mix = subData.filter((Color) => Color.color === 'mix');
-const navy = subData.filter((Color) => Color.color === 'navy');
-const orange = subData.filter((Color) => Color.color === 'orange');
-const red = subData.filter((Color) => Color.color === 'red');
-const beige = subData.filter((Color) => Color.color === 'beige');
 
-colorChk.forEach((color) => {
-  color.addEventListener('click', () => {
-    if (colorChk[0].checked) {
-      currentPage = 0;
-      paginationFunc(white)
-    } else if (colorChk[1].checked) {
-      currentPage = 0;
-      paginationFunc(black);
-    } else if (colorChk[2].checked) {
-      currentPage = 0;
-      paginationFunc(gray);
-    } else if (colorChk[3].checked) {
-      currentPage = 0;
-      paginationFunc(green);
-    } else if (colorChk[4].checked) {
-      currentPage = 0;
-      paginationFunc(blue);
-    } else if (colorChk[5].checked) {
-      currentPage = 0;
-      paginationFunc(mix);
-    } else if (colorChk[6].checked) {
-      currentPage = 0;
-      paginationFunc(navy);
-    } else if (colorChk[7].checked) {
-      currentPage = 0;
-      paginationFunc(orange);
-    } else if (colorChk[8].checked) {
-      currentPage = 0;
-      paginationFunc(red);
-    } else if (colorChk[9].checked) {
-      currentPage = 0;
-      paginationFunc(beige);
-    } else {
-      currentPage = 0;
-      paginationFunc(subData);
-    }
-  });
-})
+//컬러필터
+// const white = subData.filter((Color) => Color.color === 'white');
+// const black = subData.filter((Color) => Color.color === 'black');
+// const gray = subData.filter((Color) => Color.color === 'gray');
+// const green = subData.filter((Color) => Color.color === 'green');
+// const blue = subData.filter((Color) => Color.color === 'blue');
+// const mix = subData.filter((Color) => Color.color === 'mix');
+// const navy = subData.filter((Color) => Color.color === 'navy');
+// const orange = subData.filter((Color) => Color.color === 'orange');
+// const red = subData.filter((Color) => Color.color === 'red');
+// const beige = subData.filter((Color) => Color.color === 'beige');
+
+// function colorFilter() {
+//   colorChk.forEach((color) => {
+//     color.addEventListener('click', () => {
+//       if (colorChk[0].checked) {
+//         filter(white);
+//       } else if (colorChk[1].checked) {
+//         currentPage = 0;
+//         paginationFunc(black);
+//       } else if (colorChk[2].checked) {
+//         currentPage = 0;
+//         paginationFunc(gray);
+//       } else if (colorChk[3].checked) {
+//         currentPage = 0;
+//         paginationFunc(green);
+//       } else if (colorChk[4].checked) {
+//         currentPage = 0;
+//         paginationFunc(blue);
+//       } else if (colorChk[5].checked) {
+//         currentPage = 0;
+//         paginationFunc(mix);
+//       } else if (colorChk[6].checked) {
+//         currentPage = 0;
+//         paginationFunc(navy);
+//       } else if (colorChk[7].checked) {
+//         currentPage = 0;
+//         paginationFunc(orange);
+//       } else if (colorChk[8].checked) {
+//         currentPage = 0;
+//         paginationFunc(red);
+//       } else if (colorChk[9].checked) {
+//         currentPage = 0;
+//         paginationFunc(beige);
+//       } else {
+//         currentPage = 0;
+//         paginationFunc(subData);
+//       }
+//     });
+//   })
+// }
+// colorFilter();
+
 
 
 const pages = document.getElementById('pages');

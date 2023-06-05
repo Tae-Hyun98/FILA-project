@@ -1,3 +1,5 @@
+const color = ['white', 'black', 'gray', 'green', 'blue', 'mix', 'navy', 'orange', 'red', 'beige'];
+
 const subData = [
 
   {
@@ -563,4 +565,7 @@ const subData = [
 
 ]
 
-export default subData;
+export {
+  color,
+  subData
+};
