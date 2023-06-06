@@ -193,25 +193,26 @@ const colorLabel = document.querySelectorAll('.color_filter label');
 
 
 function makefilter() {
+  const arr = [];
   colorChk.forEach((item, idx) => {
     item.setAttribute('value', color[idx])
     item.addEventListener('change', (e) => {
       e.preventDefault();
       let ad = e.currentTarget.value;
-      let ab = subData.filter((ac) => ac.color === ad)
-      const arr = [...ab];
+      let ab = subData.filter((color1) => color1.color === ad)
 
       if (colorChk[idx].checked) {
         console.log(ad)
-        paginationFunc(ab)
+        arr.push(...ab)
+        paginationFunc(arr)
         console.log(arr)
         colorLabel[idx].classList.add('on');
       } else {
         colorLabel[idx].classList.remove('on');
-        arr.splice(arr.indexOf(ab), 1);
-        console.log(ad)
-        console.log(arr.indexOf(ab))
-        console.log(arr)
+        arr.splice(ab, ab.length);
+        console.log(ab)
+        paginationFunc(arr)
+
       }
     });
   })
@@ -287,7 +288,6 @@ let currentPage = 0;
 //페이지네이션 생성함수
 function paginationFunc(obj) {
   const onePage = 20; //한페이지에뜰 상품
-
   const totalItem = obj.length;
   if (totalItem <= onePage) {
     priobj(obj);
@@ -480,7 +480,7 @@ function priobj(obj) {
     subDiv.appendChild(detailDiv);
     productList.appendChild(subDiv);
     subProduct.appendChild(productList);
-    subProduct.append(pages)
+    subProduct.append(pages);
   }
 }
 subData.reverse();
