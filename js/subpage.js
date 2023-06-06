@@ -199,21 +199,28 @@ function makefilter() {
     item.addEventListener('change', (e) => {
       e.preventDefault();
       let ad = e.currentTarget.value;
-      let ab = subData.filter((color1) => color1.color === ad)
+      let colorfil = subData.filter((color1) => color1.color === ad)
 
       if (colorChk[idx].checked) {
         console.log(ad)
-        arr.push(...ab)
-        paginationFunc(arr)
-        console.log(arr)
+        arr.push(...colorfil)
+        filter(arr)
+        //console.log(arr)
         colorLabel[idx].classList.add('on');
       } else {
         colorLabel[idx].classList.remove('on');
-        arr.splice(ab, ab.length);
-        console.log(ab)
-        paginationFunc(arr)
-
+        if (arr.length !== 0) {
+          arr.splice(colorfil, colorfil.length);
+          console.log(colorfil);
+          console.log(arr)
+          filter(arr);
+        } else {
+          console.log('비어잇음')
+        }
       }
+      /*  else if (Array.isArray(arr) && arr.length === 0) {
+              console.log('비어잇음')
+            } */
     });
   })
 }
