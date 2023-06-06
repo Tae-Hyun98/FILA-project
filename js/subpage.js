@@ -192,8 +192,10 @@ const colorChk = document.querySelectorAll('.color');
 const colorLabel = document.querySelectorAll('.color_filter label');
 
 
+//컬러필터
 function makefilter() {
   const arr = [];
+
   colorChk.forEach((item, idx) => {
     item.setAttribute('value', color[idx])
     item.addEventListener('change', (e) => {
@@ -209,18 +211,12 @@ function makefilter() {
         colorLabel[idx].classList.add('on');
       } else {
         colorLabel[idx].classList.remove('on');
-        if (arr.length !== 0) {
-          arr.splice(colorfil, colorfil.length);
-          console.log(colorfil);
-          console.log(arr)
-          filter(arr);
-        } else {
-          console.log('비어잇음')
-        }
+        arr.splice(colorfil, colorfil.length);
+        console.log(colorfil);
+        console.log(arr)
+        filter(arr);
       }
-      /*  else if (Array.isArray(arr) && arr.length === 0) {
-              console.log('비어잇음')
-            } */
+      //if(arr.length===0){console.log('비어')}
     });
   })
 }
