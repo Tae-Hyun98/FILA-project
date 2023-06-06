@@ -19,9 +19,6 @@ col5Btn.addEventListener('click', () => {
 });
 
 
-//상품개수표시
-const totalProduct = document.getElementById('total');
-totalProduct.innerHTML = subData.length;
 
 
 //필터클릭시 아래로 필터다운
@@ -45,7 +42,12 @@ filterBtn.addEventListener('click', () => {
 });
 
 
+//상품개수표시
+const totalProduct = document.getElementById('total');
+totalProduct.innerHTML = subData.length;
 
+
+//카테고리 클릭시 on
 const allLi = document.querySelectorAll('.all_filter ul li');
 
 allLi.forEach((value, idx) => {
@@ -74,35 +76,6 @@ colorbox.forEach((item, idx) => {
 }) */
 
 
-//filter color check
-const colorChk = document.querySelectorAll('.color');
-const colorLabel = document.querySelectorAll('.color_filter label');
-const arr = [];
-
-colorChk.forEach((item, idx) => {
-  item.setAttribute('value', color[idx])
-  item.addEventListener('change', (e) => {
-    e.preventDefault();
-    let ad = e.currentTarget.value;
-    let ab = subData.filter((ac) => ac.color === ad)
-    if (colorChk[idx].checked) {
-
-      const array = arr.push(ab);
-      let index = arr.indexOf(ab);
-      console.log(index)
-      const obja = {
-        ...arr
-      }
-      // filter(obja)
-      console.log(obja)
-      colorLabel[idx].classList.add('on');
-    } else {
-      colorLabel[idx].classList.remove('on');
-      arr.pop(ab);
-      console.log(arr)
-    }
-  });
-})
 
 //filter check
 const sportChk = document.querySelectorAll('.sport');
@@ -205,29 +178,45 @@ priceFilter.forEach((price, idx) => {
         case 4:
           filter(price79000)
           break;
-        default:
-          filter(subData);
-          break;
       }
-    }
-    /*  else if (priceFilter[1].checked) {
-          currentPage = 0;
-          paginationFunc(price49000);
-        } else if (priceFilter[2].checked) {
-          currentPage = 0;
-          paginationFunc(price59000);
-        } else if (priceFilter[3].checked) {
-          currentPage = 0;
-          paginationFunc(price69000);
-        } else if (priceFilter[4].checked) {
-          currentPage = 0;
-          paginationFunc(price79000);
-        }*/
-    else {
+    } else {
       filter(subData);
     }
   })
 })
+
+
+
+//filter color check
+const colorChk = document.querySelectorAll('.color');
+const colorLabel = document.querySelectorAll('.color_filter label');
+
+
+function makefilter() {
+  colorChk.forEach((item, idx) => {
+    item.setAttribute('value', color[idx])
+    item.addEventListener('change', (e) => {
+      e.preventDefault();
+      let ad = e.currentTarget.value;
+      let ab = subData.filter((ac) => ac.color === ad)
+      const arr = [...ab];
+
+      if (colorChk[idx].checked) {
+        console.log(ad)
+        paginationFunc(ab)
+        console.log(arr)
+        colorLabel[idx].classList.add('on');
+      } else {
+        colorLabel[idx].classList.remove('on');
+        arr.splice(arr.indexOf(ab), 1);
+        console.log(ad)
+        console.log(arr.indexOf(ab))
+        console.log(arr)
+      }
+    });
+  })
+}
+makefilter();
 
 function filter(value) {
   currentPage = 0;
