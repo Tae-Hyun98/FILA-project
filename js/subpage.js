@@ -207,7 +207,6 @@ function makefilter() {
         console.log(ad)
         arr.push(...colorfil)
         filter(arr)
-        //console.log(arr)
         colorLabel[idx].classList.add('on');
       } else {
         colorLabel[idx].classList.remove('on');
@@ -217,17 +216,9 @@ function makefilter() {
         } else if (arr.length !== 0) {
           filter(arr)
         }
-        /* console.log(colorfil);
-        console.log(arr)
-        filter(arr); */
       }
-      //if(arr.length===0){console.log('비어')}
     });
-
-  })
-  /* if (arr.length === 0) {
-    filter(subData)
-  } */
+  });
 }
 makefilter();
 
