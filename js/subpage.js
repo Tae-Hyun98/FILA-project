@@ -130,25 +130,24 @@ const productList = document.querySelector('.product_list');
 
 //상품 순서 정렬
 const filterSele = document.getElementById('order');
-
-// filterSele.addEventListener('change', () => {
-//   if (filterSele.value === 'name') {
-//     const name = subData.sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0); //이름 오름차순
-//     filter(name);
-//   } else if (filterSele.value === 'desc') {
-//     const desc = subData.sort((a, b) => a.price - b.price); //가격내림차순
-//     filter(desc);
-//   } else if (filterSele.value === 'asc') {
-//     const asc = subData.sort((a, b) => b.price - a.price); //가격오름차순
-//     filter(asc);
-//   } else if (filterSele.value === 'new') {
-//     const basic = subData.sort((a, b) => b.id - a.id);
-//     filter(basic);
-//   } else if (filterSele.value === 'review') {
-//     const review = subData.sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0); //리뷰순정렬
-//     filter(review);
-//   }
-// });
+filterSele.addEventListener('change', () => {
+  if (filterSele.value === 'name') {
+    const name = subData.sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0); //이름 오름차순
+    filter(name);
+  } else if (filterSele.value === 'desc') {
+    const desc = subData.sort((a, b) => a.price - b.price); //가격내림차순
+    filter(desc);
+  } else if (filterSele.value === 'asc') {
+    const asc = subData.sort((a, b) => b.price - a.price); //가격오름차순
+    filter(asc);
+  } else if (filterSele.value === 'new') {
+    const basic = subData.sort((a, b) => b.id - a.id);
+    filter(basic);
+  } else if (filterSele.value === 'review') {
+    const review = subData.sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0); //리뷰순정렬
+    filter(review);
+  }
+});
 
 
 //가격정렬
@@ -208,19 +207,19 @@ function makefilter() {
         colorLabel[idx].classList.add('on');
         filterSele.addEventListener('change', () => {
           if (filterSele.value === 'name') {
-            const name = arr.sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0); //이름 오름차순
+            const name = arr.slice().sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0); //이름 오름차순
             filter(name);
           } else if (filterSele.value === 'desc') {
-            const desc = arr.sort((a, b) => a.price - b.price); //가격내림차순
+            const desc = arr.slice().sort((a, b) => a.price - b.price); //가격내림차순
             filter(desc);
           } else if (filterSele.value === 'asc') {
-            const asc = arr.sort((a, b) => b.price - a.price); //가격오름차순
+            const asc = arr.slice().sort((a, b) => b.price - a.price); //가격오름차순
             filter(asc);
           } else if (filterSele.value === 'new') {
-            const basic = arr.sort((a, b) => b.id - a.id);
+            const basic = arr.slice().sort((a, b) => b.id - a.id);
             filter(basic);
           } else if (filterSele.value === 'review') {
-            const review = arr.sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0); //리뷰순정렬
+            const review = arr.slice().sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0); //리뷰순정렬
             filter(review);
           }
         });
