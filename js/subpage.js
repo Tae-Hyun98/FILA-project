@@ -190,11 +190,11 @@ priceFilter.forEach((price, idx) => {
 //filter color check
 const colorChk = document.querySelectorAll('.color');
 const colorLabel = document.querySelectorAll('.color_filter label');
+const arr = [];
 
 
 //컬러필터
 function makefilter() {
-  const arr = [];
 
   colorChk.forEach((item, idx) => {
     item.setAttribute('value', color[idx])
@@ -212,13 +212,22 @@ function makefilter() {
       } else {
         colorLabel[idx].classList.remove('on');
         arr.splice(colorfil, colorfil.length);
-        console.log(colorfil);
+        if (arr.length === 0) {
+          filter(subData)
+        } else if (arr.length !== 0) {
+          filter(arr)
+        }
+        /* console.log(colorfil);
         console.log(arr)
-        filter(arr);
+        filter(arr); */
       }
       //if(arr.length===0){console.log('비어')}
     });
+
   })
+  /* if (arr.length === 0) {
+    filter(subData)
+  } */
 }
 makefilter();
 
