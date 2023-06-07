@@ -204,7 +204,6 @@ function makefilter() {
       let colorfil = subData.filter((color1) => color1.color === ad)
 
       if (colorChk[idx].checked) {
-        console.log(ad)
         arr.push(...colorfil)
         filter(arr)
         colorLabel[idx].classList.add('on');
