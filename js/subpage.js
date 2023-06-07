@@ -227,7 +227,7 @@ function makefilter() {
 
       } else {
         colorLabel[idx].classList.remove('on');
-        arr.splice(arr.indexOf(colorfil), colorfil.length);
+        arr.splice(colorfil, colorfil.length);
         if (arr.length === 0) {
           filter(subData)
         } else if (arr.length !== 0) {
