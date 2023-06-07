@@ -131,25 +131,24 @@ const productList = document.querySelector('.product_list');
 //상품 순서 정렬
 const filterSele = document.getElementById('order');
 
-filterSele.addEventListener('change', () => {
-  if (filterSele.value === 'name') {
-    const name = subData.sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0); //이름 오름차순
-    filter(name);
-  } else if (filterSele.value === 'desc') {
-    const desc = subData.sort((a, b) => a.price - b.price); //가격내림차순
-    filter(desc);
-  } else if (filterSele.value === 'asc') {
-    const asc = subData.sort((a, b) => b.price - a.price); //가격오름차순
-    filter(asc);
-  } else if (filterSele.value === 'new') {
-    const basic = subData.sort((a, b) => b.id - a.id);
-    filter(basic);
-  } else if (filterSele.value === 'review') {
-    const review = subData.sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0); //리뷰순정렬
-    arr.push(...review);
-    filter(arr);
-  }
-});
+// filterSele.addEventListener('change', () => {
+//   if (filterSele.value === 'name') {
+//     const name = subData.sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0); //이름 오름차순
+//     filter(name);
+//   } else if (filterSele.value === 'desc') {
+//     const desc = subData.sort((a, b) => a.price - b.price); //가격내림차순
+//     filter(desc);
+//   } else if (filterSele.value === 'asc') {
+//     const asc = subData.sort((a, b) => b.price - a.price); //가격오름차순
+//     filter(asc);
+//   } else if (filterSele.value === 'new') {
+//     const basic = subData.sort((a, b) => b.id - a.id);
+//     filter(basic);
+//   } else if (filterSele.value === 'review') {
+//     const review = subData.sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0); //리뷰순정렬
+//     filter(review);
+//   }
+// });
 
 
 //가격정렬
@@ -193,7 +192,6 @@ const colorChk = document.querySelectorAll('.color');
 const colorLabel = document.querySelectorAll('.color_filter label');
 const arr = [];
 
-
 //컬러필터
 function makefilter() {
 
@@ -204,14 +202,32 @@ function makefilter() {
       let ad = e.currentTarget.value;
       let colorfil = subData.filter((color1) => color1.color === ad)
 
-      if (colorChk[idx].checked) {
+      if (item.checked) {
         arr.push(...colorfil)
-        const review1 = arr.sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0);
-        filter(review1)
+        filter(arr)
         colorLabel[idx].classList.add('on');
+        filterSele.addEventListener('change', () => {
+          if (filterSele.value === 'name') {
+            const name = arr.sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0); //이름 오름차순
+            filter(name);
+          } else if (filterSele.value === 'desc') {
+            const desc = arr.sort((a, b) => a.price - b.price); //가격내림차순
+            filter(desc);
+          } else if (filterSele.value === 'asc') {
+            const asc = arr.sort((a, b) => b.price - a.price); //가격오름차순
+            filter(asc);
+          } else if (filterSele.value === 'new') {
+            const basic = arr.sort((a, b) => b.id - a.id);
+            filter(basic);
+          } else if (filterSele.value === 'review') {
+            const review = arr.sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0); //리뷰순정렬
+            filter(review);
+          }
+        });
+
       } else {
         colorLabel[idx].classList.remove('on');
-        arr.splice(colorfil, colorfil.length);
+        arr.splice(arr.indexOf(colorfil), colorfil.length);
         if (arr.length === 0) {
           filter(subData)
         } else if (arr.length !== 0) {
