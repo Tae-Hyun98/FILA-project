@@ -146,7 +146,8 @@ filterSele.addEventListener('change', () => {
     filter(basic);
   } else if (filterSele.value === 'review') {
     const review = subData.sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0); //리뷰순정렬
-    filter(review);
+    arr.push(...review);
+    filter(arr);
   }
 });
 
@@ -205,7 +206,8 @@ function makefilter() {
 
       if (colorChk[idx].checked) {
         arr.push(...colorfil)
-        filter(arr)
+        const review1 = arr.sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0);
+        filter(review1)
         colorLabel[idx].classList.add('on');
       } else {
         colorLabel[idx].classList.remove('on');
