@@ -144,10 +144,27 @@ filterSele.addEventListener('change', () => {
     const basic = subData.sort((a, b) => b.id - a.id);
     filter(basic);
   } else if (filterSele.value === 'review') {
-    const review = subData.sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0); //리뷰순정렬
+    const review = subData.slice().sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0); //리뷰순정렬
     filter(review);
+
+    /* colorChk.forEach((item) => {
+      item.addEventListener('change', (e) => {
+        e.preventDefault();
+        let ad = e.currentTarget.value;
+        let colorfil = subData.filter((color1) => color1.color === ad)
+        const ap = arr.filter((color1) => color1.color === ad).sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0);
+        if (item.checked) {
+          arr.push(...ap)
+          const review1 = arr.sort((a, b) => a.review > b.review ? -1 : a.review < b.review ? 1 : 0);
+
+          filter(ap)
+        } else {
+          arr.splice(ap, ap.length)
+        }
+      })
+    }) */
   }
-});
+})
 
 
 //가격정렬
@@ -189,10 +206,10 @@ priceFilter.forEach((price, idx) => {
 //filter color check
 const colorChk = document.querySelectorAll('.color');
 const colorLabel = document.querySelectorAll('.color_filter label');
-const arr = [];
 
 //컬러필터
 function makefilter() {
+  const arr = [];
 
   colorChk.forEach((item, idx) => {
     item.setAttribute('value', color[idx])
@@ -205,6 +222,7 @@ function makefilter() {
         arr.push(...colorfil)
         filter(arr)
         colorLabel[idx].classList.add('on');
+
         filterSele.addEventListener('change', () => {
           if (filterSele.value === 'name') {
             const name = arr.slice().sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0); //이름 오름차순
