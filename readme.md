@@ -1,13 +1,15 @@
 ![header](https://capsule-render.vercel.app/api?type=soft&color=002053&height=120&section=header&text=FILA&fontSize=50&fontColor=fff&animation=fadeIn)
 
 ## 2. FILA (팀 기획, 개인프로젝트)
-> FILA 사이트를 참고하여 리뉴얼한 개인프로젝트 (적응형웹)  
->
-> 사이트리뉴얼 기획은 팀원6명과 진행하였으며, 코딩은 개인작업 100%로 진행하였습니다.  
-> 대부분 코드는 Vanilla JS로 구현되었습니다.  
->  주요기능으로는 상품필터, 리뷰, 상품문의, 로그인/회원가입 유효성체크등이 있습니다.
->
-> 개발 기간: 2023.04.28 ~ 2023.5.~
+FILA 사이트를 참고하여 리뉴얼한 개인프로젝트 (적응형웹)  
+
+사이트리뉴얼 기획은 팀원6명과 진행하였습니다.  
+
+Parcel번들러를 사용하여 개발환경을 구축하여 개발하였으며, 라이브러리는 swiper.js, gsap.js를 사용하였고, 대부분 코드는 Vanilla JS로 구현되었습니다.  
+
+주요기능으로는 **상품필터, 리뷰, 상품문의, 로그인/회원가입 유효성체크** 등이 있습니다.  
+
+>개발 기간: 2023.04.28 ~ 2023.5.~
 >
 > 사용한 기술 스택  
 <a href="#!"><img src="https://img.shields.io/badge/html5-E34F26?style=flat&logo=html5&logoColor=white"/></a>
@@ -15,7 +17,7 @@
 <a href="#!"><img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white"/></a>
 <a href="#!"><img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=javascript&logoColor=white"/></a>
 <a href="#!"><img src="https://img.shields.io/badge/swiper.js-6332F6?style=flat&logo=swiper&logoColor=white"/></a>
-
+>
 > Tools  
 > <a href="#!"><img src="https://img.shields.io/badge/visual studio code-007ACC?style=flat&logo=visualstudiocode&logoColor=white"/></a>
 > <a href="#!"><img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"/></a>  
