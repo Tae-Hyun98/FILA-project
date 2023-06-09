@@ -1,4 +1,6 @@
-## 2. FILA
+![header](https://capsule-render.vercel.app/api?type=soft&color=002053&height=120&section=header&text=FILA&fontSize=50&fontColor=fff&animation=fadeIn)
+
+## 2. FILA (팀 기획, 개인프로젝트)
 > FILA 사이트를 참고하여 리뉴얼한 개인프로젝트 (적응형웹)  
 >
 > 사이트리뉴얼 기획은 팀원6명과 진행하였으며, 코딩은 개인작업 100%로 진행하였습니다.  
