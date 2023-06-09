@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=soft&color=002053&height=120&section=header&text=FILA&fontSize=50&fontColor=fff&animation=fadeIn)
+![header](https://capsule-render.vercel.app/api?type=Rect&color=002053&height=120&section=header&text=F%20I%20L%20A&fontSize=50&fontColor=fff&animation=fadeIn)
 
 # 2. FILA (팀 기획, 개인프로젝트)
 - FILA 사이트를 참고하여 리뉴얼한 개인프로젝트 (적응형웹)  
@@ -49,3 +49,5 @@
 ```
 # 📌 느낀점
 > ...
+
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=002053&height=200&section=footer)
