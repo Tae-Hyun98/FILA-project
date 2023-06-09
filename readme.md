@@ -4,7 +4,9 @@
 > FILA 사이트를 참고하여 리뉴얼한 개인프로젝트 (적응형웹)  
 >
 > 사이트리뉴얼 기획은 팀원6명과 진행하였으며, 코딩은 개인작업 100%로 진행하였습니다.  
->  
+> 대부분 코드는 Vanilla JS로 구현되었습니다.  
+>  주요기능으로는 상품필터, 리뷰, 상품문의, 로그인/회원가입 유효성체크등이 있습니다.
+>
 > 개발 기간: 2023.04.28 ~ 2023.5.~
 >
 > 사용한 기술 스택  
@@ -18,7 +20,8 @@
 > <a href="#!"><img src="https://img.shields.io/badge/visual studio code-007ACC?style=flat&logo=visualstudiocode&logoColor=white"/></a>
 > <a href="#!"><img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"/></a>  
 ## 📌 기능  
-메인페이지 : swiper.js/gsap.js를 이용한 슬라이드/애니메이션 및 랭킹 인디케이터, 카운드다운, 랭킹에서 카테고리선택시 상품교체, 
+메인페이지 : 라이브러리 swiper.js/gsap.js를 이용한 슬라이드/애니메이션 및 랭킹 인디케이터, 카운드다운, 랭킹에서 카테고리선택시 상품교체 기능들이 있습니다.  
+서브페이지 : sort, filter 함수를 이용한 상품 정렬,  
 ## 📌 이미지
 ### PC버전  
   <img src=/>  
