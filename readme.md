@@ -12,11 +12,13 @@
 <a href="#!"><img src="https://img.shields.io/badge/css3-1572B6?style=flat&logo=css3&logoColor=white"/></a>
 <a href="#!"><img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white"/></a>
 <a href="#!"><img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=javascript&logoColor=white"/></a>
+<a href="#!"><img src="https://img.shields.io/badge/swiper.js-6332F6?style=flat&logo=swiper&logoColor=white"/></a>
 
 > Tools  
 > <a href="#!"><img src="https://img.shields.io/badge/visual studio code-007ACC?style=flat&logo=visualstudiocode&logoColor=white"/></a>
 > <a href="#!"><img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"/></a>  
-
+## 📌 기능  
+메인페이지 : swiper.js/gsap.js를 이용한 슬라이드/애니메이션 및 랭킹 인디케이터, 카운드다운, 랭킹에서 카테고리선택시 상품교체, 
 ## 📌 이미지
 ### PC버전  
   <img src=/>  
