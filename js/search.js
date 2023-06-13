@@ -522,20 +522,19 @@ function priobj(obj) {
     subProduct.append(pages);
   }
 }
-subData.reverse();
-
-const btn = document.querySelector('.search_btn');
-const goInput = document.getElementById('search_in');
-btn.addEventListener('click', () => {
-  let go = goInput.value.toLowerCase();
-  if (go === '') {
-    productList.innerHTML = '검색어를 제대로 입력해주세요'
-  } else {
-    let filter12 = subData.filter(item => item.name.includes(go));
-    paginationFunc(filter12)
-  }
-})
 
 
-let localData = JSON.parse(localStorage.getItem('result'))
-paginationFunc(localData)
+const localData = JSON.parse(localStorage.getItem('result'));
+let words = localStorage.getItem('word')
+console.log(localData)
+
+if (localData === '' || localData.length === 0) {
+  productList.innerHTML = `<h1>검색결과 해당하는 상품이 없습니다.</h1>`
+} else {
+  paginationFunc(localData)
+}
+const count = document.querySelector('.count');
+count.innerHTML = localData.length;
+
+const word = document.querySelector('.word');
+word.innerHTML = words;

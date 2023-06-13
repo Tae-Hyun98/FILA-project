@@ -51,21 +51,30 @@ searchClose.addEventListener('click', () => {
   scr.classList.remove('search_on');
 });
 
+//상품 검색기능
 const searchBtn = document.querySelector('.search_btn');
 const goInput = document.getElementById('search_in');
-searchBtn.addEventListener('click', () => {
-  let go = goInput.value.toLowerCase();
 
-  if (go !== '') {
-    let result = subData.filter(item => item.name.includes(go));
-    location.href='./search.html'
+
+searchBtn.addEventListener('click', () => {
+  let word = goInput.value.toLowerCase();
+
+  if (word !== '') {
+    let result = subData.filter(item => item.name.includes(word));
+    location.href = './search.html'
     localStorage.setItem('result', JSON.stringify(result))
-  } else if (go === '') {
+    localStorage.setItem('word', word)
+  } else if (word === '') {
     console.log('error')
   }
 })
 
-
+goInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    searchBtn.click();
+  }
+})
 
 
 //푸터 패밀리사이트
