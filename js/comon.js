@@ -57,9 +57,9 @@ searchBtn.addEventListener('click', () => {
   let go = goInput.value.toLowerCase();
 
   if (go !== '') {
-    let filter12 = subData.filter(item => item.name.includes(go));
-    window.open('search.html');
-    localStorage.setItem('value', JSON.stringify(filter12))
+    let result = subData.filter(item => item.name.includes(go));
+    location.href='./search.html'
+    localStorage.setItem('result', JSON.stringify(result))
   } else if (go === '') {
     console.log('error')
   }

@@ -537,5 +537,5 @@ btn.addEventListener('click', () => {
 })
 
 
-let localData = JSON.parse(localStorage.getItem('value'))
+let localData = JSON.parse(localStorage.getItem('result'))
 paginationFunc(localData)
