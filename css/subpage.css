@@ -387,6 +387,7 @@ img {
   height: 60px;
   font-size: 0;
   border: none;
+  cursor: pointer;
 }
 
 .header .search_down .input_box input {

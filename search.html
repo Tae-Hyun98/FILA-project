@@ -5,22 +5,28 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FILA 로그인</title>
-  <link rel="stylesheet" href="./css/login.css">
+  <title>Search</title>
+  <link rel="stylesheet" href="./css/subpage.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
   <link
     href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
     rel="stylesheet">
 
   <script src="./js/jquery-3.6.4.min.js"></script>
-  <script type="module" src="./js/login.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script type="module" src="./js/search.js" defer></script>
   <script type="module" src="./js/comon.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+
   <!-- gsap -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
 </head>
 
 <body class="scroll">
+
+
   <header id="top" class="header">
     <div class="logo">
       <a id="logo_img" href="./index.html"></a>
@@ -386,52 +392,338 @@
     <div class="blur"></div>
   </header>
 
-  <section class="login_section">
-    <div class="login_wrap">
-      <h1>로그인</h1>
-
-      <form action="" name="login">
-        <div class="input_box">
-          <input type="text" id="login_id" placeholder="아이디" autofocus required>
-          <input type="password" id="login_pw" placeholder="비밀번호" required>
-
-          <div class="eye">
-            <span class="material-icons-outlined">
-              visibility
-            </span>
-          </div>
-
-          <div class="eye_off">
-            <span class="material-icons-outlined">
-              visibility_off
-            </span>
-          </div>
+  <!-- 카테고리네비 -->
+  <section class="category_section">
+    <div class="category_bg">
+      <div class="category_nav">
+        <div class="nav_p">
+          <p><a href="#!">MEN</a></p>
+          <p><a href="#!">></a></p>
+          <p><a href="#!">의류</a></p>
+          <p><a href="#!">></a></p>
+          <p><a href="#!">전체보기</a></p>
         </div>
-
-        <div class="id_box">
-          <label for="id_save"><input type="checkbox" id="id_save"> 아이디 저장</label>
-          <a href="./find.html">아이디 / 비밀번호 찾기</a>
-        </div>
-        <div class="social_login">
-          <a href="#!" class="social_naver">네이버로그인</a>
-          <a href="#!" class="social_kakao">카카오로그인</a>
-        </div>
-
-        <div class="logbtn">
-          <a href="#!" id="login_btn">로그인</a>
-        </div>
-      </form>
-      <hr />
-
-      <div class="join_box">
-        <a href="./join.html">회원가입</a>
       </div>
-
-      <a href="#!" class="border">비회원 주문조회</a>
     </div>
   </section>
 
-  <!-- footer -->
+  <!-- 상품리스트 -->
+  <section class="sub_list">
+    <div class="list_container">
+      <div class="list_wrap col_5">
+        <!-- 필터 -->
+        <div class="filter_wrap">
+          <div class="filter_top">
+            <div class="filter_btn">
+              <a href="#!">필터<span>+</span></a>
+            </div>
+
+            <div class="filter_right">
+              <div class="sort_select">
+                <select name="filter_sort" id="order">
+                  <option value="new">기본순</option>
+                  <option value="name">이름순</option>
+                  <option value="review">리뷰순</option>
+                  <option value="desc">낮은가격순</option>
+                  <option value="asc">높은가격순</option>
+                </select>
+              </div>
+
+              <div class="col_box">
+                <button type="button" class="col4_btn">4</button>
+                <button type="button" class="col5_btn">5</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 필터다운 -->
+          <div class="filter_down">
+            <div class="filter_box">
+              <div class="all_filter">
+                <ul>
+                  <li class="on">
+                    <a href="#!">전체</a>
+                    <span id="total"></span>
+                  </li>
+
+                  <li>
+                    <a href="#!">바람막이/아노락</a>
+                  </li>
+
+                  <li>
+                    <a href="#!">후드티/맨투맨</a>
+                  </li>
+                  <li>
+                    <a href="#!">트레이닝 세트</a>
+                  </li>
+
+                  <li>
+                    <a href="#!">니트/스웨터</a>
+                  </li>
+                  <li>
+                    <a href="#!">티셔츠</a>
+                  </li>
+
+                  <li>
+                    <a href="#!">팬츠</a>
+                  </li>
+                  <li>
+                    <a href="#!">다운/플리스</a>
+                  </li>
+
+                  <li>
+                    <a href="#!">온라인 단독</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="sport_filter">
+                <h4 class="filter_tit">스포츠</h4>
+                <ul>
+                  <li>
+                    <input type="checkbox" id="sport_1" class="sport">
+                    <label for="sport_1">테니스</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="sport_2" class="sport">
+                    <label for="sport_2">러닝</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="sport_3" class="sport">
+                    <label for="sport_3">라이프스타일</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="sport_4" class="sport">
+                    <label for="sport_4">트레이닝</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="sport_5" class="sport">
+                    <label for="sport_5">골프</label>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="color_filter">
+                <h4 class="filter_tit">색상</h4>
+                <ul>
+                  <li>
+                    <input type="checkbox" id="color_01" class="color">
+                    <label for="color_01">
+                      <img src="./img/filter_color/WHITE.png" alt="WHITE">
+                    </label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="color_02" class="color">
+                    <label for="color_02">
+                      <img src="./img/filter_color/BLACK.png" alt="BLACK">
+                    </label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="color_03" class="color">
+                    <label for="color_03">
+                      <img src="./img/filter_color/GREY.png" alt="GRAY">
+                    </label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="color_04" class="color">
+                    <label for="color_04">
+                      <img src="./img/filter_color/GREEN.png" alt="GREEN">
+                    </label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="color_05" class="color">
+                    <label for="color_05">
+                      <img src="./img/filter_color/BLUE.png" alt="BLUE">
+                    </label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="color_06" class="color">
+                    <label for="color_06">
+                      <img src="./img/filter_color/MIX.png" alt="MIX">
+                    </label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="color_07" class="color">
+                    <label for="color_07">
+                      <img src="./img/filter_color/NAVY.png" alt="NAVY">
+                    </label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="color_08" class="color">
+                    <label for="color_08">
+                      <img src="./img/filter_color/ORANGE.png" alt="ORANGE">
+                    </label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="color_09" class="color">
+                    <label for="color_09">
+                      <img src="./img/filter_color/RED.png" alt="RED">
+                    </label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="color_10" class="color">
+                    <label for="color_10">
+                      <img src="./img/filter_color/BEIGE.png" alt="BEIGE">
+                    </label>
+                  </li>
+
+                </ul>
+              </div>
+
+              <div class="size_filter">
+                <h4 class="filter_tit">사이즈</h4>
+                <ul>
+                  <li>
+                    <input type="checkbox" id="size_01" class="size">
+                    <label for="size_01">075</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="size_02" class="size">
+                    <label for="size_02">078</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="size_03" class="size">
+                    <label for="size_03">080</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="size_04" class="size">
+                    <label for="size_04">082</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="size_05" class="size">
+                    <label for="size_05">084</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="size_06" class="size">
+                    <label for="size_06">085</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="size_07" class="size">
+                    <label for="size_07">086</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="size_08" class="size">
+                    <label for="size_08">090</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="size_09" class="size">
+                    <label for="size_09">094</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="size_10" class="size">
+                    <label for="size_10">095</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="size_11" class="size">
+                    <label for="size_11">100</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="size_12" class="size">
+                    <label for="size_12">105</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="size_13" class="size">
+                    <label for="size_13">110</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="size_14" class="size">
+                    <label for="size_14">115</label>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="price_filter">
+                <h4 class="filter_tit">가격</h4>
+                <ul>
+                  <li>
+                    <input type="checkbox" id="price01" class="price" value="39">
+                    <label for="price01">39,000 이하</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="price02" class="price" value="49">
+                    <label for="price02">40,000~49,000</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="price03" class="price" value="59">
+                    <label for="price03">50,000~59,000</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="price04" class="price" value="69">
+                    <label for="price04">60,000~79,000</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="price05" class="price" value="79">
+                    <label for="price05">79,000 초과</label>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="gender_filter">
+                <h4 class="filter_tit">성별</h4>
+                <ul>
+                  <li>
+                    <input type="checkbox" id="men" class="gender">
+                    <label for="men">남성</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="women" class="gender">
+                    <label for="women">여성</label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="common" class="gender">
+                    <label for="common">공용</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product_list">
+
+        </div>
+
+
+        <div id="pages">
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
     <!-- 푸터 -->
     <div class="footer_nav">
@@ -552,15 +844,26 @@
     </div>
   </footer>
 
+  <!-- 탑,바텀버튼 -->
+  <div class="arrow">
+    <a href="#!" class="material-icons-outlined top">
+      keyboard_arrow_up
+    </a>
+    <a href="#!" class="material-icons-outlined bottom">
+      keyboard_arrow_down
+    </a>
+  </div>
+
 
   <div class="popup">
-    <p>아이디 : green</p>
-    <p>비밀번호 : 12345</p>
-    <div class="id1">
-      <p>아이디 : abcde</p>
-      <p>비밀번호 : 12345!</p>
-    </div>
+    <p>select옵션필터와</p>
+    <br />
+    <p>색상 필터, 가격필터</p>
+    <br />
+    <p>상품클릭시 상세보기페이지로이동</p>
+    <button id="popup_close">닫기</button>
   </div>
+
 </body>
 
 </html>

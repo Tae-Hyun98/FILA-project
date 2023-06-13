@@ -1,4 +1,9 @@
-/* //스크롤시 헤더
+import {
+  color,
+  subData
+} from "./sub_data.js";
+
+//스크롤시 헤더
 const scr = document.querySelector('.scroll');
 window.addEventListener("wheel", (e) => {
   const scrollUp = e.deltaY <= 0;
@@ -34,10 +39,8 @@ li.forEach((item) => {
     scr.classList.remove('bg_on');
   });
 });
- */
 
-
-/* //검색버튼 클릭시 검색창
+//검색버튼 클릭시 검색창
 const searchOpen = document.getElementById('search');
 const searchClose = document.getElementById('close');
 
@@ -46,11 +49,26 @@ searchOpen.addEventListener('click', () => {
 });
 searchClose.addEventListener('click', () => {
   scr.classList.remove('search_on');
-}); */
+});
+
+const searchBtn = document.querySelector('.search_btn');
+const goInput = document.getElementById('search_in');
+searchBtn.addEventListener('click', () => {
+  let go = goInput.value.toLowerCase();
+
+  if (go !== '') {
+    let filter12 = subData.filter(item => item.name.includes(go));
+    window.open('search.html');
+    localStorage.setItem('value', JSON.stringify(filter12))
+  } else if (go === '') {
+    console.log('error')
+  }
+})
 
 
 
-/* //푸터 패밀리사이트
+
+//푸터 패밀리사이트
 const familySite = document.getElementById('family_site');
 
 familySite.addEventListener('change', (e) => {
@@ -59,7 +77,7 @@ familySite.addEventListener('change', (e) => {
   let openNewWindow = window.open('about:blank');
 
   openNewWindow.location.href = options[optionIndex].value;
-}); */
+});
 
 
 
