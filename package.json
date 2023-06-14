@@ -1,6 +1,7 @@
 {
   "name": "fila_project",
   "version": "1.0.0",
+  "description": "![header](https://capsule-render.vercel.app/api?type=Rect&color=002053&height=150&section=header&text=F%20I%20L%20A&fontSize=60&fontColor=fff&animation=fadeIn)",
   "main": "index.html",
   "scripts": {
     "dev": "parcel index.html",
@@ -10,17 +11,25 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^9.8.8",
     "parcel-bundler": "^1.12.5",
-    "parcel-plugin-static-files-copy": "^2.6.0",
-    "postcss": "^8.4.23",
-    "sass": "^1.62.1",
-    "sass-loader": "^13.3.0"
+    "parcel-plugin-static-files-copy": "^2.6.0"
   },
   "dependencies": {
-    "jquery": "^3.6.4",
-    "jquery-ui-dist": "^1.13.2",
-    "swiper": "^9.2.4"
+    "jquery": "^3.7.0"
   },
-  "description": ""
+  "staticFiles": {
+    "staticPath": [{
+        "staticPath": "img",
+        "staticOutDir": "img"
+      },
+      {
+        "staticPath": "js",
+        "staticOutDir": "js"
+      },
+      {
+        "staticPath": "css",
+        "staticOutDir": "css"
+      }
+    ]
+  }
 }
