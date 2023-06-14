@@ -61,6 +61,7 @@ searchBtn.addEventListener('click', () => {
 
   if (word !== '') {
     let result = subData.filter(item => item.name.includes(word));
+    goInput.innerHTML = ''
     location.href = 'search.html'
     localStorage.setItem('result', JSON.stringify(result))
     localStorage.setItem('word', word)
@@ -73,6 +74,7 @@ goInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     e.preventDefault();
     searchBtn.click();
+    goInput.innerHTML = ''
   }
 })
 
@@ -125,7 +127,7 @@ topBtn.addEventListener('click', () => {
 
 bottomBtn.addEventListener('click', () => {
   gsap.to(window, 0.5, {
-    scrollTo: 7000
+    scrollTo: document.body.scrollHeight
   });
 });
 

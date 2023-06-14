@@ -1654,8 +1654,8 @@ h1 {
 .arrow {
   position: fixed;
   z-index: 5;
-  right: 5px;
-  bottom: 30px;
+  right: 10px;
+  bottom: 35px;
 }
 
 .arrow a {

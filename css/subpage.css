@@ -1015,8 +1015,8 @@ div.col_5 .product_box .detail p.product_name {
 .arrow {
   position: fixed;
   z-index: 5;
-  right: 5px;
-  bottom: 30px;
+  right: 10px;
+  bottom: 35px;
 }
 
 .arrow a {
