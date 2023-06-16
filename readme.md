@@ -2,13 +2,14 @@
 
 # FILA (팀 기획, 개인프로젝트)
 - ### 목차
-   - #### 1. [프로젝트 작업](#프로젝트작업)
+   - #### 1. [프로젝트 작업](#1-프로젝트작업)
    - #### 2. [제작기간 & 참여인원](#2-개발-기간)
    - #### 3. [사용한 기술스택](#3-사용한-기술스택)
    - #### 4. [주요기능(코드)](#4-주요기능코드)
-   - #### 5. [트러블슈팅](#PC버전)
+   - #### 5. [트러블슈팅](#5-트러블슈팅)
    - #### 6. [느낀점](#6-느낀점)
-# 프로젝트작업
+     
+## 1. 프로젝트작업
 - FILA 사이트를 참고하여 리뉴얼한 개인프로젝트 (적응형웹)  
 
 - 팀원 6명과 함께 자사 및 경쟁사 사이트를 분석후 기획하여 기존의 FILA를 리뉴얼하였습니다.  
@@ -19,10 +20,10 @@
 
 - 주요기능으로는 **상품필터, 리뷰, 상품문의, 로그인/회원가입 유효성체크** 등이 있습니다.  
 
-# 2. 개발 기간  
-  2023.04.28 ~ 2023.5.~
+## 2. 개발 기간  
+  > 2023.04.28 ~ 2023.5.~
  
-# 3. 사용한 기술스택  
+## 3. 사용한 기술스택  
   <a href="#!"><img src="https://img.shields.io/badge/html5-E34F26?style=flat&logo=html5&logoColor=white"/></a>
   <a href="#!"><img src="https://img.shields.io/badge/css3-1572B6?style=flat&logo=css3&logoColor=white"/></a>
   <a href="#!"><img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white"/></a>
@@ -33,13 +34,15 @@
   <a href="#!"><img src="https://img.shields.io/badge/visual studio code-007ACC?style=flat&logo=visualstudiocode&logoColor=white"/></a>
   <a href="#!"><img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"/></a>  
 
-# 📌 주요기능(코드)
+## 4. 주요기능(코드)
 - 메인페이지 : 라이브러리 swiper.js/gsap.js를 이용한 슬라이드/애니메이션 및 랭킹 인디케이터, 카운드다운, 랭킹에서 카테고리선택시 상품교체 기능들이 있습니다.  
 - 서브페이지 : sort, filter 함수를 이용한 상품 정렬,  
 
 ```
 
 ```
+
+## 5. 트러블슈팅
 # 📌 이미지
 ### PC버전  
   <img src=/>  
@@ -48,7 +51,7 @@
   <img src=/>
   <img src=/> 
 
-# 📌 느낀점
+## 6. 느낀점
 > ...
 
 ![Footer](https://capsule-render.vercel.app/api?type=waving&color=002053&height=200&section=footer)
