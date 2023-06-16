@@ -1,6 +1,13 @@
 ![header](https://capsule-render.vercel.app/api?type=Rect&color=002053&height=150&section=header&text=F%20I%20L%20A&fontSize=60&fontColor=fff&animation=fadeIn)
 
-# 2. FILA (팀 기획, 개인프로젝트)
+# FILA (팀 기획, 개인프로젝트)
+- ### 목차
+    #### 1. 프로젝트 작업
+    #### 2. 제작기간 & 참여인원
+    #### 3. 주요기능(코드)
+    #### 4. 트러블슈팅
+    #### 5. 느낀점  
+# 1. 프로젝트 작업
 - FILA 사이트를 참고하여 리뉴얼한 개인프로젝트 (적응형웹)  
 
 - 팀원 6명과 함께 자사 및 경쟁사 사이트를 분석후 기획하여 기존의 FILA를 리뉴얼하였습니다.  
