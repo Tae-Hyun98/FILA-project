@@ -4,7 +4,7 @@
 - ### 목차
    - #### 1. [프로젝트 작업](#1-프로젝트작업)
    - #### 2. [제작기간 & 참여인원](#2-개발-기간)
-   - #### 3. [사용한 기술스택](#3-사용한-기술스택)
+   - #### 3. [사용한 기술스택](#3-사용한-skills)
    - #### 4. [주요기능(코드)](#4-주요기능코드)
    - #### 5. [트러블슈팅](#5-트러블슈팅)
    - #### 6. [느낀점](#6-느낀점)
@@ -23,7 +23,7 @@
 ## 2. 개발 기간  
   > 2023.04.28 ~ 2023.5.~
  
-## 3. 사용한 기술스택  
+## 3. 사용한 Skills  
   <a href="#!"><img src="https://img.shields.io/badge/html5-E34F26?style=flat&logo=html5&logoColor=white"/></a>
   <a href="#!"><img src="https://img.shields.io/badge/css3-1572B6?style=flat&logo=css3&logoColor=white"/></a>
   <a href="#!"><img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white"/></a>
