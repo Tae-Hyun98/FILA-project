@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FILA</title>
-  <!--  <link rel="stylesheet" href="./css/main.scss"> -->
+  
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
@@ -18,25 +18,14 @@
   <script src="./js/import-jquery.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script type="module" src="./js/main.js" defer></script>
-  <script src="./js/mainswiper.js" defer></script>
   <script type="module" src="./js/comon.js" defer></script>
+  <script src="./js/mainswiper.js" defer></script>
 
   <!-- gsap -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
 
-  <script>
-    //퀵메뉴
-    $(function () {
-      $('.quick').css('top', $(window).height() / 2 - $('.quick').height() / 2);
-      $(window).scroll(function () {
-        let point = $(this).scrollTop() + ($(window).height() / 2 - $('.quick').height() / 2);
-        $('.quick').stop().animate({
-          top: point
-        }, 200);
-      });
-    });
-  </script>
+
 </head>
 
 <body class="scroll">

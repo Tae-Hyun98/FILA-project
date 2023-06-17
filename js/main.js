@@ -8,6 +8,19 @@ import {
 } from "./rank_data.js";
 
 
+
+//퀵메뉴
+$(function () {
+  $('.quick').css('top', $(window).height() / 2 - $('.quick').height() / 2);
+  $(window).scroll(function () {
+    let point = $(this).scrollTop() + ($(window).height() / 2 - $('.quick').height() / 2);
+    $('.quick').stop().animate({
+      top: point
+    }, 200);
+  });
+});
+
+
 //카운트다운
 const countDown = new Date("Jun 30, 2023 22:22:00").getTime();
 
