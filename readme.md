@@ -3,7 +3,7 @@
 # FILA (팀 기획, 개인프로젝트)
 - ### 목차
     #### 1. [프로젝트 작업](#1-프로젝트-작업)
-    #### 2. [제작기간 & 참여인원](#2-개발-기간)
+    #### 2. [제작기간](#2-제작-기간)
     #### 3. [사용한 기술스택](#3-사용한-skills)
     #### 4. [페이지 구성](#4-페이지-구성)
     #### 5. [주요기능(코드)](#5-주요기능코드)
@@ -21,7 +21,7 @@
 
 - 주요기능으로는 **상품검색, 상품필터, 리뷰, 상품문의, 로그인/회원가입 유효성체크** 등이 있습니다.  
 
-## 2. 개발 기간  
+## 2. 제작 기간  
   > 2023.04.28 ~ 2023.5.~
  
 ## 3. 사용한 Skills  
@@ -30,10 +30,12 @@
   <a href="#!"><img src="https://img.shields.io/badge/css3-1572B6?style=flat&logo=css3&logoColor=white"/></a>
   <a href="#!"><img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white"/></a>
   <a href="#!"><img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=javascript&logoColor=white"/></a>
+
   
   **Library**  
   <a href="#!"><img src="https://img.shields.io/badge/swiper.js-6332F6?style=flat&logo=swiper&logoColor=white"/></a>
   <a href="#!"><img src="https://img.shields.io/badge/gsap.js-88CE02?style=flat&logo=greensock&logoColor=white"/></a>
+
 
   **Tools**  
   <a href="#!"><img src="https://img.shields.io/badge/visual studio code-007ACC?style=flat&logo=visualstudiocode&logoColor=white"/></a>
