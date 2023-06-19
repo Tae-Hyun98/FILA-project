@@ -41,7 +41,7 @@
   <a href="#!"><img src="https://img.shields.io/badge/visual studio code-007ACC?style=flat&logo=visualstudiocode&logoColor=white"/></a>
   <a href="#!"><img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"/></a>  
   
-## 4. 페이지 구성
+## 4. 페이지 구성  
 페이지는 **메인페이지**, **서브페이지(상품목록)**, **디테일페이지(상품상세정보 및 리뷰/문의)**, **로그인/회원가입페이지**로 구성되어있습니다.
 
 ## 5. 주요기능  
@@ -74,7 +74,7 @@ searchBtn.addEventListener('click', () => {
   <img src=/>
   <img src=/> 
 
-## 6. 느낀점
+## 6. 느낀점  
 - FILA사이트를 사용자의 UX경험을 중점으로 팀원들과 기획하는 과정을 통해 협업에서의 소통능력을 기를수 있게되었고, 의견을 도출할 수 있는 능력을 기를수 있었으며, 다시한번 사용자의 입장에서 사이트를 사용했을때의 경험을 생각해볼수 있는 계기가 되었습니다.  
 - 또한, 퍼블리싱 및 기능구현을 통하여 더욱 효율적인 마크업을 할수 있게 되었고, 
 
