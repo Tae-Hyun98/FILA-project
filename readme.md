@@ -69,13 +69,15 @@ searchBtn.addEventListener('click', () => {
 ```
 <details>  
     <summary>검색기능시연사진</summary>  
+        
+  **검색화면**  
+  ![search](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/75b2e906-9fdb-42c2-9604-7646c42be9fa)  
 
-**검색화면**  
-![search](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/75b2e906-9fdb-42c2-9604-7646c42be9fa)  
+  **검색결과화면**
+  ![search](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/575e9a6b-9990-402a-ac27-90a2bb6644aa)  
 
-**검색결과화면**
-![search](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/575e9a6b-9990-402a-ac27-90a2bb6644aa)  
-
+  **검색실패화면**
+  ![검색기능3](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/7fa15a96-a980-4c58-89c6-8be178dae5ff)
 
 ![코드1](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/90f59878-8cfa-4d32-a1ec-db09ec0610e5)
 
