@@ -51,8 +51,9 @@
 
 ## 5. 주요기능  
 ### 검색기능 
-//검색창의 Input을 통해 입력된값을 DataSet에서 입력된값이 포함된 이름을 필터하고 필터된 배열들을 json형식으로 변환을하여 setItem으로 값을 search페이지로 전달합니다.
+검색창의 Input을 통해 입력된값을 DataSet에서 입력된값이 포함된 이름을 필터하고 필터된 배열들을 json형식으로 변환을하여 setItem으로 값을 search페이지로 전달합니다.
 ![코드1](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/90f59878-8cfa-4d32-a1ec-db09ec0610e5)
+![코드2](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/033eb99a-03cb-4f44-a0ad-34648a1b8629)
 
 
 ```javascript
