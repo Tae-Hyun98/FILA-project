@@ -52,6 +52,9 @@
 ## 5. 주요기능  
 ### 검색기능 
 //검색창의 Input을 통해 입력된값을 DataSet에서 입력된값이 포함된 이름을 필터하고 필터된 배열들을 json형식으로 변환을하여 setItem으로 값을 search페이지로 전달합니다.
+![코드1](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/90f59878-8cfa-4d32-a1ec-db09ec0610e5)
+
+
 ```javascript
 searchBtn.addEventListener('click', () => {
   let word = goInput.value.toLowerCase();
@@ -66,20 +69,21 @@ searchBtn.addEventListener('click', () => {
     console.log('error')
   }
 })
+
+
 ```
 <details>  
     <summary>검색기능시연사진</summary>  
         
-  **검색화면**  
-  ![search](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/75b2e906-9fdb-42c2-9604-7646c42be9fa)  
+  - **검색화면**  
+  ![search](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/37cd4806-08ea-454c-b32b-7c52126bf96f)  
 
-  **검색결과화면**  
+  - **검색결과화면**  
   ![search](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/575e9a6b-9990-402a-ac27-90a2bb6644aa)  
 
-  **검색실패화면**  
-  ![검색기능3](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/7fa15a96-a980-4c58-89c6-8be178dae5ff)  
+  -  **검색실패화면**  
+  ![search](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/7fa15a96-a980-4c58-89c6-8be178dae5ff)  
 
-![코드1](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/90f59878-8cfa-4d32-a1ec-db09ec0610e5)
 
 </details>
 
