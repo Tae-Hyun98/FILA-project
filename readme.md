@@ -1,5 +1,3 @@
-![header](https://capsule-render.vercel.app/api?type=Rect&color=002053&height=150&section=header&text=F%20I%20L%20A&fontSize=60&fontColor=fff&animation=fadeIn)
-
 # FILA (팀 기획, 개인프로젝트)
 > FILA 사이트를 참고하여 리뉴얼한 개인프로젝트 (적응형웹)입니다.
 
@@ -46,12 +44,12 @@
   <a href="#!"><img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"/></a>  
   
 ## 4. 페이지 구성  
-페이지는 **메인페이지**, **서브페이지(상품목록)**, **디테일페이지(상품상세정보 및 리뷰/문의)**, **로그인/회원가입페이지**로 구성되어있습니다.
+페이지는 **메인페이지, 서브페이지(상품목록), 디테일페이지(상품상세정보 및 리뷰/문의), 로그인/회원가입페이지, 검색결과페이지**로 구성되어있습니다.
 
 
 ## 5. 주요기능  
 - ### 5-1. 검색기능  
-### 검색창의 Input을 통해 입력된값을 DataSet에서 입력된값이 포함된 이름을 필터하고 필터된 값들을 JSON형식으로 변환을하여 setItem으로 값을 search페이지로 전달합니다.**  
+### 검색창의 Input을 통해 입력된값을 DataSet에서 입력된값이 포함된 이름을 필터하고 필터된 값들을 JSON형식으로 변환을하여 setItem으로 값을 search페이지로 전달합니다.  
 ```javascript
 searchBtn.addEventListener('click', () => {
   let word = goInput.value.toLowerCase();
@@ -67,7 +65,7 @@ searchBtn.addEventListener('click', () => {
   }
 })
 ```  
-**getItem으로 전달된 값을 받으면서 JSON형태의 데이터를 객체형태로 변환하여 저장합니다. 전달된 값이 없거나 length가 0이면 검색결과가 없다고 표시하며, 있다면 상품들을 출력하는 함수인 paginationFunc()함수로 상품들을 출력합니다.**  
+### getItem으로 전달된 값을 받으면서 JSON형태의 데이터를 객체형태로 변환하여 저장합니다. 전달된 값이 없거나 length가 0이면 검색결과가 없다고 표시하며, 있다면 상품들을 출력하는 함수인 paginationFunc()함수로 상품들을 출력합니다.  
 ```javascript
 const localData = JSON.parse(localStorage.getItem('result'));
 let words = localStorage.getItem('word')
@@ -100,4 +98,3 @@ if (localData === '' || localData.length === 0) {
 - FILA사이트를 사용자의 UX경험을 중점으로 팀원들과 기획하는 과정을 통해 협업에서의 소통능력을 기를수 있게되었고, 의견을 도출할 수 있는 능력을 기를수 있었으며, 다시한번 사용자의 입장에서 사이트를 사용했을때의 경험을 생각해볼수 있는 계기가 되었습니다.  
 - 또한, 퍼블리싱 및 기능구현을 통하여 더욱 효율적인 마크업을 할수 있게 되었고, 
 
-![Footer](https://capsule-render.vercel.app/api?type=waving&color=002053&height=200&section=footer)
