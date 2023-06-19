@@ -48,8 +48,8 @@
 
 
 ## 5. 주요기능  
-- ### 5-1. 검색기능  
-### 검색창의 Input을 통해 입력된값을 DataSet에서 입력된값이 포함된 이름을 필터하고 필터된 값들을 JSON형식으로 변환을하여 setItem으로 값을 search페이지로 전달합니다.  
+### 5-1. 검색기능  
+#### 검색창의 Input을 통해 입력된값을 DataSet에서 입력된값이 포함된 이름을 필터하고 필터된 값들을 JSON형식으로 변환을하여 setItem으로 값을 search페이지로 전달합니다.  
 ```javascript
 searchBtn.addEventListener('click', () => {
   let word = goInput.value.toLowerCase();
@@ -65,7 +65,7 @@ searchBtn.addEventListener('click', () => {
   }
 })
 ```  
-### getItem으로 전달된 값을 받으면서 JSON형태의 데이터를 객체형태로 변환하여 저장합니다. 전달된 값이 없거나 length가 0이면 검색결과가 없다고 표시하며, 있다면 상품들을 출력하는 함수인 paginationFunc()함수로 상품들을 출력합니다.  
+#### getItem으로 전달된 값을 받으면서 JSON형태의 데이터를 객체형태로 변환하여 저장합니다. 전달된 값이 없거나 length가 0이면 검색결과가 없다고 표시하며, 있다면 상품들을 출력하는 함수인 paginationFunc()함수로 상품들을 출력합니다.  
 ```javascript
 const localData = JSON.parse(localStorage.getItem('result'));
 let words = localStorage.getItem('word')
