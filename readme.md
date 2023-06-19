@@ -36,12 +36,10 @@
   <a href="#!"><img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white"/></a>
   <a href="#!"><img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=javascript&logoColor=white"/></a>
 
-  
   **Library**  
   <a href="#!"><img src="https://img.shields.io/badge/swiper.js-6332F6?style=flat&logo=swiper&logoColor=white"/></a>
   <a href="#!"><img src="https://img.shields.io/badge/gsap.js-88CE02?style=flat&logo=greensock&logoColor=white"/></a>
-
-
+    
   **Tools**  
   <a href="#!"><img src="https://img.shields.io/badge/visual studio code-007ACC?style=flat&logo=visualstudiocode&logoColor=white"/></a>
   <a href="#!"><img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"/></a>  
@@ -49,13 +47,14 @@
 ## 4. 페이지 구성  
 페이지는 **메인페이지**, **서브페이지(상품목록)**, **디테일페이지(상품상세정보 및 리뷰/문의)**, **로그인/회원가입페이지**로 구성되어있습니다.
 
+
 ## 5. 주요기능  
-### 5-1 검색기능  
-**검색창의 Input을 통해 입력된값을 DataSet에서 입력된값이 포함된 이름을 필터하고 필터된 배열들을 json형식으로 변환을하여 setItem으로 값을 search페이지로 전달합니다.**  
+- ### 5-1. 검색기능  
+### 검색창의 Input을 통해 입력된값을 DataSet에서 입력된값이 포함된 이름을 필터하고 필터된 값들을 JSON형식으로 변환을하여 setItem으로 값을 search페이지로 전달합니다.**  
 ```javascript
 searchBtn.addEventListener('click', () => {
   let word = goInput.value.toLowerCase();
-
+    
   if (word !== '') {
     let result = subData.filter(item => item.name.includes(word));
     goInput.innerHTML = ''
@@ -66,24 +65,33 @@ searchBtn.addEventListener('click', () => {
     console.log('error')
   }
 })
+```  
+**getItem으로 전달된 값을 받으면서 JSON형태의 데이터를 객체형태로 변환하여 저장합니다. 전달된 값이 없거나 length가 0이면 검색결과가 없다고 표시하며, 있다면 상품들을 출력하는 함수인 paginationFunc()함수로 상품들을 출력합니다.**  
+```javascript
+const localData = JSON.parse(localStorage.getItem('result'));
+let words = localStorage.getItem('word')
 
-
+if (localData === '' || localData.length === 0) {
+  productList.innerHTML = `<h1>검색결과 해당하는 상품이 없습니다.</h1>`
+} else {
+  paginationFunc(localData)
+}
 ```
+
+
 <details>  
     <summary>검색기능시연사진</summary>  
         
-  - **검색화면**  
+  - ### 검색화면  
   ![search](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/37cd4806-08ea-454c-b32b-7c52126bf96f)  
 
-  - **검색결과화면**  
+  - ### 검색결과화면  
   ![search](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/575e9a6b-9990-402a-ac27-90a2bb6644aa)  
 
-  -  **검색실패화면**  
+  - ### 검색실패화면  
   ![search](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/7fa15a96-a980-4c58-89c6-8be178dae5ff)  
 
-
 </details>
-
 
 
 ## 6. 느낀점
