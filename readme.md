@@ -2,6 +2,7 @@
 
 # FILA (팀 기획, 개인프로젝트)
 > FILA 사이트를 참고하여 리뉴얼한 개인프로젝트 (적응형웹)입니다.
+> ![fila_img](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/f7672f96-e27e-450e-871f-46681c279af7)
 
 
 - ### 목차
