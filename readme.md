@@ -51,8 +51,7 @@
 
 ## 5. 주요기능  
 ### 검색기능 
-검색창의 Input을 통해 입력된값을 DataSet에서 입력된값이 포함된 이름을 필터하고 필터된 배열들을 json형식으로 변환을하여 setItem으로 값을 search페이지로 전달합니다.
-
+//검색창의 Input을 통해 입력된값을 DataSet에서 입력된값이 포함된 이름을 필터하고 필터된 배열들을 json형식으로 변환을하여 setItem으로 값을 search페이지로 전달합니다.
 ```javascript
 searchBtn.addEventListener('click', () => {
   let word = goInput.value.toLowerCase();
@@ -68,6 +67,10 @@ searchBtn.addEventListener('click', () => {
   }
 })
 ```
+<details>
+    <summary>검색기능영상</summary>
+    
+</details>
 
 
 ## 5. 트러블슈팅
