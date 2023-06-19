@@ -68,8 +68,14 @@ searchBtn.addEventListener('click', () => {
 })
 ```
 <details>
-    <summary>검색기능영상</summary>
+    <summary>검색기능시연사진</summary>
+    검색창에 검색할 단어를 입력합니다.  
+    ![검색기능1](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/75b2e906-9fdb-42c2-9604-7646c42be9fa)  
+    입력한 후 엔터 및 검색버튼을 누르면 해당되는 상품이 출력됩니다.
+    ![검색기능2](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/575e9a6b-9990-402a-ac27-90a2bb6644aa)
     
+![코드1](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/90f59878-8cfa-4d32-a1ec-db09ec0610e5)
+
 </details>
 
 
