@@ -103,7 +103,7 @@ if (localData === '' || localData.length === 0) {
 ![상품리뷰영상](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/6624c8e6-8c29-4c8c-9b72-2d06baf2d00a)
 
 <details>
-  <summary>코드보기</summary>  
+ <summary>코드보기</summary>
   
 #### 리뷰 및 문의 기능은 조건문으로 값이 비어있지 않다면 등록이 되도록 설계를 하였고, 값을 입력하고 등록하기 버튼을 누를시 함수가 호출되어 입력된 값들을 전달받아 생성된 엘리먼트들에게 appendChild를 이용하여 자식노드로 전달된 값이 추가되어 리뷰를 생성하도록 하였으며, 리뷰가 등록된후 입력이 되어있던 Input값들을 초기화하도록 만들었습니다.
 ```javascript
