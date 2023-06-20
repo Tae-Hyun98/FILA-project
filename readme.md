@@ -10,7 +10,8 @@
   ### 3. [사용한 기술스택](#3-사용한-skills)
   ### 4. [페이지 구성](#4-페이지-구성-1)
   ### 5. [주요기능(코드)](#5-주요기능)  
-     #### 5-1. [검색기능](#5-1-검색기능)  
+     - #### [검색기능](#5-1-검색기능)  
+     - #### [리뷰등록기능](#5-2-상품-리뷰문의기능)  
   ### 6. [느낀점](#6-느낀점-1)
 
      
@@ -51,16 +52,7 @@
 
 ## 5. 주요기능  
 ### 5-1. 검색기능  
-
- - ### 검색화면  
-  ![search](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/37cd4806-08ea-454c-b32b-7c52126bf96f)  
-
-  - ### 검색결과화면  
-  ![search](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/575e9a6b-9990-402a-ac27-90a2bb6644aa)  
-
-  - ### 검색실패화면  
-  ![search](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/7fa15a96-a980-4c58-89c6-8be178dae5ff)  
-
+![검색기능영상](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/5d8ff80f-e1b0-4cd4-ab93-4952bf15326a)
 
 <details>  
     <summary>코드보기</summary>  
@@ -80,7 +72,8 @@ searchBtn.addEventListener('click', () => {
     console.log('error')
   }
 })
-```  
+```
+
 #### getItem으로 전달된 값을 받으면서 JSON형태의 데이터를 객체형태로 변환하여 저장합니다. 전달된 값이 없거나 length가 0이면 검색결과가 없다고 표시하며, 있다면 상품들을 출력하는 함수인 paginationFunc()함수로 상품들을 출력합니다.  
 ```javascript
 const localData = JSON.parse(localStorage.getItem('result'));
@@ -92,7 +85,6 @@ if (localData === '' || localData.length === 0) {
   paginationFunc(localData)
 }
 ```
-
 
 </details>
 
@@ -182,5 +174,5 @@ FILA사이트를 사용자의 UX경험을 중점으로 팀원들과 기획하는
 
 
 또한, 퍼블리싱 및 기능구현을 통하여 더욱 효율적인 마크업을 할수 있게 되었고, 자주 쓰이거나 재사용이 필요한 코드들을 함수로 정의해서 사용하면 효율적으로 코드를 짤수 있다는 것을 다시금 깨닫게 되었으며, 
-DOM에 엘리먼트 및 노드 추가시 appendchild보다 innerHTML을 사용하여 추가하는것이 더욱 효율적이라는 것을 알게 되었습니다.
+DOM에 엘리먼트 및 노드 추가시 appendChild보다 innerHTML을 사용하여 추가하는것이 더욱 효율적이라는 것을 알게 되었습니다.
 
