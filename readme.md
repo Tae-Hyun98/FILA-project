@@ -97,7 +97,7 @@ if (localData === '' || localData.length === 0) {
 </details>
 
 ### 5-2. 상품 리뷰/문의기능  
-
+![상품리뷰영상](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/6624c8e6-8c29-4c8c-9b72-2d06baf2d00a)
 
 <details>
   <summary>코드보기</summary>  
