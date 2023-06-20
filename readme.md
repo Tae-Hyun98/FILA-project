@@ -28,8 +28,12 @@
   
 - 프로젝트에 사용한 데이터들은 직접 DataSet을 구축하여 사용하였습니다.
 
-## 2. 제작 기간  
-- 2023.04.28 ~ 2023.5.24
+      
+
+## 2. 제작 기간 : 2023.04.28 ~ 2023.5.24
+
+
+    
  
 ## 3. 사용한 Skills  
   **Language**  
@@ -55,7 +59,7 @@
 ![검색기능영상](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/5d8ff80f-e1b0-4cd4-ab93-4952bf15326a)
 
 <details>  
-    <summary>코드보기</summary>  
+    <summary><span font-weight:bold>코드보기</span></summary>  
         
  #### 검색창의 Input을 통해 입력된값을 DataSet에서 입력된값이 포함된 이름을 필터하고 필터된 값들을 JSON형식으로 변환을하여 setItem으로 값을 search페이지로 전달합니다.  
 ```javascript
