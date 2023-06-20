@@ -1,7 +1,7 @@
 # FILA (팀 기획, 개인프로젝트)
 > FILA 사이트를 참고하여 리뉴얼한 개인프로젝트 (적응형웹)입니다.
 
-![메인화면](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/f7672f96-e27e-450e-871f-46681c279af7)
+![메인화면](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/f7672f96-e27e-450e-871f-46681c279af7)  
 
 
 - ## 목차  
@@ -14,7 +14,9 @@
      - #### [리뷰등록기능](#5-2-상품-리뷰문의기능)  
   ### 6. [느낀점](#6-느낀점-1)
 
-     
+
+<br/> 
+
 ## 1. 프로젝트 소개
 - FILA 사이트를 참고하여 리뉴얼한 개인프로젝트 (적응형웹) 입니다.
 
@@ -29,11 +31,11 @@
 - 프로젝트에 사용한 데이터들은 직접 DataSet을 구축하여 사용하였습니다.
 
       
+  <br/>
 
 ## 2. 제작 기간 : 2023.04.28 ~ 2023.5.24
 
-
-    
+ <br/>
  
 ## 3. 사용한 Skills  
   **Language**  
@@ -48,11 +50,14 @@
     
   **Tools**  
   <a href="#!"><img src="https://img.shields.io/badge/visual studio code-007ACC?style=flat&logo=visualstudiocode&logoColor=white"/></a>
-  <a href="#!"><img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"/></a>  
+  <a href="#!"><img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"/></a>
+
+  <br/>
   
 ## 4. 페이지 구성  
 페이지는 **메인페이지, 서브페이지(상품목록), 디테일페이지(상품상세정보 및 리뷰/문의), 로그인/회원가입페이지, 검색결과페이지**로 구성되어있습니다.
 
+<br/>
 
 ## 5. 주요기능  
 ### 5-1. 검색기능  
@@ -92,6 +97,8 @@ if (localData === '' || localData.length === 0) {
 
 </details>
 
+<br/>
+  
 ### 5-2. 상품 리뷰/문의기능  
 ![상품리뷰영상](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/6624c8e6-8c29-4c8c-9b72-2d06baf2d00a)
 
