@@ -30,12 +30,11 @@
   
 - 프로젝트에 사용한 데이터들은 직접 DataSet을 구축하여 사용하였습니다.
 
-      
-  <br/>
+<br/>
 
 ## 2. 제작 기간 : 2023.04.28 ~ 2023.5.24
 
- <br/>
+<br/>
  
 ## 3. 사용한 Skills  
   **Language**  
@@ -52,7 +51,7 @@
   <a href="#!"><img src="https://img.shields.io/badge/visual studio code-007ACC?style=flat&logo=visualstudiocode&logoColor=white"/></a>
   <a href="#!"><img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"/></a>
 
-  <br/>
+<br/>
   
 ## 4. 페이지 구성  
 페이지는 **메인페이지, 서브페이지(상품목록), 디테일페이지(상품상세정보 및 리뷰/문의), 로그인/회원가입페이지, 검색결과페이지**로 구성되어있습니다.
@@ -64,7 +63,7 @@
 ![검색기능영상](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/5d8ff80f-e1b0-4cd4-ab93-4952bf15326a)
 
 <details>
-<summary fontSize:50>코드보기</summary>
+<summary>코드보기</summary>
         
  #### 검색창의 Input을 통해 입력된값을 DataSet에서 입력된값이 포함된 이름을 필터하고 필터된 값들을 JSON형식으로 변환을하여 setItem으로 값을 search페이지로 전달합니다.  
 ```javascript
