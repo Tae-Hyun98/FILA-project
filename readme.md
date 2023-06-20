@@ -102,8 +102,7 @@ if (localData === '' || localData.length === 0) {
 ------------
 
 ### 5-2. 상품 리뷰/문의기능  
-<img src="https://github.com/Tae-Hyun98/FILA-project/assets/119056869/6624c8e6-8c29-4c8c-9b72-2d06baf2d00a" width=100%/>
-![상품리뷰영상](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/6624c8e6-8c29-4c8c-9b72-2d06baf2d00a)
+<img src="https://github.com/Tae-Hyun98/FILA-project/assets/119056869/0de67e77-d984-46c8-83cb-13cf4e758115" width=100%/>
 
 <details>
  <summary>🔎 코드보기</summary>
