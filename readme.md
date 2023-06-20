@@ -60,11 +60,10 @@
 
 ## 5. 주요기능  
 ### 5-1. 검색기능  
-<img src="https://github.com/Tae-Hyun98/FILA-project/assets/119056869/5d8ff80f-e1b0-4cd4-ab93-4952bf15326a" width=100%/>
-![검색기능영상](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/5d8ff80f-e1b0-4cd4-ab93-4952bf15326a)
+<img src="https://github.com/Tae-Hyun98/FILA-project/assets/119056869/5d8ff80f-e1b0-4cd4-ab93-4952bf15326a" width=90%/>
 
 <details>
-  <summary>🔎 코드보기</summary>
+ <summary>🔎 코드보기</summary>
 
  #### 검색창의 Input을 통해 입력된값을 DataSet에서 입력된값이 포함된 이름을 필터하고 필터된 값들을 JSON형식으로 변환을하여 setItem으로 값을 search페이지로 전달합니다.  
 ```javascript
@@ -102,7 +101,7 @@ if (localData === '' || localData.length === 0) {
 ------------
 
 ### 5-2. 상품 리뷰/문의기능  
-<img src="https://github.com/Tae-Hyun98/FILA-project/assets/119056869/0de67e77-d984-46c8-83cb-13cf4e758115" width=100%/>
+<img src="https://github.com/Tae-Hyun98/FILA-project/assets/119056869/0de67e77-d984-46c8-83cb-13cf4e758115" width=90%/>
 
 <details>
  <summary>🔎 코드보기</summary>
