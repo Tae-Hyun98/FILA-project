@@ -191,6 +191,9 @@ function reviewAdd() {
     count++;
     //별점출력
     Pstar.innerHTML = starBtn.innerHTML;
+    raingIcon.forEach((item) => {
+      item.setAttribute('class', 'far fa-star rating_star');
+    })
 
     let delBtn = document.querySelectorAll('.delete');
     for (let i = 0; i < delBtn.length; i++) {
@@ -203,9 +206,7 @@ function reviewAdd() {
   } else {
     alert('값을 입력하세요');
   }
-  raingIcon.forEach((item) => {
-    item.setAttribute('class', 'far fa-star rating_star');
-  })
+
 }
 
 
