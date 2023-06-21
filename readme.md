@@ -28,7 +28,84 @@
 
 - 주요기능으로는 **상품검색, 상품필터, 리뷰, 상품문의, 로그인/회원가입 유효성체크** 등이 있습니다.
   
-- 프로젝트에 사용한 데이터들은 직접 DataSet을 구축하여 사용하였습니다.
+- 프로젝트에 사용한 데이터들은 직접 DataSet을 구축하여 사용하였습니다.  
+    <details>
+     <summary>🔎 DataSet 보기</summary>
+    
+    #### 객체 데이터의 구조는 category, name, price, src, review, color로 구성이 되어있습니다.
+    ```javascript
+    const subData = [
+      {
+        id: 1,
+        category: "공용 오버핏 라이프스타일",
+        name: "헤리티지 세리프 로고 루즈핏 반팔티",
+        price: 41000,
+        src: "./img/Sub_img/01.jpg",
+        review: 5,
+        color: 'black'
+      },
+    
+      {
+        id: 2,
+        category: "공용",
+        name: "헤리티지 세리프 로고 루즈핏 반팔티",
+        price: 12000,
+        src: "./img/Sub_img/02.jpg",
+        review: 9,
+        color: 'white'
+      },
+    
+      {
+        id: 3,
+        category: "공용",
+        name: "FILATECH 아노락 하프 집업",
+        price: 99000,
+        src: "./img/Sub_img/03.jpg",
+        review: 15,
+        color: 'gray'
+      },
+    
+      {
+        id: 4,
+        category: "공용 컴포트핏 러닝",
+        name: "FILATECH 후드 경량자켓",
+        price: 109000,
+        src: "./img/Sub_img/04.jpg",
+        review: 1,
+        color: 'black'
+      },
+    
+      {
+        id: 5,
+        category: "공용",
+        name: "FILA ITALIA 반팔티셔츠",
+        price: 32000,
+        src: "./img/Sub_img/05.jpg",
+        review: 20,
+        color: 'white'
+      },
+    
+      {
+        id: 6,
+        category: "공용",
+        name: "FILA ITALIA 반팔티셔츠",
+        price: 25000,
+        src: "./img/Sub_img/06.jpg",
+        review: 4,
+        color: 'black'
+      },
+    
+      {
+        id: 7,
+        category: "공용",
+        name: "오버핏 코쿤 볼 패딩",
+        price: 139000,
+        src: "./img/Sub_img/07.jpg",
+        review: 50,
+        color: 'beige'
+      }]
+    ```
+    </details>
 
 <br/>
 
