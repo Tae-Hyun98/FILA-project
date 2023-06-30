@@ -1,20 +1,22 @@
 # FILA (팀 기획, 개인프로젝트)
 > FILA 사이트를 참고하여 리뉴얼한 개인프로젝트 (적응형웹)입니다.
 
-![메인화면](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/f7672f96-e27e-450e-871f-46681c279af7)
+![메인화면](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/f7672f96-e27e-450e-871f-46681c279af7)  
 
 
-- ## 목차  
+## 목차
+
   ### 1. [프로젝트 소개](#1-프로젝트-소개)
-  ### 2. [제작기간](#2-제작-기간)
+  ### 2. [제작기간](#2-제작-기간--20230428--2023524)
   ### 3. [사용한 기술스택](#3-사용한-skills)
   ### 4. [페이지 구성](#4-페이지-구성-1)
-  ### 5. [주요기능(코드)](#5-주요기능)  
-     - #### [검색기능](#5-1-검색기능)  
-     - #### [리뷰등록기능](#5-2-상품-리뷰문의기능)  
+  ### 5. [주요기능(코드)](#5-주요기능)   
+   - #### [검색기능](#5-1-검색기능)  
+   - #### [리뷰등록기능](#5-2-상품-리뷰문의기능)  
   ### 6. [느낀점](#6-느낀점-1)
 
-     
+<br/> 
+
 ## 1. 프로젝트 소개
 - FILA 사이트를 참고하여 리뉴얼한 개인프로젝트 (적응형웹) 입니다.
 
@@ -26,10 +28,90 @@
 
 - 주요기능으로는 **상품검색, 상품필터, 리뷰, 상품문의, 로그인/회원가입 유효성체크** 등이 있습니다.
   
-- 프로젝트에 사용한 데이터들은 직접 DataSet을 구축하여 사용하였습니다.
+- 프로젝트에 사용한 데이터들은 직접 DataSet을 구축하여 사용하였습니다.  
+    <details>
+     <summary>🔎 DataSet 보기</summary>
+    
+    #### 객체 데이터의 구조는 category, name, price, src, review, color로 구성이 되어있습니다.
+    ```javascript
+    const subData = [
+      {
+        id: 1,
+        category: "공용 오버핏 라이프스타일",
+        name: "헤리티지 세리프 로고 루즈핏 반팔티",
+        price: 41000,
+        src: "./img/Sub_img/01.jpg",
+        review: 5,
+        color: 'black'
+      },
+    
+      {
+        id: 2,
+        category: "공용",
+        name: "헤리티지 세리프 로고 루즈핏 반팔티",
+        price: 12000,
+        src: "./img/Sub_img/02.jpg",
+        review: 9,
+        color: 'white'
+      },
+    
+      {
+        id: 3,
+        category: "공용",
+        name: "FILATECH 아노락 하프 집업",
+        price: 99000,
+        src: "./img/Sub_img/03.jpg",
+        review: 15,
+        color: 'gray'
+      },
+    
+      {
+        id: 4,
+        category: "공용 컴포트핏 러닝",
+        name: "FILATECH 후드 경량자켓",
+        price: 109000,
+        src: "./img/Sub_img/04.jpg",
+        review: 1,
+        color: 'black'
+      },
+    
+      {
+        id: 5,
+        category: "공용",
+        name: "FILA ITALIA 반팔티셔츠",
+        price: 32000,
+        src: "./img/Sub_img/05.jpg",
+        review: 20,
+        color: 'white'
+      },
+    
+      {
+        id: 6,
+        category: "공용",
+        name: "FILA ITALIA 반팔티셔츠",
+        price: 25000,
+        src: "./img/Sub_img/06.jpg",
+        review: 4,
+        color: 'black'
+      },
+    
+      {
+        id: 7,
+        category: "공용",
+        name: "오버핏 코쿤 볼 패딩",
+        price: 139000,
+        src: "./img/Sub_img/07.jpg",
+        review: 50,
+        color: 'beige'
+      }]
+    ```
+    </details>
 
-## 2. 제작 기간  
-- 2023.04.28 ~ 2023.5.24
+<br/>
+
+## 2. 제작 기간 : 2023.04.28 ~ 2023.5.24
+
+<br/>
  
 ## 3. 사용한 Skills  
   **Language**  
@@ -44,19 +126,23 @@
     
   **Tools**  
   <a href="#!"><img src="https://img.shields.io/badge/visual studio code-007ACC?style=flat&logo=visualstudiocode&logoColor=white"/></a>
-  <a href="#!"><img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"/></a>  
+  <a href="#!"><img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"/></a>
+
+<br/>
   
 ## 4. 페이지 구성  
 페이지는 **메인페이지, 서브페이지(상품목록), 디테일페이지(상품상세정보 및 리뷰/문의), 로그인/회원가입페이지, 검색결과페이지**로 구성되어있습니다.
 
+<br/>
 
 ## 5. 주요기능  
 ### 5-1. 검색기능  
-![검색기능영상](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/5d8ff80f-e1b0-4cd4-ab93-4952bf15326a)
+<img src="https://github.com/Tae-Hyun98/FILA-project/assets/119056869/5d8ff80f-e1b0-4cd4-ab93-4952bf15326a" width=90%/>
 
-<details>  
-    <summary>코드보기</summary>  
-        
+#### 👇👇👇👇👇👇
+<details>
+ <summary>🔎 코드보기</summary>
+
  #### 검색창의 Input을 통해 입력된값을 DataSet에서 입력된값이 포함된 이름을 필터하고 필터된 값들을 JSON형식으로 변환을하여 setItem으로 값을 search페이지로 전달합니다.  
 ```javascript
 searchBtn.addEventListener('click', () => {
@@ -88,11 +174,16 @@ if (localData === '' || localData.length === 0) {
 
 </details>
 
-### 5-2. 상품 리뷰/문의기능  
-![상품리뷰영상](https://github.com/Tae-Hyun98/FILA-project/assets/119056869/6624c8e6-8c29-4c8c-9b72-2d06baf2d00a)
+<br/>
 
+------------
+
+### 5-2. 상품 리뷰/문의기능  
+<img src="https://github.com/Tae-Hyun98/FILA-project/assets/119056869/0de67e77-d984-46c8-83cb-13cf4e758115" width=90%/>
+  
+#### 👇👇👇👇👇👇
 <details>
-  <summary>코드보기</summary>  
+ <summary>🔎 코드보기</summary>
   
 #### 리뷰 및 문의 기능은 조건문으로 값이 비어있지 않다면 등록이 되도록 설계를 하였고, 값을 입력하고 등록하기 버튼을 누를시 함수가 호출되어 입력된 값들을 전달받아 생성된 엘리먼트들에게 appendChild를 이용하여 자식노드로 전달된 값이 추가되어 리뷰를 생성하도록 하였으며, 리뷰가 등록된후 입력이 되어있던 Input값들을 초기화하도록 만들었습니다.
 ```javascript
@@ -169,10 +260,12 @@ let delBtn = document.querySelectorAll('.delete');
 ```
 </details>
 
-## 6. 느낀점
-FILA사이트를 사용자의 UX경험을 중점으로 팀원들과 기획하는 과정을 통해 협업에서의 소통능력을 기를수 있게되었고, 의견을 도출할 수 있는 능력을 기를수 있었으며, 다시한번 사용자의 입장에서 사이트를 사용했을때의 경험을 생각해볼수 있는 계기가 되었습니다.  
+<br/>
+
+## 6. 느낀점  
+- FILA사이트를 사용자의 UX경험을 중점으로 팀원들과 기획하는 과정을 통해 협업에서의 소통능력을 기를수 있게되었고, 의견을 도출할 수 있는 능력을 기를수 있었으며, 다시한번 사용자의 입장에서 사이트를 사용했을때의 경험을 생각해볼수 있는 계기가 되었습니다.  
 
 
-또한, 퍼블리싱 및 기능구현을 통하여 더욱 효율적인 마크업을 할수 있게 되었고, 자주 쓰이거나 재사용이 필요한 코드들을 함수로 정의해서 사용하면 효율적으로 코드를 짤수 있다는 것을 다시금 깨닫게 되었으며, 
+- 또한, 퍼블리싱 및 기능구현을 통하여 더욱 효율적인 마크업을 할수 있게 되었고, 자주 쓰이거나 재사용이 필요한 코드들을 함수로 정의해서 사용하면 효율적으로 코드를 짤수 있다는 것을 다시금 깨닫게 되었으며, 
 DOM에 엘리먼트 및 노드 추가시 appendChild보다 innerHTML을 사용하여 추가하는것이 더욱 효율적이라는 것을 알게 되었습니다.
 
