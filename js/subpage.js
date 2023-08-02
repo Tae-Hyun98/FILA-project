@@ -111,17 +111,17 @@ function filterChk(obj, label) {
 const sizeChk = document.querySelectorAll('.size');
 const sizeLabel = document.querySelectorAll('.size_filter label');
 
-for (let i = 0; i < sizeChk.length; i++) {
-  sizeChk[i].addEventListener('click', () => {
-    if (sizeChk[i].checked) {
-      sizeLabel[i].style.color = '#fff';
-      sizeLabel[i].style.backgroundColor = '#002053';
+sizeChk.forEach((item, idx) => {
+  item.addEventListener('click', () => {
+    if (sizeChk[idx].checked) {
+      sizeLabel[idx].style.color = '#fff';
+      sizeLabel[idx].style.backgroundColor = '#002053';
     } else {
-      sizeLabel[i].style.color = '#000'
-      sizeLabel[i].style.backgroundColor = '#fff'
+      sizeLabel[idx].style.color = '#000';
+      sizeLabel[idx].style.backgroundColor = '#eee';
     }
-  });
-}
+  })
+})
 
 
 
